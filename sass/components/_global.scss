@@ -1,0 +1,18 @@
+a{
+	&.fit-cell{
+	@include abs-pos(0,0,0,0);
+	padding:15px;
+	display:block;
+	color:white;
+	text-transform:uppercase;
+	.cell &{
+		text-transform: none;
+	}
+		&.orange{
+			background-color: $orange;
+		}
+		&.grey{
+			background-color: $grey;
+		}
+	}
+}

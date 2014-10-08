@@ -1,0 +1,29 @@
+h1,h2,h3,h4,h5{
+	@include font-size(32);
+	line-height: 110%;
+	margin: 0 0 20px;
+	font-family: $raleway;
+	font-weight:400;
+	color: $grey;
+	text-transform: uppercase;
+}
+h3{
+	@include font-size(18);
+	margin-bottom:10px;
+	font-weight:600;
+}
+p{
+	margin-bottom: 20px;
+}
+figcaption,
+blockquote p{
+	@include font-size(38);
+	font-family:$raleway;
+	line-height:120%;
+	font-style:italic;
+	margin-bottom:20px;
+	color: $grey;
+	strong{
+		font-weight: 600;
+	}
+}

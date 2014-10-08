@@ -1,0 +1,31 @@
+//neat overrides
+$max-width: 1132px; //overide neat outer container width
+$visual-grid: false; 
+
+//colours
+$orange: #EE7D00;
+$grey: #615E60;
+
+//font face
+
+@font-face {
+    font-family: 'MyriadPro-Regular';
+    src: url('../fonts/MyriadPro-Regular.eot');
+    src: url('../fonts/MyriadPro-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/MyriadPro-Regular.woff') format('woff'),
+         url('../fonts/MyriadPro-Regular.ttf') format('truetype'),
+         url('../fonts/MyriadPro-Regular.svg#MyriadPro-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//fonts
+$myriad: "MyriadPro-Regular", sans-serif;
+$raleway: "Raleway", sans-serif;
+$arial: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
+//break points
+$break-small: 639px;
+$break-medium: 767px;
+$break-large: 979px;
+$break-xlarge: 1132px;

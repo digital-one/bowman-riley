@@ -1,0 +1,30 @@
+html,body{
+	width:100%;
+	height:100%;
+}
+html{
+	font-size: 62.5%;
+}
+body{
+	font-family: $myriad;
+	@include font-size(16);
+	line-height: 150%;
+	background-color: white;
+	color: $grey;
+	width:100%;
+	height:100%;
+}
+a{
+	&:link, &:visited{
+		text-decoration:none;
+	color: $grey;
+		p &{
+			text-decoration: underline;
+		}
+	}
+	&:hover,&:active{
+		p &{
+			text-decoration: none;	
+		}	
+	}
+}
