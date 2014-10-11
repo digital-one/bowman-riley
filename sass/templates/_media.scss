@@ -1,0 +1,11 @@
+article{
+	.story{
+		padding: calc(#{$gutter}*2);
+		p{
+			margin:0;
+		}
+	}
+	img{
+		@include fit-grid(width);
+	}
+}

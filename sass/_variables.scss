@@ -5,7 +5,10 @@ $visual-grid: false;
 //colours
 $orange: #EE7D00;
 $grey: #615E60;
+$blue: #0085B3;
+$brown: #CFAD81;
 
+$gutter: 12px;
 //font face
 
 @font-face {
@@ -26,6 +29,6 @@ $arial: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helveti
 
 //break points
 $break-small: 639px;
-$break-medium: 767px;
+$break-medium: 767px; //ipad 
 $break-large: 979px;
 $break-xlarge: 1132px;

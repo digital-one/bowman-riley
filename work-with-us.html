@@ -14,12 +14,14 @@
         <link href='http://fonts.googleapis.com/css?family=Raleway:300,600' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/layout.css" />
         <script src="js/modernizr.js"></script>
-       <!--[if (gte IE 6)&(lte IE 8)]>
-<script src="js/selectivizr-min.js"></script>
-<![endif]-->
-        <!--[if lte IE 9]>
-          <script src="js/respond.min.js"></script>
-        <![endif]-->
+    <!-- Load jQuery from Google CDN -->
+<script  src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<!-- Load jQuery from a local copy if loading from Google fails -->
+<script>window.jQuery || document.write('<script type="text/javascript" src="js/jquery-1.10.1.min.js"><\/script>')</script>
+<!--[if (gte IE 6)&(lte IE 8)]>
+  <script type="text/javascript" src="js/selectivizr.js"></script>
+  <noscript><link rel="stylesheet" href="[fallback css]" /></noscript>
+<![endif]--> 
     </head>
     <body>
    <!--header-->
@@ -30,30 +32,39 @@
   <!--/header-->
 <section class="page-wrap">
 <div class="main column width-45-pct" role="main">
-  <h1>Our People</h1>
+  <h1>Want a career with Bowman Riley?</h1>
 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
-
+<nav id="sub-nav" role="navigation">
+<ul>
+  <li><a href="">Overview</a></li>
+  <li><a href="">Building Surveyors</a></li>
+  <li><a href="">Party Wall</a></li>
+  <li><a href="">Project Management</a></li>
+  <li>Share this page</li>
+  <li role="search">Search</li>
+  <li>Subscribe to our newsletter</li>
+</ul>
+</nav>
 </div>
 <aside class="beta column width-55-pct">
-  <div class="column width-two-thirds">
-<div class="cell half square"><img src="images/profile.jpg" /></div>
-<div class="cell half square"><a href="" class="fit-cell">Get to know our building consultancy team</a></div>
-<div class="cell half square"><a href="" class="fit-cell">Get to know our healthcare team</a></div>
-<div class="cell half square"><img src="images/profile.jpg" /></div>
-<div class="cell half-height"><img src="images/profile-2.jpg" /></div>
+  <div class="inner">
+  <div class="row height-60-pct bg-fill-cell" style="background-image:url('images/careers.jpg');">
   </div>
-  <div class="column width-one-third" style="background-color:#fff;">
-    <div class="row twice-height"><a href="" class="fit-cell orange">Interested in a career of internship at Bowman Riley?</a></div>
-     <div class="row square"><a href="" class="fit-cell blue">Get to know our architecture team</a></div>
+  <div class="row height-40-pct">
+ <div class="column width-40-pct"><a href="" class="fit-cell orange">Internships are available click here</a></div>
+ <div class="column width-60-pct">
+  <div class="row height-40-pct"><a href="" class="fit-cell grey">Send us your CV</a></div>
+ <div class="row height-60-pct"><a href="" class="fit-cell">Contact Us</a></div>
+
+</div>
+
   </div>
+</div>
 </aside>
 </section>
 <!--scripts-->
-<!-- Load jQuery from Google CDN -->
-<script  src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-<!-- Load jQuery from a local copy if loading from Google fails -->
-<script>window.jQuery || document.write('<script type="text/javascript" src="js/jquery-1.10.1.min.js"><\/script>')</script>
+
 <script src="//maps.google.com/maps/api/js?sensor=true"></script>
 <script src="js/jquery.gmap.js"></script>
 <script src="js/jquery.cycle.all.min.js"></script>

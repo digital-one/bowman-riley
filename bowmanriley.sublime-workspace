@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"margi",
+				"margin-top"
+			],
+			[
+				"no",
+				"none"
+			],
+			[
 				"font",
 				"font-weight"
 			],
@@ -116,10 +124,6 @@
 				"n-resize"
 			],
 			[
-				"no",
-				"normal"
-			],
-			[
 				"di",
 				"dinreg"
 			],
@@ -134,10 +138,6 @@
 			[
 				"roboto",
 				"roboto-sans"
-			],
-			[
-				"margi",
-				"margin-bottom"
 			],
 			[
 				"a",
@@ -424,6 +424,22 @@
 	},
 	"file_history":
 	[
+		"/Applications/MAMP/htdocs/bowman-riley/our-people.html",
+		"/Applications/MAMP/htdocs/bowman-riley/sass/components/_global.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/sass/templates/_people.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/sass/_base.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/sass/components/_navigation.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/sass/components/_footer.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/sass/components/_container.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/sass/components/_all.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/sass/_variables.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/sass/components/_grid.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/sass/components/_typography.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/config.rb",
+		"/Applications/MAMP/htdocs/bowman-riley/our-people-sector.html",
+		"/Applications/MAMP/htdocs/bowman-riley/sass/templates/_all.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/sass/components/_header.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/sass/screen.scss",
 		"/Applications/MAMP/htdocs/bolser/bolser-mobile-wp/sass/helpers/mixins/_all.scss",
 		"/Applications/MAMP/htdocs/bolser/bolser-mobile-wp/sass/components/_header.scss",
 		"/Applications/MAMP/htdocs/bolser/bolser-mobile-wp/sass/helpers/mixins/_center-vertical.scss",
@@ -535,23 +551,7 @@
 		"/Applications/MAMP/htdocs/pitter-patter-parcels/sass/helpers/_placeholders.scss",
 		"/Applications/MAMP/htdocs/pitter-patter-parcels/sass/helpers/mixins/_font-size.scss",
 		"/Applications/MAMP/htdocs/pitter-patter-parcels/sass/layout.scss",
-		"/Applications/MAMP/htdocs/pitter-patter-parcels/sass/modules/_selectbox.scss",
-		"/Applications/MAMP/htdocs/pitter-patter-parcels/sass/modules/_all.scss",
-		"/Applications/MAMP/htdocs/pitter-patter-parcels/sass/helpers/mixins/_rgba-bg.scss",
-		"/Applications/MAMP/htdocs/pitter-patter-parcels/sass/helpers/classes/_all.scss",
-		"/Applications/MAMP/htdocs/pitter-patter-parcels/sass/helpers/mixins/_inline-menu.scss",
-		"/Applications/MAMP/htdocs/pitter-patter-parcels/sass/helpers/mixins/_all.scss",
-		"/Applications/MAMP/htdocs/pitter-patter-parcels/sass/helpers/classes/_clearfix.scss",
-		"/Applications/MAMP/htdocs/pitter-patter-parcels/css/layout.css",
-		"/Applications/MAMP/htdocs/pitter-patter-parcels/sass/components/_all.scss",
-		"/Applications/MAMP/htdocs/pitter-patter-parcels/sass/bourbon/_bourbon.scss",
-		"/Applications/MAMP/htdocs/pitter-patter-parcels/sass/helpers/mixins/_gradients.scss",
-		"/Applications/MAMP/htdocs/pitter-patter-parcels/sass/helpers/mixins/_text-shadow.scss",
-		"/Applications/MAMP/htdocs/pitter-patter-parcels/sass/helpers/_all.scss",
-		"/Applications/MAMP/htdocs/pitter-patter-parcels/sass/helpers/mixins/_box-shadow.scss",
-		"/Applications/MAMP/htdocs/pitter-patter-parcels/sass/_helpers.scss",
-		"/Applications/MAMP/htdocs/bolser/nokia-the-connection/www/workspace/assets/sass/templates/_competitions.scss",
-		"/Applications/MAMP/htdocs/pitter-patter-parcels/sass/helpers/mixins/_box-sizing.scss"
+		"/Applications/MAMP/htdocs/pitter-patter-parcels/sass/modules/_selectbox.scss"
 	],
 	"find":
 	{
@@ -571,6 +571,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"header",
 			"14px",
 			"link-box",
 			"header",
@@ -697,8 +698,7 @@
 			".sticker02",
 			".sticker",
 			".page-games",
-			".page-games .sticker",
-			".common_sec"
+			".page-games .sticker"
 		],
 		"highlight": false,
 		"in_selection": false,

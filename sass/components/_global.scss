@@ -1,18 +1,32 @@
 a{
 	&.fit-cell{
 	@include abs-pos(0,0,0,0);
-	padding:15px;
+	padding: $gutter;
 	display:block;
-	color:white;
+	color:$grey;
+	background-color:white;
 	text-transform:uppercase;
-	.cell &{
-		text-transform: none;
-	}
+		.cell &{
+			text-transform: none;
+		}
 		&.orange{
 			background-color: $orange;
+			color:white;
 		}
 		&.grey{
 			background-color: $grey;
+			color:white;
+		}
+		&.blue{
+			background-color: $blue;
+			color:white;
+		}
+		&.brown{
+			background-color: $brown;
+			color:white;
 		}
 	}
+}
+.bg-fill-cell{
+	@include bg-cover;
 }
