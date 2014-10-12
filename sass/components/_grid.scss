@@ -60,31 +60,33 @@
 	height:100%;
 	display: block;
 	position:relative;
-	&.main{
-		position:fixed;
-		@media screen and (max-width: $break-medium+1) {
-			position:relative;
-			height:45%;
-
-		}
-	}
-	&.beta{
-		margin-left: 45.24%;
-		@media screen and (max-width: $break-medium+1) {
-			margin:0;
-			height:55%;
-		}
-	}
 	&.width-25-pct{
 		width:25%;
+		#case-studies-single &{
+			@media screen and (max-width: $break-medium+1) {
+				width:100%;
+				height:auto;
+			}
+			&.gutter-2x{
+				@media screen and (max-width: $break-medium+1) {
+					border:none;
+					margin-bottom: 20px;
+				}
+			}
+		}
 	}
 	&.width-40-pct{
 		width:35.72%;
 	}
 	&.width-45-pct{
 		width:45.24%;
-		@media screen and (max-width: $break-medium+1) {
-			width:100%;
+		&.main{
+			position:fixed;
+			@media screen and (max-width: $break-medium+1) {
+				position:relative;
+				height:45%;
+				width:100%;
+			}
 		}
 	}
 
@@ -93,8 +95,13 @@
 	}
 	&.width-55-pct{
 		width:54.76%;
-		@media screen and (max-width: $break-medium+1) {
-			width:100%;
+		&.beta{
+			margin-left: 45.24%;
+			@media screen and (max-width: $break-medium+1) {
+				margin:0;
+				height:55%;
+				width:100%;
+			}
 		}
 	}
 	&.width-60-pct{
@@ -102,6 +109,17 @@
 	}
 	&.width-75-pct{
 		width:75%;
+		#case-studies-single &{
+			@media screen and (max-width: $break-medium+1) {
+				width:100%;
+				height:auto;
+			}	
+			&.gutter-2x{
+				@media screen and (max-width: $break-medium+1) {
+					border:none;
+				}	
+			}
+		}
 	}
 	&.width-one-third{
 		width:33.33%;
@@ -112,11 +130,6 @@
 	.masked{
 		overflow:hidden; 
 	}
-	/*
-	.beta &:nth-child(1){
-		border-right:calc(#{$gutter}/2) solid white;
-	}
-	*/
 	.beta &.gutter-2x:nth-child(1){
 		border-right:$gutter solid white;
 	}

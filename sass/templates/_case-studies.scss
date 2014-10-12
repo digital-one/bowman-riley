@@ -1,5 +1,13 @@
 #case-studies-single{
 	article{
 		padding-right:10%;
+		@media screen and (max-width: $break-medium+1) {
+			padding-right: 0;
+		}
+	}
+	@media screen and (max-width: $break-medium+1) {
+		aside.column.width-25-pct{
+			width: 100%;
+		}
 	}
 }
