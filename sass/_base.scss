@@ -6,9 +6,9 @@ html{
 	font-size: 62.5%;
 }
 body{
-	font-family: $myriad;
+	font-family: $varela;
 	@include font-size(12);
-	line-height: 130%;
+	line-height: 140%;
 	background-color: white;
 	color: $grey;
 	width:100%;

@@ -2,7 +2,7 @@
 	@include inline-menu; 
 }
 #secondary-nav{
-	@include abs-pos(auto,auto,76px,0);
+	@include abs-pos(auto,auto,calc(#{$gutter*2}),0);
 	width:100%;
 	display: block;
 	padding: 0 calc(#{$gutter*5 + 1}) 0 24px;
@@ -12,6 +12,10 @@
 	}
 	@media screen and (min-width:$break-medium+2) and  (max-width: $break-xlarge) {
 		display:none;
+	}
+	@media screen and (max-width: $break-small) {
+		position:relative;
+		padding: 36px 0 0;
 	}
 	.tabs{
 		margin-bottom: 10px;
@@ -31,7 +35,7 @@ nav#utility-nav{
 	width:100%;
 	li{
 		list-style-type: none;
-		padding:6px 0 5px;
+		padding:10px 0;
 		display: block;
 		border-bottom:1px solid $grey;
 		&.search{
@@ -42,35 +46,82 @@ nav#utility-nav{
 				border:none;
 				padding:0;
 				width:100%;
-				@include font-size(11);
+				@include font-size(13);
 				@include placeholder {
     				color: $grey;
     				@include opacity(1);
   				}
-
 			}
 		}
 		a,span{
 			height:20px;
-			background-color: #ccc;
+			//background-color: #ccc;
 			display: block;
-			@include font-size(11);
+			position: relative;
+			@include font-size(13);
 			line-height:31px;
 		}
+		a{
+			&.arrow{
+				&:after{
+					content:"";
+					display:block;
+					width:20px;
+					height:20px;
+					@include abs-pos(0,0,auto,auto);
+					background:url('../images/arrow-up.svg') center center no-repeat;
+					background-size: 20px 20px;
+				}
+			}
+		}
+		span{
+			a{
+
+			}
+		}
+		&.share{
+			@extend %clearfix;
+			span{
+				float: left;
+			}
+			ul{
+				float:right;
+				li{
+					padding:0;
+					margin:0 0 0 10px;
+					float: left;
+					display: inline-block;
+					border:none;
+					a{
+						width:20px;
+						height:20px;
+						g.icon path {
+							@include transition (fill 0.2s ease-in-out);
+						}
+						svg:hover g.icon path{
+							fill: $brown;
+						}
+						img{
+							@include fit-grid(width);
+						}
+					}
+				}
+			}
+		}
 	}
-	@media screen and (max-width: $break-medium+1) {
+	@media screen and (min-width: $break-small+1) and (max-width: $break-medium+1) {
 		width:50%;
 		float:left;
 	}
 }
 nav#sub-nav{
 	text-transform:uppercase;
-	@media screen and (max-width: $break-medium+1) {
+		@media screen and (min-width: $break-small+1) and (max-width: $break-medium+1) {
 		padding-right: calc(#{$gutter});
 	}
 }
 nav#utility-nav{
-	@media screen and (max-width: $break-medium+1) {
+	@media screen and (min-width: $break-small+1) and (max-width: $break-medium+1) {
 		padding-left: calc(#{$gutter});
 	}
 }

@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"gutte",
+				"gutter-2x"
+			],
+			[
+				"ma",
+				"margin-bottom"
+			],
+			[
+				"backg",
+				"background-color"
+			],
+			[
 				"margi",
 				"margin-top"
 			],
@@ -26,10 +38,6 @@
 			[
 				"text",
 				"text-decoration"
-			],
-			[
-				"ma",
-				"margin-bottom"
 			],
 			[
 				"in",
@@ -395,6 +403,89 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "sass/components/_global.scss",
+			"settings":
+			{
+				"buffer_size": 464,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "sass/components/_header.scss",
+			"settings":
+			{
+				"buffer_size": 153,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<!doctype html>\n<!--[if lt IE 7 ]> <html lang=\"en\" class=\"no-js ie6\"> <![endif]-->\n<!--[if IE 7 ]>    <html lang=\"en\" class=\"no-js ie7\"> <![endif]-->\n<!--[if IE 8 ]>    <html lang=\"en\" class=\"no-js ie8\"> <![endif]-->\n<!--[if IE 9 ]>    <html lang=\"en\" class=\"no-js ie9\"> <![endif]-->\n<!--[if (gt IE 9)|!(IE)]><!--> <html lang=\"en\" class=\"no-js\"> <!--<![endif]-->\n    <head>\n        <meta charset=\"utf-8\">\n        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n        <title>Bolser</title>\n        <meta name=\"description\" content=\"\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\" />\n        <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->\n        <link href='http://fonts.googleapis.com/css?family=Raleway:300,600' rel='stylesheet' type='text/css'>\n        <link rel=\"stylesheet\" href=\"css/layout.css\" />\n        <script src=\"js/modernizr.js\"></script>\n    <!-- Load jQuery from Google CDN -->\n<script  src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js\"></script>\n<!-- Load jQuery from a local copy if loading from Google fails -->\n<script>window.jQuery || document.write('<script type=\"text/javascript\" src=\"js/jquery-1.10.1.min.js\"><\\/script>')</script>\n<!--[if (gte IE 6)&(lte IE 8)]>\n  <script type=\"text/javascript\" src=\"js/selectivizr.js\"></script>\n  <noscript><link rel=\"stylesheet\" href=\"[fallback css]\" /></noscript>\n<![endif]--> \n    </head>\n    <body id=\"case-studies\">\n   <!--header-->\n   <header id=\"header\">\n    <h1 id=\"home-link\">Bowman Riley</h1>\n<nav id=\"nav\"><a id=\"mobile\">Mobile</a><ul><li><a href=\"\">All About Bowman Riley</a></li><li><a href=\"\">Architects</a></li><li><a href=\"\">Building Consultancy</a></li><li><a href=\"\">Healthcare</a></li><li><a href=\"\">Case Studies</a></li><li><a href=\"\">Work with us</a></li><li><a href=\"\">Media &amp; Latest News</a></li><li><a href=\"\">Contact</a></li></ul></nav>\n  </header>\n  <!--/header-->\n<section class=\"page-wrap\">\n<div class=\"main column width-45-pct\" role=\"main\">\n  <h1>Take a look at our case studies</h1>\n<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>\n<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>\n<section id=\"secondary-nav\">\n<div class=\"tabs\"><a href=\"\">Show by sector</a><a href=\"\">Show by category</a></div>\n  <nav id=\"sub-nav\" role=\"navigation\">\n<ul>\n  <li><a href=\"\">Overview</a></li>\n  <li><a href=\"\">Building Surveyors</a></li>\n  <li><a href=\"\">Party Wall</a></li>\n  <li><a href=\"\">Project Management</a></li>\n</ul>\n</nav>\n<nav id=\"utility-nav\">\n  <ul>\n  <li><span>Share this page</span></li>\n  <li class=\"search\" role=\"search\"><form><input type=\"text\" name=\"s\" id=\"s\" placeholder=\"Search\" /></li>\n  <li><a href=\"\">Subscribe to our newsletter</a></li>\n</ul>\n</nav>\n</section>\n</div>\n<aside class=\"beta column width-55-pct\">\n  <div class=\"inner\">\n  <div class=\"row height-45-pct no-gutter masked\">\n    <div class=\"cell half\">image</div>\n    <div class=\"cell half\">image</div>\n  </div>\n  <div class=\"row height-55-pct no-gutter\">\n<div class=\"cell one-third height-50-pct\">image</div>\n<div class=\"cell one-third height-50-pct\">image</div>\n<div class=\"cell one-third height-50-pct\">image</div>\n<div class=\"cell one-third height-50-pct\">image</div>\n<div class=\"cell one-third height-50-pct\">image</div>\n<div class=\"cell one-third height-50-pct\">image</div>\n  </div>\n</div>\n</aside>\n</section>\n<!--scripts-->\n\n<script src=\"//maps.google.com/maps/api/js?sensor=true\"></script>\n<script src=\"js/jquery.gmap.js\"></script>\n<script src=\"js/jquery.cycle.all.min.js\"></script>\n<script src=\"js/jquery.easing.min.js\"></script>\n<script src=\"js/jquery.selectbox.min.js\"></script>\n<script src=\"js/fancybox/jquery.fancybox.js\"></script>\n<script src=\"js/scripts.js\"></script>\n<!--/scripts-->\n    </body>\n    </html>",
+			"file": "case-studies.html",
+			"file_size": 4456,
+			"file_write_time": 1413052195000000,
+			"settings":
+			{
+				"buffer_size": 4453,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "awards.html",
+			"settings":
+			{
+				"buffer_size": 4233,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "building-consultancy.html",
+			"settings":
+			{
+				"buffer_size": 4339,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "sass/components/_grid.scss",
+			"settings":
+			{
+				"buffer_size": 3837,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "work-with-us.html",
+			"settings":
+			{
+				"buffer_size": 4405,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "latest-news.html",
+			"settings":
+			{
+				"buffer_size": 4369,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "sass/components/_container.scss",
+			"settings":
+			{
+				"buffer_size": 1180,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "our-people-sector.html",
+			"settings":
+			{
+				"buffer_size": 4599,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -424,20 +515,35 @@
 	},
 	"file_history":
 	[
-		"/Applications/MAMP/htdocs/bowman-riley/our-people.html",
-		"/Applications/MAMP/htdocs/bowman-riley/sass/components/_global.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/sass/templates/_people.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/sass/_base.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/sass/components/_navigation.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/sass/components/_footer.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/sass/components/_container.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/sass/components/_all.scss",
 		"/Applications/MAMP/htdocs/bowman-riley/sass/_variables.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/sass/components/_grid.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/sass/components/_typography.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/config.rb",
-		"/Applications/MAMP/htdocs/bowman-riley/our-people-sector.html",
+		"/Applications/MAMP/htdocs/bowman-riley/index.html",
+		"/Applications/MAMP/htdocs/bowman-riley/media.html",
+		"/Applications/MAMP/htdocs/bowman-riley/our-people.html",
+		"/Applications/MAMP/htdocs/bowman-riley/building-consultancy-single.html",
+		"/Applications/MAMP/htdocs/bowman-riley/sass/components/_navigation.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/contact.html",
+		"/Applications/MAMP/htdocs/bowman-riley/sass/templates/_case-studies.scss",
 		"/Applications/MAMP/htdocs/bowman-riley/sass/templates/_all.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/sass/components/_typography.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/sass/components/_grid.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/case-study-single.html",
+		"/Applications/MAMP/htdocs/bowman-riley/sass/components/_container.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/latest-news.html",
+		"/Applications/MAMP/htdocs/bowman-riley/our-people-sector.html",
+		"/Applications/MAMP/htdocs/bowman-riley/case-studies.html",
+		"/Applications/MAMP/htdocs/bowman-riley/work-with-us.html",
+		"/Applications/MAMP/htdocs/bowman-riley/sass/templates/_contact.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/sass/_base.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/building-consultancy.html",
+		"/Applications/MAMP/htdocs/bowman-riley/sass/helpers/mixins/_all.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/sass/templates/_home.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/sass/helpers/_placeholders.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/sass/components/_global.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/sass/helpers/classes/_clearfix.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/sass/templates/_people.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/sass/components/_footer.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/sass/components/_all.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/config.rb",
 		"/Applications/MAMP/htdocs/bowman-riley/sass/components/_header.scss",
 		"/Applications/MAMP/htdocs/bowman-riley/sass/screen.scss",
 		"/Applications/MAMP/htdocs/bolser/bolser-mobile-wp/sass/helpers/mixins/_all.scss",
@@ -536,22 +642,7 @@
 		"/Applications/MAMP/htdocs/pitter-patter-parcels/basket.php",
 		"/Applications/MAMP/htdocs/pitter-patter-parcels/checkout.php",
 		"/Applications/MAMP/htdocs/pitter-patter-parcels/js/scripts.js",
-		"/Applications/MAMP/htdocs/pitter-patter-parcels/parcels.php",
-		"/Applications/MAMP/htdocs/pitter-patter-parcels/parcels-by-you-items.php",
-		"/Applications/MAMP/htdocs/pitter-patter-parcels/sass/_variables.scss",
-		"/Applications/MAMP/htdocs/pitter-patter-parcels/header.html",
-		"/Applications/MAMP/htdocs/pitter-patter-parcels/footer.html",
-		"/Applications/MAMP/htdocs/pitter-patter-parcels/category.php",
-		"/Applications/MAMP/htdocs/pitter-patter-parcels/sass/components/_container.scss",
-		"/Applications/MAMP/htdocs/pitter-patter-parcels/sass/templates/_media-queries.scss",
-		"/Applications/MAMP/htdocs/pitter-patter-parcels/product.php",
-		"/Applications/MAMP/htdocs/pitter-patter-parcels/sass/templates/_all.scss",
-		"/Applications/MAMP/htdocs/pitter-patter-parcels/sass/helpers/mixins/_centered-menu.scss",
-		"/Applications/MAMP/htdocs/pitter-patter-parcels/images/banner-bg.jpg",
-		"/Applications/MAMP/htdocs/pitter-patter-parcels/sass/helpers/_placeholders.scss",
-		"/Applications/MAMP/htdocs/pitter-patter-parcels/sass/helpers/mixins/_font-size.scss",
-		"/Applications/MAMP/htdocs/pitter-patter-parcels/sass/layout.scss",
-		"/Applications/MAMP/htdocs/pitter-patter-parcels/sass/modules/_selectbox.scss"
+		"/Applications/MAMP/htdocs/pitter-patter-parcels/parcels.php"
 	],
 	"find":
 	{
@@ -571,6 +662,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"border",
 			"header",
 			"14px",
 			"link-box",
@@ -697,8 +789,7 @@
 			".lock",
 			".sticker02",
 			".sticker",
-			".page-games",
-			".page-games .sticker"
+			".page-games"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -844,8 +935,288 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "sass/components/_global.scss",
+					"settings":
+					{
+						"buffer_size": 464,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								427,
+								427
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "sass/components/_header.scss",
+					"settings":
+					{
+						"buffer_size": 153,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								151,
+								151
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "case-studies.html",
+					"settings":
+					{
+						"buffer_size": 4453,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2849,
+								3434
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 207.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "awards.html",
+					"settings":
+					{
+						"buffer_size": 4233,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2810,
+								3395
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 176.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "building-consultancy.html",
+					"settings":
+					{
+						"buffer_size": 4339,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2501,
+								3086
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 71.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "sass/components/_grid.scss",
+					"settings":
+					{
+						"buffer_size": 3837,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1801,
+								1801
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 758.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "work-with-us.html",
+					"settings":
+					{
+						"buffer_size": 4405,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1218,
+								1218
+							],
+							[
+								1929,
+								1929
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 100.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "latest-news.html",
+					"settings":
+					{
+						"buffer_size": 4369,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2685,
+								2685
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 44.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "sass/components/_container.scss",
+					"settings":
+					{
+						"buffer_size": 1180,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								175,
+								175
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "our-people-sector.html",
+					"settings":
+					{
+						"buffer_size": 4599,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3102,
+								3102
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 390.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
