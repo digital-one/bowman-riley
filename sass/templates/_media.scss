@@ -8,4 +8,12 @@ article{
 	img{
 		@include fit-grid(width);
 	}
+	a{
+		@include transition (background-color 0.2s ease-in-out);
+		background-color: white;
+		display: block;
+		&:hover, &:active{
+			background-color:lighten($grey,50);
+		}
+	}
 }

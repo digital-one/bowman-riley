@@ -1586,12 +1586,21 @@ a.fit-cell.brown {
 a.fit-cell.brown:hover, a.fit-cell.brown:active {
   background-color: #d6b993;
 }
-/* line 126, ../sass/components/_global.scss */
+/* line 124, ../sass/components/_global.scss */
+a.fit-cell.brown.inverted {
+  background-color: white;
+  color: #CFAD81;
+}
+/* line 128, ../sass/components/_global.scss */
+a.fit-cell.brown.inverted.down:after {
+  background-image: url("../images/arrow-down-brown.svg");
+}
+/* line 135, ../sass/components/_global.scss */
 a.fit-cell.white:after {
   background-image: url("../images/arrow-right.svg");
 }
 
-/* line 133, ../sass/components/_global.scss */
+/* line 142, ../sass/components/_global.scss */
 .bg-fill-cell {
   background-position: center center;
   background-repeat: no-repeat;
@@ -1600,7 +1609,7 @@ a.fit-cell.white:after {
   -o-background-size: cover;
   background-size: cover;
 }
-/* line 135, ../sass/components/_global.scss */
+/* line 144, ../sass/components/_global.scss */
 .bg-fill-cell a {
   top: 0;
   right: 0;
@@ -1613,7 +1622,6 @@ a.fit-cell.white:after {
   -moz-opacity: 0;
   -khtml-opacity: 0;
   filter: alpha(opacity=0);
-  border-color: white !important;
   background-color: #0085b3;
   background-color: transparent\9;
   background-color: rgba(0, 133, 179, 0.75);
@@ -1628,15 +1636,27 @@ a.fit-cell.white:after {
 .bg-fill-cell a:nth-child(n) {
   filter: none;
 }
-/* line 144, ../sass/components/_global.scss */
+/* line 152, ../sass/components/_global.scss */
 .bg-fill-cell a:hover, .bg-fill-cell a:active {
   opacity: 1;
   -moz-opacity: 1;
   -khtml-opacity: 1;
   filter: alpha(opacity=100);
 }
+/* line 155, ../sass/components/_global.scss */
+.bg-fill-cell a:after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  top: auto;
+  right: auto;
+  bottom: 12px;
+  left: 12px;
+  position: absolute;
+  background: url("../images/arrow-right-white.svg") left top no-repeat;
+}
 
-/* line 149, ../sass/components/_global.scss */
+/* line 164, ../sass/components/_global.scss */
 .arrow-divide {
   display: block;
   width: 20px;
@@ -1647,7 +1667,7 @@ a.fit-cell.white:after {
   position: absolute;
   background: url("../images/divide-v.png") center top repeat-y;
 }
-/* line 154, ../sass/components/_global.scss */
+/* line 169, ../sass/components/_global.scss */
 .arrow-divide a {
   width: 20px;
   height: 20px;
@@ -1657,10 +1677,57 @@ a.fit-cell.white:after {
   left: 0;
   position: absolute;
 }
-/* line 158, ../sass/components/_global.scss */
+/* line 173, ../sass/components/_global.scss */
 .arrow-divide a img {
   width: 100%;
   height: auto;
+}
+
+/* line 178, ../sass/components/_global.scss */
+a.overlay {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  display: block;
+  padding: 12px 60% 12px 18px;
+  opacity: 0;
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  filter: alpha(opacity=0);
+  background-color: #0085b3;
+  background-color: transparent\9;
+  background-color: rgba(0, 133, 179, 0.75);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#$code+$hex,endColorstr=#$code+$hex);
+  zoom: 1;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  color: white;
+}
+/* line 26, ../sass/helpers/mixins/_rgba-bg.scss */
+a.overlay:nth-child(n) {
+  filter: none;
+}
+/* line 186, ../sass/components/_global.scss */
+a.overlay:hover, a.overlay:active {
+  opacity: 1;
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  filter: alpha(opacity=100);
+}
+/* line 189, ../sass/components/_global.scss */
+a.overlay:after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  top: auto;
+  right: 18px;
+  bottom: 12px;
+  left: auto;
+  position: absolute;
+  background: url("../images/arrow-right-white.svg") left top no-repeat;
 }
 
 /* line 1, ../sass/components/_grid.scss */
@@ -1746,7 +1813,6 @@ a.fit-cell.white:after {
 @media screen and (max-width: 768px) {
   /* line 68, ../sass/components/_grid.scss */
   #case-studies-single .column.width-25-pct {
-    width: 100%;
     height: auto;
   }
 }
@@ -1843,7 +1909,6 @@ a.fit-cell.white:after {
 @media screen and (max-width: 768px) {
   /* line 133, ../sass/components/_grid.scss */
   #case-studies-single .column.width-75-pct {
-    width: 100%;
     height: auto;
   }
 }
@@ -2122,6 +2187,18 @@ article img {
   width: 100%;
   height: auto;
 }
+/* line 11, ../sass/templates/_media.scss */
+article a {
+  -webkit-transition: background-color 0.2s ease-in-out;
+  -moz-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+  background-color: white;
+  display: block;
+}
+/* line 15, ../sass/templates/_media.scss */
+article a:hover, article a:active {
+  background-color: #e0dedf;
+}
 
 /* line 1, ../sass/templates/_contact.scss */
 #map {
@@ -2132,19 +2209,7 @@ article img {
 #case-studies-single article {
   padding-right: 10%;
 }
-@media screen and (max-width: 768px) {
-  /* line 2, ../sass/templates/_case-studies.scss */
-  #case-studies-single article {
-    padding-right: 0;
-  }
-}
-@media screen and (max-width: 768px) {
-  /* line 9, ../sass/templates/_case-studies.scss */
-  #case-studies-single aside.column.width-25-pct {
-    width: 100%;
-  }
-}
-/* line 13, ../sass/templates/_case-studies.scss */
+/* line 8, ../sass/templates/_case-studies.scss */
 #case-studies-single .case-study-links {
   top: auto;
   right: auto;
@@ -2152,7 +2217,13 @@ article img {
   left: 0;
   position: absolute;
 }
-/* line 15, ../sass/templates/_case-studies.scss */
+@media screen and (max-width: 768px) {
+  /* line 8, ../sass/templates/_case-studies.scss */
+  #case-studies-single .case-study-links {
+    position: relative;
+  }
+}
+/* line 13, ../sass/templates/_case-studies.scss */
 #case-studies-single .case-study-links ul {
   padding-bottom: 25px;
   margin-bottom: 30px;
@@ -2161,11 +2232,11 @@ article img {
   font-size: 1.1rem;
   line-height: 100%;
 }
-/* line 21, ../sass/templates/_case-studies.scss */
+/* line 19, ../sass/templates/_case-studies.scss */
 #case-studies-single .case-study-links ul li {
   margin-bottom: 5px;
 }
-/* line 24, ../sass/templates/_case-studies.scss */
+/* line 22, ../sass/templates/_case-studies.scss */
 #case-studies-single .case-study-links ul:after {
   content: "";
   display: block;
@@ -2178,7 +2249,7 @@ article img {
   position: absolute;
   background: url("../images/arrow-right.svg") left top no-repeat;
 }
-/* line 33, ../sass/templates/_case-studies.scss */
+/* line 31, ../sass/templates/_case-studies.scss */
 #case-studies-single .case-study-links a.download {
   margin-bottom: 25px;
   display: block;
@@ -2186,7 +2257,7 @@ article img {
   font-size: 11px;
   font-size: 1.1rem;
 }
-/* line 38, ../sass/templates/_case-studies.scss */
+/* line 36, ../sass/templates/_case-studies.scss */
 #case-studies-single .case-study-links a.download:after {
   content: "";
   display: block;
@@ -2200,24 +2271,30 @@ article img {
   background: url("../images/arrow-down.svg") left top no-repeat;
 }
 
-/* line 49, ../sass/templates/_case-studies.scss */
+/* line 47, ../sass/templates/_case-studies.scss */
 ul.case-study-meta {
   font-size: 11px;
   font-size: 1.1rem;
   line-height: 100%;
   display: inline-block;
 }
-/* line 53, ../sass/templates/_case-studies.scss */
+@media screen and (max-width: 768px) {
+  /* line 47, ../sass/templates/_case-studies.scss */
+  ul.case-study-meta {
+    margin-bottom: 60px;
+  }
+}
+/* line 54, ../sass/templates/_case-studies.scss */
 ul.case-study-meta li {
   border-bottom: 1px solid #615E60;
   padding-bottom: 4px;
   margin-bottom: 4px;
 }
-/* line 57, ../sass/templates/_case-studies.scss */
+/* line 58, ../sass/templates/_case-studies.scss */
 .bg-fill-cell a ul.case-study-meta li {
   border-color: white;
 }
-/* line 61, ../sass/templates/_case-studies.scss */
+/* line 62, ../sass/templates/_case-studies.scss */
 ul.case-study-meta li:last-child {
   margin: 0;
   padding: 0;

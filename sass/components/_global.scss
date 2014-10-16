@@ -121,6 +121,15 @@ a{
 			&:hover,&:active{
 				background-color:lighten($brown,5);
 			}
+			&.inverted{
+				background-color:white;
+				color: $brown;
+				&.down{
+					&:after{
+						background-image:url('../images/arrow-down-brown.svg');
+					}
+				}
+			}
 		}
 		&.white{
 			&:after{
@@ -137,12 +146,18 @@ a{
 		display: block;
 		padding: $gutter;
 		@include opacity(0);
-		border-color: white !important;
 		@include rgba-bg($r:0,$g:133,$b:179,$hex:$blue,$opacity:0.75);
 		@include transition (all 0.2s ease-in-out);
 		color: white;
 		&:hover,&:active{
 			@include opacity(1);
+		}
+		&:after{
+			content:"";
+			width:20px;
+			height:20px;
+			@include abs-pos(auto,auto,$gutter,$gutter);
+			background:url('../images/arrow-right-white.svg') left top no-repeat;
 		}
 	}
 }
@@ -158,5 +173,24 @@ a{
 		img{
 			@include fit-grid(width);
 		}
+	}
+}
+a.overlay{
+	@include abs-pos(0,0,0,0);
+	display: block;
+	padding: 12px 60% 12px 18px;
+	@include opacity(0);
+	@include rgba-bg($r:0,$g:133,$b:179,$hex:$blue,$opacity:0.75);
+	@include transition (all 0.2s ease-in-out);
+	color: white;
+	&:hover,&:active{
+		@include opacity(1);
+	}
+	&:after{
+		content:"";
+		width:20px;
+		height:20px;
+		@include abs-pos(auto,18px,$gutter,auto);
+		background:url('../images/arrow-right-white.svg') left top no-repeat;
 	}
 }

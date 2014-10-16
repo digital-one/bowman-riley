@@ -67,7 +67,7 @@
 		width:25%;
 		#case-studies-single &{
 			@media screen and (max-width: $break-medium+1) {
-				width:100%;
+				//width:100%;
 				height:auto;
 			}
 			&.gutter-2x{
@@ -141,7 +141,7 @@
 				@extend %ir;
 			}
 			@media screen and (max-width: $break-medium+1) {
-				width:100%;
+				//width:100%;
 				height:auto;
 			}	
 			&.gutter-2x{

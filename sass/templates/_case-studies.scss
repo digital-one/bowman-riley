@@ -2,16 +2,14 @@
 	article{
 		padding-right:10%;
 		@media screen and (max-width: $break-medium+1) {
-			padding-right: 0;
-		}
-	}
-	@media screen and (max-width: $break-medium+1) {
-		aside.column.width-25-pct{
-			width: 100%;
+			//padding-right: 0;
 		}
 	}
 	.case-study-links{
 		@include abs-pos(auto,auto,0,0);
+		@media screen and (max-width: $break-medium+1) {
+			position: relative;
+		}
 		ul{
 			padding-bottom:25px;
 			margin-bottom: 30px;
@@ -50,6 +48,9 @@ ul.case-study-meta{
 	@include font-size(11);
 	line-height: 100%;
 	display: inline-block;
+	@media screen and (max-width: $break-medium+1) {
+		margin-bottom: 60px;
+	}
 	li{
 		border-bottom: 1px solid $grey;
 		padding-bottom:4px;
