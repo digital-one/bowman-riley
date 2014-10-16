@@ -25,6 +25,10 @@ $(document).ready(function() {
     $('#page-wrap').fullpage({
     	verticalCentered: false,
         resize : false,
+        scrollOverflow: true,
+        paddingTop: 0,
+        paddingBottom: 0,
+        normalScrollElementTouchThreshold: 24
     });
 
 

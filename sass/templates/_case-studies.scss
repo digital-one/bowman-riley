@@ -10,4 +10,58 @@
 			width: 100%;
 		}
 	}
+	.case-study-links{
+		@include abs-pos(auto,auto,0,0);
+		ul{
+			padding-bottom:25px;
+			margin-bottom: 30px;
+			position: relative;
+			@include font-size(11);
+			line-height: 100%;
+			li{
+				margin-bottom: 5px;
+			}
+			&:after{
+				content:"";
+				display:block;
+				width:20px;
+				height:20px;
+				@include abs-pos(auto,auto,0,0);
+				background:url('../images/arrow-right.svg') left top no-repeat;
+			}
+		}
+		a.download{
+			margin-bottom: 25px;
+			display: block;
+			position: relative;
+			@include font-size(11);
+			&:after{
+				content:"";
+				display:block;
+				width:20px;
+				height:20px;
+				@include abs-pos(auto,auto,-25px,0);
+				background:url('../images/arrow-down.svg') left top no-repeat;
+			}
+		}
+	}	
+}
+ul.case-study-meta{
+	@include font-size(11);
+	line-height: 100%;
+	display: inline-block;
+	li{
+		border-bottom: 1px solid $grey;
+		padding-bottom:4px;
+		margin-bottom: 4px;
+		.bg-fill-cell a &{
+			border-color: white;
+
+		}
+		&:last-child{
+			margin:0;
+			padding:0;
+			border-bottom:0;
+		}
+	}
 }

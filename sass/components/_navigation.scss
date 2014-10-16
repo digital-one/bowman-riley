@@ -1,5 +1,60 @@
 #nav{
-	@include inline-menu; 
+	@include inline-menu;
+	@include wp-current-page-links{
+		background-color: $dark-grey;
+	}
+	margin-left: 14px;
+	li{
+		position:relative;
+		a{
+			@include transition (background-color 0.2s ease-in-out);
+			text-transform: uppercase;
+			@include font-size(12);
+			&:link,&:visited{
+				color:white;
+				padding:0 10px;
+				height:50px;
+				line-height: 59px;
+			}
+			&:hover,&:active{
+				background-color: $dark-grey;
+			}
+			&#mobile{
+				display: none;
+			}
+		}
+		.sub-menu{
+			@include abs-pos(52px,auto,auto,0);
+			//display: block;
+			display: none;
+			width:auto;
+			min-width: 10px;
+			background-color:$dark-grey;
+			padding: 12px 20px 12px;
+			li,a{
+				float: none;
+				width: auto;
+				padding:0 0 12px;
+				a{
+					@include transition (color 0.2s ease-in-out);
+					text-transform: capitalize;
+					line-height: 100%;
+					height:auto;
+					width:auto;
+					display: block;
+					white-space: nowrap;
+					padding: 6px 0;
+					&:hover, &:active{
+						color: $brown;
+					}
+
+				}
+			}		
+		}
+	}
+	a#mobile{
+		display: none;
+	}
 }
 #secondary-nav{
 	@include abs-pos(auto,auto,calc(#{$gutter*2}),0);
@@ -27,6 +82,13 @@
 			background-color: $brown;
 			margin-right: 3px;
 			color: white;
+			@include transition (all 0.2s ease-in-out);
+			&:hover,&:active{
+				background-color: lighten($brown,5);
+			}
+			&.active{
+				background-color: $grey;
+			}
 		}
 	}
 }
@@ -35,13 +97,15 @@ nav#utility-nav{
 	width:100%;
 	li{
 		list-style-type: none;
-		padding:10px 0;
+		padding:10px 0 0;
 		display: block;
-		border-bottom:1px solid $grey;
+		&.share, &.search{
+			border-bottom:1px solid $grey;
+		}
 		&.search{
 			padding-bottom:0;
 			input{
-				height:25px;
+				height:30px;
 				line-height:1;
 				border:none;
 				padding:0;
@@ -53,30 +117,92 @@ nav#utility-nav{
   				}
 			}
 		}
+		&.current-menu-item{
+			a{
+				color:$brown;
+				border-color:$brown;
+			}
+			svg path.icon{
+				fill:$brown;
+			}
+			.orange &{
+				a{
+					color:$orange;
+					border-color:$orange;
+				}
+				svg path.icon{
+					fill:$orange;
+				}
+			}
+			.blue &{
+				a{
+					color:$blue;
+					border-color:$blue;
+				}
+				svg path.icon{
+					fill:$blue;
+				}
+			}
+			.purple &{
+				a{
+					color:$purple;
+					border-color:$purple;
+				}
+				svg path.icon{
+					fill:$purple;
+				}
+			}
+		}
 		a,span{
-			height:20px;
-			//background-color: #ccc;
+			height:30px;
 			display: block;
 			position: relative;
 			@include font-size(13);
 			line-height:31px;
+			padding-bottom:10px;
 		}
 		a{
-			&.arrow{
-				&:after{
-					content:"";
-					display:block;
-					width:20px;
-					height:20px;
-					@include abs-pos(0,0,auto,auto);
-					background:url('../images/arrow-up.svg') center center no-repeat;
-					background-size: 20px 20px;
+			border-bottom:1px solid $grey;
+			@include transition (all 0.2s ease-in-out);
+			span{
+				@include abs-pos(0,0,auto,auto);
+				width:20px;
+				height:20px;
+				display: block;
+				img{
+					@include fit-grid(height);
+				}
+				svg path.icon{
+					@include transition (all 0.2s ease-in-out);
 				}
 			}
-		}
-		span{
-			a{
-
+			&:hover, &:active{
+				color: $brown;
+				border-color: $brown;
+				svg path.icon{
+					fill:$brown;
+				}
+				.orange &{
+					color: $orange;
+					border-color: $orange;
+					svg path.icon{
+						fill:$orange;
+					}
+				}
+				.blue &{
+					color: $blue;
+					border-color: $blue;
+					svg path.icon{
+						fill:$blue;
+					}
+				}
+				.purple &{
+					color: $purple;
+					border-color: $purple;
+					svg path.icon{
+						fill:$purple;
+					}
+				}
 			}
 		}
 		&.share{
@@ -95,12 +221,20 @@ nav#utility-nav{
 					a{
 						width:20px;
 						height:20px;
+						border:none;
 						g.icon path {
 							@include transition (fill 0.2s ease-in-out);
 						}
 						svg:hover g.icon path{
 							fill: $brown;
+							.orange &{
+								fill: $orange;
+							}
+							.blue &{
+								fill: $blue;
+							}
 						}
+
 						img{
 							@include fit-grid(width);
 						}

@@ -1,48 +1,24 @@
-<!doctype html>
-<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Bowman Riley</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
-        <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css' />
-        <link rel="stylesheet" href="css/layout.css" />
-        <script src="js/modernizr.js"></script>
-       <!--[if (gte IE 6)&(lte IE 8)]>
-<script src="js/selectivizr-min.js"></script>
-<![endif]-->
-        <!--[if lte IE 9]>
-          <script src="js/respond.min.js"></script>
-        <![endif]-->
-    </head>
-    <body>
-   <!--header-->
-   <header id="header">
-    <h1 id="home-link">Bowman Riley</h1>
-<nav id="nav"><a id="mobile">Mobile</a><ul><li><a href="">All About Bowman Riley</a></li><li><a href="">Architects</a></li><li><a href="">Building Consultancy</a></li><li><a href="">Healthcare</a></li><li><a href="">Case Studies</a></li><li><a href="">Work with us</a></li><li><a href="">Media &amp; Latest News</a></li><li><a href="">Contact</a></li></ul></nav>
-  </header>
-  <!--/header-->
-  <div id="page-wrap">
-    <!--home-->
-<section class="section">
-<div class="main column width-45-pct" role="main">
-  <h1>DELIVERING THOUGHTFUL &amp; RESPONSIVE DESIGN SINCE 1968</h1>
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
 <section id="secondary-nav">
-  <section id="twitter-feed">
-           
-          
-  </section>
+  <section id="twitter-feed"></section>
   <section id="latest-work">
   <h4>Latest examples of our work</h4>
-  <ul><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li></ul>
+  <ul><li><a href=""><img src="images/1.jpg" /></a></li><li><a href=""><img src="images/3.jpg" /></a></li><li><a href=""><img src="images/18.jpg" /></a></li><li><a href=""><img src="images/4.jpg" /></a></li></ul>
 </section>
+<div class="tabs"><a href="">Show by sector</a><a href="" class="active">Show by category</a></div>
+<nav id="sub-nav">
+<ul>
+<li class="current-menu-item"><a href="">Overview<span><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+   viewBox="0 0 55.4 49.7" enable-background="new 0 0 55.4 49.7" xml:space="preserve">
+<path class="icon" fill="#615E60" d="M22.8,11.8l6.1,6.1h-22C3.1,17.9,0,21,0,24.8v0c0,3.8,3.1,6.9,6.9,6.9h22l-6.1,6.1c-2.7,2.7-2.7,7.1,0,9.8
+  l0,0c2.7,2.7,7.1,2.7,9.8,0l22.8-22.8L32.6,2c-2.7-2.7-7.1-2.7-9.8,0l0,0C20.1,4.7,20.1,9.1,22.8,11.8z"/>
+</svg></span></a></li>
+<li><a href="">Services<span><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+   viewBox="0 0 55.4 49.7" enable-background="new 0 0 55.4 49.7" xml:space="preserve">
+<path class="icon" fill="#615E60" d="M22.8,11.8l6.1,6.1h-22C3.1,17.9,0,21,0,24.8v0c0,3.8,3.1,6.9,6.9,6.9h22l-6.1,6.1c-2.7,2.7-2.7,7.1,0,9.8
+  l0,0c2.7,2.7,7.1,2.7,9.8,0l22.8-22.8L32.6,2c-2.7-2.7-7.1-2.7-9.8,0l0,0C20.1,4.7,20.1,9.1,22.8,11.8z"/>
+</svg></span></a></li>
+</ul>
+  </nav>
 <nav id="utility-nav">
   <ul>
       <li class="share"><span>Follow Bowman Riley</span><ul><li><a href="">
@@ -124,84 +100,11 @@
   </g>
 </svg></a></li></ul></li>
   <li class="search" role="search"><form><input type="text" name="s" id="s" placeholder="Search" /></li>
-  <li><a href="" class="arrow">Subscribe to our newsletter</a></li>
+  <li><a href="" class="arrow">Subscribe to our newsletter<span><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+   viewBox="0 0 17.4 19.4" enable-background="new 0 0 17.4 19.4" xml:space="preserve">
+<path class="icon" fill="#615E60" d="M4.1,11.4l2.1-2.1V17c0,1.3,1.1,2.4,2.4,2.4h0c1.3,0,2.4-1.1,2.4-2.4V9.3l2.1,2.1c0.9,0.9,2.5,0.9,3.4,0l0,0
+  c0.9-0.9,0.9-2.5,0-3.4l-8-8l-8,8c-0.9,0.9-0.9,2.5,0,3.4l0,0C1.7,12.4,3.2,12.4,4.1,11.4z"/>
+</svg></span></a></li>
 </ul>
 </nav>
 </section>
-</div>
-<aside class="beta column width-55-pct split">
-  <div class="inner">
-<!--top row-->
-<div class="row height-60-pct bg-fill-cell" style="background-image:url('images/our-story.jpg');">
-</div>
-<!--/top row-->
-<!--bottom row-->
-<div class="row height-40-pct split">
-  <!--left column-->
-<div class="column width-40-pct">
-<div class="row height-60-pct"><a href="" class="fit-cell orange">Contact Us</a></div>
-<div class="row height-40-pct"><a href="" class="fit-cell">Download Practice Profile</a></div>
-</div>
-<!--/left column-->
-<!--right column-->
-<div class="column width-60-pct">
-<a href="" class="fit-cell grey">Case Studies</a>
-</div>
-<!--/right column-->
-</div>
-<!--/bottom row-->
-</div>
-</aside>
-</section>
-<!--/home-->
-<section class="section">
-<div class="main column width-45-pct" role="main">
-  <h1>Our Story</h1>
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
-
-</div>
-<aside class="beta column width-55-pct split">
-  <div class="inner">
-<!--top row-->
-<div class="row height-60-pct bg-fill-cell" style="background-image:url('images/our-story.jpg');">
-</div>
-<!--/top row-->
-<!--bottom row-->
-<div class="row height-40-pct split">
-  <!--left column-->
-<div class="column width-40-pct">
-<div class="row height-60-pct"><a href="" class="fit-cell orange">Contact Us</a></div>
-<div class="row height-40-pct"><a href="" class="fit-cell">Download Practice Profile</a></div>
-</div>
-<!--/left column-->
-<!--right column-->
-<div class="column width-60-pct">
-<a href="" class="fit-cell grey">Case Studies</a>
-</div>
-<!--/right column-->
-</div>
-<!--/bottom row-->
-</div>
-</aside>
-</section>
-</div>
-<!--scripts-->
-<!-- Load jQuery from Google CDN -->
-<script  src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-<!-- Load jQuery from a local copy if loading from Google fails -->
-<script>window.jQuery || document.write('<script type="text/javascript" src="js/jquery-1.10.1.min.js"><\/script>')</script>
-<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>-->
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
-<script src="//maps.google.com/maps/api/js?sensor=true"></script>
-<script src="js/jquery.gmap.js"></script>
-<script src="js/jquery.cycle.all.min.js"></script>
-<script src="js/jquery.easing.min.js"></script>
-<script src="js/jquery.selectbox.min.js"></script>
-<script src="js/fancybox/jquery.fancybox.js"></script>
-<script src="js/jquery.fullPage.min.js"></script>
-<script src="js/twitter-fetcher.js"></script>
-<script src="js/scripts.js"></script>
-<!--/scripts-->
-    </body>
-    </html>

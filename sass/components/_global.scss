@@ -1,32 +1,162 @@
 a{
 	&.fit-cell{
 	@include abs-pos(0,0,0,0);
-	padding: $gutter;
+	@include transition (background-color 0.2s ease-in-out);
+	padding: $gutter 77px $gutter $gutter;
+	#our-people &{
+		padding: $gutter;
+	}
 	display:block;
 	color:$grey;
 	background-color:white;
 	text-transform:uppercase;
+	#our-people &{
+		text-transform: none;
+	}
+	&.down{
+		&:after{
+			background-image:url('../images/arrow-down-white.svg');
+		}
+		&:hover,&:active{
+			&:after{
+				bottom:17px;
+				right:20px;
+			}
+		}
+	}
+	&.up{
+		&:after{
+			background-image:url('../images/arrow-up-white.svg');
+		}
+		&:hover,&:active{
+			&:after{
+				bottom:23px;
+				right:20px;
+			}
+		}
+	}
+	@include font-size(18);
+	line-height:120%;
+		&:after{
+			content:"";
+			display: block;
+			width:55px;
+			height:50px;
+			background-image:url('../images/arrow-right-white.svg');
+			background-position: left top;
+			background-repeat:no-repeat;
+			background-size: 55px 50px;
+			@include abs-pos(auto,20px,20px,auto);
+			@include transition (all 0.2s ease-in-out);
+			#our-people &{
+				width:20px;
+				height:20px;
+				@include abs-pos(auto,auto,20px,20px);
+				background-image:url('../images/arrow-right-white.svg');
+				background-size: 20px 18px;
+			}
+			.ie8 &{
+				//ie8 fallback;
+			}
+		}
+		&:hover,&:active{
+			&:after{
+				right:17px;
+			}
+			#our-people &{
+				&:after{
+					left:23px;
+					right:auto;
+				}
+			}
+		}
 		.cell &{
 			text-transform: none;
 		}
 		&.orange{
 			background-color: $orange;
 			color:white;
+			&:hover,&:active{
+				background-color:lighten($orange,5);
+			}
+			#our-people &{
+				background-color: white;
+				color: $orange;
+				&:after{
+					background-image:url('../images/arrow-right-orange.svg');
+				}
+			}
+		}
+		&.purple{
+			background-color: $purple;
+			color: white;
+			&:hover,&:active{
+				background-color:lighten($purple,5);
+			}
+			#our-people &{
+				background-color: white;
+				color: $purple;
+				&:after{
+					background-image:url('../images/arrow-right-purple.svg');
+				}
+			}
 		}
 		&.grey{
 			background-color: $grey;
 			color:white;
+			&:hover,&:active{
+				background-color:lighten($grey,5);
+			}
 		}
 		&.blue{
 			background-color: $blue;
 			color:white;
+			&:hover,&:active{
+				background-color:lighten($blue,5);
+			}
 		}
 		&.brown{
 			background-color: $brown;
 			color:white;
+			&:hover,&:active{
+				background-color:lighten($brown,5);
+			}
 		}
+		&.white{
+			&:after{
+				background-image:url('../images/arrow-right.svg');	
+			}
+		}
+
 	}
 }
 .bg-fill-cell{
 	@include bg-cover;
+	a{
+		@include abs-pos(0,0,0,0);
+		display: block;
+		padding: $gutter;
+		@include opacity(0);
+		border-color: white !important;
+		@include rgba-bg($r:0,$g:133,$b:179,$hex:$blue,$opacity:0.75);
+		@include transition (all 0.2s ease-in-out);
+		color: white;
+		&:hover,&:active{
+			@include opacity(1);
+		}
+	}
+}
+.arrow-divide{
+	display: block;
+	width:20px;
+	@include abs-pos(20px,15px,35px,auto);
+	background: url('../images/divide-v.png') center top repeat-y;
+	a{
+		width:20px;
+		height:20px;
+		@include abs-pos(auto,auto,0,0);
+		img{
+			@include fit-grid(width);
+		}
+	}
 }

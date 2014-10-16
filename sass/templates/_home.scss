@@ -1,10 +1,15 @@
 #twitter-feed{
 	@extend %clearfix;
+	margin-bottom:24px;
 	ul{
 		list-style-type: none;
 		li{
 			float:left;
-			width:50%;
+			width:48%;
+			margin-right:4%;
+			&:last-child{
+				margin-right:0
+			}
 			.user{
 				width:28px;
 				height:19px;
@@ -53,6 +58,10 @@
 				content:"";
 				padding-top:50%;
 				display: inline-block;
+			}
+			img{
+				@include abs-pos(0,auto,auto,0);
+				@include fit-grid(height);
 			}
 		}
 	}
