@@ -26,6 +26,8 @@ $(document).ready(function() {
     if(!isTouchDevice.any() && !mobileMenu()){
         activateDropDown();
     }
+    menu();
+
     $('#page-wrap').fullpage({
     	verticalCentered: false,
         resize : false,
@@ -105,6 +107,7 @@ function deactivateDropDown(){
     $('#nav li.menu-item-has-children').unbind('mouseenter');
      $('#nav li.menu-item-has-children').unbind('mouseleave');
  }
+
 function activateDropDown(){
     $('#nav li.menu-item-has-children').bind('mouseenter',function(){
         $('.sub-menu',$(this)).fadeIn(200);
@@ -113,3 +116,24 @@ function activateDropDown(){
         $('.sub-menu',$(this)).fadeOut(100);
     })
 }
+
+function menu(){
+    var $links = $('.sub-menu a');
+    $links.on('click',function(e){
+        e.preventDefault();
+        var $index = $links.index($(this))+1;
+        console.log($index);
+        var $url = $(this).attr('href');
+        //remove trailing slash from url if present
+        if ($url.substring($url.length-1) == "/"){
+            var $url = ($url.slice(0, -1));
+        }
+        //get slug of page
+        var $urlSegments = $url.split('/');
+            $segmentLength = $urlSegments.length,
+            $slug = $urlSegments[$segmentLength-1];
+            //move down to section
+            $.fn.fullpage.moveTo($index);
+    })
+}
+
