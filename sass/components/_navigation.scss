@@ -50,20 +50,20 @@
 		}
 		
 		.sub-menu{
-			@include abs-pos(52px,auto,auto,0);
-			//display: block;
+			@include abs-pos(50px,auto,auto,0);
+			border-top:2px solid $brown;
 			display: none;
 			width:auto;
 			min-width: 10px;
 			background-color:$dark-grey;
-			padding: 12px 20px 0;
-			//@extend %clearfix; 
+			padding: 12px 20px 12px;
 			@media screen and (max-width: $break-nav) {
 				position:relative;
 				top:auto;
 				background-color:transparent;
 				padding:0;
 				display: block;
+				border:none;
 			}
 			li,a{
 				float: none;

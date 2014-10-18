@@ -1015,16 +1015,17 @@ p a:hover, p a:active {
 }
 /* line 52, ../sass/components/_navigation.scss */
 #nav li .sub-menu {
-  top: 52px;
+  top: 50px;
   right: auto;
   bottom: auto;
   left: 0;
   position: absolute;
+  border-top: 2px solid #CFAD81;
   display: none;
   width: auto;
   min-width: 10px;
   background-color: #464545;
-  padding: 12px 20px 0;
+  padding: 12px 20px 12px;
 }
 @media screen and (max-width: 1200px) {
   /* line 52, ../sass/components/_navigation.scss */
@@ -1034,6 +1035,7 @@ p a:hover, p a:active {
     background-color: transparent;
     padding: 0;
     display: block;
+    border: none;
   }
 }
 /* line 68, ../sass/components/_navigation.scss */
