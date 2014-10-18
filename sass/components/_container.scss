@@ -4,12 +4,14 @@
 	display:block;
 	position:relative;
 	background-color:#f1f1f1;
-
+	left:0;
 	.section{
 		padding:50px 0 0;
 		//width:100%;
 		//height:100%;
 		display: block;
+		background-color:white;
+		position:relative;
 	}
 	@media screen and (max-width: $break-medium+1) {
 		//padding-top:7%;
@@ -22,6 +24,7 @@
 }
 .main{
 	padding:calc(#{$gutter*2}) calc(#{$gutter*4 + 1}) calc(#{$gutter*2}) calc(#{$gutter*2});
+
 	@media screen and (max-width: $break-medium+1) {
 		padding: calc(#{$gutter*2}) $gutter $gutter;
 	}
@@ -55,5 +58,10 @@
 		@media screen and (max-width: $break-medium+1) {
 			padding: 0 $gutter $gutter 0;
 		}
+	}
+	#explore & .inner{
+		@extend .clearfix;
+		height:auto;
+		padding:$gutter $gutter $gutter 0;
 	}
 }

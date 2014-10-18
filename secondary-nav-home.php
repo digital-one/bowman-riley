@@ -1,5 +1,10 @@
 <section id="secondary-nav">
- 
+  <section id="twitter-feed"></section>
+  <section id="latest-work">
+  <h4>Latest examples of our work</h4>
+  <ul><li><a href=""><img src="images/1.jpg" /></a></li><li><a href=""><img src="images/3.jpg" /></a></li><li><a href=""><img src="images/18.jpg" /></a></li><li><a href=""><img src="images/4.jpg" /></a></li></ul>
+</section>
+<div class="tabs"><a href="">Show by sector</a><a href="" class="active">Show by category</a></div>
 <nav id="sub-nav">
 <ul>
 <li class="current-menu-item"><a href="">Overview<span><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"

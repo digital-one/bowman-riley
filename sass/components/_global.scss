@@ -3,6 +3,10 @@ a{
 	@include abs-pos(0,0,0,0);
 	@include transition (background-color 0.2s ease-in-out);
 	padding: $gutter 77px $gutter $gutter;
+	@media screen and (max-width: $break-large) {
+		padding:12px 40px 12px 12px;
+		@include font-size(16);
+	}
 	#our-people &{
 		padding: $gutter;
 	}
@@ -41,6 +45,11 @@ a{
 			content:"";
 			display: block;
 			width:55px;
+			@media screen and (max-width: $break-large) {
+				width:35px;
+				height:32px;
+				background-size: 35px 32px;
+			}
 			height:50px;
 			background-image:url('../images/arrow-right-white.svg');
 			background-position: left top;
@@ -79,7 +88,7 @@ a{
 			&:hover,&:active{
 				background-color:lighten($orange,5);
 			}
-			#our-people &{
+			#our-people &, #our-people-sector &{
 				background-color: white;
 				color: $orange;
 				&:after{
@@ -93,7 +102,7 @@ a{
 			&:hover,&:active{
 				background-color:lighten($purple,5);
 			}
-			#our-people &{
+			#our-people &, #our-people-sector &{
 				background-color: white;
 				color: $purple;
 				&:after{
@@ -163,6 +172,9 @@ a{
 }
 .arrow-divide{
 	display: block;
+	@media screen and (max-width: $break-medium+1) {
+		display:none;
+	}
 	width:20px;
 	@include abs-pos(20px,15px,35px,auto);
 	background: url('../images/divide-v.png') center top repeat-y;
@@ -178,19 +190,35 @@ a{
 a.overlay{
 	@include abs-pos(0,0,0,0);
 	display: block;
-	padding: 12px 60% 12px 18px;
+	z-index:999;
+	padding: 18px 60% 12px 18px;
+	#our-people-sector &{
+		padding:18px;
+	}
 	@include opacity(0);
 	@include rgba-bg($r:0,$g:133,$b:179,$hex:$blue,$opacity:0.75);
+	&.orange{
+		@include rgba-bg($r:238,$g:125,$b:0,$hex:$orange,$opacity:0.75);
+	}
 	@include transition (all 0.2s ease-in-out);
 	color: white;
 	&:hover,&:active{
 		@include opacity(1);
 	}
+	
 	&:after{
 		content:"";
 		width:20px;
 		height:20px;
 		@include abs-pos(auto,18px,$gutter,auto);
 		background:url('../images/arrow-right-white.svg') left top no-repeat;
+	}
+	&.close:after{
+		content:"";
+		display: block;
+		width:18px;
+		height:18px;
+		@include abs-pos(18px,18px,auto,auto);
+		background:url('../images/close-white.svg') left top no-repeat;
 	}
 }
