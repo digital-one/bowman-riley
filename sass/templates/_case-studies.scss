@@ -1,12 +1,12 @@
-#case-studies-single{
+#case-studies{
+	aside{
+		position: relative;
+	}
 	article{
 		padding-right:10%;
-		@media screen and (max-width: $break-medium+1) {
-			//padding-right: 0;
-		}
 	}
 	.case-study-links{
-		@include abs-pos(auto,auto,0,0);
+		//@include abs-pos(auto,auto,0,0);
 		@media screen and (max-width: $break-medium+1) {
 			position: relative;
 		}
@@ -46,14 +46,15 @@
 }
 ul.case-study-meta{
 	@include font-size(11);
+	#case-studies &{
+		margin-bottom: 60px;
+		//@include abs-pos(0,auto,auto,0);
+	}
 	#our-people-sector &{
 		@include font-size(12);
 	}
 	line-height: 100%;
 	display: inline-block;
-	@media screen and (max-width: $break-medium+1) {
-		margin-bottom: 60px;
-	}
 	.overlay &{
 		margin-bottom: 30px;
 	}

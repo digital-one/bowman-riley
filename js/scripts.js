@@ -21,30 +21,27 @@ var isTouchDevice = {
 
 
 
-$(document).ready(function() {
+$(function(){
 
     if(!isTouchDevice.any() && !mobileMenu()){
         activateDropDown();
     }
     menu();
 
+
+
+
+initPageScroll = function(){
     $('#page-wrap').fullpage({
     	verticalCentered: false,
         resize : false,
         scrollOverflow: true,
         paddingTop: 0,
         paddingBottom: 0,
-        normalScrollElementTouchThreshold: 24
+        normalScrollElementTouchThreshold: 24,
+        anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage']
     });
-
-
-    var config1 = {
- 	"id": '345170787868762112',
-  	"domId": 'twitter-feed',
-    "maxTweets": 2,
-    "enableLinks": true
-};
-twitterFetcher.fetch(config1);
+}
 
 
 $('#mobile').on('click',function(e){
@@ -76,7 +73,133 @@ $('.arrow-divide a').on('click',function(e){
     e.preventDefault();
     $.fn.fullpage.moveSectionDown();
 })
+
+
+if (Modernizr.history){ //if browser supports history
+      var $main = $('main'),
+          $aside = $('aside'),
+          $links = $('#nav a');
+String.prototype.decodeHTML = function() {
+    return $("<div>", {html: "" + this}).html();
+  };
+
+    $('#nav a').on('click',function(e){
+        e.preventDefault();
+        var $href = $(this).attr("href");
+        loadPage($href);
+    }) 
+$('body').on('click', '.case-study-link, #case-studies a.close, #news a.close, a.news-link', function(e) {
+        e.preventDefault();
+        var $href = $(this).attr("href");
+        loadPage($href,'aside');
+    })
+
+$('body').on('click','.push-link',function(e){
+    e.preventDefault();
+    var $href = $(this).attr("href");
+    loadPage($href);
+})
+
+
+    $(window).on("popstate", function(e) { //handle browser back button
+    if (e.originalEvent.state !== null) {
+      loadPage(location.href);
+    }
+    });
+
+
+loadPage = function(href,selector){
+    if(!selector){
+        selector = 'main';
+    } 
+    target  = $(selector)
+    history.pushState({}, '', href);
+    target.empty();
+    setNavState(href);
+    target.load(href + " "+ selector+">*", onAjaxLoad);
+    //if($.fn.fullpage){
+   //$.fn.fullpage.setAllowScrolling(false);
+  // $.fn.fullpage.setKeyboardScrolling(false);
+  // }
+}
+onAjaxLoad = function(html){
+    document.title = html
+          .match(/<title>(.*?)<\/title>/)[1]
+          .trim()
+          .decodeHTML();
+          onPageLoad(html);
+}
+onPageLoad = function(html){
+ //$.fn.fullpage.destroy();
+//get number of sections 
+var $sections = $('.section',html),
+    $anchors = Array()
+
+$sections.each(function(){
+    $anchors.push($(this).attr('data-anchor'));
+    
+})
+//set the nav bar to the current url
+$('#page-wrap').fullpage({
+        verticalCentered: false,
+        resize : false,
+        scrollOverflow: true,
+        paddingTop: 0,
+        paddingBottom: 0,
+        normalScrollElementTouchThreshold: 30,
+        touchSensitivity: 30,
+         scrollingSpeed: 500,
+        anchors: $anchors
+    });
+ if($('#twitter-feed').length){
+    var config1 = {
+    "id": '345170787868762112',
+    "domId": 'twitter-feed',
+    "maxTweets": 2,
+    "enableLinks": true
+    };
+twitterFetcher.fetch(config1)
+}
+
+//google map
+if($('#map').length){
+    $('#map').gmap({
+        markers: [{'latitude': 53.7970116,'longitude': -1.5483672}],
+        markerFile: 'http://bowmanriley.localhost/images/marker.png',
+        markerWidth:130,
+        markerHeight:154,
+        markerAnchorX:65,
+        markerAnchorY:154
+    })
+}
+
+
+ repositionSubNavs();
+}
+
+setNavState = function(href){
+    $links.parent('li').removeClass('current-menu-item');
+    $links.each(function(){
+        if($(this).attr('href')==href){
+            $(this).parent('li').addClass('current-menu-item');
+        }
+    })
+}
+loadPage(location.href);
+}
+//
+$('body').on('click', '.people-link.select', function(e) {
+ e.preventDefault();
+    $(this).removeClass('select').addClass('close');
 });
+$('body').on('click','.people-link.close',function(e){
+    e.preventDefault();
+    $(this).removeClass('close').addClass('select');
+})
+
+
+
+}); //closing on ready
 
 $(window).on('resize',function(){
      if($(window).width()>1199){
@@ -96,7 +219,11 @@ $(window).on('resize',function(){
          deactivateDropDown();
      }
     }
+    repositionSubNavs();
 })
+
+
+
 function mobileMenu(){
      if($(window).width()<1200){
         return true;
@@ -122,7 +249,6 @@ function menu(){
     $links.on('click',function(e){
         e.preventDefault();
         var $index = $links.index($(this))+1;
-        console.log($index);
         var $url = $(this).attr('href');
         //remove trailing slash from url if present
         if ($url.substring($url.length-1) == "/"){
@@ -136,4 +262,24 @@ function menu(){
             $.fn.fullpage.moveTo($index);
     })
 }
+setSubNavPosition =  function(){
+
+  $('.secondary-nav').each(function(){
+      var $windowHeight = $(this).parent('.main').outerHeight(),
+        $navHeight = $(this).outerHeight(),
+        $spacing = 24,
+        $top = ($windowHeight - $navHeight) - $spacing;
+        $(this).css({
+            top: $top+'px'
+        })
+        $(this).show();
+    })
+}
+repositionSubNavs = function(){
+     
+setTimeout(setSubNavPosition,500);
+}
+  
+
+
 

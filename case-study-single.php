@@ -1,36 +1,6 @@
-<!doctype html>
-<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Bolser</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
-        <link href='http://fonts.googleapis.com/css?family=Raleway:300,600' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="css/layout.css" />
-        <script src="js/modernizr.js"></script>
-    <!-- Load jQuery from Google CDN -->
-<script  src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-<!-- Load jQuery from a local copy if loading from Google fails -->
-<script>window.jQuery || document.write('<script type="text/javascript" src="js/jquery-1.10.1.min.js"><\/script>')</script>
-<!--[if (gte IE 6)&(lte IE 8)]>
-  <script type="text/javascript" src="js/selectivizr.js"></script>
-  <noscript><link rel="stylesheet" href="[fallback css]" /></noscript>
-<![endif]--> 
-    </head>
-    <body id="case-studies-single">
-   <!--header-->
-   <header id="header">
-    <h1 id="home-link">Bowman Riley</h1>
-<nav id="nav"><a id="mobile">Mobile</a><ul><li><a href="">All About Bowman Riley</a></li><li><a href="">Architects</a></li><li><a href="">Building Consultancy</a></li><li><a href="">Healthcare</a></li><li><a href="">Case Studies</a></li><li><a href="">Work with us</a></li><li><a href="">Media &amp; Latest News</a></li><li><a href="">Contact</a></li></ul></nav>
-  </header>
-  <!--/header-->
-<section class="page-wrap">
+<?php include_once('header.php') ?>
+  <main id="page-wrap" role="main">
+   <section id="case-studies" class="section">
 <div class="main column width-45-pct" role="main">
   <h1>Take a look at our case studies</h1>
 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
@@ -60,27 +30,19 @@
     image
   </div>
   <div class="row height-55-pct  gutter-2x">
-<aside class="column width-25-pct gutter-2x">Client Location</aside>
+<div class="column width-25-pct gutter-2x"><ul class="case-study-meta"><li>Client: Primark</li><li class="location">Location: North of England</li></ul>
+<div  class="case-study-links"><ul><li><a href="">See more in retail</a></li><li><a href="">See more in Architects category</a></li></ul><a href="" class="download">Download case study</a></div>
+</div>
 <article class="column width-75-pct gutter-2x">
 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
-<a class="close">Close</a>
+<a href="http://bowmanriley.localhost/case-studies.php" class="close">Close</a>
   </article>
   </div>
 </div>
 </aside>
 </section>
-<!--scripts-->
-
-<script src="//maps.google.com/maps/api/js?sensor=true"></script>
-<script src="js/jquery.gmap.js"></script>
-<script src="js/jquery.cycle.all.min.js"></script>
-<script src="js/jquery.easing.min.js"></script>
-<script src="js/jquery.selectbox.min.js"></script>
-<script src="js/fancybox/jquery.fancybox.js"></script>
-<script src="js/scripts.js"></script>
-<!--/scripts-->
-    </body>
-    </html>
+</main>
+<?php include('footer.php'); ?>

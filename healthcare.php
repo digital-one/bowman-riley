@@ -1,5 +1,5 @@
 <?php include_once('header.php') ?>
-  <div id="page-wrap">
+  <main id="page-wrap" role="main">
    
 
     <!--overview-->
@@ -33,7 +33,7 @@ image here
 </div>
 <aside class="beta column width-55-pct">
   <div class="inner">
-  <div class="row height-60-pct bg-fill-cell masked" style="background-image:url('images/1.jpg');">
+  <div class="row height-60-pct bg-fill-cell masked" style="background-image:url('images/1.jpg');"><a href="" class="purple overlay">overlay</a>
   </div>
   <div class="row height-40-pct">
  <div class="column width-50-pct bg-fill-cell" style="background-image:url('images/3.jpg');"></div>
@@ -42,7 +42,7 @@ image here
 </div>
   </section>
    <!--/building surveyors-->
-</div>
+</main>
 <!--scripts-->
 <!-- Load jQuery from Google CDN -->
 <script  src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>

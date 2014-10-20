@@ -1,4 +1,4 @@
-<section id="secondary-nav">
+<section class="secondary-nav">
  
 <nav id="sub-nav">
 <ul>

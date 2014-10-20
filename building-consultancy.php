@@ -1,9 +1,9 @@
 <?php include_once('header.php') ?>
-  <div id="page-wrap">
+  <main id="page-wrap" role="main">
    
 
     <!--overview-->
-<section class="section orange">
+<section class="section orange" data-anchor="building-consultants">
 <div class="main column width-45-pct" role="main">
   <h1>Headline Before<br /><span>Building Consultants</span></h1>
 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
@@ -24,7 +24,7 @@ image here
 </section>
   <!--/overview-->
   <!--building surveyors-->
-  <section class="section orange">
+  <section class="section orange" data-anchor="building-surveyors">
 <div class="main column width-45-pct" role="main">
   <h1>Headline Before<br /><span>Building Surveyors</span><br />Sub Category</h1>
 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
@@ -33,7 +33,7 @@ image here
 </div>
 <aside class="beta column width-55-pct">
   <div class="inner">
-  <div class="row height-60-pct bg-fill-cell masked" style="background-image:url('images/1.jpg');">
+  <div class="row height-60-pct bg-fill-cell masked" style="background-image:url('images/1.jpg');"><a href="" class="orange overlay">overlay</a>
   </div>
   <div class="row height-40-pct">
  <div class="column width-50-pct bg-fill-cell" style="background-image:url('images/3.jpg');"></div>
@@ -42,7 +42,7 @@ image here
 </div>
   </section>
    <!--/building surveyors-->
-</div>
+</main>
 <!--scripts-->
 <!-- Load jQuery from Google CDN -->
 <script  src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>

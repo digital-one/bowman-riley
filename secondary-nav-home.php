@@ -1,4 +1,4 @@
-<section id="secondary-nav">
+<section class="secondary-nav">
   <section id="twitter-feed"></section>
   <section id="latest-work">
   <h4>Latest examples of our work</h4>

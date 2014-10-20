@@ -40,7 +40,7 @@
 		border-bottom: $gutter solid white;
 	}
 	.beta &:nth-child(2){
-		#our-people &{
+		#people &{
 			border-bottom: $gutter solid white;
 		}
 		
@@ -65,7 +65,7 @@
 	position:relative;
 	&.width-25-pct{
 		width:25%;
-		#case-studies-single &{
+		#case-studies &{
 			@media screen and (max-width: $break-medium+1) {
 				//width:100%;
 				height:auto;
@@ -107,7 +107,7 @@
 			.fixed &{
 				margin-left: 45.24%;
 			}
-			#our-people &{
+			#people &{
 				background-color: lighten($grey,50);
 			}
 			#case-studies &{
@@ -130,16 +130,8 @@
 	}
 	&.width-75-pct{
 		width:75%;
-		#case-studies-single &{
-			a.close{
-				display: block;
-				width:18px;
-				height:18px;
-				@include abs-pos(0,10px,auto,auto);
-				cursor:pointer;
-				background:url('../images/close.svg') left top no-repeat;
-				@extend %ir;
-			}
+		#case-studies &{
+			
 			@media screen and (max-width: $break-medium+1) {
 				//width:100%;
 				height:auto;

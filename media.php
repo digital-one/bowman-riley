@@ -1,5 +1,5 @@
 <?php include_once('header.php') ?>
-  <div id="page-wrap">
+  <main id="page-wrap" role="main">
   <section class="section">
 <div class="main column width-45-pct" role="main">
   <h1>All things media and our latest news</h1>
@@ -29,7 +29,7 @@
   <div class="row height-60-pct bg-fill-cell" style="background-image:url('images/careers.jpg');">
   </div>
   <div class="row height-40-pct">
- <div class="column width-40-pct"><a href="" class="fit-cell brown">Latest press releases</a></div>
+ <div class="column width-40-pct"><a href="http://bowmanriley.localhost/latest-news.php" class="fit-cell brown push-link">Latest press releases</a></div>
  <div class="column width-60-pct">
   <div class="row height-40-pct"><a href="" class="fit-cell grey down">Media pack download</a></div>
  <div class="row height-60-pct"><div class="column width-55-pct"><a href="" class="fit-cell brown inverted down">Download out brochures</a></div><div class="column width-45-pct"><a href="" class="fit-cell white">Contact Us</a></div></div>
@@ -40,5 +40,5 @@
 </div>
 </aside>
 </section>
-</div>
+</main>
 <?php include_once('footer.php') ?>

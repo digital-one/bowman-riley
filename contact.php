@@ -1,5 +1,5 @@
 <?php include_once('header.php') ?>
-  <div id="page-wrap">
+  <main id="page-wrap" role="main">
   <section class="section">
 <div class="main column width-45-pct" role="main">
   <h1>Get in touch</h1>
@@ -11,5 +11,5 @@
  map here
 </aside>
 </section>
-</div>
+</main>
 <?php include_once('footer.php') ?>

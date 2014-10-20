@@ -1,9 +1,8 @@
 <?php include_once('header.php') ?>
-  <div id="page-wrap">
-   
 
-    <!--overview-->
-<section class="section blue">
+    <main id="page-wrap" role="main">
+  <!--overview-->
+<section class="section blue" data-anchor="architects">
 <div class="main column width-45-pct" role="main">
   <h1>COMMERCIALLY<br />CREATIVE<br /><span>ARCHITECTS</span></h1>
 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
@@ -23,7 +22,7 @@
 </section>
   <!--/overview-->
       <!--services-->
-<section class="section blue">
+<section class="section blue" data-anchor="architectural-services">
 <div class="main column width-45-pct" role="main">
   <h1>OUR<br /><span>ARCHITECTURAL</span><br />SERVICES</h1>
 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
@@ -42,7 +41,7 @@
 </aside>
 </section>
   <!--/services-->
-</div>
+</main>
 <!--scripts-->
 <!-- Load jQuery from Google CDN -->
 <script  src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
