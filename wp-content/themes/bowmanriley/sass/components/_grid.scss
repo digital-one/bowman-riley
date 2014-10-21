@@ -1,0 +1,267 @@
+.row{
+	display:block;
+	width:100%;
+	position:relative;
+	@extend .clearfix;
+	&.height-60-pct{
+		height:61.24%;
+	}
+	&.height-40-pct{
+		height:38.76%;
+	}
+	&.height-45-pct{
+		height:45%;
+	}
+	&.height-55-pct{
+		height:55%;
+	}
+	&.height-one-third{
+		height:33.33%;
+	}
+	&.height-two-thirds{
+		height:66.66%;
+	}
+	&.twice-height{
+		&:before{
+			padding-top:calc(200% + #{$gutter});
+		}
+	}
+	&.square{
+		//border:0;
+		height:auto;
+		&:before{
+			content:"";
+			padding-top: 100%;
+			//padding-top: 100%;
+			display: block;
+		}
+	}
+	.beta &:nth-child(1){
+		border-bottom: $gutter solid white;
+	}
+	.beta &:nth-child(2){
+		#people &{
+			border-bottom: $gutter solid white;
+		}
+		
+	}
+	.beta &.gutter-2x:nth-child(1){
+		border-bottom:$gutter solid white;
+	}
+	.beta &.gutter-2x:nth-child(2){
+		border-top: $gutter solid white;
+	}
+	.beta &.no-gutter:nth-child(1){
+		border:none;
+	}
+	.beta &.no-gutter:nth-child(2){
+		border:none;
+	}
+}
+.column{
+	float:left;
+	height:100%;
+	display: block;
+	position:relative;
+	&.width-25-pct{
+		width:25%;
+		#case-studies &{
+			@media screen and (max-width: $break-medium+1) {
+				//width:100%;
+				height:auto;
+			}
+			&.gutter-2x{
+				@media screen and (max-width: $break-medium+1) {
+					border:none;
+					margin-bottom: 20px;
+				}
+			}
+		}
+	}
+	&.width-40-pct{
+		width:35.72%;
+	}
+	&.width-45-pct{
+		width:45.24%;
+		&.main{
+			.fixed &{
+				position:fixed;
+			}
+			@media screen and (max-width: $break-medium+1) {
+				position:relative;
+				height:45%;
+				width:100%;
+			}
+			@media screen and(max-width: $break-small){
+				height:auto;
+			}
+		}
+	}
+
+	&.width-50-pct{
+		width:50%;
+	}
+	&.width-55-pct{
+		width:54.76%;
+		&.beta{
+			.fixed &{
+				margin-left: 45.24%;
+			}
+			#people &{
+				background-color: lighten($grey,50);
+			}
+			#case-studies &{
+				@media screen and(max-width: $break-small){
+					height:auto;
+				}
+			}
+			@media screen and (max-width: $break-medium+1) {
+				margin:0;
+				height:55%;
+				width:100%;
+			}
+			@media screen and(max-width: $break-small){
+				height:480px;
+			}
+		}
+	}
+	&.width-60-pct{
+		width:64.28%;
+	}
+	&.width-75-pct{
+		width:75%;
+		#case-studies &{
+			
+			@media screen and (max-width: $break-medium+1) {
+				//width:100%;
+				height:auto;
+			}	
+			&.gutter-2x{
+				@media screen and (max-width: $break-medium+1) {
+					border:none;
+				}	
+			}
+		}
+	}
+	&.width-one-third{
+		width:33.33%;
+	}
+	&.width-two-thirds{
+		width:66.66%;
+	}
+	.masked{
+		overflow:hidden; 
+	}
+	.beta &.gutter-2x:nth-child(1){
+		border-right:$gutter solid white;
+	}
+	.beta &:nth-child(2){
+		border-left:$gutter solid white;
+	}
+	.beta &.gutter-2x:nth-child(2){
+		border-left:$gutter solid white;
+	}
+	.beta &.no-gutter:nth-child(1){
+		border:none;
+	}
+	.beta &.no-gutter:nth-child(2){
+		border:none;
+	}
+}
+.cell{
+	position:relative;
+	display: block;
+	float:left;
+	width:100%;
+	background-color:#ccc;
+	overflow:hidden;
+	//border: calc(#{$gutter}/2) solid white;
+	border: $gutter solid white;
+	border-right:0;
+	border-top:0;
+	#explore &{
+		border:$gutter solid white;
+	}
+	height:100%;
+	&.height-50-pct{
+		height:50%;
+	}
+	&.twice-height{
+		&:before{
+			padding-top:200%;
+		}
+	}
+	&.half-height{
+		height:auto;
+		img{
+			@include abs-pos(-25%,auto,auto,0);
+		}
+		&:before{
+			content:"";
+			padding-top: calc(50% - #{$gutter}/2);
+			display: block;
+		}
+	}
+	img{
+		@include fit-grid(width);
+		@include abs-pos(0,0,0,0);
+		display:block;
+		z-index: 1;
+	}
+	&.half{
+		width:50%;
+		#case-studies &{
+			&:before{
+				content:"";
+				padding-top:50%;
+				display: block;
+			}
+			@media screen and (max-width: $break-small){
+				width:100%;	
+				height:50%;
+			}
+		}
+	}
+	&.square{
+		//border:0;
+		height:auto;
+		&:before{
+			content:"";
+			padding-top:100%;
+			display: block;
+		}
+	}
+	&.one-third{
+		width:33.33%;
+		
+		@media screen and (max-width: $break-medium+1) {
+			width:33.33%;
+		}
+		#case-studies &{
+			&:before{
+				content:"";
+				padding-top:50%;
+				display: block;
+			}
+			@media screen and (max-width: $break-small) {
+				width:50%;
+			}
+		}
+		/*@media screen and (max-width: $break-large) {
+			width:50%;
+		}
+		*/
+	}
+	&.two-thirds{
+		width: 66.66%;
+		img{
+			@include abs-pos(-50%,auto,auto,0);
+		}
+	}
+}
+.shift-gutter-up{
+	margin-top:-6px;
+}
+.shift-gutter-right{
+	margin-left:6px;
+}

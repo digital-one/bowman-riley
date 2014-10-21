@@ -1,0 +1,155 @@
+#twitter-feed{
+	@extend %clearfix;
+	margin-bottom:24px;
+	ul{
+		list-style-type: none;
+		li{
+			float:left;
+			width:48%;
+			margin-right:4%;
+			&:last-child{
+				margin-right:0
+			}
+			.user{
+				width:28px;
+				height:19px;
+				display: block;
+				background:url('../images/twitter.svg') left top no-repeat;
+				margin-bottom: 12px;
+				img,span{
+					display: none;
+				}
+			}
+			.tweet{
+				a{
+					font-weight: 600;
+				}
+			}
+			.timePosted,.interact{
+				display: none;
+			}
+		}
+	}
+}
+#latest-work{
+	@extend %clearfix;
+	margin-bottom:10px;
+	h4{
+		padding-bottom:10px;
+		margin-bottom:10px;
+		border-bottom:1px solid $grey;
+	}
+	li{
+		width:23.5%;
+		margin-right:2%;
+		display: inline-block;
+		float:left;
+		&:last-child{
+			margin-right:0;
+		}
+		a{
+			width:100%;
+			overflow:hidden;
+			position:relative;
+			display: inline-block;
+			float: left;
+			background-color:#ccc;
+			&:before{
+				content:"";
+				padding-top:50%;
+				display: inline-block;
+			}
+			span{
+
+			}
+			img{
+				@include abs-pos(0,auto,auto,0);
+				@include fit-grid(height);
+			}
+		}
+	}
+}
+a.service-link{
+	@include abs-pos(0,0,0,0);
+	display: block;
+	border: 2px solid $blue;
+	@include transition (border-color 0.2s ease-in-out);
+	padding: calc(#{$gutter*2});
+	@include font-size(18);
+	background-color:white;
+	text-transform:uppercase;
+	span{
+		position:relative;
+		display: block;
+		width:100%;
+		height:100%;
+	}
+	svg,img{
+		height:100%;
+		width:auto;
+		display: block;
+		@include abs-pos(0,0,0,auto);
+		path,polygon{
+			@include transition (fill 0.2s ease-in-out);
+		}
+	}
+	&:hover,&:active{
+		border-color:lighten($blue,5);
+		svg{
+			path,polygon{
+				fill:lighten($blue,5);
+			}
+		}
+	}
+	&.building-consultants{
+		border-color:$red;
+		svg,img{
+			width:100%;
+			height:auto;
+			display: block;
+			@include abs-pos(auto,0,0,0);
+		}
+		&:hover,&:active{
+			border-color:lighten($red,5);
+			svg{
+				path,polygon{
+					fill:lighten($red,5);
+				}
+			}
+		}
+	}
+	&.healthcare{
+		border-color:$pink;
+		svg,img{
+			width:auto;
+			height:45%;
+			display: block;
+			@include abs-pos(auto,0,0,auto);
+		}
+		&:hover,&:active{
+			border-color:lighten($pink,5);
+			svg{
+				path,polygon{
+					fill:lighten($pink,5);
+				}
+			}
+		}
+	}
+	&.case-studies{
+		border-color:$grey;
+		svg,img{
+			width:auto;
+			height:25%;
+			display: block;
+			@include abs-pos(auto,0,0,auto);
+		}
+		&:hover,&:active{
+			border-color:lighten($grey,5);
+			svg{
+				path,polygon{
+					fill:lighten($grey,5);
+				}
+			}
+		}
+	}
+}

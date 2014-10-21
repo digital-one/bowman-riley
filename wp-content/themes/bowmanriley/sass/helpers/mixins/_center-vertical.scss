@@ -1,0 +1,15 @@
+@mixin center-vertical($height){
+	position:relative;
+	height:$height;
+	&:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+    .centered{
+        vertical-align: middle;
+        display: inline-block;
+        width:auto;
+    }
+}

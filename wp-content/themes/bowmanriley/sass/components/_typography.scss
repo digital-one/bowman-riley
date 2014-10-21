@@ -1,0 +1,56 @@
+h1,h2,h3,h4,h5{
+	@include font-size(34);
+	line-height: 110%;
+	margin: 0 0 20px;
+	font-family: $varela;
+	font-weight:400;
+	color: $grey;
+	text-transform: uppercase;
+	span{
+		color: $brown;
+	}
+}
+h1,h2{
+	.blue & span{
+		color: $blue;
+	}
+	.orange & span{
+		color: $orange;
+	}
+	.purple & span{
+		color: $purple;
+	}
+}
+h3{
+	@include font-size(18);
+	margin-bottom:10px;
+	font-weight:600;
+}
+h4{
+	@include font-size(13);
+	text-transform: none;
+}
+p{
+	margin-bottom: 12px;
+}
+figcaption,
+blockquote p{
+	@include font-size(38);
+	font-family:$varela;
+	line-height:120%;
+	font-style:italic;
+	margin-bottom:20px;
+	color: $grey;
+	strong{
+		font-weight: 600;
+	}
+}
+a{
+	@include transition (color 0.2s ease-in-out);
+	&:link,&:visited{
+
+	}
+	&:hover, &:active{
+		color:$brown;
+	}
+}

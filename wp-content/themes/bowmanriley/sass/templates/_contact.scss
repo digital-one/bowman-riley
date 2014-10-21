@@ -1,0 +1,38 @@
+#map{
+	background-color:#ccc;
+}
+#offices{ 
+	margin-top:40px;
+	ul{
+		li{
+			padding-bottom:6px;
+			border-bottom: 1px solid $grey;
+			margin-bottom: 10px;
+			@extend %clearfix;
+		}
+		div{
+			float:left;
+			display: inline-block;
+			h4,p{
+				margin-bottom: 3px;
+				a{
+					&:link, &:visited{
+						text-decoration: none;
+					}
+					&:hover, &:active{
+						color:$brown;
+					}
+				}
+
+			}
+		}
+		&.links{
+			float:right;
+			li{
+				margin:0;
+				padding:0;
+				border:none;
+			}
+		}
+	}
+} 
