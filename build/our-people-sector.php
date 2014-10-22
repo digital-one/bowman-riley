@@ -1,4 +1,4 @@
-<?php include_once('header.php') ?>
+<?php get_header() ?>
   <main id="page-wrap" role="main">
 <section id="our-people-sector" class="section">
 <div class="main column width-45-pct" role="main">
@@ -35,4 +35,4 @@ scrambled it to make a type</p></a><img src="images/profile-2.jpg" /></div>
 </aside>
 </section>
 </main>
-<?php include_once('footer.php') ?>
+<?php get_footer() ?>

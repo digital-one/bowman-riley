@@ -254,6 +254,11 @@
 	}
 	&.two-thirds{
 		width: 66.66%;
+		&.square{
+			&:before{
+				padding-top:50%;
+			}
+		}
 		img{
 			@include abs-pos(-50%,auto,auto,0);
 		}

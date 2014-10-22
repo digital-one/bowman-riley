@@ -5,19 +5,22 @@ ini_set('zlib.output_handler', '');
 //AJAX
 
 function ajax_get_pages(){
-    if( isset($_GET['action'])&& $_GET['action'] == 'ajax_get_pages'){
+    if( isset($_GET['action'])&& $_GET['action'] == 'ajax_get_pages'):
     
     //get child pages
     $page_id = url_to_postid($_GET['url']);
     $front_id = get_option('page_on_front');
-    
-    //echo $_GET['url'];
-    //echo $page_id;
-    if($page_id==0){
-      //$page_id = get_option('page_on_front');
-        $page_id=$front_id; //override so sub pages of home are from about us section
-    }
-    //$page_id=$parent->ID;
+if(rtrim($_GET['url'], "/") == home_url()):
+      $page_id=$front_id;
+    endif;
+//echo $_GET['url'];
+//echo home_url();
+//die();
+    //die($_GET['url']);
+       $output_pages[0] = $_GET['url'];
+
+    if($page_id): //if url is a page (not a taxonomy,archive etc) get sub pages
+
 $args = array(
     'post_type' => 'page',
     'numberposts' => -1,
@@ -27,18 +30,20 @@ $args = array(
     'order' => 'ASC'
     );
 
-  $sub_pages[0] = get_permalink($page_id); //if not front page load in parent page
+ //if not front page load in parent page
 
-  // print_r($sub_pages);
  if($pages = get_posts($args)):
       foreach($pages as $page):
-        $sub_pages[] = get_permalink($page->ID);
+        $output_pages[] = get_permalink($page->ID);
         endforeach;
+endif;
+
         endif;
 
-  echo json_encode($sub_pages);
+ echo json_encode($output_pages);
+
   die();
-}
+endif;
 }
 
 add_action('init', 'ajax_get_pages');
@@ -50,10 +55,9 @@ if( !function_exists('load_custom_post_types')):
 function load_custom_post_types(){
 	$cpt_files = apply_filters('load_custom_post_type_files', array(
 		//'post_types/product',
-		'post_types/event',
-    'post_types/offer',
-    'post_types/review',
-    'post_types/activity'
+		'post_types/people',
+    'post_types/case-studies',
+    'post_types/news'
 	));
 	foreach($cpt_files as $cpt_file) get_template_part($cpt_file);
 }

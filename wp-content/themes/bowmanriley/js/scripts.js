@@ -84,19 +84,21 @@ $('body').on('click', '.case-study-link, #case-studies a.close, #news a.close, a
 $('body').on('click','.push-link',function(e){
     e.preventDefault();
     var $href = $(this).attr("href");
-    loadPage($href);
+    getPages($href);
 })
 
 
     $(window).on("popstate", function(e) { //handle browser back button
     if (e.originalEvent.state !== null) {
-      loadPage(location.href);
+      getPages(location.href);
     }
     });
 
 var $totalPages = 0,
     $loadedPages = 0,
     $pages = Array(),
+    $target = 'main',
+    $selector = '.section',
     $initFullPageJS=0; //counter to handle if fullpage js has already been called.
 
 setNavState = function(href){
@@ -128,7 +130,11 @@ animateLogo = function(direction){
 }
 }
 
-getPages = function(url){
+getPages = function(url,target,selector){
+
+    if(target) $target = target;
+    if(selector) $selector =  selector;
+
     $.ajax({
     //url: $url,
     url:"?action=ajax_get_pages&url="+url,
@@ -159,7 +165,7 @@ loadPages = function(pages){
 
 loadPage  = function(url){
     $.get(url, function(data){ 
-  $(data).find(".section").appendTo("main");
+  $(data).find($selector).appendTo($target);
   $loadedPages++;
   if($loadedPages < $totalPages){
     var $url = $pages[$loadedPages];
@@ -203,7 +209,7 @@ initLoadedPages = function(){
         scrollOverflow: true,
         paddingTop: 0,
         paddingBottom: 0,
-        normalScrollElementTouchThreshold: 30,
+        normalScrollElementTouchThreshold: 15,
         touchSensitivity: 5,
         scrollingSpeed: 700,
         anchors: $anchors,

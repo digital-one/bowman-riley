@@ -10,7 +10,7 @@
 </div>
 <aside class="beta column width-55-pct">
   <div class="inner">
-  <div class="row height-60-pct gutter masked" style="background-image:url('images/rose-bowl.jpg');">
+  <div class="row height-60-pct gutter masked" style="background-image:url('<?php echo get_template_directory_uri(); ?>/images/rose-bowl.jpg');">
   </div>
   <div class="row height-40-pct">
  <div class="column width-40-pct"><a href="" class="fit-cell down blue">Our Architectural Services</a></div>
