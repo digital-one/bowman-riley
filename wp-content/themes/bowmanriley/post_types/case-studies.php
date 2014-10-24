@@ -38,7 +38,7 @@ function create_cpt_casestudies(){
 		'capability_type' => 'post',
 		'hierarchical' => false,
 		'has_archive' => true,
-		'rewrite' => true,
+		'rewrite' => array('slug' => 'case-studies/archive'),
 		'menu_position' => 5,
 		'taxonomies' => array('casestudies-category'),
 		'supports' => array('title', 'editor', 'excerpt', 'thumbnail','post-thumbnails')
@@ -76,7 +76,7 @@ function cpt_casestudies_taxonomies() {
 		array(
 			"hierarchical" => true, 
 			"labels" => $labels,
-			'rewrite' => array('slug' => 'casestudies_category'),
+			'rewrite' => array('slug' => 'case-studies/category'),
 			'query_var' => true,
                         'public' => true,
                         'publicly_queryable' => true,

@@ -48,8 +48,12 @@ ul.case-study-meta{
 	@include font-size(11);
 	#case-studies &{
 		margin-bottom: 60px;
+
 		//@include abs-pos(0,auto,auto,0);
 	}
+	#case-studies .overlay &{
+		margin-bottom: 20px;
+		}
 	#our-people-sector &{
 		@include font-size(12);
 	}

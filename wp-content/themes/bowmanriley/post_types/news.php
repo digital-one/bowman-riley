@@ -39,7 +39,7 @@ function create_cpt_news(){
 		'capability_type' => 'post',
 		'hierarchical' => false,
 		'has_archive' => true,
-		'rewrite' => true,
+		'rewrite' => array('slug' => 'news/archive'),
 		'menu_position' => 5,
 		'taxonomies' => array('news-category'),
 		'supports' => array('title', 'editor', 'excerpt', 'thumbnail','post-thumbnails')

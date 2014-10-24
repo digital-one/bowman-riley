@@ -16,11 +16,7 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/twitter-fetcher.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/scripts.js"></script>
 <!--/scripts-->
-<script>
-        $(document).ready(function(){
-            getPages('<?php echo get_permalink($post->ID) ?>');
-        })
-        </script>
+
     
 <?php wp_footer() ?>
 </body>

@@ -19,6 +19,10 @@ var isTouchDevice = {
     }
 };
 
+var isRetina = (
+    window.devicePixelRatio > 1 ||
+    (window.matchMedia && window.matchMedia("(-webkit-min-device-pixel-ratio: 1.5),(-moz-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5)").matches)
+);
 
 
 $(function(){
@@ -28,7 +32,7 @@ $(function(){
     }
     menu();
 
-    
+
 
 //mobile menu
 
@@ -75,10 +79,10 @@ String.prototype.decodeHTML = function() {
         //loadPage($href);
         getPages($href);
     }) 
-$('body').on('click', '.case-study-link, #case-studies a.close, #news a.close, a.news-link', function(e) {
+$('body').on('click', '.case-study-link, #case-studies a.close, #news a.close, a.news-link, .case-study-links .category-links a', function(e) {
         e.preventDefault();
         var $href = $(this).attr("href");
-        loadPage($href,'aside');
+        getPages($href,'aside','aside .inner');
     })
 
 $('body').on('click','.push-link',function(e){
@@ -87,12 +91,49 @@ $('body').on('click','.push-link',function(e){
     getPages($href);
 })
 
+$('body').on('click', '#case-studies-nav a',function(e){
+     e.preventDefault();
+     $('#case-studies-nav a').removeClass('current');
+     $(this).addClass('current');
+        var $href = $(this).attr("href");
+        getPages($href,'aside','aside .inner');
+})
+/*
+window.addEventListener("popstate", function(e) {
 
-    $(window).on("popstate", function(e) { //handle browser back button
+    // URL location
+    var location = document.location;
+
+    // state
+    //var state = e.state;
     if (e.originalEvent.state !== null) {
+     getPages(location.href);
+    
+    }
+
+});
+ */
+
+window.onpopstate = function(event) {
+ // console.log("location: " + document.location.pathname + ", state: " + JSON.stringify(event.state));
+if(event.state==null){
+   
+} else {
+    getPages(location.href);
+}
+};
+
+/*
+    $(window).on("popstate", function(e) { //handle browser back button
+console.log(e);
+    if (e.originalEvent.state !== null) {
+
       getPages(location.href);
     }
     });
+
+*/
+
 
 var $totalPages = 0,
     $loadedPages = 0,
@@ -152,8 +193,10 @@ getPages = function(url,target,selector){
     }); 
 }
 
+   getPages(location.href); //on load get the pages
+
 loadPages = function(pages){
-    $('main').empty();
+    $($target).empty();
     $totalPages = pages.length;
     $loadedPages=0;
     $pages = pages;
@@ -165,6 +208,7 @@ loadPages = function(pages){
 
 loadPage  = function(url){
     $.get(url, function(data){ 
+        console.log('getting content from '+$selector+' and putting into '+$target);
   $(data).find($selector).appendTo($target);
   $loadedPages++;
   if($loadedPages < $totalPages){
@@ -214,6 +258,7 @@ initLoadedPages = function(){
         scrollingSpeed: 700,
         anchors: $anchors,
         onLeave: function(index, nextIndex, direction){
+              history.pushState({}, '', location.href);
          //after leaving section 2
         if(index == 1 && direction =='down'){
           animateLogo('down');

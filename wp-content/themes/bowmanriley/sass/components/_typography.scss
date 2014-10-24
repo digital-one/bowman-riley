@@ -11,13 +11,16 @@ h1,h2,h3,h4,h5{
 	}
 }
 h1,h2{
-	.blue & span{
+	em{
+		font-style: normal;
+	}
+	.blue & em{
 		color: $blue;
 	}
-	.orange & span{
+	.orange & em{
 		color: $orange;
 	}
-	.purple & span{
+	.purple & em{
 		color: $purple;
 	}
 }

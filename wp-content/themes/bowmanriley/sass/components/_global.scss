@@ -110,6 +110,27 @@ a{
 				}
 			}
 		}
+		&.blue{
+			background-color: $blue;
+			color:white;
+			&:hover,&:active{
+				background-color:lighten($blue,5);
+			}
+			&.inverted{
+				background-color: white;      
+				color: $blue; 
+				&:after{
+					background-image:url('../images/arrow-right-purple.svg'); 
+				}
+			}
+			#people &, #our-people-sector &{
+				background-color: white;  
+				color: $blue; 
+				&:after{
+					background-image:url('../images/arrow-right-purple.svg'); 
+				}
+			}
+		}
 		&.grey{
 			background-color: $grey;
 			color:white;
@@ -117,13 +138,7 @@ a{
 				background-color:lighten($grey,5);
 			}
 		}
-		&.blue{
-			background-color: $blue;
-			color:white;
-			&:hover,&:active{
-				background-color:lighten($blue,5);
-			}
-		}
+		
 		&.brown{
 			background-color: $brown;
 			color:white;

@@ -321,3 +321,18 @@ nav#utility-nav{
 		padding-left: calc(#{$gutter});
 	}
 }
+nav#case-studies-nav{
+	ul{
+		border-bottom: 1px solid $grey;
+	}
+	li{
+		border-top: 1px solid $grey;
+		padding:10px 0;
+	}
+	a{
+		text-transform: uppercase;
+		&.current{
+			color: $brown;
+		}
+	}
+}

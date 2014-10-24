@@ -19,7 +19,7 @@ endforeach;
 
 
   <main id="page-wrap" role="main">
-<section id="our-people-sector" class="<?php echo get_field('theme',$term);?> section">
+<section id="our-people-sector" class="<?php echo get_field('theme',$term);?> section fixed">
 <div class="main column width-45-pct" role="main">
   <h1>Our <?php echo $term_name ?></h1>
   <?php echo get_field('term_long_description',$term) ?>
@@ -55,7 +55,7 @@ $total = count($people)+2;
 for($i=0; $i<$total; $i++):
 	if(in_array($current_cell, $link_cells)):
 		?>
-	<div class="cell one-third square"><a href="<?php echo get_term_link($other_terms[$link]) ?>" class="push-link fit-cell <?php echo get_field('theme',$other_terms[$link]);?>"><?php echo $other_terms[$link]->description?></a></div>
+	<div class="cell one-third square"><a href="<?php echo get_term_link($other_terms[$link]) ?>" class="push-link fit-cell inverted <?php echo get_field('theme',$other_terms[$link]);?>"><?php echo $other_terms[$link]->description?></a></div>
 	<?php $current_cell++ ?>
 	<?php $link++; ?>
 <?php endif ?>
