@@ -40,7 +40,9 @@ $args = array(
 
  if($pages = get_posts($args)):
       foreach($pages as $page):
+        if(get_field('scrolling_page_load',$page->ID)!='no'):
         $output_pages[] = get_permalink($page->ID);
+      endif;
         endforeach;
 endif;
 endif;
@@ -128,20 +130,15 @@ register_nav_menus( array(
 
 add_action( 'wp_enqueue_scripts', 'retina_support_enqueue_scripts' );
 
+
 add_filter( 'admin_post_thumbnail_html', 'add_featured_image_instruction');
 function add_featured_image_instruction( $content ) {
- global $post;
- $post_type = $post->post_type;
- if(is_admin()):
-  $template = get_page_template_slug( $post->ID );
- if($template=='template-columns-2-links.php'):
-     return $content .= '<p>Upload jpg image 800x1200 pixels @ 72dpi</p>';
-   else:
-return $content .= '<p>Upload jpg image 1200x800 pixels @ 72dpi</p>';
-    endif;
- return $content;
- endif;
+   
+  return $content .= '<p>Upload jpg image 800x1200 pixels (portrait) or 1200x800 pixels (landscape) @72dpi</p>';
+
 }
+
+
 
 //
 function my_custom_post_type_archive_where($where,$args){      $post_type  = isset($args['post_type'])  ? $args['post_type']  :'post';      $where ="WHERE post_type = '$post_type' AND post_status = 'publish'";    return $where;  }
@@ -153,7 +150,7 @@ add_filter( 'get_archives_link', function( $html ) {
         return $html;
 
     // $html is '<li><a href='http://example.com/hello-world'>Hello world!</a></li>'
-    $html = str_replace( home_url(), home_url().'/latest-news/archive', $html );
+    $html = str_replace( home_url(), home_url().'/media-latest-news/latest-news/archive', $html );
     return $html;
 });
 
