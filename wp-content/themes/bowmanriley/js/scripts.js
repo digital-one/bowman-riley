@@ -98,6 +98,14 @@ $('body').on('click', '#case-studies-nav a',function(e){
         var $href = $(this).attr("href");
         getPages($href,'aside','aside .inner');
 })
+
+$('body').on('click','#sub-nav.people-categories  a',function(e){
+    e.preventDefault();
+    $('#sub-nav.people-categories a').parent('li').removeClass('current-menu-item');
+    $(this).parent('li').addClass('current-menu-item');
+    var $href = $(this).attr("href");
+     getPages($href);
+})
 /*
 window.addEventListener("popstate", function(e) {
 
@@ -145,6 +153,14 @@ var $totalPages = 0,
 setNavState = function(href){
     var $hash = location.hash;
     href = href.replace($hash,'');
+    if(href=='http://bowmanriley.localhost/'){
+        $('header').removeAttr('style').addClass('front-page');
+        animateLogo('up')
+    } else {
+        $('header').removeAttr('style').removeClass('front-page');
+        animateLogo('down')
+    }
+    
     $links.parent('li').removeClass('current-menu-item');
     $links.each(function(){
         if($(this).attr('href')==href){
@@ -172,7 +188,8 @@ animateLogo = function(direction){
 }
 
 getPages = function(url,target,selector){
-
+    $target = 'main';
+    $selector = '.section';
     if(target) $target = target;
     if(selector) $selector =  selector;
 
@@ -208,7 +225,8 @@ loadPages = function(pages){
 
 loadPage  = function(url){
     $.get(url, function(data){ 
-        console.log('getting content from '+$selector+' and putting into '+$target);
+     //   console.log('getting content from '+$selector+' and putting into '+$target);
+
   $(data).find($selector).appendTo($target);
   $loadedPages++;
   if($loadedPages < $totalPages){
@@ -228,7 +246,7 @@ initLoadedPages = function(){
         $sections.each(function(){
         $anchors.push($(this).attr('data-anchor'));
         });
-        console.log($anchors);
+        //console.log($anchors);
         if($initFullPageJS>0){
             $.fn.fullpage.setAllowScrolling(false);
             $.fn.fullpage.setKeyboardScrolling(false);
@@ -264,7 +282,9 @@ initLoadedPages = function(){
           animateLogo('down');
          }
          if(index == 2 && direction =='up'){
+            if($('header').hasClass('front-page')){
           animateLogo('up');
+          }
          }
          }
     });
@@ -275,7 +295,7 @@ initLoadedPages = function(){
     //load first map
      $('#map').gmap({
         markers: [{'latitude': 53.7970116,'longitude': -1.5483672}],
-        markerFile: 'http://bowmanriley.localhost/images/marker.png',
+        markerFile: 'http://bowmanriley.localhost/wp-content/themes/bowmanriley/images/marker.png',
         markerWidth:130,
         markerHeight:154,
         markerAnchorX:65,
@@ -285,7 +305,7 @@ initLoadedPages = function(){
         e.preventDefault();
         $('#map').empty().gmap({
         markers: [{'latitude': 53.7970116,'longitude': -1.5483672}],
-        markerFile: 'http://bowmanriley.localhost/images/marker.png',
+        markerFile: 'http://bowmanriley.localhost/wp-content/themes/bowmanriley/images/marker.png',
         markerWidth:130,
         markerHeight:154,
         markerAnchorX:65,
@@ -296,7 +316,7 @@ initLoadedPages = function(){
         e.preventDefault();
         $('#map').empty().gmap({
         markers: [{'latitude': 51.5232556,'longitude': -0.0977822}],
-        markerFile: 'http://bowmanriley.localhost/images/marker.png',
+        markerFile: 'http://bowmanriley.localhost/wp-content/themes/bowmanriley/images/marker.png',
         markerWidth:130,
         markerHeight:154,
         markerAnchorX:65,
@@ -307,7 +327,7 @@ initLoadedPages = function(){
         e.preventDefault();
         $('#map').empty().gmap({
         markers: [{'latitude': 53.9615561,'longitude': -2.0139126}],
-        markerFile: 'http://bowmanriley.localhost/images/marker.png',
+        markerFile: 'http://bowmanriley.localhost/wp-content/themes/bowmanriley/images/marker.png',
         markerWidth:130,
         markerHeight:154,
         markerAnchorX:65,
@@ -316,132 +336,10 @@ initLoadedPages = function(){
     });
     }
     //reposition sub navs
-    repositionSubNavs();
-}
-
-/*
-loadPage = function(href,selector){
-    if(!selector){
-        selector = 'main';
-    } 
-    target  = $(selector)
-    history.pushState({}, '', href);
-    target.empty();
-    setNavState(href);
-    target.load(href + " "+ selector+">*", onAjaxLoad);
-}
-onAjaxLoad = function(html){
-    document.title = html
-          .match(/<title>(.*?)<\/title>/)[1]
-          .trim()
-          .decodeHTML();
-          onPageLoad(html);
+   // repositionSubNavs();
 }
 
 
-onPageLoad = function(html){
- //$.fn.fullpage.destroy();
-//get number of sections 
-var $sections = $('.section',html),
-    $anchors = Array()
-
-$sections.each(function(){
-    $anchors.push($(this).attr('data-anchor'));
-});
-if($initFullPageJS>0){
- $.fn.fullpage.setAllowScrolling(false);
- $.fn.fullpage.setKeyboardScrolling(false);
-}
- $initFullPageJS++;
-//set the nav bar to the current url
-$('#page-wrap').fullpage({
-        verticalCentered: false,
-        resize : false,
-        scrollOverflow: true,
-        paddingTop: 0,
-        paddingBottom: 0,
-        normalScrollElementTouchThreshold: 30,
-        touchSensitivity: 15,
-        scrollingSpeed: 700,
-        anchors: $anchors,
-        onLeave: function(index, nextIndex, direction){
-         //after leaving section 2
-        if(index == 1 && direction =='down'){
-          animateLogo('down');
-         }
-         if(index == 2 && direction =='up'){
-          animateLogo('up');
-         }
-         }
-    });
- if($('#twitter-feed').length){
-    var config1 = {
-    "id": '345170787868762112',
-    "domId": 'twitter-feed',
-    "maxTweets": 2,
-    "enableLinks": true
-    };
-twitterFetcher.fetch(config1)
-}
-
-//google maps
-
-if($('#map').length){
-
-     $('#map').gmap({
-        markers: [{'latitude': 53.7970116,'longitude': -1.5483672}],
-        markerFile: 'http://bowmanriley.localhost/images/marker.png',
-        markerWidth:130,
-        markerHeight:154,
-        markerAnchorX:65,
-        markerAnchorY:154
-});
-
-    $('.map-1').on('click',function(e){
-        e.preventDefault();
-        $('#map').empty().gmap({
-        markers: [{'latitude': 53.7970116,'longitude': -1.5483672}],
-        markerFile: 'http://bowmanriley.localhost/images/marker.png',
-        markerWidth:130,
-        markerHeight:154,
-        markerAnchorX:65,
-        markerAnchorY:154
-    })
-    });
-     $('.map-2').on('click',function(e){
-        e.preventDefault();
-        $('#map').empty().gmap({
-        markers: [{'latitude': 51.5232556,'longitude': -0.0977822}],
-        markerFile: 'http://bowmanriley.localhost/images/marker.png',
-        markerWidth:130,
-        markerHeight:154,
-        markerAnchorX:65,
-        markerAnchorY:154
-    })
-    });
-     $('.map-3').on('click',function(e){
-        e.preventDefault();
-        $('#map').empty().gmap({
-        markers: [{'latitude': 53.9615561,'longitude': -2.0139126}],
-        markerFile: 'http://bowmanriley.localhost/images/marker.png',
-        markerWidth:130,
-        markerHeight:154,
-        markerAnchorX:65,
-        markerAnchorY:154
-    })
-    });
-   
-}
-
-
- repositionSubNavs();
-}
-
-
-
-loadPage(location.href);
-}
-*/
 
 // button click actions
 
@@ -479,7 +377,7 @@ $(window).on('resize',function(){
          deactivateDropDown();
      }
     }
-    repositionSubNavs();
+ //   repositionSubNavs();
 })
 
 
@@ -536,7 +434,7 @@ setSubNavPosition =  function(){
 }
 repositionSubNavs = function(){
      
-setTimeout(setSubNavPosition,500);
+setTimeout(setSubNavPosition,200);
 }
   
 

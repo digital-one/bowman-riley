@@ -118,8 +118,8 @@
 }
 .secondary-nav{
 	//@include abs-pos(auto,auto,calc(#{$gutter*2}),0);
-	display: none;
-	@include abs-pos(0,auto,auto,0);
+	display: block;
+	@include abs-pos(auto,auto,24px,0);
 	@include transition (bottom 0.2s ease-in-out);
 	width:100%;
 	padding: 0 calc(#{$gutter*5 + 1}) 0 24px;

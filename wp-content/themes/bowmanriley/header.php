@@ -24,7 +24,7 @@
     </head>
     <body>
    <!--header-->
-   <header id="header" class="front-page">
+   <header id="header" <?php if(is_front_page()):?>class="front-page"<?php endif ?>>
     <h1 id="home-link"><img src="<?php echo get_template_directory_uri(); ?>/images/bowman-riley.svg" /></h1>
 <nav id="nav"><a id="mobile">Mobile</a>
 <?php

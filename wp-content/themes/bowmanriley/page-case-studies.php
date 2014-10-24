@@ -28,7 +28,7 @@ $args = array(
       'terms' => 'featured'
     )
   ),
-  'orderby' => 'menu_index',
+  'orderby' => 'menu_order',
   'order' => 'ASC'
 );
 

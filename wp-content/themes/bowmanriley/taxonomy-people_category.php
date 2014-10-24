@@ -3,6 +3,7 @@
 	$queried_object = get_queried_object();
     $term_id = $queried_object->term_id;
 	$term = get_term($term_id,'people_category');
+
 	$term_name= $term->name;
 	$theme = get_field('theme',$term);
 ?>
@@ -19,12 +20,20 @@ endforeach;
 
 
   <main id="page-wrap" role="main">
-<section id="our-people-sector" class="<?php echo get_field('theme',$term);?> section fixed">
+
+<section id="our-people-sector" class="
+<?php
+$queried_object = get_queried_object();
+    $term_id = $queried_object->term_id;
+	$term = get_term($term_id,'people_category');
+echo get_field('theme',$term);?> section fixed" data-anchor="<?php echo $term->slug ?>">
+	
+
 <div class="main column width-45-pct" role="main">
-  <h1>Our <?php echo $term_name ?></h1>
+  <h1>Our<br /><?php echo $term_name ?> Team</h1>
   <?php echo get_field('term_long_description',$term) ?>
 
-<?php get_template_part('includes/secondary-nav') ?>
+<?php get_template_part('includes/secondary-nav-people') ?>
 </div>
 <aside class="beta column width-55-pct">
 <div class="inner">
@@ -51,7 +60,7 @@ $current_person=0;
 $link=0;
 $link_cells = [1,3];
 $double_img_cells = [6];
-$total = count($people)+2;
+$total = count($people);
 for($i=0; $i<$total; $i++):
 	if(in_array($current_cell, $link_cells)):
 		?>
@@ -66,7 +75,9 @@ if(in_array($current_cell, $double_img_cells)):
 	$class="two-thirds half-height";
 endif;
 ?>
+
 	<div class="cell <?php echo $class?>"><a href="" class="overlay <?php echo $theme;?> people-link select"><ul class="case-study-meta"><li><?php echo $people[$current_person]->post_title ?></li><li><?php echo get_field('position',$people[$current_person]->ID) ?></li></ul><?php echo $people[$current_person]->post_content ?></a><img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($people[$current_person]->ID)); ?>" /></div>
+
 <?php $current_person++ ?>
 <?php $current_cell++ ?>
 <?php endfor; ?>

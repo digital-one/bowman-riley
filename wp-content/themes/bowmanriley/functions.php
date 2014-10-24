@@ -32,7 +32,7 @@ $args = array(
     'numberposts' => -1,
     'post_status' => 'publish',
     'post_parent' => $page_id,
-    'orderby' => 'menu_index',
+    'orderby' => 'menu_order',
     'order' => 'ASC'
     );
 
@@ -142,5 +142,24 @@ return $content .= '<p>Upload jpg image 1200x800 pixels @ 72dpi</p>';
  return $content;
  endif;
 }
+
+//
+function my_custom_post_type_archive_where($where,$args){      $post_type  = isset($args['post_type'])  ? $args['post_type']  :'post';      $where ="WHERE post_type = '$post_type' AND post_status = 'publish'";    return $where;  }
+
+add_filter('getarchives_where','my_custom_post_type_archive_where',10,2);
+
+add_filter( 'get_archives_link', function( $html ) {
+    if( is_admin() ) // Just in case, don't run on admin side
+        return $html;
+
+    // $html is '<li><a href='http://example.com/hello-world'>Hello world!</a></li>'
+    $html = str_replace( home_url(), home_url().'/latest-news/archive', $html );
+    return $html;
+});
+
+
+
+
+
 
 ?>

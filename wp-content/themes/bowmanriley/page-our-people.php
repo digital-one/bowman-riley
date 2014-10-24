@@ -3,11 +3,8 @@
 <!-- our people -->
 <section id="people" class="section" data-anchor="our-people">
 <div class="main column width-45-pct" role="main">
-  <h1>Our People</h1>
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
-<?php get_template_part('includes/secondary-nav') ?>
-<div class="arrow-divide"><a href=""><img src="images/arrow-down.svg" /></a></div>
+ <?php echo $post->post_content ?>
+<?php get_template_part('includes/secondary-nav-people') ?>
 </div>
 <aside class="beta column width-55-pct">
   <div class="inner">
@@ -22,7 +19,42 @@
 <div class="cell half-height"><?php  echo wp_get_attachment_image( get_field('image', $terms[2]), 'full'); ?></div>
   </div>
   <div class="column width-one-third">
-    <div class="row twice-height"><a href="http://bowmanriley.localhost/work-with-us.php" class="push-link fit-cell brown">Interested in a career of internship at Bowman Riley?</a></div>
+    <div class="row twice-height">
+	<?php
+switch(get_field('link_1_type')){
+	case 'page':
+	$label = !empty(get_field('link_1_label',$post->ID)) ? get_field('link_1_label',$post->ID) : $page->post_title;
+	$permalink = get_field('link_1_page',$post->ID);
+	$arrow_direction = 'right';
+	$target = "_parent";
+	break;
+	case 'anchor':
+	$post_id = url_to_postid(get_field('link_1_anchor',$post->ID));
+	$page = get_post($post_id);
+	$label = !empty(get_field('link_1_label',$post->ID)) ? get_field('link_1_label',$post->ID) : $page->post_title;
+	if($page->post_parent==0):
+		$permalink = get_permalink($page->ID); //if the target page is the parent page
+	else:
+		$permalink = get_permalink($page->parent); //if the target page is a child page
+	endif;
+	$permalink = $permalink.'#'.$page->post_name;
+	$arrow_direction = get_field('link_1_arrow_direction',$post->ID);
+	$target = "_parent";
+	break;
+	case 'download':
+	$permalink = get_field('link_1_file',$post->ID);
+	$label = get_field('link_1_label',$post->ID);
+	$arrow_direction = 'down';
+	$target = "_blank";
+	break;
+}
+?>
+
+    	<a href="<?php echo $permalink?>" target="<?php echo $target ?>" class="push-link fit-cell brown <?php echo $arrow_direction?>"><?php echo $label ?></a>
+
+
+
+    </div>
      <div class="row square"><a href="<?php echo get_term_link($terms[2]->slug, $terms[2]->taxonomy);?>" class="push-link fit-cell blue"><?php echo $terms[2]->description ?></a></div>
   </div>
 <?php endif ?>

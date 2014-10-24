@@ -54,6 +54,9 @@
 			display: inline-block;
 			float: left;
 			background-color:#ccc;
+			@include transition (opacity 0.2s ease-in-out);
+			@include opacity(1);
+			border:1px solid lighten(black,90);
 			&:before{
 				content:"";
 				padding-top:50%;
@@ -65,6 +68,9 @@
 			img{
 				@include abs-pos(0,auto,auto,0);
 				@include fit-grid(height);
+			}
+			&:hover,&:active{
+				@include opacity(.8);
 			}
 		}
 	}
@@ -94,6 +100,7 @@ a.service-link{
 		}
 	}
 	&:hover,&:active{
+		color: $grey;
 		border-color:lighten($blue,5);
 		svg{
 			path,polygon{

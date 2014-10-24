@@ -19,13 +19,21 @@
 			display: block;
 			&:link,&:visited{
 				color: $grey;
+				img{
+					@include transition (opacity 0.2s ease-in-out);
+				}
 			}
 			&:hover, &:active{
 				background-color:lighten($grey,50);
+				img{
+					@include opacity(.8);
+				}
 			}
 		}
 		&.single{
 			padding:0 10% 0 24px;
+			display: block;
+			width: 100%;
 			h2{
 				@include font-size(24);
 				margin-bottom: 5px;

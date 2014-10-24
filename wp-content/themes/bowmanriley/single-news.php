@@ -7,23 +7,19 @@ $page = get_post(32);
 <section id="news" class="section fixed <?php echo get_field('theme',$post->ID)?>">
 <div class="main column width-45-pct" role="main">
   <?php echo $page->post_content?>
-<?php //include('secondary-nav.php') ?>
+<?php get_template_part('includes/news-nav') ?>
 </div>
 <aside class="beta column width-55-pct">
   <div class="inner no-cell">
-  <div class="row height-45-pct bg-fill-cell masked gutter-2x " style="background-image:url('images/primark.jpg');">
-    image
+  <div class="row height-45-pct bg-fill-cell masked gutter-2x " style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>');">
   </div>
   <div class="row height-55-pct  gutter-2x">
 
 <article class="single column gutter-2x">
-  <h2>News Item Headline</h2>
-  <p><time datetime="2014-10-11">11<sup>th</sup> October 2014</time></p>
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
-<a href="http://bowmanriley.localhost/latest-news.php" class="close">Close</a>
+  <h2><?php echo $post->post_title?></h2>
+  <p> <time datetime="<?php echo mysql2date('Y-M-d', $post->post_date); ?>"><?php echo mysql2date('d', $post->post_date); ?><sup><?php echo mysql2date('S', $post->post_date); ?></sup> <?php echo mysql2date('F Y', $post->post_date); ?></time></p>
+<?php echo $post->post_content ?>
+<a href="<?php echo get_permalink(32)?>" class="close">Close</a>
   </article>
   </div>
 </div>

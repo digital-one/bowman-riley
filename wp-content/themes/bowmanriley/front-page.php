@@ -3,10 +3,9 @@
   <!--home-->
 <section class="section" id="about" data-anchor="about-bowman-riley">
 <div class="main column width-45-pct">
-  <h1>DELIVERING THOUGHTFUL &amp; RESPONSIVE DESIGN SINCE 1968</h1>
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
-<?php include_once('secondary-nav-home.php') ?>
-<div class="arrow-divide"><a href=""><img src="images/arrow-down.svg" /></a></div>
+ <?php echo $post->post_content ?>
+<?php get_template_part('includes/secondary-nav-home') ?>
+<div class="arrow-divide"><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/arrow-down.svg" /></a></div>
 </div>
 <aside class="beta column width-55-pct split">
   <div class="inner">

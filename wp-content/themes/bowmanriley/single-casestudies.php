@@ -1,8 +1,10 @@
 <?php get_header() ?>
+  <?php $page = get_post(24); ?>
   <main id="page-wrap" role="main">
-   <section id="case-studies" class="section">
+   <section id="case-studies" class="section <?php echo get_field('theme',$page->ID) ?>">
 <div class="main column width-45-pct" role="main">
-  <?php echo $post->post_content ?>
+
+  <?php echo $page->post_content ?>
 <?php get_template_part('includes/case-studies-nav') ?>
 </div>
 <aside class="beta column width-55-pct">

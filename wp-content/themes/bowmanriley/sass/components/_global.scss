@@ -123,13 +123,14 @@ a{
 					background-image:url('../images/arrow-right-purple.svg'); 
 				}
 			}
-			#people &, #our-people-sector &{
+			/*#people &, #our-people-sector &{
 				background-color: white;  
 				color: $blue; 
 				&:after{
 					background-image:url('../images/arrow-right-purple.svg'); 
 				}
 			}
+			*/
 		}
 		&.grey{
 			background-color: $grey;
@@ -158,6 +159,11 @@ a{
 		&.white{
 			&:after{
 				background-image:url('../images/arrow-right.svg');	
+			}
+			&.down{
+				&:after{
+					background-image:url('../images/arrow-down.svg');	
+				}
 			}
 		}
 

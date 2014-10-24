@@ -11,8 +11,25 @@
 </div>
 <aside class="beta column width-55-pct">
   <div class="inner">
-  <div class="row height-60-pct bg-fill-cell" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>');">
-  </div>
+  	<?php if(!empty(get_field('case_study',$post->ID))):
+$cs = get_field('case_study',$post->ID);
+$image_id = $cs->ID;
+$has_case_study = true;
+else:
+$image_id = $post->ID;
+$has_case_study = false;
+	endif;
+	?>
+  <div class="row height-60-pct bg-fill-cell" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($image_id)); ?>');">
+  <?php if($has_case_study): ?>
+  <a href="<?php echo get_permalink($cs->ID)?>" class="main overlay push-link <?php echo get_field('theme',$post->ID)?>">
+<ul class="case-study-meta">
+<li class="client"><?php echo $cs->post_title?></li>
+<li class="location"><?php echo get_field('location',$cs->ID) ?></li>
+</ul>
+<p><?php echo $cs->post_excerpt ?></p>
+  </a>
+<?php endif ?></div>
   <div class="row height-40-pct">
  <div class="column width-40-pct">
 <?php

@@ -38,7 +38,7 @@ function create_cpt_people(){
 		'capability_type' => 'post',
 		'hierarchical' => false,
 		'has_archive' => true,
-		'rewrite' => true,
+		'rewrite' => array('slug' => 'people/archive'),
 		'menu_position' => 5,
 		'taxonomies' => array('people_category'),
 		'supports' => array('title', 'editor', 'excerpt', 'thumbnail','post-thumbnails')
@@ -76,7 +76,7 @@ function cpt_people_taxonomies() {
 		array(
 			"hierarchical" => true, 
 			"labels" => $labels,
-			'rewrite' => array('slug' => 'people-category'),
+			'rewrite' => array('slug' => 'people/category'),
 			'query_var' => true,
                         'public' => true,
                         'publicly_queryable' => true,

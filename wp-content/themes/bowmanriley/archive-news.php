@@ -7,7 +7,7 @@ $page = get_post(32);
 <section id="news" class="section fixed <?php echo get_field('theme',$post->ID)?>" data-anchor="<?php echo $post->post_name?>">
 <div class="main column width-45-pct" role="main">
   <?php echo $page->post_content?>
-<?php //include('secondary-nav.php') ?>
+<?php get_template_part('includes/news-nav') ?>
 </div>
 <aside class="beta column width-55-pct">
   <div class="inner">
@@ -15,7 +15,8 @@ $page = get_post(32);
   </div>
   <?php
   $term = isset($wp->query_vars['term']) ? $wp->query_vars['term'] : '';
-  $year = isset($wp->query_vars['year']) ? $wp->query_vars['year'] : date('Y');
+  $year = isset($wp->query_vars['yr']) ? $wp->query_vars['yr'] : date('Y');
+
   $args = array(
      'post_type' => 'news',
     'orderby' => 'date',

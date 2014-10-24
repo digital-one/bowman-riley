@@ -125,8 +125,7 @@ function add_cpt_news_custom_columns($column,$id){
 
 function add_cpt_news_rewrite_rules(){ 
 
-
-add_rewrite_rule('^latest-news/archive/([^/]*)/([^/]*)/?', 'index.php?pagename=latest-news&yr=$matches[1]&mo=$matches[2]','top');
+add_rewrite_rule('^latest-news/archive/([^/]*)/?', 'index.php?pagename=latest-news&yr=$matches[1]','top');
 
 /*
 	//add_rewrite_rule('^latest-news/archive/cat/([^/]*)/year/([^/]*)/month/([^/]*)/page/([^/]*)/?','index.php?post_type=news&&category=$matches[1]&y=$matches[2]&m=$matches[3]&paged=$matches[4]','top');
@@ -145,7 +144,7 @@ add_rewrite_rule('^latest-news/archive/([^/]*)/([^/]*)/?', 'index.php?pagename=l
 
 function add_cpt_news_query_vars($public_query_vars) {
 	  $public_query_vars[] = "yr";
-	  $public_query_vars[] = "mo";
+	 // $public_query_vars[] = "mo";
 	return $public_query_vars; 
 }
 
