@@ -10,7 +10,6 @@
 <script src="//maps.google.com/maps/api/js?sensor=true"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.gmap.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.easing.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/fancybox/jquery.fancybox.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.slimscroll.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.fullPage.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/twitter-fetcher.js"></script>

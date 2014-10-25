@@ -5,7 +5,7 @@
 <div class="main column width-45-pct">
  <?php echo $post->post_content ?>
 <?php get_template_part('includes/secondary-nav-home') ?>
-<div class="arrow-divide"><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/arrow-down.svg" /></a></div>
+<div class="arrow-divide"><a href=""><img data-no-retina src="<?php echo get_template_directory_uri(); ?>/images/arrow-down.svg" /></a></div>
 </div>
 <aside class="beta column width-55-pct split">
   <div class="inner">

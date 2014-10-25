@@ -1,14 +1,21 @@
 #main{
 	width:100%;
 	height:100%;
+	background-color: white;
+
 }
 #page-wrap{
 	//width:100%;
 	height:100%;
 	display:block;
 	position:relative;
-	background-color:#f1f1f1;
+	background-color:white;
 	left:0;
+	@include opacity(1);
+	@include transition (opacity 0.2s ease-in-out);
+	&.loading{
+		@include opacity(.6);
+	}
 	.section{
 		padding:50px 0 0;
 		width:100%;

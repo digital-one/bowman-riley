@@ -9,11 +9,11 @@ function ajax_get_pages(){
     //get child pages
      // die($_GET['url']);
     $page_id = url_to_postid($_GET['url']);
-     $front_id = get_option('page_on_front');
-//echo $_GET['url'];
-//echo $page_id;
-//echo home_url();
-     $single_page=0;
+    $first_load = $_GET['firstLoad'];
+    $front_id = get_option('page_on_front');
+    $output_pages=array();
+    $single_page=0;
+
 if($page_id==$front_id && $_GET['url']!=home_url()): //catch single pages routing through homepage
 $single_page=1;
 endif;
@@ -23,8 +23,9 @@ if(rtrim($_GET['url'], "/") == home_url()):
       $page_id=$front_id;
     endif;
 
+//if(!$first_load){
        $output_pages[0] = $_GET['url'];
-
+//}
     if($page_id and !$single_page): //if url is a page (not a taxonomy,archive etc) get sub pages
 
 $args = array(

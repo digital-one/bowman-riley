@@ -67,7 +67,16 @@ $('#page-wrap').animate({
 if (Modernizr.history){ //if browser supports history
       var $main = $('main'),
           $aside = $('aside'),
-          $links = $('#nav a');
+          $links = $('#nav a'),
+          $firstLoad  = 1;
+
+var $navLinks = $('#nav a');
+$navLinks.on('click',function(e){
+    e.preventDefault();
+$navLinks.removeClass('current-menu-item');
+$(this).addClass('current-menu-item');
+})
+
 
 String.prototype.decodeHTML = function() {
     return $("<div>", {html: "" + this}).html();
@@ -145,6 +154,7 @@ console.log(e);
 
 var $totalPages = 0,
     $loadedPages = 0,
+    $loadedObjs=[];
     $pages = Array(),
     $target = 'main',
     $selector = '.section',
@@ -188,6 +198,18 @@ animateLogo = function(direction){
 }
 
 getPages = function(url,target,selector){
+
+    $('body').prepend('<div id="overlay" />');
+    $('main').addClass('loading');
+    $loadedObjs=[];
+    //kill mouse scroll
+   /* if($initFullPageJS>0){
+            $.fn.fullpage.destroy();
+            $.fn.fullpage.setAllowScrolling(false);
+            $.fn.fullpage.setKeyboardScrolling(false);
+        }
+        */
+        setNavState(url);
     $target = 'main';
     $selector = '.section';
     if(target) $target = target;
@@ -195,7 +217,7 @@ getPages = function(url,target,selector){
 
     $.ajax({
     //url: $url,
-    url:"?action=ajax_get_pages&url="+url,
+    url:"?action=ajax_get_pages&url="+url+"&firstLoad="+$firstLoad,
     dataType: 'json',
     timeout: 1000,
     success: function(data) {
@@ -203,38 +225,57 @@ getPages = function(url,target,selector){
     loadPages(data);
     },
     error: function(XMLHttpRequest, textStatus, errorThrown) {
-        console.log('error')
+        if(console) console.log('error')
     },
     complete: function(xhr, textStatus) {
     } 
     }); 
 }
 
-   getPages(location.href); //on load get the pages
+   getPages(location.href); 
 
-loadPages = function(pages){
-    $($target).empty();
+loadPages = function(pages){ //get page urls back
     $totalPages = pages.length;
-    $loadedPages=0;
+    $loadedPages = 0;
     $pages = pages;
     var $href  = $pages[0];
-    history.pushState({}, '', $href); //push the parent url
-    setNavState($href); //set the nav state to parent
-    loadPage($href); //load the parent page
+
+   
+     history.pushState({}, '', $href); //push the parent url
+    // setNavState($href); //set the nav state to parent
+     if($firstLoad && $pages.length > 1){ //if first load and more than one page, start at 2nd page down
+        $href= $pages[1];
+    }
+     loadPage($href); //load the parent page
 }
 
 loadPage  = function(url){
     $.get(url, function(data){ 
-     //   console.log('getting content from '+$selector+' and putting into '+$target);
-
-  $(data).find($selector).appendTo($target);
+        if($firstLoad==0 && $loadedPages==0){
+        document.title = data.match(/<title>(.*?)<\/title>/)[1].trim();
+        }
+       var $section = $(data).find($selector);
+    $loadedObjs.push($section);
+    //console.log($loadedObjs);
+ // $(data).find($selector).appendTo($target);
+ 
   $loadedPages++;
   if($loadedPages < $totalPages){
     var $url = $pages[$loadedPages];
     loadPage($url);
     } else {
         //all pages loaded
+       
+if(!$firstLoad){
+        $($target).empty();
+        }
+
+        for(i=0;i<$loadedObjs.length;i++){
+            $($target).append($loadedObjs[i])
+           // $loadedObjs[i].appendTo($target);
+        }
        initLoadedPages();
+       $firstLoad=0;
     }
     });
 }
@@ -251,7 +292,7 @@ initLoadedPages = function(){
             $.fn.fullpage.setAllowScrolling(false);
             $.fn.fullpage.setKeyboardScrolling(false);
         }
-        $initFullPageJS++;
+    
 
     //twitter feed
     if($('#twitter-feed').length){ 
@@ -288,7 +329,7 @@ initLoadedPages = function(){
          }
          }
     });
-
+    $initFullPageJS++;
     //google maps
 
     if($('#map').length){
@@ -337,6 +378,8 @@ initLoadedPages = function(){
     }
     //reposition sub navs
    // repositionSubNavs();
+      $('main').removeClass('loading');
+   $('#overlay').remove();
 }
 
 
