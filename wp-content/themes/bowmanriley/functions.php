@@ -17,15 +17,17 @@ function ajax_get_pages(){
 if($page_id==$front_id && $_GET['url']!=home_url()): //catch single pages routing through homepage
 $single_page=1;
 endif;
-
- 
-if(rtrim($_GET['url'], "/") == home_url()):
+//hack to get hash working when home url is called
+list ($url) = explode('#', $_GET['url']);
+if(rtrim($url, "/") == home_url()):
       $page_id=$front_id;
     endif;
 
 //if(!$first_load){
        $output_pages[0] = $_GET['url'];
 //}
+      // if($page_id==0) $page_id=$front_id;
+      // die('pageid='.$page_id);
     if($page_id and !$single_page): //if url is a page (not a taxonomy,archive etc) get sub pages
 
 $args = array(
@@ -47,7 +49,7 @@ $args = array(
         endforeach;
 endif;
 endif;
-//die(print_r($output_pages));
+
  echo json_encode($output_pages);
 
   die();
@@ -73,6 +75,7 @@ endif;
 
 //includes
 get_template_part('functions/sidebars');
+get_template_part('functions/options');
 
 // load widgets
 get_template_part('widgets/widget_signpost');
@@ -128,6 +131,24 @@ register_nav_menus( array(
 		'main_nav' => __('Main Navigation')
 ));
 
+class test_nav extends Walker_Nav_Menu{
+  function start_el (&$output, $item, $depth, $args){
+    $url = rtrim($item->url,"/");
+    $url = explode('/',$url);
+    if(count($url)>3):
+
+      $url[count($url)-1] = '#'.$url[count($url)-1];
+    endif;
+    $url = implode('/',$url);
+    $item_output = '<a class="new-class" href="' . $url. '">' . $item->title . '</a>';
+    $classes = implode(" ",$item->classes);
+    $output .= '<li class="'.$classes.'">' . apply_filters ('walker_nav_menu_start_el', $item_output, $item,  $depth, $args);
+   }
+ }
+
+
+
+
 
 add_action( 'wp_enqueue_scripts', 'retina_support_enqueue_scripts' );
 
@@ -141,7 +162,8 @@ function add_featured_image_instruction( $content ) {
 
 
 
-//
+//update custom post type archive to output correct permalink
+
 function my_custom_post_type_archive_where($where,$args){      $post_type  = isset($args['post_type'])  ? $args['post_type']  :'post';      $where ="WHERE post_type = '$post_type' AND post_status = 'publish'";    return $where;  }
 
 add_filter('getarchives_where','my_custom_post_type_archive_where',10,2);
@@ -156,8 +178,13 @@ add_filter( 'get_archives_link', function( $html ) {
 });
 
 
+//enqueue jquery
 
-
-
+if (!is_admin()) add_action("wp_enqueue_scripts", "jquery_enqueue", 11);
+function jquery_enqueue() {
+   wp_deregister_script('jquery');
+   wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js", false, null);
+   wp_enqueue_script('jquery');
+}
 
 ?>

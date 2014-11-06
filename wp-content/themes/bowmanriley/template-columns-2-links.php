@@ -4,10 +4,12 @@
     <!--overview-->
 <section class="section <?php echo get_field('theme',$post->ID)?>" data-anchor="<?php echo $post->post_name?>">
 <div class="main column width-45-pct" role="main">
+  <div class="main-content">
 <?php echo $post->post_content ?>
+</div>
 <?php get_template_part('includes/secondary-nav') ?>
 <?php if($post->post_parent==0): ?>
-<div class="arrow-divide"><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/arrow-down.svg" /></a></div>
+<div class="arrow-divide"><a href=""><img data-no-retina src="<?php echo get_template_directory_uri(); ?>/images/arrow-down.svg" /></a></div>
 <?php endif ?>
 </div>
 <aside class="beta column width-55-pct">
@@ -19,15 +21,33 @@
         <?php
 switch(get_field('link_1_type')){
   case 'page':
-  $label = !empty(get_field('link_1_label',$post->ID)) ? get_field('link_1_label',$post->ID) : $page->post_title;
+  $val = get_field('link_1_label',$post->ID);
+  $label = !empty($val) ? get_field('link_1_label',$post->ID) : $page->post_title;
   $permalink = get_field('link_1_page',$post->ID);
+  $arrow_direction = 'right';
+  $target = "_parent";
+  break;
+  case 'case-study-category':
+  $val = get_field('link_1_label',$post->ID);
+  $label = !empty($val) ? get_field('link_1_label',$post->ID) : $page->post_title;
+  $term = get_field('link_1_case_study_category',$post->ID);
+  $permalink = get_term_link($term);
+  $arrow_direction = 'right';
+  $target = "_parent";
+  break;
+  case 'people-category':
+  $val = get_field('link_1_label',$post->ID);
+  $label = !empty($val) ? get_field('link_1_label',$post->ID) : $page->post_title;
+  $term = get_field('link_1_people_category',$post->ID);
+  $permalink = get_term_link($term);
   $arrow_direction = 'right';
   $target = "_parent";
   break;
   case 'anchor':
   $post_id = url_to_postid(get_field('link_1_anchor',$post->ID));
   $page = get_post($post_id);
-  $label = !empty(get_field('link_1_label',$post->ID)) ? get_field('link_1_label',$post->ID) : $page->post_title;
+  $val = get_field('link_1_label',$post->ID);
+  $label = !empty($val) ? get_field('link_1_label',$post->ID) : $page->post_title;
   if($page->post_parent==0):
     $permalink = get_permalink($page->ID); //if the target page is the parent page
   else:
@@ -45,22 +65,40 @@ switch(get_field('link_1_type')){
   break;
 }
 ?>
-      <a href="<?php echo $permalink ?>" target="<?php echo $target ?>" class="fit-cell <?php echo get_field('theme')?> <?php echo $arrow_direction ?>"><?php echo $label ?></a>
+      <a href="<?php echo $permalink ?>" target="<?php echo $target ?>" class="push-link fit-cell <?php echo get_field('theme')?> <?php echo $arrow_direction ?>"><?php echo $label ?></a>
 
     </div>
      <div class="row height-60-pct">
         <?php
 switch(get_field('link_2_type')){
   case 'page':
-  $label = !empty(get_field('link_2_label',$post->ID)) ? get_field('link_2_label',$post->ID) : $page->post_title;
+  $val = get_field('link_2_label',$post->ID);
+  $label = !empty($val) ? get_field('link_2_label',$post->ID) : $page->post_title;
   $permalink = get_field('link_2_page',$post->ID);
+  $arrow_direction = 'right';
+  $target = "_parent";
+  break;
+  case 'case-study-category':
+  $val = get_field('link_2_label',$post->ID);
+  $label = !empty($val) ? get_field('link_2_label',$post->ID) : $page->post_title;
+  $term = get_field('link_2_case_study_category',$post->ID);
+  $permalink = get_term_link($term);
+  $arrow_direction = 'right';
+  $target = "_parent";
+  break;
+  case 'people-category':
+  $val = get_field('link_2_label',$post->ID);
+  $label = !empty($val) ? get_field('link_2_label',$post->ID) : $page->post_title;
+  $term = get_field('link_2_people_category',$post->ID);
+  $permalink = get_term_link($term);
   $arrow_direction = 'right';
   $target = "_parent";
   break;
   case 'anchor':
   $post_id = url_to_postid(get_field('link_2_anchor',$post->ID));
   $page = get_post($post_id);
-  $label = !empty(get_field('link_2_label',$post->ID)) ? get_field('link_2_label',$post->ID) : $page->post_title;
+  $val =get_field('link_2_label',$post->ID);
+  $label = !empty($val) ? get_field('link_2_label',$post->ID) : $page->post_title;
   if($page->post_parent==0):
     $permalink = get_permalink($page->ID); //if the target page is the parent page
   else:
@@ -78,7 +116,7 @@ switch(get_field('link_2_type')){
   break;
 }
 ?>
-<a href="<?php echo $permalink?>" target="<?php echo $target ?>" class="fit-cell grey <?php echo $arrow_direction ?>"><?php echo $label ?></a>
+<a href="<?php echo $permalink?>" target="<?php echo $target ?>" class="push-link fit-cell grey <?php echo $arrow_direction ?>"><?php echo $label ?></a>
 
     </div>
   </div>

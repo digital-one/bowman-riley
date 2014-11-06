@@ -33,7 +33,7 @@
 			&:link,&:visited{
 				color:white;
 				padding:0 10px;
-				height:50px;
+				height:52px;
 				line-height: 59px;
 				@media screen and (max-width: $break-nav) {
 					float:none;
@@ -50,7 +50,7 @@
 		}
 		.sub-menu{
 			@include abs-pos(50px,auto,auto,0);
-			border-top:2px solid $brown;
+			//border-top:2px solid $brown;
 			display: none;
 			width:auto;
 			min-width: 10px;
@@ -71,7 +71,8 @@
 			}
 			li,a{
 				
-				width: auto;
+				width: 100%;
+				display: block;
 				@media screen and (max-width: $break-nav) {
 					padding:0;
 				}
@@ -81,7 +82,7 @@
 					float: none;
 					line-height: 100%;
 					height:auto;
-					width:auto;
+					width:100%;
 					display: block;
 					white-space: nowrap;
 					padding: 6px 0;
@@ -183,6 +184,8 @@ nav#utility-nav{
 		}
 		&.search{
 			padding-bottom:0;
+			padding-right:25px;
+			position: relative;
 			input{
 				height:30px;
 				line-height:1;
@@ -194,6 +197,17 @@ nav#utility-nav{
     				color: $grey;
     				@include opacity(1);
   				}
+			}
+			button{
+				width:20px;
+				height:20px;
+				background-color: transparent;
+				border:none;
+				padding:0;
+				@include abs-pos(auto,0,10px,auto);
+				img{
+					@include fit-grid(width);
+				}
 			}
 		}
 		&.current-menu-item{

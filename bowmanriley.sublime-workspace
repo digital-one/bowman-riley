@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"first",
+				"firstLoad"
+			],
+			[
+				"min-",
+				"min-width"
+			],
+			[
+				"fo",
+				"font-style"
+			],
+			[
+				"te",
+				"text-transform"
+			],
+			[
+				"pa",
+				"padding-bottom"
+			],
+			[
+				"casestudies",
+				"casestudies_category"
+			],
+			[
 				"n",
 				"nowrap"
 			],
@@ -14,14 +38,6 @@
 			[
 				"ba",
 				"background-image"
-			],
-			[
-				"pa",
-				"padding-left"
-			],
-			[
-				"te",
-				"text-decoration"
 			],
 			[
 				"ma",
@@ -82,10 +98,6 @@
 			[
 				"in",
 				"inline-block"
-			],
-			[
-				"fo",
-				"font-weight"
 			],
 			[
 				"gutte",
@@ -328,10 +340,6 @@
 				"text-align"
 			],
 			[
-				"first",
-				"first-child"
-			],
-			[
 				"v",
 				"vertical-align"
 			],
@@ -431,6 +439,62 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "wp-content/themes/bowmanriley/single-casestudies.php",
+			"settings":
+			{
+				"buffer_size": 1552,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "wp-content/themes/bowmanriley/sass/components/_typography.scss",
+			"settings":
+			{
+				"buffer_size": 799,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "wp-content/themes/bowmanriley/taxonomy-casestudies_category.php",
+			"settings":
+			{
+				"buffer_size": 2180,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "wp-content/themes/bowmanriley/footer.php",
+			"settings":
+			{
+				"buffer_size": 1462,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "wp-content/themes/bowmanriley/sass/components/_navigation.scss",
+			"settings":
+			{
+				"buffer_size": 6548,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "wp-content/themes/bowmanriley/sass/_variables.scss",
+			"settings":
+			{
+				"buffer_size": 468,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "wp-content/themes/bowmanriley/sass/components/_header.scss",
+			"settings":
+			{
+				"buffer_size": 445,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -460,15 +524,63 @@
 	},
 	"file_history":
 	[
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/post_types/case-studies.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/images/bowman-riley-home.svg",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/front-page.php",
+		"/Applications/MAMP/htdocs/Backups/Stonefix/stonefix/lloyds/js/jquery.confirmBox.js",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/header.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/components/_navigation.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/components/_global.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/components/_container.scss",
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/functions.php",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/page-our-architectural-services.php",
-		"/Applications/MAMP/htdocs/bowman-riley/build/index.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/template-columns-2-links.php",
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/template-rows-2-links.php",
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/template-rows-4-links.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/js/scripts.js",
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/template-rows-3-links.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/page-our-people.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/taxonomy-people_category.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/template-3-images.php",
+		"/Users/neilmills/Downloads/altinetc_dev.sql",
+		"/Applications/MAMP/htdocs/bowman-riley/bowmanriley.sql",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/page-contact.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/post_types/news.php",
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/includes/secondary-nav.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/includes/secondary-nav-people.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/includes/case-studies-nav.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/post_types/people.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/css/layout.css",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/page-latest-news.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/footer.php",
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/page-explore-our-services.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/js/jquery.slimscroll.min.js",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/archive-news.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/components/_typography.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/templates/_home.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/includes/secondary-nav-home.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/page-case-studies.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/components/_grid.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/templates/_media.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/single-news.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/includes/news-nav.php",
+		"/Applications/MAMP/htdocs/bowman-riley/build/header.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/----page-our-story.php",
+		"/Users/neilmills/Library/Caches/Cleanup At Startup/Transmit/58C53E6F-9FC9-4C5D-90EA-3A62DD171973/archive-news.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/----page-architects.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/functions/retina-images.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/page-our-architectural-services.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-config.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/includes/utility-nav.php",
+		"/Applications/MAMP/htdocs/bowman-riley/build/sass/components/_navigation.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/taxonomy-casestudies_category.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/templates/_case-studies.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/single-casestudies.php",
+		"/Applications/MAMP/htdocs/bowman-riley/build/work-with-us.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/post_types/case-studies.php",
+		"/Applications/MAMP/htdocs/bowman-riley/build/our-people-sector.php",
+		"/Applications/MAMP/htdocs/park_manor/wp-content/themes/parkmanor_modified/taxonomy-activity_category.php",
+		"/Applications/MAMP/htdocs/bowman-riley/build/sass/components/_grid.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/build/about.php",
+		"/Applications/MAMP/htdocs/bowman-riley/build/index.php",
 		"/Applications/MAMP/htdocs/bowman-riley/.htaccess",
 		"/Applications/MAMP/htdocs/bowman-riley/sass/components/_global.scss",
 		"/Applications/MAMP/htdocs/bowman-riley/sass/components/_navigation.scss",
@@ -539,55 +651,7 @@
 		"/Applications/MAMP/htdocs/bowman-riley/sass/screen.scss",
 		"/Applications/MAMP/htdocs/bolser/bolser-mobile-wp/sass/helpers/mixins/_all.scss",
 		"/Applications/MAMP/htdocs/bolser/bolser-mobile-wp/sass/components/_header.scss",
-		"/Applications/MAMP/htdocs/bolser/bolser-mobile-wp/sass/helpers/mixins/_center-vertical.scss",
-		"/Applications/MAMP/htdocs/bolser/bolser-mobile-wp/sass/components/_all.scss",
-		"/Applications/MAMP/htdocs/bolser/bolser-mobile/bolsermobile.sublime-project",
-		"/Applications/MAMP/htdocs/bolser/bolser-mobile-wp/fonts/MyriadPro-Regular.eot",
-		"/Applications/MAMP/htdocs/altinet/webinar-register.html",
-		"/Applications/MAMP/htdocs/altinet/videos-2.html",
-		"/Applications/MAMP/htdocs/altinet/partner-detail.html",
-		"/Applications/MAMP/htdocs/altinet/about.html",
-		"/Applications/MAMP/htdocs/altinet/videos.html",
-		"/Applications/MAMP/htdocs/altinet/css/ie.css",
-		"/Applications/MAMP/htdocs/altinet/contact.html",
-		"/Applications/MAMP/htdocs/altinet/archive.html",
-		"/Applications/MAMP/htdocs/altinet/webinars.html",
-		"/Applications/MAMP/htdocs/altinet/case-study-detail.html",
-		"/Applications/MAMP/htdocs/altinet/case-studies.html",
-		"/Applications/MAMP/htdocs/altinet/inner.html",
-		"/Applications/MAMP/htdocs/altinet/partners.html",
-		"/Applications/MAMP/htdocs/altinet/css/layout.css",
-		"/Applications/MAMP/htdocs/altinet/sass/templates/_partners.scss",
-		"/Applications/MAMP/htdocs/altinet/partners_2.html",
-		"/Applications/MAMP/htdocs/altinet/sass/layout.scss",
-		"/Applications/MAMP/htdocs/altinet/sass/templates/_webinars.scss",
-		"/Applications/MAMP/htdocs/altinet/solutions.html",
-		"/Applications/MAMP/htdocs/altinet/index.html",
-		"/Applications/MAMP/htdocs/altinet/solutions-detail.html",
-		"/Applications/MAMP/htdocs/altinet/single-news.html",
-		"/Applications/MAMP/htdocs/altinet/archive-news.html",
-		"/Applications/MAMP/htdocs/altinet/single.html",
-		"/Applications/MAMP/htdocs/altinet/sass/components/_typography.scss",
-		"/Applications/MAMP/htdocs/altinet/sass/components/_global.scss",
-		"/Applications/MAMP/htdocs/altinet/sass/components/_navigation.scss",
-		"/Applications/MAMP/htdocs/altinet/sass/components/_footer.scss",
-		"/Applications/MAMP/htdocs/altinet/sass/components/_all.scss",
-		"/Applications/MAMP/htdocs/altinet/js/scripts.js",
-		"/Applications/MAMP/htdocs/altinet/sass/templates/_all.scss",
-		"/Applications/MAMP/htdocs/altinet/valuation.html",
-		"/Applications/MAMP/htdocs/altinet/sass/templates/_blog.scss",
-		"/Applications/MAMP/htdocs/altinet/sass/_variables.scss",
-		"/Applications/MAMP/htdocs/altinet/sass/_base.scss",
-		"/Applications/MAMP/htdocs/altinet/sass/components/_container.scss",
-		"/Applications/MAMP/htdocs/altinet/sass/templates/_home.scss",
-		"/Applications/MAMP/htdocs/altinet/sass/components/_slider.scss",
-		"/Applications/MAMP/htdocs/altinet/sass/templates/_solutions.scss",
-		"/Applications/MAMP/htdocs/altinet/sass/components/_header.scss",
-		"/Applications/MAMP/htdocs/altinet/sass/templates/_case-study.scss",
-		"/Applications/MAMP/htdocs/altinet/sass/components/_forms.scss",
-		"/Applications/MAMP/htdocs/altinet/sass/templates/_contact.scss",
-		"/Applications/MAMP/htdocs/altinet/sass/modules/_owl-carousel.scss",
-		"/Applications/MAMP/htdocs/altinet/sass/modules/_all.scss"
+		"/Applications/MAMP/htdocs/bolser/bolser-mobile-wp/sass/helpers/mixins/_center-vertical.scss"
 	],
 	"find":
 	{
@@ -608,6 +672,39 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"http://92.60.114.159/~altinetco",
+			"http://bowmanriley.localhost",
+			"setNavState",
+			"menu()",
+			"nav",
+			".empty",
+			"getPages",
+			"case-stu",
+			"people",
+			"?php echo get_term_link($term)",
+			"aside",
+			"secondary-nav",
+			"sub-nav",
+			"getPages",
+			"current",
+			"sub-nav",
+			"main",
+			"overlay",
+			"repositionSubNavs",
+			"secondary",
+			"latest-work",
+			"animateLogo",
+			"animateLogo ",
+			"console",
+			"theme",
+			"case-study-link",
+			"pop",
+			"push",
+			"inverted",
+			"fit-cell",
+			"people",
+			"theme",
+			"push-link",
 			"accreditation",
 			"page-accreditation",
 			"page-buzz",
@@ -702,40 +799,7 @@
 			"Email is already taken\n",
 			"	\n",
 			"Email is already taken.",
-			"Entry encountered errors when saving",
-			"ul,",
-			"ul",
-			"your_points",
-			".header_content",
-			"counter_container",
-			"btn_text",
-			"sticker h4",
-			".btn_text",
-			".header-account-wrapper",
-			".sticker06",
-			"=",
-			".sticker06",
-			".sticker",
-			".gold",
-			".bronze .main_pannel",
-			"span.bronze",
-			".bronze",
-			"tabs",
-			".grad",
-			"pink",
-			"h2",
-			".bronze",
-			"sticker",
-			"bronze",
-			"heading",
-			"sticker",
-			"enter-competition",
-			"body_container",
-			"list",
-			"filter_content",
-			"list",
-			"filter_content",
-			"Quizzes"
+			"Entry encountered errors when saving"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -881,8 +945,198 @@
 	"groups":
 	[
 		{
+			"selected": 5,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "wp-content/themes/bowmanriley/single-casestudies.php",
+					"settings":
+					{
+						"buffer_size": 1552,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								136,
+								178
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "wp-content/themes/bowmanriley/sass/components/_typography.scss",
+					"settings":
+					{
+						"buffer_size": 799,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								242,
+								242
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "wp-content/themes/bowmanriley/taxonomy-casestudies_category.php",
+					"settings":
+					{
+						"buffer_size": 2180,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								204,
+								204
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "wp-content/themes/bowmanriley/footer.php",
+					"settings":
+					{
+						"buffer_size": 1462,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1041,
+								1041
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "wp-content/themes/bowmanriley/sass/components/_navigation.scss",
+					"settings":
+					{
+						"buffer_size": 6548,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1458,
+								1458
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 626.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "wp-content/themes/bowmanriley/sass/_variables.scss",
+					"settings":
+					{
+						"buffer_size": 468,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								176,
+								170
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "wp-content/themes/bowmanriley/sass/components/_header.scss",
+					"settings":
+					{
+						"buffer_size": 445,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								157,
+								157
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],

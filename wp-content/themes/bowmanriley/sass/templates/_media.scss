@@ -1,4 +1,4 @@
-#news{
+#news,#people-single,#our-people-sector{
 	article{
 		.story{
 			padding: calc(#{$gutter}*2);
@@ -13,6 +13,7 @@
 			@include fit-grid(width);
 			display: block;
 		}
+		/*
 		a{
 			@include transition (background-color 0.2s ease-in-out);
 			background-color: white;
@@ -24,12 +25,13 @@
 				}
 			}
 			&:hover, &:active{
-				background-color:lighten($grey,50);
+				//background-color:lighten($grey,50);
 				img{
 					@include opacity(.8);
 				}
 			}
 		}
+		*/
 		&.single{
 			padding:0 10% 0 24px;
 			display: block;
@@ -38,6 +40,23 @@
 				@include font-size(24);
 				margin-bottom: 5px;
 			}
+		}
+	}
+}
+a.news-link{
+	@include transition (background-color 0.2s ease-in-out);
+	background-color: white;
+	display: block;
+	&:link,&:visited{
+		color: $grey;
+		img{
+			@include transition (opacity 0.2s ease-in-out);
+		}
+	}
+	&:hover, &:active{
+		background-color:lighten($grey,50);
+		img{
+			@include opacity(.8);
 		}
 	}
 }

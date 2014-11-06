@@ -32,7 +32,7 @@ $(function(){
     }
     menu();
 
-
+$(".fancybox").fancybox();
 
 //mobile menu
 
@@ -70,13 +70,31 @@ if (Modernizr.history){ //if browser supports history
           $links = $('#nav a'),
           $firstLoad  = 1;
 
+//on click change nav state
+
 var $navLinks = $('#nav a');
 $navLinks.on('click',function(e){
     e.preventDefault();
-$navLinks.removeClass('current-menu-item');
-$(this).addClass('current-menu-item');
+$navLinks.parent('li').removeClass('current-menu-item');
+$(this).parent('li').addClass('current-menu-item');
 })
 
+//convert drop down links to hash
+
+$("p:not(.intro)") 
+var $submenu_links = $('.sub-menu a:not(#menu-item-50 .sub-menu a)');
+$submenu_links.each(function(){
+    var $href = $(this).attr('href');
+    //remove trailing slash
+    $href =  $href.replace(/\/$/,"");
+    $href = $href.replace('about-us/','');
+    $url = $href.split("/");
+    if($url.length > 3){
+        $url[$url.length-1] = '#'+$url[$url.length-1];
+    }
+    $url = $url.join('/');
+    $(this).attr('href',$url);
+})
 
 String.prototype.decodeHTML = function() {
     return $("<div>", {html: "" + this}).html();
@@ -88,7 +106,7 @@ String.prototype.decodeHTML = function() {
         //loadPage($href);
         getPages($href);
     }) 
-$('body').on('click', '.case-study-link, #case-studies a.close, #news a.close, a.news-link, .case-study-links .category-links a', function(e) {
+$('body').on('click', '.case-study-link, #case-studies a.close, #news a.close,#our-people-sector a.close, a.news-link, .case-study-links .category-links a', function(e) {
         e.preventDefault();
         var $href = $(this).attr("href");
         getPages($href,'aside','aside .inner');
@@ -115,6 +133,7 @@ $('body').on('click','#sub-nav.people-categories  a',function(e){
     var $href = $(this).attr("href");
      getPages($href);
 })
+
 /*
 window.addEventListener("popstate", function(e) {
 
@@ -134,7 +153,6 @@ window.addEventListener("popstate", function(e) {
 window.onpopstate = function(event) {
  // console.log("location: " + document.location.pathname + ", state: " + JSON.stringify(event.state));
 if(event.state==null){
-   
 } else {
     getPages(location.href);
 }
@@ -161,18 +179,20 @@ var $totalPages = 0,
     $initFullPageJS=0; //counter to handle if fullpage js has already been called.
 
 setNavState = function(href){
+
     var $hash = location.hash;
     href = href.replace($hash,'');
-    if(href=='http://bowmanriley.localhost/'){
+    if(href=='http://92.60.114.159/~bowmanriley/'){
         $('header').removeAttr('style').addClass('front-page');
         animateLogo('up')
     } else {
         $('header').removeAttr('style').removeClass('front-page');
         animateLogo('down')
     }
-    
+   // console.log($links);
     $links.parent('li').removeClass('current-menu-item');
     $links.each(function(){
+
         if($(this).attr('href')==href){
             $(this).parent('li').addClass('current-menu-item');
         }
@@ -209,6 +229,7 @@ getPages = function(url,target,selector){
             $.fn.fullpage.setKeyboardScrolling(false);
         }
         */
+
         setNavState(url);
     $target = 'main';
     $selector = '.section';
@@ -217,8 +238,10 @@ getPages = function(url,target,selector){
 
     $.ajax({
     //url: $url,
-    url:"?action=ajax_get_pages&url="+url+"&firstLoad="+$firstLoad,
+    url:"?action=ajax_get_pages",
     dataType: 'json',
+    timeout: 5000,
+    data: { url: url, firstLoad: $firstLoad} ,
     timeout: 1000,
     success: function(data) {
     //$pages = data;
@@ -235,18 +258,32 @@ getPages = function(url,target,selector){
    getPages(location.href); 
 
 loadPages = function(pages){ //get page urls back
+
     $totalPages = pages.length;
     $loadedPages = 0;
     $pages = pages;
+
     var $href  = $pages[0];
 
    
      history.pushState({}, '', $href); //push the parent url
     // setNavState($href); //set the nav state to parent
+    var $loadPage=0;
+    
+    if(!$firstLoad){
+        $loadPage=1;
+    }
      if($firstLoad && $pages.length > 1){ //if first load and more than one page, start at 2nd page down
         $href= $pages[1];
+        $loadPage=1;
     }
-     loadPage($href); //load the parent page
+     if($loadPage){
+          loadPage($href); //load the parent page
+     } else {
+        $firstLoad=0;
+        initLoadedPages();
+}
+   
 }
 
 loadPage  = function(url){
@@ -292,7 +329,7 @@ initLoadedPages = function(){
             $.fn.fullpage.setAllowScrolling(false);
             $.fn.fullpage.setKeyboardScrolling(false);
         }
-    
+   
 
     //twitter feed
     if($('#twitter-feed').length){ 
@@ -305,7 +342,10 @@ initLoadedPages = function(){
     twitterFetcher.fetch(config1);
     }
 
+
+
     //init fullpage js
+    
     $('#page-wrap').fullpage({
         verticalCentered: false,
         resize : false,
@@ -329,28 +369,30 @@ initLoadedPages = function(){
          }
          }
     });
+  
     $initFullPageJS++;
     //google maps
 
+/*
     if($('#map').length){
     //load first map
      $('#map').gmap({
         markers: [{'latitude': 53.7970116,'longitude': -1.5483672}],
         markerFile: 'http://bowmanriley.localhost/wp-content/themes/bowmanriley/images/marker.png',
-        markerWidth:130,
-        markerHeight:154,
-        markerAnchorX:65,
-        markerAnchorY:154
+         markerWidth:140,
+        markerHeight:164,
+        markerAnchorX:68,
+        markerAnchorY:162
     });
     $('.map-1').on('click',function(e){
         e.preventDefault();
         $('#map').empty().gmap({
         markers: [{'latitude': 53.7970116,'longitude': -1.5483672}],
         markerFile: 'http://bowmanriley.localhost/wp-content/themes/bowmanriley/images/marker.png',
-        markerWidth:130,
-        markerHeight:154,
-        markerAnchorX:65,
-        markerAnchorY:154
+        markerWidth:135,
+        markerHeight:162,
+        markerAnchorX:67,
+        markerAnchorY:162
     })
     });
      $('.map-2').on('click',function(e){
@@ -358,10 +400,10 @@ initLoadedPages = function(){
         $('#map').empty().gmap({
         markers: [{'latitude': 51.5232556,'longitude': -0.0977822}],
         markerFile: 'http://bowmanriley.localhost/wp-content/themes/bowmanriley/images/marker.png',
-        markerWidth:130,
-        markerHeight:154,
-        markerAnchorX:65,
-        markerAnchorY:154
+        markerWidth:135,
+        markerHeight:162,
+        markerAnchorX:67,
+        markerAnchorY:162
     })
     });
      $('.map-3').on('click',function(e){
@@ -369,31 +411,50 @@ initLoadedPages = function(){
         $('#map').empty().gmap({
         markers: [{'latitude': 53.9615561,'longitude': -2.0139126}],
         markerFile: 'http://bowmanriley.localhost/wp-content/themes/bowmanriley/images/marker.png',
-        markerWidth:130,
-        markerHeight:154,
-        markerAnchorX:65,
-        markerAnchorY:154
+        markerWidth:135,
+        markerHeight:162,
+        markerAnchorX:67,
+        markerAnchorY:162
     })
     });
     }
+    */
     //reposition sub navs
    // repositionSubNavs();
       $('main').removeClass('loading');
    $('#overlay').remove();
+
+   //move page to requested anchor link
+   if(location.hash){
+    var $hash = location.hash.replace('#','');
+   // console.log($hash);
+    $.fn.fullpage.moveTo($hash,0);
+    $.fn.fullpage.reBuild();
+    }
 }
 
+// people button click actions
 
-
-// button click actions
-
-$('body').on('click', '.people-link.select', function(e) {
- e.preventDefault();
-    $(this).removeClass('select').addClass('close');
-});
-$('body').on('click','.people-link.close',function(e){
+if(!isTouchDevice.any()){
+$('body').on('click','.people-link',function(e){
     e.preventDefault();
-    $(this).removeClass('close').addClass('select');
+    var $href = $(this).attr("href");
+     getPages($href,'aside','aside .inner');
 })
+} else {
+    $('body').on('click', '.people-link.select', function(e) {
+    e.preventDefault();
+    $(this).removeClass('select').addClass('link');
+    });
+    $('body').on('click','.people-link.link',function(e){
+    e.preventDefault();
+    var $href = $(this).attr("href");
+    getPages($href,'aside','aside .inner');
+    })
+}
+
+// page down arrow action
+
 $('body').on('click', '.arrow-divide a',function(e){
     e.preventDefault();
     $.fn.fullpage.moveSectionDown();
@@ -438,9 +499,11 @@ function deactivateDropDown(){
 
 function activateDropDown(){
     $('#nav li.menu-item-has-children').bind('mouseenter',function(){
+        $(this).addClass('hover');
         $('.sub-menu',$(this)).fadeIn(200);
     })
     $('#nav li.menu-item-has-children').bind('mouseleave',function(){
+        $(this).removeClass('hover');
         $('.sub-menu',$(this)).fadeOut(100);
     })
 }

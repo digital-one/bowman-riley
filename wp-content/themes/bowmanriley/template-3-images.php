@@ -4,13 +4,24 @@
  <main id="page-wrap" role="main">
     <section class="section <?php echo get_field('theme',$post->ID)?>" data-anchor="<?php echo $post->post_name?>">
 <div class="main column width-45-pct" role="main">
+  <div class="main-content">
  <?php echo $post->post_content ?>
+</div>
 <?php get_template_part('includes/secondary-nav') ?>
+<?php
+$children = get_pages("child_of=$post->post_parent&sort_column=menu_order&sort_order=DESC");
+$lastchild = $children[0];
+if($post->ID != $lastchild->ID):
+?>
+<div class="arrow-divide"><a href=""><img data-no-retina src="<?php echo get_template_directory_uri(); ?>/images/arrow-down.svg" /></a></div>
+<?php endif ?>
 </div>
 <aside class="beta column width-55-pct">
   <div class="inner">
-  	  	<?php if(!empty(get_field('case_study',$post->ID))):
+  	  	<?php 
 $cs = get_field('case_study',$post->ID);
+if(!empty($cs)):
+
 $image_id = $cs->ID;
 $has_case_study = true;
 else:

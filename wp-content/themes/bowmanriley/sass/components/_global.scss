@@ -126,11 +126,18 @@ a{
 			&:hover,&:active{
 				background-color:lighten($blue,5);
 			}
+			#people &{
+				background-color:white;
+				color:$blue;
+				&:after{
+					background-image:url('../images/arrow-right-blue.svg');
+				}
+			}
 			&.inverted{
 				background-color: white;      
 				color: $blue; 
 				&:after{
-					background-image:url('../images/arrow-right-purple.svg'); 
+					background-image:url('../images/arrow-right-blue.svg'); 
 				}
 			}
 			/*#people &, #our-people-sector &{
@@ -265,7 +272,7 @@ a.overlay{
 		background:url('../images/close-white.svg') left top no-repeat;
 	}
 }
-#case-studies,#news{
+#case-studies,#news,#people-single,#our-people-sector{
 	a.close{
 		display: block;
 		width:18px;
@@ -274,5 +281,24 @@ a.overlay{
 		cursor:pointer;
 		background:url('../images/close.svg') left top no-repeat;
 		@extend %ir;
+	}
+}
+.main-content{
+	ul{
+		margin-bottom: 12px;
+	}
+	li{
+		padding-left:14px;
+		margin-bottom: 5px;
+		position:relative;
+		&:before{
+			content:"";
+			@include abs-pos(5px,auto,auto,0);
+			display: block;
+			width:4px;
+			height:4px;
+			background:url('../images/bulletpoint.svg') left top no-repeat;
+			background-size: 4px 4px;
+		}
 	}
 }

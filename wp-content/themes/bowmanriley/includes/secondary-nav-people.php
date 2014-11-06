@@ -1,16 +1,19 @@
 <section class="secondary-nav">
  
 <nav id="sub-nav" class="people-categories">
-<ul>
- <?php
+
+<?php
  $current_term='';
- if(is_tax( 'people_category' )):
+ if(is_tax( 'people_category')):
   $queried_object = get_queried_object();
     $term_id = $queried_object->term_id;
   $term = get_term($term_id,'people_category');
   $current_term= $term->name;
 endif;
 ?>
+<ul>
+ 
+
   <?php
   $args = array(
   'hide_empty' => 0
@@ -18,6 +21,9 @@ endif;
   if($terms = get_terms('people_category',$args)): 
     foreach($terms as $term):
       $current = $current_term == $term->name ? ' class="current-menu-item"' : '';
+      if(has_term( $term->name,'people_category')):
+        $current = ' class="current-menu-item"';
+      endif;
   ?>
 <li<?php echo $current ?>><a href="<?php echo get_term_link($term) ?>"><?php echo $term->name ?> team<span><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
    viewBox="0 0 55.4 49.7" enable-background="new 0 0 55.4 49.7" xml:space="preserve">

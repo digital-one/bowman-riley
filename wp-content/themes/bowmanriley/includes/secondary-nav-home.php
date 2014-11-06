@@ -1,7 +1,7 @@
 <section class="secondary-nav">
   <section id="twitter-feed"></section>
   <section id="latest-work">
-  <h4>Latest examples of our work</h4>
+  <h4>Highlighted projects</h4>
   <ul>
     <?php
 $args = array( 

@@ -13,6 +13,7 @@
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
         <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css' />
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css" />
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/js/fancybox/jquery.fancybox.css" />
         <script src="<?php echo get_template_directory_uri(); ?>/js/modernizr.js"></script>
        <!--[if (gte IE 6)&(lte IE 8)]>
 <script src="js/selectivizr-min.js"></script>
@@ -20,25 +21,31 @@
         <!--[if lte IE 9]>
           <script src="js/respond.min.js"></script>
         <![endif]-->
+  <?php gravity_form_enqueue_scripts(2, true); ?>
          <?php wp_head() ?>
+
     </head>
     <body>
-     
+      <div style="display:none;">
+<div id="fancyboxID-2">
+<?php echo do_shortcode('[gravityform id="2" ajax="true"]') ?>
+</div>
+</div>
    <!--header-->
    <header id="header" <?php if(is_front_page()):?>class="front-page"<?php endif ?>>
-    <h1 id="home-link"><img data-no-retina src="<?php echo get_template_directory_uri(); ?>/images/bowman-riley.svg" /></h1>
+    <h1 id="home-link"><a href="<?php echo home_url() ?>"><img data-no-retina src="<?php echo get_template_directory_uri(); ?>/images/bowman-riley.svg" /></a></h1>
 <nav id="nav"><a id="mobile">Mobile</a>
 <?php
     wp_nav_menu( array(
         'menu'=>'Main Navigation',
         'container' => false, 
         'fallback_cb' => 'wp_page_menu'//,
+        //'walker' => new test_nav ()
         //'menu_class' => 'inline',
         //'link_after' => '<span></span>'
         )
     );
     ?>
-<!--<ul><li class="menu-item-has-children"><a href="http://bowmanriley.localhost/">All About Bowman Riley</a><ul class="sub-menu"><li><a href="">Home</a></li><li><a href="http://bowmanriley.localhost/our-story">Our story</a></li><li><a href="http://bowmanriley.localhost/our-people/">Our people</a></li><li><a href="http://bowmanriley.localhost/our-approach">Our approach</a></li><li><a href="">Our sustainability</a></li><li><a href="">Our CSR</a></li></ul></li><li><a href="http://bowmanriley.localhost/architects.php">Architects</a></li><li><a href="http://bowmanriley.localhost/building-consultancy.php">Building Consultancy</a></li><li><a href="http://bowmanriley.localhost/healthcare.php">Healthcare</a></li><li><a href="http://bowmanriley.localhost/case-studies.php">Case Studies</a></li><li><a href="http://bowmanriley.localhost/work-with-us.php">Work with us</a></li><li><a href="http://bowmanriley.localhost/media.php">Media &amp; Latest News</a></li><li><a href="http://bowmanriley.localhost/contact.php">Contact</a></li></ul>-->
 </nav>
   </header>
   <!--/header-->

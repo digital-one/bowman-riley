@@ -1,6 +1,12 @@
 <nav id="utility-nav">
+  <?php
+  $twitter_url = get_option("twitter_url");
+  $facebook_url = get_option("facebook_url");
+  $linkedin_url = get_option("linkedin_url");
+  ?>
   <ul>
-      <li class="share"><span>Follow Bowman Riley</span><ul><li><a href="">
+     <?php if(is_front_page()): ?>
+      <li class="share"><span>Follow Bowman Riley</span><ul><li><a href="<?php echo $twitter_url ?>" target="_blank">
         <svg id="share-twitter" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
    viewBox="0 0 18.8 18.8" enable-background="new 0 0 18.8 18.8" xml:space="preserve">
    <g class="icon">
@@ -12,7 +18,7 @@
     c-0.7,0-0.9-0.5-0.3-0.8c-0.6,0-0.9-0.2-1.1-0.5C6.6,9.1,6.6,9.1,6.7,9c0.1-0.1,0.3-0.1,0.5-0.2C6.7,8.7,6.3,8.4,6.2,8
     c0-0.1,0-0.1,0.1-0.2c0.1,0,0.3-0.1,0.5-0.1C6.3,7.5,6,7.2,6,6.8C5.9,6.5,6,6.5,6.2,6.6C7.4,7.1,8.6,7.6,9.3,8.3" />
   </g>
-</svg></a></li><li><a href="">
+</svg></a></li><li><a href="<?php echo $facebook_url ?>" target="_blank">
 <svg id="share-facebook" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
    viewBox="0 0 18.8 18.8" enable-background="new 0 0 18.8 18.8" xml:space="preserve">
 <g class="icon">
@@ -23,7 +29,7 @@
   C7.6,3.8,7.6,5.5,7.6,5.8z"/>
 </g>
 </svg>
-</a></li><li><a href="">
+</a></li><li><a href="<?php echo $linkedin_url ?>" target="_blank">
 <svg id="share-linkedin" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
    viewBox="0 0 18.8 18.8" enable-background="new 0 0 18.8 18.8" xml:space="preserve">
 <g class="icon">
@@ -36,6 +42,7 @@
 </g>
 </svg>
 </a></li></ul></li>
+<?php endif ?>
   <li class="share"><span>Share this page</span><ul><li><a href="">  <svg id="share-twitter" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
    viewBox="0 0 18.8 18.8" enable-background="new 0 0 18.8 18.8" xml:space="preserve">
    <g class="icon">
@@ -56,7 +63,7 @@
   c-0.2,0-1.6,0-1.6,0s0-1,0-1.2c0-0.2,0.2-0.4,0.5-0.4c0.2,0,0.7,0,1.2,0c0-0.2,0-1.1,0-1.8c-0.6,0-1.3,0-1.6,0
   C7.6,3.8,7.6,5.5,7.6,5.8z"/>
 </g>
-</svg></a></li><li><a href=""><svg id="share-email" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+</svg></a></li><li><a href="mailto:"><svg id="share-email" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
    viewBox="0 0 18.8 18.8" enable-background="new 0 0 18.8 18.8" xml:space="preserve">
 <g class="icon">
   <path fill="#625F61" d="M9.4,18.8C4.2,18.8,0,14.6,0,9.4S4.2,0,9.4,0s9.4,4.2,9.4,9.4S14.6,18.8,9.4,18.8z M9.4,0.7
@@ -78,11 +85,17 @@
       C10.7,9.5,10.7,9.2,10.7,8.9z"/>
   </g>
 </svg></a></li></ul></li>
-  <li class="search" role="search"><form><input type="text" name="s" id="s" placeholder="Search" /></li>
-  <li><a href="" class="arrow">Subscribe to our newsletter<span><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+  <li class="search" role="search"><form><input type="text" name="s" id="s" placeholder="Search" /><button type="submit"><img data-no-retina src="<?php bloginfo('template_directory')?>/images/search-icon.svg" /></button></li>
+  <?php if(is_front_page()): ?>
+  <li><a href="#fancyboxID-2" class="arrow fancybox">Subscribe to our news<span><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
    viewBox="0 0 17.4 19.4" enable-background="new 0 0 17.4 19.4" xml:space="preserve">
 <path class="icon" fill="#615E60" d="M4.1,11.4l2.1-2.1V17c0,1.3,1.1,2.4,2.4,2.4h0c1.3,0,2.4-1.1,2.4-2.4V9.3l2.1,2.1c0.9,0.9,2.5,0.9,3.4,0l0,0
   c0.9-0.9,0.9-2.5,0-3.4l-8-8l-8,8c-0.9,0.9-0.9,2.5,0,3.4l0,0C1.7,12.4,3.2,12.4,4.1,11.4z"/>
 </svg></span></a></li>
+<?php endif ?>
 </ul>
+<!--<div style="display:none" class="fancybox-hidden"><div id="fancyboxID-2">-->
+
+
+<!--</div></div>-->
 </nav>

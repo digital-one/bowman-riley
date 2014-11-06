@@ -72,7 +72,7 @@ ul.case-study-meta{
 		}
 		.overlay &{
 			border:none;
-			&.client,&.location{
+			&.client,&.location,&.stage,&.value{
 				padding-left: 20px;
 				margin-bottom: 2px;
 				&:before{
@@ -84,7 +84,6 @@ ul.case-study-meta{
 					background-image:url('../images/icon-client.svg');
 					background-position: left top;
 					background-repeat:no-repeat;
-
 				}
 			}
 			&.location{
@@ -102,5 +101,4 @@ ul.case-study-meta{
 			border-bottom:0;
 		}
 	}
-
 }
