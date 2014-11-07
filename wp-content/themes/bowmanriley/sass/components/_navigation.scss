@@ -236,13 +236,13 @@ nav#utility-nav{
 					fill:$blue;
 				}
 			}
-			.purple &{
+			.green &{
 				a{
-					color:$purple;
-					border-color:$purple;
+					color:$green;
+					border-color:$green;
 				}
 				svg path.icon{
-					fill:$purple;
+					fill:$green;
 				}
 			}
 		}
@@ -289,11 +289,11 @@ nav#utility-nav{
 						fill:$blue;
 					}
 				}
-				.purple &{
-					color: $purple;
-					border-color: $purple;
+				.green &{
+					color: $green;
+					border-color: $green;
 					svg path.icon{
-						fill:$purple;
+						fill:$green;
 					}
 				}
 			}

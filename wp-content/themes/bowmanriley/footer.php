@@ -10,6 +10,7 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.fullPage.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/twitter-fetcher.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/fancybox/jquery.fancybox.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/owlcarousel/owl.carousel.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/scripts.js"></script>
 <!--/scripts-->
 <script type="text/javascript">

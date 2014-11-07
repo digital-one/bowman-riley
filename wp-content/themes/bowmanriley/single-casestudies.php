@@ -9,9 +9,9 @@
 </div>
 <aside class="beta column width-55-pct">
   <div class="inner no-cell">
-  <div class="row height-55-pct bg-fill-cell masked gutter-2x" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>');">
+  <div class="row height-60-pct bg-fill-cell masked gutter-2x" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>');">
   </div>
-  <div class="row height-45-pct  gutter-2x">
+  <div class="row height-40-pct  gutter-2x">
 <div class="column width-25-pct gutter-2x"><ul class="case-study-meta"><li>Client: <?php echo $post->post_title?></li>
   <?php
   $location = get_field('location',$post->ID);

@@ -61,6 +61,11 @@
 
 		}
 	}
+	#downloads &{
+		.inner{
+			padding:calc(#{$gutter*2}) calc(#{$gutter*2}) calc(#{$gutter*2}) 0;
+		}
+	}
 	#case-studies & .inner{
 		padding:calc(#{$gutter*2}) calc(#{$gutter*2}) $gutter 0;
 		@media screen and (max-width: $break-medium+1) {

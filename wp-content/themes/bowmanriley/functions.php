@@ -7,7 +7,7 @@ ini_set('zlib.output_handler', '');
 function ajax_get_pages(){
     if( isset($_GET['action'])&& $_GET['action'] == 'ajax_get_pages'):
     //get child pages
-     // die($_GET['url']);
+     //die($_GET['url']);
     $page_id = url_to_postid($_GET['url']);
     $first_load = $_GET['firstLoad'];
     $front_id = get_option('page_on_front');

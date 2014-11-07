@@ -8,19 +8,19 @@ textarea,
 .selectBox-dropdown{
 	line-height: 1;
 	height: 46px;
-	font-family: $raleway;
+	font-family: $varela;  
 	font-weight:400;
-	background-color: $light-grey;
+	background-color: white;
 	padding: 0 10px;
 	@include font-size(12);
 	border: none;
 	width: 100%;
 	@include transition (background-color .1s linear 0s);
 	&:focus{
-		background-color: darken($light-grey,10);
+		background-color: darken(white,10);
 	}
 	@include placeholder {
-    color: $mid-grey;
+    color: black;
   }
 }
 textarea{
@@ -32,15 +32,16 @@ textarea{
 
 //selectbox
 
+/*
 .selectBox-dropdown{
 	position: relative;
 	cursor: pointer;
 	&:hover, &:active, &:focus{
 		border-style: none;
-		background-color: darken($light-grey,10);
+		background-color: darken(white,10);
 	}
 	&.selectBox-menuShowing{
-    	background-color: darken($light-grey,10);
+    	background-color: darken(white,10);
     }
     &.selectBox-menuShowing-bottom{
 
@@ -53,8 +54,8 @@ textarea{
 		line-height: 46px;
 		@include font-size(14);
 		display: block;
-		font-family: $arial;
-		color: $mid-grey;
+		font-family: $varela;
+		color: black;
 	}
 	.selectBox-arrow{
 		height: 17px;
@@ -69,7 +70,7 @@ textarea{
     z-index: 99999;
     max-height: 200px;
     min-height: 1em;
-    background: $light-grey !important;
+    background: white !important;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
     @include box-shadow(0 2px 6px rgba(0, 0, 0, .2));
@@ -84,7 +85,7 @@ textarea{
 		}
 		li{
 			&.selectBox-hover a {
-    			background-color: darken($light-grey,10);
+    			background-color: darken(black,10);
     		}
     		&.selectBox-selected a{
     			//background-color: $green;
@@ -112,7 +113,7 @@ textarea{
 		}
 	}
 }
-.selectBox-inline {
+.selectBox-inline { 
     min-width: 150px;
     outline: none;
     border: solid 1px #BBB;
@@ -123,6 +124,7 @@ textarea{
     border-radius: 4px;
     overflow: auto;
 }
+
 
 //gravity forms
 
@@ -165,3 +167,4 @@ textarea{
 		line-height: 38px;
 	}
 }
+*/

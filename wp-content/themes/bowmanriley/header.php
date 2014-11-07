@@ -13,7 +13,6 @@
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
         <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css' />
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css" />
-        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/js/fancybox/jquery.fancybox.css" />
         <script src="<?php echo get_template_directory_uri(); ?>/js/modernizr.js"></script>
        <!--[if (gte IE 6)&(lte IE 8)]>
 <script src="js/selectivizr-min.js"></script>
@@ -21,14 +20,23 @@
         <!--[if lte IE 9]>
           <script src="js/respond.min.js"></script>
         <![endif]-->
-  <?php gravity_form_enqueue_scripts(2, true); ?>
+  <?php gravity_form_enqueue_scripts(2,true); ?>
          <?php wp_head() ?>
-
     </head>
     <body>
-      <div style="display:none;">
-<div id="fancyboxID-2">
+<div style="display:none;">
+<div id="fancyboxID-1" class="popup-form">
+<?php echo do_shortcode('[gravityform id="1" ajax="true"]') ?>
+</div>
+</div>
+<div style="display:none;">
+<div id="fancyboxID-2" class="popup-form">
 <?php echo do_shortcode('[gravityform id="2" ajax="true"]') ?>
+</div>
+</div>
+<div style="display:none;">
+<div id="fancyboxID-3" class="popup-form">
+<?php echo do_shortcode('[gravityform id="3" ajax="true"]') ?>
 </div>
 </div>
    <!--header-->

@@ -45,6 +45,16 @@ $image_id = $post->ID;
 $has_case_study = false;
 	endif;
 	?>
+	<?php
+if(get_field('image_slider',$post->ID)):
+	?>
+<div class="row height-60-pct gutter slider">
+	<?php while(the_repeater_field('image_slider')):  ?>
+	<?php list($src,$w,$h) = wp_get_attachment_image_src(get_sub_field('slider_image'), 'full'); ?>
+<div class="image-slide" class="bg-fill-cell" style="background-image:url('<?php echo $src ?>');"></div>
+<?php endwhile ?>
+</div>
+<?php else: ?>
   <div class="row height-60-pct gutter masked bg-fill-cell" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($image_id)); ?>');">
   <?php if($has_case_study):?>
   <a href="<?php echo get_permalink($cs->ID)?>" class="main overlay push-link <?php echo get_field('theme',$post->ID)?>">
@@ -56,8 +66,9 @@ $has_case_study = false;
   </a>
 <?php endif ?>
 </div>
+<?php endif ?>
   <div class="row height-40-pct">
- <div class="column width-40-pct">
+ 
  	<?php
 switch(get_field('link_1_type')){
 	case 'page':
@@ -103,12 +114,25 @@ switch(get_field('link_1_type')){
 	$arrow_direction = 'down';
 	$target = "_blank";
 	break;
+	case 'image':
+	list($src,$w,$h) = wp_get_attachment_image_src(get_field('link_1_image',$post->ID), 'full');
+	break;
+	case 'logo':
+	$src = get_field('link_1_logo',$post->ID);
+	$box_colour = get_field('link_1_logo_box_colour',$post->ID);
+	break;
 }
 ?>
- 	<a href="<?php echo $permalink?>" target="<?php echo $target?>" class="push-link fit-cell <?php echo $arrow_direction?> <?php echo get_field('theme',$post->ID)?>"><?php echo $label ?></a>
-
+ 	<?php if(get_field('link_1_type')=='image'): ?>
+ 	 <div class="column width-40-pct bg-fill-cell" style="background-image:url('<?php echo $src; ?>');"></div>
+ 	<?php elseif(get_field('link_1_type')=='logo'): ?>
+ 	<div class="column width-40-pct logo <?php echo $box_colour ?>"><img src="<?php echo $src ?>" /></div>
+ <?php else: ?>
+  <div class="column width-40-pct">
+ 	<a href="<?php echo $permalink?>" target="<?php echo $target?>" class="<?php echo $class ?> fit-cell <?php echo $arrow_direction?> grey"><?php echo $label ?></a>
  </div>
- <div class="column width-60-pct">
+<?php endif ?>
+
  	<?php
 switch(get_field('link_2_type')){
 	case 'page':
@@ -117,6 +141,7 @@ switch(get_field('link_2_type')){
 	$permalink = get_field('link_2_page',$post->ID);
 	$arrow_direction = 'right';
 	$target = "_parent";
+	$form_id = '';
 	break;
 	case 'case-study-category':
 	$val = get_field('link_2_label',$post->ID);
@@ -125,6 +150,7 @@ switch(get_field('link_2_type')){
 	$permalink = get_term_link($term);
 	$arrow_direction = 'right';
 	$target = "_parent";
+	$form_id = '';
 	break;
 	case 'people-category':
 	$val = get_field('link_2_label',$post->ID);
@@ -133,6 +159,7 @@ switch(get_field('link_2_type')){
 	$permalink = get_term_link($term);
 	$arrow_direction = 'right';
 	$target = "_parent";
+	$form_id = '';
 	break;
 	case 'anchor':
 	$post_id = url_to_postid(get_field('link_2_anchor',$post->ID));
@@ -147,17 +174,45 @@ switch(get_field('link_2_type')){
 	$permalink = $permalink.'#'.$page->post_name;
 	$arrow_direction = get_field('link_2_arrow_direction',$post->ID);
 	$target = "_parent";
+	$form_id = '';
 	break;
 	case 'download':
+	$form_id = '';
 	$permalink = get_field('link_2_file',$post->ID);
 	$label = get_field('link_2_label',$post->ID);
 	$arrow_direction = 'down';
 	$target = "_blank";
+	$action="";
+	break;
+	case 'form':
+	$form_id = get_field('link_2_form',$post->ID);
+	$gform = get_field('link_2_form',$post->ID);
+	//print_r($gform);
+	$permalink = "#fancyboxID-".$gform->id;
+	$label = get_field('link_2_label',$post->ID);
+	$arrow_direction = 'right';
+	$target = "_blank";
+	break;
+	case 'image':
+	list($src,$w,$h) = wp_get_attachment_image_src(get_field('link_2_image',$post->ID), 'full');
+	break;
+	case 'logo':
+	$src = get_field('link_2_logo',$post->ID);
+	$box_colour = get_field('link_2_logo_box_colour',$post->ID);
 	break;
 }
 ?>
- 	<a href="<?php echo $permalink?>" target="<?php echo $target?>" class="push-link fit-cell <?php echo $arrow_direction?> grey"><?php echo $label ?></a>
-</div>
+<?php $class = !empty($form_id) ? 'fancybox' : 'push-link' ?>
+
+<?php if(get_field('link_2_type')=='image'): ?>
+ 	 <div class="column width-60-pct bg-fill-cell" style="background-image:url('<?php echo $src; ?>');"></div>
+ 	<?php elseif(get_field('link_2_type')=='logo'): ?>
+ 	<div class="column width-40-pct logo <?php echo $box_colour ?>"><img src="<?php echo $src ?>" /></div>
+ <?php else: ?>
+  <div class="column width-60-pct">
+ 	<a href="<?php echo $permalink?>" target="<?php echo $target?>" class="<?php echo $class ?> fit-cell <?php echo $arrow_direction?> grey"><?php echo $label ?></a>
+ </div>
+<?php endif ?>
   </div>
 </div>
 </aside>

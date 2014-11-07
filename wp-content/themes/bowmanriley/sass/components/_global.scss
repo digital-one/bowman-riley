@@ -106,17 +106,17 @@ a{
 				}
 			}
 		}
-		&.purple{
-			background-color: $purple;
+		&.green{
+			background-color: $green;
 			color: white;
 			&:hover,&:active{
-				background-color:lighten($purple,5);
+				background-color:lighten($green,5);
 			}
 			#people &, #our-people-sector &{
 				background-color: white;
-				color: $purple;
+				color: $green;
 				&:after{
-					background-image:url('../images/arrow-right-purple.svg');
+					background-image:url('../images/arrow-right-green.svg');
 				}
 			}
 		}
@@ -247,8 +247,8 @@ a.overlay{
 	&.orange{
 		@include rgba-bg($r:238,$g:125,$b:0,$hex:$orange,$opacity:0.75);
 	}
-	&.purple{
-		@include rgba-bg($r:116,$g:103,$b:163,$hex:$purple,$opacity:0.75);
+	&.green{
+		@include rgba-bg($r:116,$g:103,$b:163,$hex:$green,$opacity:0.75);
 	}
 	@include transition (all 0.2s ease-in-out);
 	color: white;
@@ -300,5 +300,52 @@ a.overlay{
 			background:url('../images/bulletpoint.svg') left top no-repeat;
 			background-size: 4px 4px;
 		}
+	}
+}
+
+
+div.owl-prev,div.owl-next{
+	cursor:pointer;
+	z-index:999;
+	display: inline-block;
+	width: 30px;
+	height:30px;
+	background-color: $blue;
+	background-image:url('../images/slider-arrow-left.svg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: 18px 18px;
+	@include abs-pos(50%,auto,auto,0);
+	@extend %ir;
+	margin-top: -15px;
+	.orange &{
+		background-color: $orange;
+	}
+	.green &{
+		background-color: $green;
+	}
+}
+div.owl-next{
+	@include abs-pos(50%,0,auto,auto);
+	background-image:url('../images/slider-arrow-right.svg');
+}
+.owl-carousel{
+	display:block;
+	height:100%;
+}
+.owl-stage-outer{
+	height:100%;
+	display: block;
+	.owl-stage{
+		height:100%;
+		display:block;
+	}
+	.owl-item{
+		display: block;
+		height: 100%;
+	}
+	.image-slide{
+		display:block;
+		height:100%;
 	}
 }

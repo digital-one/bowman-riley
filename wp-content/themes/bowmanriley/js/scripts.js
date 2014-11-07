@@ -88,8 +88,9 @@ $submenu_links.each(function(){
     //remove trailing slash
     $href =  $href.replace(/\/$/,"");
     $href = $href.replace('about-us/','');
+    $href
     $url = $href.split("/");
-    if($url.length > 3){
+    if($url.length-1 > 4){
         $url[$url.length-1] = '#'+$url[$url.length-1];
     }
     $url = $url.join('/');
@@ -371,6 +372,29 @@ initLoadedPages = function(){
     });
   
     $initFullPageJS++;
+
+    if($('.slider').length){
+
+    var owl = $('.slider');
+    owl.owlCarousel({
+        autoplay: true,
+        center: true,
+        items:1,
+        loop:true,
+        margin:0,
+        nav: true,
+        navContainer: '.slider-container',
+        responsive:{
+            0:{
+                nav: true,
+                dotsEach: false,
+                items:1
+            }
+        }
+    });  
+
+    }
+    
     //google maps
 
 /*

@@ -6,3 +6,8 @@ Author: Neil Mills, Digital One
 Author URI: http://www.digital-one.co.uk
 */
 @import "css/layout.css";
+@import "js/fancybox/jquery.fancybox.css";
+@import "js/owlcarousel/owl.carousel.css";
+@import "js/owlcarousel/owl.theme.css";
+
+

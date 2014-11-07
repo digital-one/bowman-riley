@@ -51,11 +51,9 @@ if(!empty($location)): ?>
 if(!empty($stage)): ?>
       <li class="stage"><?php echo $stage ?></li>
 <?php endif ?>
-<?php
-if(!empty($value)): ?>
-      <li class="value"><?php echo $value ?></li>
-<?php endif ?>
-    </ul></a></div>
+    </ul>
+<p><?php echo $projects[$i]->post_excerpt?></p>
+  </a></div>
   <?php else: ?>
 <div class="cell one-third height-50-pct bg-fill-cell" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($projects[$i]->ID)); ?>');"><a href="<?php echo get_permalink($projects[$i]->ID) ?>" class="case-study-link overlay"><ul class="case-study-meta"><li class="client"><?php echo $projects[$i]->post_title ?></li>
 <?php

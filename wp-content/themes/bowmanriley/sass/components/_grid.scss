@@ -66,6 +66,23 @@
 	height:100%;
 	display: block;
 	position:relative;
+	&.blue{
+		background-color: $blue;
+	}
+	&.green{
+		background-color: $green;
+	}
+	&.orange{
+		background-color: $orange;
+	}
+	&.logo{
+		text-align: center;
+		img{
+			@include fit-grid(height);
+			display: inline-block;
+			margin:0 auto;
+		}
+	}
 	&.width-25-pct{
 		width:25%;
 		#case-studies &{

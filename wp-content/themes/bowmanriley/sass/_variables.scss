@@ -3,15 +3,16 @@ $max-width: 1132px; //overide neat outer container width
 $visual-grid: false; 
 
 //colours
-$orange: #EE7D00;
-$grey: #615E60;
-$dark-grey: #464545;
-$blue: #00AEEF;
+$orange: #ee7203;
+$grey: #7c7c7b;
+$dark-grey: darken($grey,10);
+$blue: #009fe3;
 //$brown: #CFAD81;
 $brown: #00AEEF;
 $purple: #7467A3;
 $red: #E96335;
-$pink: #944E7A;
+$pink: #e6007e;
+$green: #76b82a;
 $gutter: 12px;
 
 //font face

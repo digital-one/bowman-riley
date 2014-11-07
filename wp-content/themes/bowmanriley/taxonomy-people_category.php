@@ -58,17 +58,19 @@ $people = get_posts($args);
 $current_cell=0;
 $current_person=0;
 $link=0;
-$link_cells = array(1,3);
+//$link_cells = array(1,3);
 $double_img_cells = array(6);
 $total = count($people);
 for($i=0; $i<$total; $i++):
+	/*
 	if(in_array($current_cell, $link_cells)):
 		?>
 	<div class="cell one-third square"><a href="<?php echo get_term_link($other_terms[$link]) ?>" class="push-link fit-cell inverted <?php echo get_field('theme',$other_terms[$link]);?>"><?php echo $other_terms[$link]->description?></a></div>
 	<?php $current_cell++ ?>
 	<?php $link++; ?>
 <?php endif ?>
-
+*/
+?>
 <?php
 $class="one-third square";
 if(in_array($current_cell, $double_img_cells)):

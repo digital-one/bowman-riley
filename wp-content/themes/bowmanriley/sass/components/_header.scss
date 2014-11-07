@@ -1,7 +1,7 @@
 #header{
 	position:fixed; 
 	display: block; 
-	z-index:999;
+	z-index:9999;
 	@extend %full-width;
 	background-color:$grey;
 	color:white;

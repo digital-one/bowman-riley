@@ -29,6 +29,19 @@ $image_id = $post->ID;
 $has_case_study = false;
 	endif;
 	?>
+    <?php
+if(get_field('image_slider',$post->ID)):
+  ?>
+<div class="row height-60-pct gutter slider-container">
+
+<div class="slider">
+  <?php while(the_repeater_field('image_slider')):  ?>
+  <?php list($src,$w,$h) = wp_get_attachment_image_src(get_sub_field('slider_image'), 'full'); ?>
+<div class="image-slide" class="bg-fill-cell" style="background-image:url('<?php echo $src ?>');"></div>
+<?php endwhile ?>
+</div>
+</div>
+<?php else: ?>
   <div class="row height-60-pct bg-fill-cell masked" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($image_id)); ?>');">
   	<?php if($has_case_study):?>
   <a href="<?php echo get_permalink($cs->ID)?>" class="main overlay push-link <?php echo get_field('theme',$post->ID)?>">
@@ -40,6 +53,7 @@ $has_case_study = false;
   </a>
 <?php endif ?>
   </div>
+<?php endif ?>
   <div class="row height-40-pct">
  <div class="column width-50-pct bg-fill-cell" style="background-image:url('<?php echo wp_get_attachment_url(get_field('image_2_src',$post->ID)); ?>');"></div>
 <div class="column width-50-pct bg-fill-cell" style="background-image:url('<?php echo wp_get_attachment_url(get_field('image_3_src',$post->ID)); ?>');"></div>

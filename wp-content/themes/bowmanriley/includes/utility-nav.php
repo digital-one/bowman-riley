@@ -63,7 +63,7 @@
   c-0.2,0-1.6,0-1.6,0s0-1,0-1.2c0-0.2,0.2-0.4,0.5-0.4c0.2,0,0.7,0,1.2,0c0-0.2,0-1.1,0-1.8c-0.6,0-1.3,0-1.6,0
   C7.6,3.8,7.6,5.5,7.6,5.8z"/>
 </g>
-</svg></a></li><li><a href="mailto:"><svg id="share-email" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+</svg></a></li><li><a href="#fancyboxID-3" class="fancybox"><svg id="share-email" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
    viewBox="0 0 18.8 18.8" enable-background="new 0 0 18.8 18.8" xml:space="preserve">
 <g class="icon">
   <path fill="#625F61" d="M9.4,18.8C4.2,18.8,0,14.6,0,9.4S4.2,0,9.4,0s9.4,4.2,9.4,9.4S14.6,18.8,9.4,18.8z M9.4,0.7
@@ -85,8 +85,11 @@
       C10.7,9.5,10.7,9.2,10.7,8.9z"/>
   </g>
 </svg></a></li></ul></li>
-  <li class="search" role="search"><form><input type="text" name="s" id="s" placeholder="Search" /><button type="submit"><img data-no-retina src="<?php bloginfo('template_directory')?>/images/search-icon.svg" /></button></li>
   <?php if(is_front_page()): ?>
+  <li class="search" role="search"> <?php //get_search_form( ); ?> 
+   <form id="search-form" method="get" action="<?php echo home_url() ?>/search-results"><input type="text" name="search" id="search" placeholder="Search" /><button type="submit"><img data-no-retina src="<?php bloginfo('template_directory')?>/images/search-icon.svg" /></button></form>
+</li>
+
   <li><a href="#fancyboxID-2" class="arrow fancybox">Subscribe to our news<span><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
    viewBox="0 0 17.4 19.4" enable-background="new 0 0 17.4 19.4" xml:space="preserve">
 <path class="icon" fill="#615E60" d="M4.1,11.4l2.1-2.1V17c0,1.3,1.1,2.4,2.4,2.4h0c1.3,0,2.4-1.1,2.4-2.4V9.3l2.1,2.1c0.9,0.9,2.5,0.9,3.4,0l0,0

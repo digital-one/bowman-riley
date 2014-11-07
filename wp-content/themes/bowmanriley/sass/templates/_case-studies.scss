@@ -73,7 +73,7 @@ ul.case-study-meta{
 		.overlay &{
 			border:none;
 			&.client,&.location,&.stage,&.value{
-				padding-left: 20px;
+				padding-left: 24px;
 				margin-bottom: 2px;
 				&:before{
 					content:"";
@@ -82,16 +82,24 @@ ul.case-study-meta{
 					@include abs-pos(2px,auto,auto,0);
 					display: block;
 					background-image:url('../images/icon-client.svg');
-					background-position: left top;
+					background-position: center center;
 					background-repeat:no-repeat;
+				}
+			}
+			&.stage{
+				&:before{
+					width:13px;
+					height:9px;
+					background-image:url('../images/icon-stage.svg');
+					@include abs-pos(0,auto,auto,0)
 				}
 			}
 			&.location{
 				&:before{
-					width:7px;
+					width:13px;
 					height:10px;
 					background-image:url('../images/icon-location.svg');
-					@include abs-pos(0,auto,auto,4px)
+					@include abs-pos(0,auto,auto,0)
 				}
 			}
 		}

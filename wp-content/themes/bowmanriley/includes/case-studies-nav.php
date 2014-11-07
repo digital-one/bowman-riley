@@ -44,11 +44,13 @@ if($c>0) echo ', ';
 if($categories = get_terms( 'casestudies_category', $category_args)):
  $c=0;
 foreach($categories as $category):
+  if(get_field('filter_option',$category)!='no'):
    $current = $term_name==strtolower($category->name) ? ' class="current"' : '';
 if($c>0) echo ', ';
 ?>
 <a href="<?php echo get_term_link($category)?>"<?php echo $current ?>><?php echo $category->name ?></a>
 <?php $c++; ?>
+<?php endif; ?>
 <?php endforeach ?>
 <?php endif ?>
 </li>
