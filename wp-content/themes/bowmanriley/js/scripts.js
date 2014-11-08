@@ -30,7 +30,7 @@ $(function(){
     if(!isTouchDevice.any() && !mobileMenu()){
         activateDropDown();
     }
-    menu();
+
 
 $(".fancybox").fancybox();
 
@@ -61,14 +61,109 @@ $('#page-wrap').animate({
 }
 });
 
+//route calculator
+
+$("#calculate-route").submit(function(event) {
+  event.preventDefault();
+  calculateRoute($("#from").val(), $("#to").val());
+});
+$('body').on('click','#calculate-route a#reset',function(e){
+    e.preventDefault();
+    $('#calculate-route input').val('');
+});
+//retreive current geo location
+$('body').on('click','#from-link',function(event){
+     $('body').prepend('<div id="overlay" />');
+    $('main').addClass('loading');
+
+          event.preventDefault();
+          var addressId = this.id.substring(0, this.id.indexOf("-"));
+ 
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var geocoder = new google.maps.Geocoder();
+            geocoder.geocode({
+              "location": new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
+            },
+            function(results, status) {
+                $('#overlay').remove();
+                $('main').removeClass('loading');
+              if (status == google.maps.GeocoderStatus.OK)
+                $("#" + addressId).val(results[0].formatted_address);
+              else
+                $("#error").append("Unable to retrieve your address<br />");
+            });
+          },
+          function(positionError){
+            $("#error").append("Error: " + positionError.message + "<br />");
+          },
+          {
+            enableHighAccuracy: true,
+            timeout: 10 * 1000 // 10 seconds
+          });
+        });
+
+calculateRoute =function (from) {
+
+        $('#map').css({
+        height:'80%'
+        })
+         lat = $('#map').attr('data-lat');
+        lng = $('#map').attr('data-lng');
+
+        var myOptions = {
+          zoom: 10,
+          center: new google.maps.LatLng(lat, lng),
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+       
+        to = new google.maps.LatLng(lat, lng);
+        // Draw the map
+        var mapObject = new google.maps.Map(document.getElementById("map"), myOptions);
+ 
+        var directionsService = new google.maps.DirectionsService();
+    
 
 
+        var directionsRequest = {
+          origin: from,
+          destination: to,
+          travelMode: google.maps.DirectionsTravelMode.DRIVING,
+          unitSystem: google.maps.UnitSystem.METRIC
+        };
+        directionsService.route(
+          directionsRequest,
+          function(response, status){
+            $('aside').append('<div id="directions" />');
+            if (status == google.maps.DirectionsStatus.OK){
+              directionsDisplay = new google.maps.DirectionsRenderer({
+                map: mapObject,
+                panel: document.getElementById('directions'),
+                directions: response
+              });
+
+
+            
+             
+     
+
+
+              // directionsDisplay.setDirections(response);
+            }
+            else
+              $("#error").append("Unable to retrieve your route<br />");
+          }
+        );
+      }
+ 
 
 if (Modernizr.history){ //if browser supports history
       var $main = $('main'),
           $aside = $('aside'),
           $links = $('#nav a'),
-          $firstLoad  = 1;
+          $firstLoad  = 1,
+          $home_url = 'http://bowmanriley.localhost/';
+       
+
 
 //on click change nav state
 
@@ -81,16 +176,30 @@ $(this).parent('li').addClass('current-menu-item');
 
 //convert drop down links to hash
 
-$("p:not(.intro)") 
-var $submenu_links = $('.sub-menu a:not(#menu-item-50 .sub-menu a)');
+var $submenu_links = $('.sub-menu a:not(#menu-item-50 .sub-menu a,#menu-item-60 .sub-menu a)');
 $submenu_links.each(function(){
+    var $href = $(this).attr('href');
+    //remove trailing slash
+    $href =  $href.replace(/\/$/,"");
+    $url = $href.split("/");
+    if($url.length>4){
+        $url[$url.length-1] = '#'+$url[$url.length-1];
+    }
+    $url = $url.join('/');
+    $(this).attr('href',$url);
+})
+
+// add hash to homepage sub pages
+
+var $home_submenu_links  =$('#menu-item-60 .sub-menu a');
+$home_submenu_links.each(function(){
     var $href = $(this).attr('href');
     //remove trailing slash
     $href =  $href.replace(/\/$/,"");
     $href = $href.replace('about-us/','');
     $href
     $url = $href.split("/");
-    if($url.length-1 > 4){
+    if($url.length>1){
         $url[$url.length-1] = '#'+$url[$url.length-1];
     }
     $url = $url.join('/');
@@ -101,16 +210,18 @@ String.prototype.decodeHTML = function() {
     return $("<div>", {html: "" + this}).html();
   };
 
+//link actions
+
     $('#nav a').on('click',function(e){
         e.preventDefault();
         var $href = $(this).attr("href");
-        //loadPage($href);
         getPages($href);
     }) 
-$('body').on('click', '.case-study-link, #case-studies a.close, #news a.close,#our-people-sector a.close, a.news-link, .case-study-links .category-links a', function(e) {
+$('body').on('click', '.case-study-link, #case-studies a.close, #news a.close,#our-people-sector a.close,#people-single a.close, a.news-link, .case-study-links .category-links a', function(e) {
         e.preventDefault();
         var $href = $(this).attr("href");
-        getPages($href,'aside','aside .inner');
+      //  getPages($href,'aside','aside .inner');
+        getPages($href);
     })
 
 $('body').on('click','.push-link',function(e){
@@ -135,27 +246,24 @@ $('body').on('click','#sub-nav.people-categories  a',function(e){
      getPages($href);
 })
 
-/*
-window.addEventListener("popstate", function(e) {
+$('body').on('click','.directions-link',function(e){
+    e.preventDefault();
+    $('#map').attr('data-lat',$(this).attr('data-lat'));
+    $('#map').attr('data-lng',$(this).attr('data-lng'));
+    $('form#calculate-route').slideDown();
+})
 
-    // URL location
-    var location = document.location;
-
-    // state
-    //var state = e.state;
-    if (e.originalEvent.state !== null) {
-     getPages(location.href);
-    
-    }
-
-});
- */
 
 window.onpopstate = function(event) {
- // console.log("location: " + document.location.pathname + ", state: " + JSON.stringify(event.state));
+  
 if(event.state==null){
+ 
 } else {
-    getPages(location.href);
+    var $url = location.href.replace(location.hash,'');
+    if($url==$home_url){
+         $url = $home_url;
+    }
+    getPages($url);
 }
 };
 
@@ -173,17 +281,22 @@ console.log(e);
 
 var $totalPages = 0,
     $loadedPages = 0,
-    $loadedObjs=[];
-    $pages = Array(),
+    $cache = [],
+    $sectionCache = [],
+    $loadedObjs=[],
+    $pages = [],
     $target = 'main',
     $selector = '.section',
     $initFullPageJS=0; //counter to handle if fullpage js has already been called.
+
 
 setNavState = function(href){
 
     var $hash = location.hash;
     href = href.replace($hash,'');
-    if(href=='http://92.60.114.159/~bowmanriley/'){
+   // if(href=='http://92.60.114.159/~bowmanriley/'){
+            if(href=='http://bowmanriley.localhost/'){
+
         $('header').removeAttr('style').addClass('front-page');
         animateLogo('up')
     } else {
@@ -220,23 +333,54 @@ animateLogo = function(direction){
 
 getPages = function(url,target,selector){
 
+//check if page request is within the section currently being viewed
+
+var $hasHash=0;
+var $currentURL = location.href.replace(location.hash,'');
+var $requestedURL = url.split('#');
+if($requestedURL[1]) $hasHash=1;
+$requestedURL = $requestedURL[0];
+var $sameSection=0;
+//if page request is within current section, goto anchor
+if($currentURL==$requestedURL) $sameSection=1;
+
+if($sameSection && $hasHash && !$firstLoad){
+   // console.log('hash page within same section')
+      history.pushState({}, '', url); //push the parent url
+      // if(location.hash){
+       var $anchor = location.hash.replace('#','');
+        $.fn.fullpage.moveTo($anchor, 0);
+     
+} else {
+//   console.log('page within same section but parent')
+    //load the section pages
+
     $('body').prepend('<div id="overlay" />');
     $('main').addClass('loading');
     $loadedObjs=[];
-    //kill mouse scroll
-   /* if($initFullPageJS>0){
-            $.fn.fullpage.destroy();
-            $.fn.fullpage.setAllowScrolling(false);
-            $.fn.fullpage.setKeyboardScrolling(false);
-        }
-        */
-
-        setNavState(url);
+    setNavState(url);
     $target = 'main';
     $selector = '.section';
     if(target) $target = target;
     if(selector) $selector =  selector;
 
+    //check section cache to see if url has been called previously
+
+    var $getAjaxPages=1;
+    if($sectionCache.length>0){
+    $.each($sectionCache, function( key, $arr) {
+       /// console.log($arr);
+        $.each($arr,function($key, $url){
+         
+            if($url==url){ //if url has been cached load the cached section pages
+                loadPages($arr);
+                $getAjaxPages=0;
+            }
+        })
+      });
+    }
+
+    if($getAjaxPages){ //otherwise get the section pages via AJAX
     $.ajax({
     //url: $url,
     url:"?action=ajax_get_pages",
@@ -246,6 +390,7 @@ getPages = function(url,target,selector){
     timeout: 1000,
     success: function(data) {
     //$pages = data;
+    $sectionCache.push(data);
     loadPages(data);
     },
     error: function(XMLHttpRequest, textStatus, errorThrown) {
@@ -254,11 +399,15 @@ getPages = function(url,target,selector){
     complete: function(xhr, textStatus) {
     } 
     }); 
+    }
 }
 
-   getPages(location.href); 
+}
+
+   getPages(location.href); // on page load - get pages.
 
 loadPages = function(pages){ //get page urls back
+  // console.log(pages);
 
     $totalPages = pages.length;
     $loadedPages = 0;
@@ -276,49 +425,81 @@ loadPages = function(pages){ //get page urls back
     }
      if($firstLoad && $pages.length > 1){ //if first load and more than one page, start at 2nd page down
         $href= $pages[1];
+        $loadedPages++;
         $loadPage=1;
     }
      if($loadPage){
-          loadPage($href); //load the parent page
+        loadPage($href); //load the parent page
      } else {
         $firstLoad=0;
         initLoadedPages();
 }
    
 }
-
-loadPage  = function(url){
-    $.get(url, function(data){ 
-        if($firstLoad==0 && $loadedPages==0){
-        document.title = data.match(/<title>(.*?)<\/title>/)[1].trim();
-        }
-       var $section = $(data).find($selector);
-    $loadedObjs.push($section);
-    //console.log($loadedObjs);
- // $(data).find($selector).appendTo($target);
- 
-  $loadedPages++;
-  if($loadedPages < $totalPages){
-    var $url = $pages[$loadedPages];
-    loadPage($url);
-    } else {
-        //all pages loaded
-       
-if(!$firstLoad){
-        $($target).empty();
-        }
-
-        for(i=0;i<$loadedObjs.length;i++){
-            $($target).append($loadedObjs[i])
-           // $loadedObjs[i].appendTo($target);
-        }
-       initLoadedPages();
-       $firstLoad=0;
+renderPage = function(){
+  // console.log('render page');
+   if(!$firstLoad){
+    if($initFullPageJS){
+    $.fn.fullpage.destroy('all');
     }
-    });
+   $($target).empty(); //if not first load empty the stage
+  // console.log($target);
+   }
+        for(i=0;i<$loadedObjs.length;i++){
+           //  console.log($loadedObjs[i])
+            $($target).append($loadedObjs[i])
+
+        }
+        $firstLoad=0;
+        $loadedObjs = [];
+        initLoadedPages();
 }
 
-initLoadedPages = function(){
+loadPage  = function(url){
+
+    //first check if requested page HTML is in cache
+    var $ajaxLoad=1;
+    if($cache.length>0){
+    $.each($cache, function( key, obj) {
+      if(obj.url == url){
+        $ajaxLoad=0;
+         //page is in cache, get the HTML
+      //   console.log('loading '+url+' form cache');
+          $loadedObjs.push(obj.html);
+          $loadedPages++;
+           if($loadedPages < $totalPages){
+                 var $url = $pages[$loadedPages];
+                loadPage($url);
+                } else {
+                    renderPage()
+                }
+      } 
+      });
+} 
+
+    if($ajaxLoad){
+     //    console.log('loading '+url+' form ajax');
+        //page HTML not in cache so load it via AJAX
+        $.get(url)
+        .done(function(data){
+        // $.get(url, function(data){ 
+              var $section = $(data).find($selector);
+              $loadedObjs.push($section);
+              $cache.push({url: url, html: $section});
+              $loadedPages++;
+                if($loadedPages < $totalPages){
+                 var $url = $pages[$loadedPages];
+                loadPage($url);
+                } else {
+                    renderPage()
+                }
+         });
+    }
+}
+
+
+//after all section pages have loaded, init fullpage.js and other plugins.
+initLoadedPages = function(){ 
     //page anchors
       var $sections = $('.section'),
             $anchors = Array();
@@ -343,8 +524,6 @@ initLoadedPages = function(){
     twitterFetcher.fetch(config1);
     }
 
-
-
     //init fullpage js
     
     $('#page-wrap').fullpage({
@@ -354,7 +533,7 @@ initLoadedPages = function(){
         paddingTop: 0,
         paddingBottom: 0,
         normalScrollElementTouchThreshold: 15,
-        touchSensitivity: 5,
+        touchSensitivity: 10,
         scrollingSpeed: 700,
         anchors: $anchors,
         onLeave: function(index, nextIndex, direction){
@@ -370,11 +549,25 @@ initLoadedPages = function(){
          }
          }
     });
-  
+
     $initFullPageJS++;
 
-    if($('.slider').length){
+if($('#map').length){
+    var $lat = $('#map').attr('data-lat'),
+        $lng = $('#map').attr('data-lng');
+$('#map').gmap({
+        markers: [{'latitude': $lat,'longitude': $lng}],
+        markerFile: $home_url+'/wp-content/themes/bowmanriley/images/marker.png',
+        markerWidth:140,
+        markerHeight:164,
+        markerAnchorX:68,
+        markerAnchorY:162
+    });
+}
 
+    //owl carousel
+
+    if($('.slider').length){
     var owl = $('.slider');
     owl.owlCarousel({
         autoplay: true,
@@ -392,66 +585,17 @@ initLoadedPages = function(){
             }
         }
     });  
-
-    }
+}
     
-    //google maps
 
-/*
-    if($('#map').length){
-    //load first map
-     $('#map').gmap({
-        markers: [{'latitude': 53.7970116,'longitude': -1.5483672}],
-        markerFile: 'http://bowmanriley.localhost/wp-content/themes/bowmanriley/images/marker.png',
-         markerWidth:140,
-        markerHeight:164,
-        markerAnchorX:68,
-        markerAnchorY:162
-    });
-    $('.map-1').on('click',function(e){
-        e.preventDefault();
-        $('#map').empty().gmap({
-        markers: [{'latitude': 53.7970116,'longitude': -1.5483672}],
-        markerFile: 'http://bowmanriley.localhost/wp-content/themes/bowmanriley/images/marker.png',
-        markerWidth:135,
-        markerHeight:162,
-        markerAnchorX:67,
-        markerAnchorY:162
-    })
-    });
-     $('.map-2').on('click',function(e){
-        e.preventDefault();
-        $('#map').empty().gmap({
-        markers: [{'latitude': 51.5232556,'longitude': -0.0977822}],
-        markerFile: 'http://bowmanriley.localhost/wp-content/themes/bowmanriley/images/marker.png',
-        markerWidth:135,
-        markerHeight:162,
-        markerAnchorX:67,
-        markerAnchorY:162
-    })
-    });
-     $('.map-3').on('click',function(e){
-        e.preventDefault();
-        $('#map').empty().gmap({
-        markers: [{'latitude': 53.9615561,'longitude': -2.0139126}],
-        markerFile: 'http://bowmanriley.localhost/wp-content/themes/bowmanriley/images/marker.png',
-        markerWidth:135,
-        markerHeight:162,
-        markerAnchorX:67,
-        markerAnchorY:162
-    })
-    });
-    }
-    */
     //reposition sub navs
    // repositionSubNavs();
       $('main').removeClass('loading');
-   $('#overlay').remove();
+      $('#overlay').remove();
 
    //move page to requested anchor link
    if(location.hash){
     var $hash = location.hash.replace('#','');
-   // console.log($hash);
     $.fn.fullpage.moveTo($hash,0);
     $.fn.fullpage.reBuild();
     }
@@ -463,7 +607,8 @@ if(!isTouchDevice.any()){
 $('body').on('click','.people-link',function(e){
     e.preventDefault();
     var $href = $(this).attr("href");
-     getPages($href,'aside','aside .inner');
+     //getPages($href,'aside','aside .inner');
+     getPages($href);
 })
 } else {
     $('body').on('click', '.people-link.select', function(e) {
@@ -473,7 +618,8 @@ $('body').on('click','.people-link',function(e){
     $('body').on('click','.people-link.link',function(e){
     e.preventDefault();
     var $href = $(this).attr("href");
-    getPages($href,'aside','aside .inner');
+   // getPages($href,'aside','aside .inner');
+    getPages($href);
     })
 }
 
@@ -546,7 +692,7 @@ function menu(){
             $segmentLength = $urlSegments.length,
             $slug = $urlSegments[$segmentLength-1];
             //move down to section
-            $.fn.fullpage.moveTo($index);
+           // $.fn.fullpage.moveTo($index);
     })
 }
 setSubNavPosition =  function(){

@@ -13,6 +13,7 @@
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
         <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css' />
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css" />
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/js/fancybox/jquery.fancybox.css" />
         <script src="<?php echo get_template_directory_uri(); ?>/js/modernizr.js"></script>
        <!--[if (gte IE 6)&(lte IE 8)]>
 <script src="js/selectivizr-min.js"></script>

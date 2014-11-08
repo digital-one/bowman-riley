@@ -11,6 +11,7 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/twitter-fetcher.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/fancybox/jquery.fancybox.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/owlcarousel/owl.carousel.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.scrollTo.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/scripts.js"></script>
 <!--/scripts-->
 <script type="text/javascript">
@@ -24,7 +25,8 @@ while(the_repeater_field('office_locations')):
 ?>
    $('.map-<?php echo $i ?>').on('click',function(e){
    	e.preventDefault();
-     $('#map').empty().gmap({
+    $('#directions').remove();
+     $('#map').css({height:'100%'}).attr('data-lat','<?php echo $location['lat']?>').attr('data-lng','<?php echo $location['lng']?>').empty().gmap({
         markers: [{'latitude': <?php echo $location['lat']?>,'longitude': <?php echo $location['lng']?>}],
         markerFile: '<?php echo get_template_directory_uri() ?>/images/marker.png',
         markerWidth:140,

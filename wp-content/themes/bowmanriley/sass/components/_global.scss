@@ -302,9 +302,7 @@ a.overlay{
 		}
 	}
 }
-
-
-div.owl-prev,div.owl-next{
+div.owl-prev,div.owl-next{ 
 	cursor:pointer;
 	z-index:999;
 	display: inline-block;
@@ -347,5 +345,6 @@ div.owl-next{
 	.image-slide{
 		display:block;
 		height:100%;
+		@include bg-cover;
 	}
 }

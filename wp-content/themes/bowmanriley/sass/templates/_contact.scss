@@ -36,3 +36,50 @@
 		}
 	}
 } 
+#calculate-route{
+	display: none;
+	margin-top: 30px;
+	li{
+		position: relative;
+		margin-bottom: 5px;
+		@extend %clearfix;
+	}
+	input{
+		padding-right:30px;
+	}
+	button{
+		display: block;
+		width:30px;
+		height:30px;
+		@include abs-pos(0,0,auto,auto);
+		background:url('../images/arrow-right.svg') center center no-repeat;
+		background-size:20px 20px;
+		border:none;
+		@extend %ir;
+	}
+	a{
+		&:link,&:visited{
+			color: $blue;
+			position:relative;
+			display: inline-block;
+			height:16px;
+			line-height: 16px;
+			&#from-link{
+				@extend %align-left;
+				padding-right: 18px;
+				&:after{
+					content:"";
+					width:16px;
+					height:16px;
+					display: block;
+					@include abs-pos(0,0,auto,auto);
+					background:url('../images/icon-location-blue.svg') center center no-repeat;
+					background-size:16px 16px;
+				}
+			}
+			&#reset{
+				@extend %align-right;
+			}
+		}
+	}
+}

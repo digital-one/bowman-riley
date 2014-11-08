@@ -764,7 +764,7 @@ ul {
 }
 
 /* line 9, ../sass/helpers/_placeholders.scss */
-#nav a#mobile, #case-studies a.close, #news a.close, #people-single a.close, #our-people-sector a.close, div.owl-prev, div.owl-next {
+#nav a#mobile, #case-studies a.close, #news a.close, #people-single a.close, #our-people-sector a.close, div.owl-prev, div.owl-next, #calculate-route button {
   overflow: hidden;
   text-indent: -10000px;
 }
@@ -777,9 +777,19 @@ figure, ul, li, p, blockquote {
 
 /* line 25, ../sass/helpers/_placeholders.scss */
 nav#sub-nav li.share,
-nav#utility-nav li.share, #twitter-feed, #latest-work, #offices ul li, #post-list li, #post-list li a {
+nav#utility-nav li.share, #twitter-feed, #latest-work, #offices ul li, #calculate-route li, #post-list li, #post-list li a {
   overflow: hidden;
   zoom: 1;
+}
+
+/* line 29, ../sass/helpers/_placeholders.scss */
+#calculate-route a#from-link:link, #calculate-route a#from-link:visited {
+  float: left;
+}
+
+/* line 32, ../sass/helpers/_placeholders.scss */
+#calculate-route a#reset:link, #calculate-route a#reset:visited {
+  float: right;
 }
 
 /* line 1, ../sass/_base.scss */
@@ -948,7 +958,7 @@ p a:hover, p a:active {
 #header {
   position: fixed;
   display: block;
-  z-index: 9999;
+  z-index: 9998;
   background-color: #7c7c7b;
   color: white;
   height: 52px;
@@ -2119,7 +2129,7 @@ a.overlay.close:after {
   background-size: 4px 4px;
 }
 
-/* line 307, ../sass/components/_global.scss */
+/* line 305, ../sass/components/_global.scss */
 div.owl-prev, div.owl-next {
   cursor: pointer;
   z-index: 999;
@@ -2138,16 +2148,16 @@ div.owl-prev, div.owl-next {
   position: absolute;
   margin-top: -15px;
 }
-/* line 321, ../sass/components/_global.scss */
+/* line 319, ../sass/components/_global.scss */
 .orange div.owl-prev, .orange div.owl-next {
   background-color: #ee7203;
 }
-/* line 324, ../sass/components/_global.scss */
+/* line 322, ../sass/components/_global.scss */
 .green div.owl-prev, .green div.owl-next {
   background-color: #76b82a;
 }
 
-/* line 328, ../sass/components/_global.scss */
+/* line 326, ../sass/components/_global.scss */
 div.owl-next {
   top: 50%;
   right: 0;
@@ -2157,31 +2167,37 @@ div.owl-next {
   background-image: url("../images/slider-arrow-right.svg");
 }
 
-/* line 332, ../sass/components/_global.scss */
+/* line 330, ../sass/components/_global.scss */
 .owl-carousel {
   display: block;
   height: 100%;
 }
 
-/* line 336, ../sass/components/_global.scss */
+/* line 334, ../sass/components/_global.scss */
 .owl-stage-outer {
   height: 100%;
   display: block;
 }
-/* line 339, ../sass/components/_global.scss */
+/* line 337, ../sass/components/_global.scss */
 .owl-stage-outer .owl-stage {
   height: 100%;
   display: block;
 }
-/* line 343, ../sass/components/_global.scss */
+/* line 341, ../sass/components/_global.scss */
 .owl-stage-outer .owl-item {
   display: block;
   height: 100%;
 }
-/* line 347, ../sass/components/_global.scss */
+/* line 345, ../sass/components/_global.scss */
 .owl-stage-outer .image-slide {
   display: block;
   height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 /* line 1, ../sass/components/_grid.scss */
@@ -2279,45 +2295,46 @@ div.owl-next {
 /* line 78, ../sass/components/_grid.scss */
 .column.logo {
   text-align: center;
+  overflow: hidden;
 }
-/* line 80, ../sass/components/_grid.scss */
+/* line 81, ../sass/components/_grid.scss */
 .column.logo img {
   width: auto;
   height: 100%;
   display: inline-block;
   margin: 0 auto;
 }
-/* line 86, ../sass/components/_grid.scss */
+/* line 87, ../sass/components/_grid.scss */
 .column.width-25-pct {
   width: 25%;
 }
 @media screen and (max-width: 768px) {
-  /* line 88, ../sass/components/_grid.scss */
+  /* line 89, ../sass/components/_grid.scss */
   #case-studies .column.width-25-pct {
     height: auto;
   }
 }
 @media screen and (max-width: 768px) {
-  /* line 93, ../sass/components/_grid.scss */
+  /* line 94, ../sass/components/_grid.scss */
   #case-studies .column.width-25-pct.gutter-2x {
     border: none;
     margin-bottom: 20px;
   }
 }
-/* line 101, ../sass/components/_grid.scss */
+/* line 102, ../sass/components/_grid.scss */
 .column.width-40-pct {
   width: 35.72%;
 }
-/* line 104, ../sass/components/_grid.scss */
+/* line 105, ../sass/components/_grid.scss */
 .column.width-45-pct {
   width: 45.24%;
 }
-/* line 107, ../sass/components/_grid.scss */
+/* line 108, ../sass/components/_grid.scss */
 .fixed .column.width-45-pct.main {
   position: fixed;
 }
 @media screen and (max-width: 768px) {
-  /* line 106, ../sass/components/_grid.scss */
+  /* line 107, ../sass/components/_grid.scss */
   .column.width-45-pct.main {
     position: relative;
     height: 45%;
@@ -2325,35 +2342,31 @@ div.owl-next {
   }
 }
 @media screen and (max-width: 639px) {
-  /* line 106, ../sass/components/_grid.scss */
+  /* line 107, ../sass/components/_grid.scss */
   .column.width-45-pct.main {
     height: auto;
   }
 }
-/* line 121, ../sass/components/_grid.scss */
+/* line 122, ../sass/components/_grid.scss */
 .column.width-50-pct {
   width: 50%;
 }
-/* line 124, ../sass/components/_grid.scss */
+/* line 125, ../sass/components/_grid.scss */
 .column.width-55-pct {
   width: 54.76%;
 }
-/* line 127, ../sass/components/_grid.scss */
+/* line 128, ../sass/components/_grid.scss */
 .fixed .column.width-55-pct.beta {
   margin-left: 45.24%;
 }
-/* line 130, ../sass/components/_grid.scss */
-#people .column.width-55-pct.beta {
-  background-color: #fbfbfb;
-}
 @media screen and (max-width: 639px) {
-  /* line 133, ../sass/components/_grid.scss */
+  /* line 131, ../sass/components/_grid.scss */
   #case-studies .column.width-55-pct.beta {
     height: auto;
   }
 }
 @media screen and (max-width: 768px) {
-  /* line 126, ../sass/components/_grid.scss */
+  /* line 127, ../sass/components/_grid.scss */
   .column.width-55-pct.beta {
     margin: 0;
     height: 55%;
@@ -2361,65 +2374,65 @@ div.owl-next {
   }
 }
 @media screen and (max-width: 639px) {
-  /* line 126, ../sass/components/_grid.scss */
+  /* line 127, ../sass/components/_grid.scss */
   .column.width-55-pct.beta {
     height: 480px;
   }
 }
-/* line 148, ../sass/components/_grid.scss */
+/* line 146, ../sass/components/_grid.scss */
 .column.width-60-pct {
   width: 64.28%;
 }
-/* line 151, ../sass/components/_grid.scss */
+/* line 149, ../sass/components/_grid.scss */
 .column.width-75-pct {
   width: 75%;
 }
 @media screen and (max-width: 768px) {
-  /* line 153, ../sass/components/_grid.scss */
+  /* line 151, ../sass/components/_grid.scss */
   #case-studies .column.width-75-pct {
     height: auto;
   }
 }
 @media screen and (max-width: 768px) {
-  /* line 159, ../sass/components/_grid.scss */
+  /* line 157, ../sass/components/_grid.scss */
   #case-studies .column.width-75-pct.gutter-2x {
     border: none;
   }
 }
-/* line 166, ../sass/components/_grid.scss */
+/* line 164, ../sass/components/_grid.scss */
 .column.width-one-third {
   width: 33.33%;
 }
-/* line 169, ../sass/components/_grid.scss */
+/* line 167, ../sass/components/_grid.scss */
 .column.width-two-thirds {
   width: 66.66%;
 }
-/* line 172, ../sass/components/_grid.scss */
+/* line 170, ../sass/components/_grid.scss */
 .column .masked {
   overflow: hidden;
 }
-/* line 175, ../sass/components/_grid.scss */
+/* line 173, ../sass/components/_grid.scss */
 .beta .column.gutter-2x:nth-child(1) {
   border-right: 12px solid white;
 }
-/* line 178, ../sass/components/_grid.scss */
+/* line 176, ../sass/components/_grid.scss */
 .beta .column:nth-child(2) {
   border-left: 12px solid white;
 }
-/* line 181, ../sass/components/_grid.scss */
+/* line 179, ../sass/components/_grid.scss */
 .beta .column.gutter-2x:nth-child(2) {
   border-left: 12px solid white;
 }
-/* line 184, ../sass/components/_grid.scss */
+/* line 182, ../sass/components/_grid.scss */
 .beta .column.no-gutter:nth-child(1) {
   border: none;
 }
-/* line 187, ../sass/components/_grid.scss */
+/* line 185, ../sass/components/_grid.scss */
 .beta .column.no-gutter:nth-child(2) {
   border: none;
 }
 
-/* line 191, ../sass/components/_grid.scss */
+/* line 189, ../sass/components/_grid.scss */
 .cell {
   position: relative;
   display: block;
@@ -2432,23 +2445,23 @@ div.owl-next {
   border-top: 0;
   height: 100%;
 }
-/* line 202, ../sass/components/_grid.scss */
+/* line 200, ../sass/components/_grid.scss */
 #explore .cell {
   border: 12px solid white;
 }
-/* line 206, ../sass/components/_grid.scss */
+/* line 204, ../sass/components/_grid.scss */
 .cell.height-50-pct {
   height: 50%;
 }
-/* line 210, ../sass/components/_grid.scss */
+/* line 208, ../sass/components/_grid.scss */
 .cell.twice-height:before {
   padding-top: 200%;
 }
-/* line 214, ../sass/components/_grid.scss */
+/* line 212, ../sass/components/_grid.scss */
 .cell.half-height {
   height: auto;
 }
-/* line 216, ../sass/components/_grid.scss */
+/* line 214, ../sass/components/_grid.scss */
 .cell.half-height img {
   top: -25%;
   right: auto;
@@ -2456,12 +2469,12 @@ div.owl-next {
   left: 0;
   position: absolute;
 }
-/* line 219, ../sass/components/_grid.scss */
+/* line 217, ../sass/components/_grid.scss */
 .cell.half-height:before {
   content: "";
   display: block;
 }
-/* line 225, ../sass/components/_grid.scss */
+/* line 223, ../sass/components/_grid.scss */
 .cell img {
   width: 100%;
   height: auto;
@@ -2473,34 +2486,34 @@ div.owl-next {
   display: block;
   z-index: 1;
 }
-/* line 231, ../sass/components/_grid.scss */
+/* line 229, ../sass/components/_grid.scss */
 .cell.half {
   width: 50%;
 }
-/* line 234, ../sass/components/_grid.scss */
+/* line 232, ../sass/components/_grid.scss */
 #case-studies .cell.half:before {
   content: "";
   padding-top: 50%;
   display: block;
 }
 @media screen and (max-width: 639px) {
-  /* line 233, ../sass/components/_grid.scss */
+  /* line 231, ../sass/components/_grid.scss */
   #case-studies .cell.half {
     width: 100%;
     height: 50%;
   }
 }
-/* line 245, ../sass/components/_grid.scss */
+/* line 243, ../sass/components/_grid.scss */
 .cell.square {
   height: auto;
 }
-/* line 248, ../sass/components/_grid.scss */
+/* line 246, ../sass/components/_grid.scss */
 .cell.square:before {
   content: "";
   padding-top: 100%;
   display: block;
 }
-/* line 254, ../sass/components/_grid.scss */
+/* line 252, ../sass/components/_grid.scss */
 .cell.one-third {
   width: 33.33%;
   /*@media screen and (max-width: $break-large) {
@@ -2509,28 +2522,28 @@ div.owl-next {
   */
 }
 @media screen and (max-width: 768px) {
-  /* line 254, ../sass/components/_grid.scss */
+  /* line 252, ../sass/components/_grid.scss */
   .cell.one-third {
     width: 33.33%;
   }
 }
-/* line 261, ../sass/components/_grid.scss */
+/* line 259, ../sass/components/_grid.scss */
 #case-studies .cell.one-third:before {
   content: "";
   padding-top: 50%;
   display: block;
 }
 @media screen and (max-width: 639px) {
-  /* line 260, ../sass/components/_grid.scss */
+  /* line 258, ../sass/components/_grid.scss */
   #case-studies .cell.one-third {
     width: 50%;
   }
 }
-/* line 275, ../sass/components/_grid.scss */
+/* line 273, ../sass/components/_grid.scss */
 .cell.two-thirds {
   width: 66.66%;
 }
-/* line 277, ../sass/components/_grid.scss */
+/* line 275, ../sass/components/_grid.scss */
 .cell.two-thirds img {
   top: -50%;
   right: auto;
@@ -2539,12 +2552,12 @@ div.owl-next {
   position: absolute;
 }
 
-/* line 282, ../sass/components/_grid.scss */
+/* line 280, ../sass/components/_grid.scss */
 .shift-gutter-up {
   margin-top: -6px;
 }
 
-/* line 285, ../sass/components/_grid.scss */
+/* line 283, ../sass/components/_grid.scss */
 .shift-gutter-right {
   margin-left: 6px;
 }
@@ -2559,11 +2572,11 @@ select,
 textarea,
 .selectBox-dropdown {
   line-height: 1;
-  height: 46px;
+  height: 30px;
   font-family: "Varela Round", sans-serif;
   font-weight: 400;
-  background-color: white;
-  padding: 0 10px;
+  background-color: #e6e6e6;
+  padding: 0 7px;
   font-size: 12px;
   font-size: 1.2rem;
   border: none;
@@ -3117,6 +3130,61 @@ a.news-link:hover img, a.news-link:active img {
   margin: 0;
   padding: 0;
   border: none;
+}
+
+/* line 39, ../sass/templates/_contact.scss */
+#calculate-route {
+  display: none;
+  margin-top: 30px;
+}
+/* line 42, ../sass/templates/_contact.scss */
+#calculate-route li {
+  position: relative;
+  margin-bottom: 5px;
+}
+/* line 47, ../sass/templates/_contact.scss */
+#calculate-route input {
+  padding-right: 30px;
+}
+/* line 50, ../sass/templates/_contact.scss */
+#calculate-route button {
+  display: block;
+  width: 30px;
+  height: 30px;
+  top: 0;
+  right: 0;
+  bottom: auto;
+  left: auto;
+  position: absolute;
+  background: url("../images/arrow-right.svg") center center no-repeat;
+  background-size: 20px 20px;
+  border: none;
+}
+/* line 61, ../sass/templates/_contact.scss */
+#calculate-route a:link, #calculate-route a:visited {
+  color: #009fe3;
+  position: relative;
+  display: inline-block;
+  height: 16px;
+  line-height: 16px;
+}
+/* line 67, ../sass/templates/_contact.scss */
+#calculate-route a:link#from-link, #calculate-route a:visited#from-link {
+  padding-right: 18px;
+}
+/* line 70, ../sass/templates/_contact.scss */
+#calculate-route a:link#from-link:after, #calculate-route a:visited#from-link:after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  display: block;
+  top: 0;
+  right: 0;
+  bottom: auto;
+  left: auto;
+  position: absolute;
+  background: url("../images/icon-location-blue.svg") center center no-repeat;
+  background-size: 16px 16px;
 }
 
 /* line 2, ../sass/templates/_case-studies.scss */

@@ -77,6 +77,7 @@
 	}
 	&.logo{
 		text-align: center;
+		overflow:hidden;
 		img{
 			@include fit-grid(height);
 			display: inline-block;
@@ -126,9 +127,6 @@
 		&.beta{
 			.fixed &{
 				margin-left: 45.24%;
-			}
-			#people &{
-				background-color: lighten($grey,50);
 			}
 			#case-studies &{
 				@media screen and(max-width: $break-small){

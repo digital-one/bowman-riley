@@ -48,11 +48,14 @@ $has_case_study = false;
 	<?php
 if(get_field('image_slider',$post->ID)):
 	?>
-<div class="row height-60-pct gutter slider">
+<div class="row height-60-pct gutter slider-container">
+
+<div class="slider">
 	<?php while(the_repeater_field('image_slider')):  ?>
 	<?php list($src,$w,$h) = wp_get_attachment_image_src(get_sub_field('slider_image'), 'full'); ?>
 <div class="image-slide" class="bg-fill-cell" style="background-image:url('<?php echo $src ?>');"></div>
 <?php endwhile ?>
+</div>
 </div>
 <?php else: ?>
   <div class="row height-60-pct gutter masked bg-fill-cell" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($image_id)); ?>');">
