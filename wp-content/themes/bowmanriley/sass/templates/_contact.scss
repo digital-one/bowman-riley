@@ -39,6 +39,13 @@
 #calculate-route{
 	display: none;
 	margin-top: 30px;
+	p.error{
+		display: none;
+		background-color: $blue;
+		color: #fff;
+		padding: 3px 4px;
+		margin-bottom: 10px;
+	}
 	li{
 		position: relative;
 		margin-bottom: 5px;
@@ -67,6 +74,7 @@
 			&#from-link{
 				@extend %align-left;
 				padding-right: 18px;
+				display: none;
 				&:after{
 					content:"";
 					width:16px;

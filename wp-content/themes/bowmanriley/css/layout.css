@@ -3138,15 +3138,23 @@ a.news-link:hover img, a.news-link:active img {
   margin-top: 30px;
 }
 /* line 42, ../sass/templates/_contact.scss */
+#calculate-route p.error {
+  display: none;
+  background-color: #009fe3;
+  color: #fff;
+  padding: 3px 4px;
+  margin-bottom: 10px;
+}
+/* line 49, ../sass/templates/_contact.scss */
 #calculate-route li {
   position: relative;
   margin-bottom: 5px;
 }
-/* line 47, ../sass/templates/_contact.scss */
+/* line 54, ../sass/templates/_contact.scss */
 #calculate-route input {
   padding-right: 30px;
 }
-/* line 50, ../sass/templates/_contact.scss */
+/* line 57, ../sass/templates/_contact.scss */
 #calculate-route button {
   display: block;
   width: 30px;
@@ -3160,7 +3168,7 @@ a.news-link:hover img, a.news-link:active img {
   background-size: 20px 20px;
   border: none;
 }
-/* line 61, ../sass/templates/_contact.scss */
+/* line 68, ../sass/templates/_contact.scss */
 #calculate-route a:link, #calculate-route a:visited {
   color: #009fe3;
   position: relative;
@@ -3168,11 +3176,12 @@ a.news-link:hover img, a.news-link:active img {
   height: 16px;
   line-height: 16px;
 }
-/* line 67, ../sass/templates/_contact.scss */
+/* line 74, ../sass/templates/_contact.scss */
 #calculate-route a:link#from-link, #calculate-route a:visited#from-link {
   padding-right: 18px;
+  display: none;
 }
-/* line 70, ../sass/templates/_contact.scss */
+/* line 78, ../sass/templates/_contact.scss */
 #calculate-route a:link#from-link:after, #calculate-route a:visited#from-link:after {
   content: "";
   width: 16px;

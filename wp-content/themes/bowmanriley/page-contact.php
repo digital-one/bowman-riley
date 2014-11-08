@@ -39,6 +39,7 @@ endif;
 </ul>
 </div>
 <form id="calculate-route" name="calculate-route" action="#" method="get">
+	<p class="error">Error message</p>
 	<ul>
 		<li>
   <input type="text" id="from" name="from" required="required" placeholder="Enter your address" size="30" />	<button type="submit">Submit</button>

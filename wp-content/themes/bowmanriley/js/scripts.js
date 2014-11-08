@@ -63,6 +63,12 @@ $('#page-wrap').animate({
 
 //route calculator
 
+if (typeof navigator.geolocation != "undefined") {
+          $('#from-link').show();
+         
+        }
+
+
 $("#calculate-route").submit(function(event) {
   event.preventDefault();
   calculateRoute($("#from").val(), $("#to").val());
@@ -73,6 +79,7 @@ $('body').on('click','#calculate-route a#reset',function(e){
 });
 //retreive current geo location
 $('body').on('click','#from-link',function(event){
+     $('#calculate-route  p.error').empty().hide();
      $('body').prepend('<div id="overlay" />');
     $('main').addClass('loading');
 
@@ -90,11 +97,12 @@ $('body').on('click','#from-link',function(event){
               if (status == google.maps.GeocoderStatus.OK)
                 $("#" + addressId).val(results[0].formatted_address);
               else
-                $("#error").append("Unable to retrieve your address<br />");
+               
+                $('#calculate-route p.error').show().append("Unable to retrieve your current location");
             });
           },
           function(positionError){
-            $("#error").append("Error: " + positionError.message + "<br />");
+           $('#calculate-route p.error').show().append("Error: " + positionError.message);
           },
           {
             enableHighAccuracy: true,
@@ -103,6 +111,7 @@ $('body').on('click','#from-link',function(event){
         });
 
 calculateRoute =function (from) {
+    $('#calculate-route  p.error').empty().hide();
 
         $('#map').css({
         height:'80%'
@@ -150,7 +159,7 @@ calculateRoute =function (from) {
               // directionsDisplay.setDirections(response);
             }
             else
-              $("#error").append("Unable to retrieve your route<br />");
+                $('#calculate-route p.error').show().append("Unable to retrieve your route");
           }
         );
       }
