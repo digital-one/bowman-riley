@@ -304,7 +304,7 @@ setNavState = function(href){
     var $hash = location.hash;
     href = href.replace($hash,'');
    // if(href=='http://92.60.114.159/~bowmanriley/'){
-            if(href=='http://bowmanriley.localhost/'){
+            if(href==$home_url){
 
         $('header').removeAttr('style').addClass('front-page');
         animateLogo('up')

@@ -192,6 +192,7 @@ nav#utility-nav{
 				border:none;
 				padding:0;
 				width:100%;
+				background-color: white;
 				@include font-size(13);
 				@include placeholder {
     				color: $grey;

@@ -132,7 +132,7 @@ switch(get_field('link_1_type')){
  	<div class="column width-40-pct logo <?php echo $box_colour ?>"><img src="<?php echo $src ?>" /></div>
  <?php else: ?>
   <div class="column width-40-pct">
- 	<a href="<?php echo $permalink?>" target="<?php echo $target?>" class="<?php echo $class ?> fit-cell <?php echo $arrow_direction?> grey"><?php echo $label ?></a>
+ 	<a href="<?php echo $permalink?>" target="<?php echo $target?>" class="<?php echo $class ?> fit-cell <?php echo $arrow_direction?> <?php echo get_field('theme',$post->ID)?>"><?php echo $label ?></a>
  </div>
 <?php endif ?>
 
