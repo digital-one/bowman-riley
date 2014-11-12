@@ -64,6 +64,12 @@
 				display: block;
 				border:none;
 			}
+			
+			h5{
+				@include font-size(12);
+				margin-bottom: 5px;
+				color: white;
+			}
 			li{
 				width:auto;
 				display: inline-block;
@@ -100,7 +106,19 @@
 		}
 		&.menu-item-50{
 			.sub-menu{
-				width:320px;
+				width: 360px;
+				padding: 20px 20px 15px;
+				ul{
+					@extend %clearfix;
+					margin-bottom: 13px;
+					border-bottom: 1px solid lighten($grey,10);
+					padding-bottom: 8px;
+					&:last-child{
+						padding: 0;
+						margin:0;
+						border: none;
+					}
+				}
 				li{
 					display: block;
 					float: left !important;
@@ -133,7 +151,10 @@
 }
 .secondary-nav{
 	//@include abs-pos(auto,auto,calc(#{$gutter*2}),0);
-	display: block;
+	display: none;
+	@media screen and (min-height: 700px) {
+		display:block;
+	}
 	@include abs-pos(auto,auto,24px,0);
 	.fixed &{
 		@include abs-pos(auto,auto,72px,0);

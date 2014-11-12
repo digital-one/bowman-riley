@@ -13,7 +13,7 @@
 		height:45%;
 	}
 	&.height-50-pct{
-		height:55%;
+		height:50%;
 	}
 	&.height-55-pct{
 		height:55%;
@@ -27,6 +27,24 @@
 	&.twice-height{
 		&:before{
 			padding-top:calc(200% + #{$gutter});
+		}
+	}
+	&.blue{
+		background-color: $blue;
+	}
+	&.green{
+		background-color: $green;
+	}
+	&.orange{
+		background-color: $orange;
+	}
+	&.logo{
+		text-align: center;
+		overflow:hidden;
+		img{
+			@include fit-grid(height);
+			display: inline-block;
+			margin:0 auto;
 		}
 	}
 	&.square{
@@ -161,6 +179,9 @@
 			}
 		}
 	}
+	&.width-100-pct{
+		width:100%;
+	}
 	&.width-one-third{
 		width:33.33%;
 	}
@@ -212,12 +233,13 @@
 	&.half-height{
 		height:auto;
 		img{
-			@include abs-pos(-25%,auto,auto,0);
+			@include abs-pos(0,auto,auto,0);
 		}
 		&:before{
 			content:"";
 			//padding-top: calc(50% - #{$gutter}/2);
 			display: block;
+			padding-top:50%;
 		}
 	}
 	img{

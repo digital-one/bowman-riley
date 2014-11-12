@@ -29,6 +29,35 @@ textarea{
 	resize: none;
 }
 
+.popup-form{
+	min-width:300px;
+	h3{
+		color: $blue;
+	}
+	li{
+		margin-bottom: 10px;
+	}
+	input.button{
+		border:none;
+		background-color:$grey;
+		@include border-radius(5px);
+		height:30px;
+		line-height: 1;
+		padding: 0 10px;
+		color: white;
+		text-align: center;
+		&:hover,&:active{
+			background-color: $blue;
+		}
+	}
+}
+.validation_error,.validation_message{
+	color: red !important;
+	margin-bottom: 10px;
+}
+.validation_message{
+	margin: 3px 0 0;
+}
 
 //selectbox
 

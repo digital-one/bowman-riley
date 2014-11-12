@@ -31,6 +31,11 @@ $(function(){
         activateDropDown();
     }
 
+ //if($('.slider').length){
+
+
+
+  
 
 $(".fancybox").fancybox();
 
@@ -77,12 +82,14 @@ $('body').on('click','#calculate-route a#reset',function(e){
     e.preventDefault();
     $('#calculate-route input').val('');
 });
+
+
 //retreive current geo location
 $('body').on('click','#from-link',function(event){
      $('#calculate-route  p.error').empty().hide();
      $('body').prepend('<div id="overlay" />');
     $('main').addClass('loading');
-
+    loader('show');
           event.preventDefault();
           var addressId = this.id.substring(0, this.id.indexOf("-"));
  
@@ -94,6 +101,7 @@ $('body').on('click','#from-link',function(event){
             function(results, status) {
                 $('#overlay').remove();
                 $('main').removeClass('loading');
+                loader('hide');
               if (status == google.maps.GeocoderStatus.OK)
                 $("#" + addressId).val(results[0].formatted_address);
               else
@@ -150,13 +158,6 @@ calculateRoute =function (from) {
                 directions: response
               });
 
-
-            
-             
-     
-
-
-              // directionsDisplay.setDirections(response);
             }
             else
                 $('#calculate-route p.error').show().append("Unable to retrieve your route");
@@ -170,8 +171,11 @@ if (Modernizr.history){ //if browser supports history
           $aside = $('aside'),
           $links = $('#nav a'),
           $firstLoad  = 1,
-          $home_url = 'http://bowmanriley.localhost/';
+          //$home_url = 'http://bowmanriley.localhost/',
+          $home_url = 'http://92.60.114.159/~bowmanriley/';
+          $owl_class="";
        
+
 
 
 //on click change nav state
@@ -181,6 +185,11 @@ $navLinks.on('click',function(e){
     e.preventDefault();
 $navLinks.parent('li').removeClass('current-menu-item');
 $(this).parent('li').addClass('current-menu-item');
+
+ 
+  // owl.data('owlCarousel').destroy();
+
+
 })
 
 //convert drop down links to hash
@@ -244,8 +253,15 @@ $('body').on('click', '#case-studies-nav a',function(e){
      $('#case-studies-nav a').removeClass('current');
      $(this).addClass('current');
         var $href = $(this).attr("href");
-        getPages($href,'aside','aside .inner');
+       // getPages($href,'aside','aside .inner');
+        getPages($href);
 })
+
+ $('body').on('click','.destroy',function(e){
+e.preventDefault()
+$('.slider').data('owlCarousel').destroy();
+});
+
 
 $('body').on('click','#sub-nav.people-categories  a',function(e){
     e.preventDefault();
@@ -296,7 +312,9 @@ var $totalPages = 0,
     $pages = [],
     $target = 'main',
     $selector = '.section',
-    $initFullPageJS=0; //counter to handle if fullpage js has already been called.
+    $initFullPageJS=0, //counter to handle if fullpage js has already been called.
+    $initOwl=0,
+    owl = $('.owl-carousel');
 
 
 setNavState = function(href){
@@ -340,10 +358,63 @@ animateLogo = function(direction){
 }
 }
 
+loaderPosition = function(){
+  var $loaderHeight = $('#loader').outerHeight(),
+      $loaderWidth = $('#loader').outerWidth(),
+      $width = $(window).width(),
+      $height = $(window).height(),
+      $top = (($height/2) - ($loaderHeight/2)),
+      $left = (($width/2) - ($loaderWidth/2));
+
+      $('#loader').css({
+        left: $left+'px',
+        top: $top+'px'
+      })
+}
+
+loader = function(status){
+  console.log(status);
+  switch(status){
+    case 'show':
+   var $width = $(window).width(),
+       $height = $(window).height(),
+       $loaderHeight = 80,
+       $loaderWidth = 80,
+       $move = 50,
+      // var top = (($(window).height() / 2) - ($("#popup_container").outerHeight() / 2)) + $.confirmBox.verticalOffset;
+       $top = (($height/2) - ($loaderHeight/2)),
+       $left = (($width/2) - ($loaderWidth/2)),
+       $startPos = $top + $move;
+
+ $('body').prepend('<div id="loader" />');
+ $('#loader').css({
+  top: $startPos+'px',
+  left: $left
+ })
+ //animate loader
+$('#loader').animate({
+  top: $top,
+  opacity: 1
+},500);
+
+//$(window).bind('resize', loaderPosition());
+break;
+case 'hide':
+$('#loader').animate({
+  opacity:0
+},500,function(){
+ // $(this).remove();
+})
+//$(window).unbind('resize', loaderPosition());
+break;
+}
+}
+
+
 getPages = function(url,target,selector){
 
 //check if page request is within the section currently being viewed
-
+  
 var $hasHash=0;
 var $currentURL = location.href.replace(location.hash,'');
 var $requestedURL = url.split('#');
@@ -366,6 +437,7 @@ if($sameSection && $hasHash && !$firstLoad){
 
     $('body').prepend('<div id="overlay" />');
     $('main').addClass('loading');
+    loader('show');
     $loadedObjs=[];
     setNavState(url);
     $target = 'main';
@@ -447,25 +519,29 @@ loadPages = function(pages){ //get page urls back
 }
 renderPage = function(){
   // console.log('render page');
+
+ 
    if(!$firstLoad){
     if($initFullPageJS){
     $.fn.fullpage.destroy('all');
     }
-   $($target).empty(); //if not first load empty the stage
+$('main').empty();
+ //  $($target).empty(); //if not first load empty the stage
   // console.log($target);
    }
         for(i=0;i<$loadedObjs.length;i++){
            //  console.log($loadedObjs[i])
-            $($target).append($loadedObjs[i])
+            $('main').append($loadedObjs[i])
 
         }
-        $firstLoad=0;
+        
         $loadedObjs = [];
-        initLoadedPages();
+
+     initLoadedPages();
 }
 
 loadPage  = function(url){
-
+//console.log('load page '+url);
     //first check if requested page HTML is in cache
     var $ajaxLoad=1;
     if($cache.length>0){
@@ -507,8 +583,26 @@ loadPage  = function(url){
 }
 
 
+//function to update share links when hash changes or page is loading via AJAX
+updateShareLinks = function(index){
+  var $href = location.href,
+      $section =  $('.fp-section').eq(index-1),
+     
+      $title = $section.attr('data-title');
+      document.title = $title;
+      $('#utility-nav a.share-twitter').attr('href',encodeURI('http://twitter.com/home?status='+$title+'+'+$href));
+      $('#utility-nav a.share-facebook').attr('href',encodeURI('http://www.facebook.com/share.php?u='+$href+'&amp;title='+$title));
+      $('#gform_3 .gform_hidden').val($href);
+
+ // console.log('page title='+$title)
+  //console.log('changing share to '+$href);
+}
+
 //after all section pages have loaded, init fullpage.js and other plugins.
 initLoadedPages = function(){ 
+
+
+
     //page anchors
       var $sections = $('.section'),
             $anchors = Array();
@@ -522,10 +616,10 @@ initLoadedPages = function(){
         }
    
 
-    //twitter feed
+    //twitter feed bowmanrileyarch
     if($('#twitter-feed').length){ 
     var config1 = {
-    "id": '345170787868762112',
+    "id": '532496073038630912',
     "domId": 'twitter-feed',
     "maxTweets": 2,
     "enableLinks": true
@@ -545,6 +639,7 @@ initLoadedPages = function(){
         touchSensitivity: 10,
         scrollingSpeed: 700,
         anchors: $anchors,
+
         onLeave: function(index, nextIndex, direction){
               history.pushState({}, '', location.href);
          //after leaving section 2
@@ -556,10 +651,12 @@ initLoadedPages = function(){
           animateLogo('up');
           }
          }
+         updateShareLinks(nextIndex);
          }
     });
 
     $initFullPageJS++;
+    updateShareLinks(1); //update share links for first page
 
 if($('#map').length){
     var $lat = $('#map').attr('data-lat'),
@@ -574,34 +671,27 @@ $('#map').gmap({
     });
 }
 
-    //owl carousel
 
-    if($('.slider').length){
-    var owl = $('.slider');
-    owl.owlCarousel({
-        autoplay: true,
-        center: true,
-        items:1,
-        loop:true,
-        margin:0,
-        nav: true,
-        navContainer: '.slider-container',
-        responsive:{
-            0:{
-                nav: true,
-                dotsEach: false,
-                items:1
-            }
-        }
-    });  
+ if($('.slider').length){
+
+
+//owl.data('owlCarousel').destroy();
+var owl = $('.slider');
+
+$('.slider').unslick().slick({
+  autoplay: true
+});
+
+
 }
-    
+
 
     //reposition sub navs
    // repositionSubNavs();
       $('main').removeClass('loading');
       $('#overlay').remove();
-
+      loader('hide');
+$firstLoad=0;
    //move page to requested anchor link
    if(location.hash){
     var $hash = location.hash.replace('#','');
@@ -672,16 +762,16 @@ function mobileMenu(){
     return false;
 }
 function deactivateDropDown(){
-    $('#nav li.menu-item-has-children').unbind('mouseenter');
-     $('#nav li.menu-item-has-children').unbind('mouseleave');
+    $('#nav li.menu-item-has-children,#nav li#menu-item-50').unbind('mouseenter');
+     $('#nav li.menu-item-has-children,#nav li#menu-item-50').unbind('mouseleave');
  }
 
 function activateDropDown(){
-    $('#nav li.menu-item-has-children').bind('mouseenter',function(){
+    $('#nav li.menu-item-has-children,#nav li#menu-item-50').bind('mouseenter',function(){
         $(this).addClass('hover');
         $('.sub-menu',$(this)).fadeIn(200);
     })
-    $('#nav li.menu-item-has-children').bind('mouseleave',function(){
+    $('#nav li.menu-item-has-children,#nav li#menu-item-50').bind('mouseleave',function(){
         $(this).removeClass('hover');
         $('.sub-menu',$(this)).fadeOut(100);
     })

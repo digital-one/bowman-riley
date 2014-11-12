@@ -43,7 +43,7 @@
 </svg>
 </a></li></ul></li>
 <?php endif ?>
-  <li class="share"><span>Share this page</span><ul><li><a href="">  <svg id="share-twitter" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+  <li class="share"><span>Share this page</span><ul><li><a href="http://twitter.com/home?status=<?php echo urlencode($post->post_title) ?>+<?php echo get_permalink($post->ID)?>"  class="share-twitter" target="_blank">  <svg id="share-twitter" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
    viewBox="0 0 18.8 18.8" enable-background="new 0 0 18.8 18.8" xml:space="preserve">
    <g class="icon">
   <path fill="#615E60" d="M9.4,18.8C4.2,18.8,0,14.6,0,9.4S4.2,0,9.4,0s9.4,4.2,9.4,9.4S14.6,18.8,9.4,18.8z M9.4,0.7
@@ -54,7 +54,7 @@
     c-0.7,0-0.9-0.5-0.3-0.8c-0.6,0-0.9-0.2-1.1-0.5C6.6,9.1,6.6,9.1,6.7,9c0.1-0.1,0.3-0.1,0.5-0.2C6.7,8.7,6.3,8.4,6.2,8
     c0-0.1,0-0.1,0.1-0.2c0.1,0,0.3-0.1,0.5-0.1C6.3,7.5,6,7.2,6,6.8C5.9,6.5,6,6.5,6.2,6.6C7.4,7.1,8.6,7.6,9.3,8.3" />
   </g>
-</svg></a></li><li><a href=""><svg id="share-facebook" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+</svg></a></li><li><a href="http://www.facebook.com/share.php?u=<?php echo get_permalink($post->ID)?>&amp;title=<?php echo urlencode($post->post_title) ?>"  class="share-facebook" target="_blank"><svg id="share-facebook" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
    viewBox="0 0 18.8 18.8" enable-background="new 0 0 18.8 18.8" xml:space="preserve">
 <g class="icon">
   <path fill="#625F61" d="M9.4,18.8C4.2,18.8,0,14.6,0,9.4S4.2,0,9.4,0s9.4,4.2,9.4,9.4S14.6,18.8,9.4,18.8z M9.4,0.7

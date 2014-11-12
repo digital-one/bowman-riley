@@ -1,6 +1,10 @@
 #twitter-feed{
 	@extend %clearfix;
 	margin-bottom:24px;
+	display: none;
+	@media screen and (min-height: 780px) {
+    	display:block;
+	}
 	ul{
 		list-style-type: none;
 		li{

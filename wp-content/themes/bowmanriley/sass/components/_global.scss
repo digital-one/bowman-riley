@@ -215,6 +215,9 @@ a{
 	}
 	width:20px;
 	@include abs-pos(20px,15px,35px,auto);
+	.fixed &{
+		@include abs-pos(20px,15px,70px,auto);
+	}
 	background: url('../images/divide-v.png') center top repeat-y;
 	a{
 		width:20px;
@@ -248,7 +251,7 @@ a.overlay{
 		@include rgba-bg($r:238,$g:125,$b:0,$hex:$orange,$opacity:0.75);
 	}
 	&.green{
-		@include rgba-bg($r:116,$g:103,$b:163,$hex:$green,$opacity:0.75);
+		@include rgba-bg($r:118,$g:184,$b:42,$hex:$green,$opacity:0.75);
 	}
 	@include transition (all 0.2s ease-in-out);
 	color: white;
@@ -302,9 +305,10 @@ a.overlay{
 		}
 	}
 }
-div.owl-prev,div.owl-next{ 
+.slick-prev,.slick-next{ 
 	cursor:pointer;
 	z-index:999;
+	border:none;
 	display: inline-block;
 	width: 30px;
 	height:30px;
@@ -323,7 +327,7 @@ div.owl-prev,div.owl-next{
 		background-color: $green;
 	}
 }
-div.owl-next{
+.slick-next{
 	@include abs-pos(50%,0,auto,auto);
 	background-image:url('../images/slider-arrow-right.svg');
 }
@@ -342,9 +346,27 @@ div.owl-next{
 		display: block;
 		height: 100%;
 	}
-	.image-slide{
-		display:block;
-		height:100%;
-		@include bg-cover;
-	}
+	
+}
+.slick-slider, .slick-list, .slick-track, .slick-slider{
+	height: 100%;
+}
+.image-slide{
+	display:block;
+	height:100%;
+	@include bg-cover;
+}
+.fancybox-overlay{
+	z-index:9999 !important;
+}
+#loader{
+	display: block;
+	width: 85px;
+  	height: 85px;
+  	background-color: white;
+  	position: absolute;
+  	@include opacity(0);
+  	z-index: 9999;
+  	@include border-radius(50%);
+  	background: white url('../images/loader.gif') center center no-repeat;
 }

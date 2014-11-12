@@ -41,7 +41,7 @@ function create_cpt_casestudies(){
 		'rewrite' => array('slug' => 'case-studies/archive'),
 		'menu_position' => 5,
 		'taxonomies' => array('casestudies-category'),
-		'supports' => array('title', 'editor', 'excerpt', 'thumbnail','post-thumbnails')
+		'supports' => array('title', 'editor', 'excerpt', 'thumbnail','post-thumbnails','page-attributes')
 		
 	);
 
@@ -59,8 +59,8 @@ function cpt_casestudies_taxonomies() {
 	// Create all taxonomies here.
 	//
 	$labels = array(
-		'name' => _x( 'Case Studies Category', 'taxonomy general name', 'dc_theme' ),
-		'singular_name' => _x( 'Case Studies Category', 'taxonomy singular name', 'dc_theme' ),
+		'name' => _x( 'Case Study Categories', 'taxonomy general name', 'dc_theme' ),
+		'singular_name' => _x( 'Case Study Category', 'taxonomy singular name', 'dc_theme' ),
 		'search_items' =>  __( 'Search Case Study Categories', 'dc_theme' ),
 		'all_items' => __( 'All Case Study Categories', 'dc_theme' ),
 		'parent_item' => __( 'Parent Case Study Categories', 'dc_theme' ),

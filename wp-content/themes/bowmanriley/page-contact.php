@@ -7,7 +7,7 @@ $lng = $first_office['office_location']['lng'];
 ?>
 
 <main id="page-wrap" role="main">
-  <section class="section fixed">
+  <section class="section fixed"  data-title="<?php wp_title()?>">
 <div class="main column width-45-pct" role="main">
   <?php echo $post->post_content ?>
 <div id="offices">
@@ -19,8 +19,9 @@ while(the_repeater_field('office_locations')):
 
 	$directions_link = get_sub_field('office_directions_link');
 	$directions_pdf = get_sub_field('office_directions_pdf');
-	$office_lat  = get_sub_field('office_location')['lat'];
-	$office_lng  = get_sub_field('office_location')['lng'];
+	$office_location = get_sub_field('office_location');
+	$office_lat  = $office_location['lat'];
+	$office_lng  = $office_location['lng'];
 ?>
 	<li><div><h4><?php echo get_sub_field('office_title')?></h4><p>Tel: <a href="tel:<?php echo str_replace(' ','',get_sub_field('office_telephone'))?>"><?php echo get_sub_field('office_telephone')?></a><br />e-mail: <a href="mailto:<?php echo get_sub_field('office_email_address')?>"><?php echo get_sub_field('office_email_address')?></a></p></div><ul class="links">
 		

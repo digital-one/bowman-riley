@@ -1,7 +1,7 @@
 <?php get_header() ?>
 <main id="page-wrap" role="main">
 <!-- our people -->
-<section id="people" class="section" data-anchor="our-people">
+<section id="people" class="section" data-title="<?php wp_title() ?>" data-anchor="our-people">
 <div class="main column width-45-pct" role="main">
  <?php echo $post->post_content ?>
 <?php get_template_part('includes/secondary-nav-people') ?>
@@ -22,7 +22,7 @@ if($post->ID != $lastchild->ID):
 </a>
 </div>
 <div class="cell half square"><a href="<?php echo get_term_link($terms[0]->slug, $terms[0]->taxonomy);?>" class="push-link fit-cell orange"><?php echo $terms[0]->description ?></a></div>
-<div class="cell half square"><a href="<?php echo get_term_link($terms[1]->slug, $terms[1]->taxonomy);?>" class="push-link fit-cell purple"><?php echo $terms[1]->description ?></a></div>
+<div class="cell half square"><a href="<?php echo get_term_link($terms[1]->slug, $terms[1]->taxonomy);?>" class="push-link fit-cell green"><?php echo $terms[1]->description ?></a></div>
 <div class="cell half square"><a href="<?php echo get_term_link($terms[1]->slug, $terms[1]->taxonomy);?>"  class="push-link"><?php  echo wp_get_attachment_image( get_field('image', $terms[1]), 'full'); ?></a></div>
 <div class="cell half-height"><a href="<?php echo get_term_link($terms[2]->slug, $terms[2]->taxonomy);?>"  class="push-link"><?php  echo wp_get_attachment_image( get_field('image', $terms[2]), 'full'); ?></a></div>
   </div>

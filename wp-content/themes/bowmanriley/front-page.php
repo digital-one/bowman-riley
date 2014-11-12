@@ -4,7 +4,7 @@
 
 <main id="page-wrap" role="main">
   <!--home-->
-<section class="section" id="about" data-anchor="about-bowman-riley">
+<section class="section" id="about"  data-title="<?php wp_title()?>" data-anchor="about-bowman-riley">
 <div class="main column width-45-pct">
  <?php echo do_shortcode($post->post_content) ?>
 

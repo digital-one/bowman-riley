@@ -21,7 +21,7 @@ endforeach;
 
   <main id="page-wrap" role="main">
 
-<section id="our-people-sector" class="
+<section id="our-people-sector"  data-title="<?php wp_title()?>" class="
 <?php
 $queried_object = get_queried_object();
     $term_id = $queried_object->term_id;
@@ -50,7 +50,7 @@ $args = array(
   'post_status' => 'publish',
   'taxonomy' => 'people_category',
   'term' => $term_name,
-  'orderby' => 'menu_index',
+  'orderby' => 'menu_order',
   'order' => 'ASC'
 );
 
@@ -59,7 +59,7 @@ $current_cell=0;
 $current_person=0;
 $link=0;
 //$link_cells = array(1,3);
-$double_img_cells = array(6);
+$double_img_cells = array();
 $total = count($people);
 for($i=0; $i<$total; $i++):
 	/*
@@ -78,7 +78,7 @@ if(in_array($current_cell, $double_img_cells)):
 endif;
 ?>
 
-	<div class="cell <?php echo $class?>"><a href="<?php echo get_permalink($people[$current_person]->ID) ?>" class="overlay <?php echo $theme;?> people-link select"><ul class="case-study-meta"><li><?php echo $people[$current_person]->post_title ?></li><li><?php echo get_field('position',$people[$current_person]->ID) ?></li></ul><?php echo $people[$current_person]->post_content ?></a><img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($people[$current_person]->ID)); ?>" /></div>
+	<div class="cell bg-fill-cell <?php echo $class?>" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($people[$current_person]->ID)); ?>');"><a href="<?php echo get_permalink($people[$current_person]->ID) ?>" class="overlay <?php echo $theme;?> people-link select"><ul class="case-study-meta"><li><?php echo $people[$current_person]->post_title ?></li><li><?php echo get_field('position',$people[$current_person]->ID) ?></li></ul></a><!--<img src="<?php //echo wp_get_attachment_url(get_post_thumbnail_id($people[$current_person]->ID)); ?>" />--></div>
 
 <?php $current_person++ ?>
 <?php $current_cell++ ?>

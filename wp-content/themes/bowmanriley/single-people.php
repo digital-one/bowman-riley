@@ -7,7 +7,7 @@ $theme = get_field('theme',$term);
 
   <main id="page-wrap" role="main">
 <!-- our story section -->
-<section id="people-single" class="<?php echo $theme ?> section fixed <?php echo get_field('theme',$post->ID)?>">
+<section id="people-single"  data-title="<?php wp_title()?>" class="<?php echo $theme ?> section fixed <?php echo get_field('theme',$post->ID)?>">
 <div class="main column width-45-pct" role="main">
   <h1><?php echo $term->name ?> Team</h1>
     <?php echo get_field('term_long_description',$term) ?>

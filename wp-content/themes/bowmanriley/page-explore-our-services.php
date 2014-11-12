@@ -1,7 +1,7 @@
 <?php get_header() ?>
 <main id="page-wrap" role="main">
   <!--explore-->
-<section id="explore" class="section" data-anchor="explore-our-services">
+<section id="explore" class="section"  data-title="<?php wp_title()?>" data-anchor="explore-our-services">
 <div class="main column width-45-pct" role="main">
  <?php echo $post->post_content?>
 <?php get_template_part('includes/secondary-nav'); ?>

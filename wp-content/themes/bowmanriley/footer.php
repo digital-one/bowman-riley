@@ -11,6 +11,7 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/twitter-fetcher.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/fancybox/jquery.fancybox.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/owlcarousel/owl.carousel.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/slick/slick.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.scrollTo.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/scripts.js"></script>
 <!--/scripts-->

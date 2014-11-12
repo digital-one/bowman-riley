@@ -1,7 +1,7 @@
 <?php /* Template Name: Row layout with 4 links */ ?>
 <?php get_header(); ?>
   <main id="page-wrap" role="main">
-  <section class="section <?php echo get_field('theme',$post->ID)?>" data-anchor="<?php echo $post->post_name?>">
+  <section class="section <?php echo get_field('theme',$post->ID)?>"  data-title="<?php wp_title()?>" data-anchor="<?php echo $post->post_name?>">
 <div class="main column width-45-pct" role="main">
 		<div class="main-content">
  <?php echo $post->post_content ?>
@@ -39,19 +39,19 @@ $has_case_study = false;
   </a>
 <?php endif ?></div>
   <div class="row height-40-pct">
- <div class="column width-40-pct">
+
 <?php
 switch(get_field('link_1_type')){
 	case 'page':
 	$val = get_field('link_1_label',$post->ID);
-	$label = !empty($val) ? get_field('link_1_label',$post->ID) : $page->post_title;
+	$label = !empty($val) ? get_field('link_1_label',$post->ID) : $post->post_title;
 	$permalink = get_field('link_1_page',$post->ID);
 	$arrow_direction = 'right';
 	$target = "_parent";
 	break;
 	case 'case-study-category':
 	$val = get_field('link_1_label',$post->ID);
-	$label = !empty($val) ? get_field('link_1_label',$post->ID) : $page->post_title;
+	$label = !empty($val) ? get_field('link_1_label',$post->ID) : $post->post_title;
 	$term = get_field('link_1_case_study_category',$post->ID);
 	$permalink = get_term_link($term);
 	$arrow_direction = 'right';
@@ -59,7 +59,7 @@ switch(get_field('link_1_type')){
 	break;
 	case 'people-category':
 	$val = get_field('link_1_label',$post->ID);
-	$label = !empty($val) ? get_field('link_1_label',$post->ID) : $page->post_title;
+	$label = !empty($val) ? get_field('link_1_label',$post->ID) : $post->post_title;
 	$term = get_field('link_1_people_category',$post->ID);
 	$permalink = get_term_link($term);
 	$arrow_direction = 'right';
@@ -69,7 +69,7 @@ switch(get_field('link_1_type')){
 	$post_id = url_to_postid(get_field('link_1_anchor',$post->ID));
 	$page = get_post($post_id);
 	$val = get_field('link_1_label',$post->ID);
-	$label = !empty($val) ? get_field('link_1_label',$post->ID) : $page->post_title;
+	$label = !empty($val) ? get_field('link_1_label',$post->ID) : $post->post_title;
 	if($page->post_parent==0):
 		$permalink = get_permalink($page->ID); //if the target page is the parent page
 	else:
@@ -85,26 +85,39 @@ switch(get_field('link_1_type')){
 	$arrow_direction = 'down';
 	$target = "_blank";
 	break;
+	case 'image':
+	list($src,$w,$h) = wp_get_attachment_image_src(get_field('link_1_image',$post->ID), 'full');
+	break;
+	case 'logo':
+	$src = get_field('link_1_logo',$post->ID);
+	$box_colour = get_field('link_1_logo_box_colour',$post->ID);
+	break;
 }
 ?>
- 	<a href="<?php echo $permalink ?>" target="<?php echo $target ?>" class="push-link fit-cell <?php echo get_field('theme',$post->ID)?> push-link <?php echo $arrow_direction ?>"><?php echo $label ?></a>
-
+<?php $class = !empty($form_id) ? 'fancybox' : 'push-link' ?>
+ 	<?php if(get_field('link_1_type')=='image'): ?>
+ 	 <div class="column width-40-pct bg-fill-cell" style="background-image:url('<?php echo $src; ?>');"></div>
+ 	<?php elseif(get_field('link_1_type')=='logo'): ?>
+ 	<div class="column width-40-pct logo <?php echo $box_colour ?>"><img src="<?php echo $src ?>" /></div>
+ <?php else: ?>
+  <div class="column width-40-pct">
+ 	<a href="<?php echo $permalink?>" target="<?php echo $target?>" class="<?php echo $class ?> fit-cell <?php echo $arrow_direction?> <?php echo get_field('theme',$post->ID) ?>"><?php echo $label ?></a>
  </div>
+<?php endif ?>
  <div class="column width-60-pct">
-  <div class="row height-40-pct">
   	<!--link 2-->
 <?php
 switch(get_field('link_2_type')){
 	case 'page':
 	$val = get_field('link_2_label',$post->ID);
-	$label = !empty($val) ? get_field('link_2_label',$post->ID) : $page->post_title;
+	$label = !empty($val) ? get_field('link_2_label',$post->ID) : $post->post_title;
 	$permalink = get_field('link_2_page',$post->ID);
 	$arrow_direction = 'right';
 	$target = "_parent";
 	break;
 	case 'case-study-category':
 	$val = get_field('link_2_label',$post->ID);
-	$label = !empty($val) ? get_field('link_2_label',$post->ID) : $page->post_title;
+	$label = !empty($val) ? get_field('link_2_label',$post->ID) : $post->post_title;
 	$term = get_field('link_2_case_study_category',$post->ID);
 	$permalink = get_term_link($term);
 	$arrow_direction = 'right';
@@ -112,7 +125,7 @@ switch(get_field('link_2_type')){
 	break;
 	case 'people-category':
 	$val = get_field('link_2_label',$post->ID);
-	$label = !empty($val) ? get_field('link_2_label',$post->ID) : $page->post_title;
+	$label = !empty($val) ? get_field('link_2_label',$post->ID) : $post->post_title;
 	$term = get_field('link_2_people_category',$post->ID);
 	$permalink = get_term_link($term);
 	$arrow_direction = 'right';
@@ -122,7 +135,7 @@ switch(get_field('link_2_type')){
 	$post_id = url_to_postid(get_field('link_2_anchor',$post->ID));
 	$page = get_post($post_id);
 	$val = get_field('link_2_label',$post->ID);
-	$label = !empty($val) ? get_field('link_2_label',$post->ID) : $page->post_title;
+	$label = !empty($val) ? get_field('link_2_label',$post->ID) : $post->post_title;
 	if($page->post_parent==0):
 		$permalink = get_permalink($page->ID); //if the target page is the parent page
 	else:
@@ -138,25 +151,39 @@ switch(get_field('link_2_type')){
 	$arrow_direction = 'down';
 	$target = "_blank";
 	break;
+	case 'image':
+	list($src,$w,$h) = wp_get_attachment_image_src(get_field('link_2_image',$post->ID), 'full');
+	break;
+	case 'logo':
+	$src = get_field('link_2_logo',$post->ID);
+	$box_colour = get_field('link_2_logo_box_colour',$post->ID);
+	break;
 }
 ?>
-<a href="<?php echo $permalink ?>" target="<?php echo $target ?>" class="push-link fit-cell grey <?php echo $arrow_direction ?>"><?php echo $label ?></a>
-<!--/link 2-->
-  </div>
+<?php $class = !empty($form_id) ? 'fancybox' : 'push-link' ?>
+ 	<?php if(get_field('link_1_type')=='image'): ?>
+ 	 <div class="row height-40-pct bg-fill-cell" style="background-image:url('<?php echo $src; ?>');"></div>
+ 	<?php elseif(get_field('link_1_type')=='logo'): ?>
+ 	<div class="row height-40-pct logo <?php echo $box_colour ?>"><img src="<?php echo $src ?>" /></div>
+ <?php else: ?>
+  <div class="row height-40-pct">
+ 	<a href="<?php echo $permalink?>" target="<?php echo $target?>" class="<?php echo $class ?> fit-cell <?php echo $arrow_direction?> grey"><?php echo $label ?></a>
+ </div>
+<?php endif ?>
  <div class="row height-60-pct"><div class="column width-55-pct">
  	<!--link 3-->
  	<?php
 switch(get_field('link_3_type')){
 	case 'page':
 	$val = get_field('link_3_label',$post->ID);
-	$label = !empty($val) ? get_field('link_3_label',$post->ID) : $page->post_title;
+	$label = !empty($val) ? get_field('link_3_label',$post->ID) : $post->post_title;
 	$permalink = get_field('link_3_page',$post->ID);
 	$arrow_direction = 'right';
 	$target = "_parent";
 	break;
 	case 'case-study-category':
 	$val = get_field('link_3_label',$post->ID);
-	$label = !empty($val) ? get_field('link_3_label',$post->ID) : $page->post_title;
+	$label = !empty($val) ? get_field('link_3_label',$post->ID) : $post->post_title;
 	$term = get_field('link_3_case_study_category',$post->ID);
 	$permalink = get_term_link($term);
 	$arrow_direction = 'right';
@@ -164,7 +191,7 @@ switch(get_field('link_3_type')){
 	break;
 	case 'people-category':
 	$val = get_field('link_3_label',$post->ID);
-	$label = !empty($val) ? get_field('link_3_label',$post->ID) : $page->post_title;
+	$label = !empty($val) ? get_field('link_3_label',$post->ID) : $post->post_title;
 	$term = get_field('link_3_people_category',$post->ID);
 	$permalink = get_term_link($term);
 	$arrow_direction = 'right';
@@ -175,7 +202,7 @@ switch(get_field('link_3_type')){
 	$post_id = url_to_postid(get_field('link_3_anchor',$post->ID));
 	$page = get_post($post_id);
 	$val = get_field('link_3_label',$post->ID);
-	$label = !empty($val) ? get_field('link_3_label',$post->ID) : $page->post_title;
+	$label = !empty($val) ? get_field('link_3_label',$post->ID) : $post->post_title;
 	if($page->post_parent==0):
 		$permalink = get_permalink($page->ID); //if the target page is the parent page
 	else:
@@ -191,24 +218,41 @@ switch(get_field('link_3_type')){
 	$arrow_direction = 'down';
 	$target = "_blank";
 	break;
+	case 'image':
+	list($src,$w,$h) = wp_get_attachment_image_src(get_field('link_3_image',$post->ID), 'full');
+	break;
+	case 'logo':
+	$src = get_field('link_3_logo',$post->ID);
+	$box_colour = get_field('link_3_logo_box_colour',$post->ID);
+	break;
 }
 ?>
- 	<a href="<?php echo $permalink ?>" target="<?php echo $target ?>" class="push-link fit-cell <?php echo get_field('theme',$post->ID)?> inverted <?php echo $arrow_direction ?>"><?php echo $label ?></a>
+<?php $class = !empty($form_id) ? 'fancybox' : 'push-link' ?>
+ 	<?php if(get_field('link_3_type')=='image'): ?>
+ 	 <div class="column width-55-pct bg-fill-cell" style="background-image:url('<?php echo $src; ?>');"></div>
+ 	<?php elseif(get_field('link_3_type')=='logo'): ?>
+ 	<div class="column width-55-pct logo <?php echo $box_colour ?>"><img src="<?php echo $src ?>" /></div>
+ <?php else: ?>
+  <div class="column width-55-pct">
+ 	<a href="<?php echo $permalink?>" target="<?php echo $target?>" class="<?php echo $class ?> fit-cell <?php echo $arrow_direction?> inverted"><?php echo $label ?></a>
+ </div>
+<?php endif ?>
+
  	<!--/link 3-->
- </div><div class="column width-45-pct">
+
  <!--link 4-->
  <?php
 switch(get_field('link_4_type')){
 	case 'page':
 	$val = get_field('link_4_label',$post->ID);
-	$label = !empty($val) ? get_field('link_4_label',$post->ID) : $page->post_title;
+	$label = !empty($val) ? get_field('link_4_label',$post->ID) : $post->post_title;
 	$permalink = get_field('link_4_page',$post->ID);
 	$arrow_direction = 'right';
 	$target = "_parent";
 	break;
 	case 'case-study-category':
 	$val = get_field('link_4_label',$post->ID);
-	$label = !empty($val) ? get_field('link_4_label',$post->ID) : $page->post_title;
+	$label = !empty($val) ? get_field('link_4_label',$post->ID) : $post->post_title;
 	$term = get_field('link_4_case_study_category',$post->ID);
 	$permalink = get_term_link($term);
 	$arrow_direction = 'right';
@@ -216,7 +260,7 @@ switch(get_field('link_4_type')){
 	break;
 	case 'people-category':
 	$val = get_field('link_4_label',$post->ID);
-	$label = !empty($val) ? get_field('link_4_label',$post->ID) : $page->post_title;
+	$label = !empty($val) ? get_field('link_4_label',$post->ID) : $post->post_title;
 	$term = get_field('link_4_people_category',$post->ID);
 	$permalink = get_term_link($term);
 	$arrow_direction = 'right';
@@ -226,7 +270,7 @@ switch(get_field('link_4_type')){
 	$post_id = url_to_postid(get_field('link_4_anchor',$post->ID));
 	$page = get_post($post_id);
 	$val = get_field('link_4_label',$post->ID);
-	$label = !empty($val) ? get_field('link_4_label',$post->ID) : $page->post_title;
+	$label = !empty($val) ? get_field('link_4_label',$post->ID) : $post->post_title;
 	if($page->post_parent==0):
 		$permalink = get_permalink($page->ID); //if the target page is the parent page
 	else:
@@ -242,11 +286,28 @@ switch(get_field('link_4_type')){
 	$arrow_direction = 'down';
 	$target = "_blank";
 	break;
+	case 'image':
+	list($src,$w,$h) = wp_get_attachment_image_src(get_field('link_4_image',$post->ID), 'full');
+	break;
+	case 'logo':
+	$src = get_field('link_4_logo',$post->ID);
+	$box_colour = get_field('link_4_logo_box_colour',$post->ID);
+	break;
 }
 ?>
- <a href="<?php echo $permalink?>" target="<?php echo $target ?>" class="push-link fit-cell white <?php echo $arrow_direction ?>"><?php echo $label ?></a>
+<?php $class = !empty($form_id) ? 'fancybox' : 'push-link' ?>
+ 	<?php if(get_field('link_4_type')=='image'): ?>
+ 	 <div class="column width-45-pct bg-fill-cell" style="background-image:url('<?php echo $src; ?>');"></div>
+ 	<?php elseif(get_field('link_4_type')=='logo'): ?>
+ 	<div class="column width-45-pct logo <?php echo $box_colour ?>"><img src="<?php echo $src ?>" /></div>
+ <?php else: ?>
+  <div class="column width-45-pct">
+ 	<a href="<?php echo $permalink?>" target="<?php echo $target?>" class="<?php echo $class ?> fit-cell <?php echo $arrow_direction?> white"><?php echo $label ?></a>
+ </div>
+<?php endif ?>
+
 <!--/link 4-->
-</div></div>
+</div>
 </div>
 </div>
 </div>

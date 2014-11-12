@@ -2,7 +2,7 @@
 <?php get_header() ?>
   <main id="page-wrap" role="main">
     <!--overview-->
-<section class="section <?php echo get_field('theme',$post->ID)?>" data-anchor="<?php echo $post->post_name?>">
+<section class="section <?php echo get_field('theme',$post->ID)?>"  data-title="<?php wp_title()?>" data-anchor="<?php echo $post->post_name?>">
 <div class="main column width-45-pct" role="main">
   <div class="main-content">
 <?php echo $post->post_content ?>

@@ -131,20 +131,7 @@ register_nav_menus( array(
 		'main_nav' => __('Main Navigation')
 ));
 
-class test_nav extends Walker_Nav_Menu{
-  function start_el (&$output, $item, $depth, $args){
-    $url = rtrim($item->url,"/");
-    $url = explode('/',$url);
-    if(count($url)>3):
 
-      $url[count($url)-1] = '#'.$url[count($url)-1];
-    endif;
-    $url = implode('/',$url);
-    $item_output = '<a class="new-class" href="' . $url. '">' . $item->title . '</a>';
-    $classes = implode(" ",$item->classes);
-    $output .= '<li class="'.$classes.'">' . apply_filters ('walker_nav_menu_start_el', $item_output, $item,  $depth, $args);
-   }
- }
 
 
 
@@ -186,5 +173,44 @@ function jquery_enqueue() {
    wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js", false, null);
    wp_enqueue_script('jquery');
 }
+
+
+class subMenu extends Walker_Nav_Menu {
+    function end_el(&$output, $item, $depth=0, $args=array()) {
+    if( $item->ID == 50 ){
+
+      $healthcare_args = array(
+        'parent'      => 36,
+        'orderby'     => 'name', 
+        'order'       => 'ASC',
+        'hide_empty'  => true
+  );
+$output.='<div class="sub-menu">';
+if($healthcare_cats = get_terms( 'casestudies_category', $healthcare_args)):
+$output.='<h5>Healthcare:</h5><ul>';
+foreach($healthcare_cats as $term):
+$output.='<li><a href="'.get_term_link($term).'">'.$term->name.'</a></li>';
+  endforeach;
+  $output.='</ul>';
+endif;
+    $other_args = array(
+        'parent'      => 8,
+        'orderby'     => 'name', 
+        'order'       => 'ASC',
+        'exclude'     => 36,
+        'hide_empty'  => true
+      );
+    if($other_cats = get_terms( 'casestudies_category', $other_args)):
+      $output.='<h5>Other:</h5><ul>';
+      foreach($other_cats as $term):
+$output.='<li><a href="'.get_term_link($term).'">'.$term->name.'</a></li>';
+  endforeach;
+      $output.='</ul>';
+      endif;
+    $output .= "</div></li>\n";  
+    }
+  }
+}
+
 
 ?>

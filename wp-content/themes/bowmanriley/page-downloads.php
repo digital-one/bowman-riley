@@ -2,9 +2,10 @@
 
  <main id="page-wrap" role="main">
 <!-- our story section -->
-<section id="downloads" class="section fixed <?php echo get_field('theme',$post->ID)?>" data-anchor="<?php echo $post->post_name?>">
+<section id="downloads" class="section fixed <?php echo get_field('theme',$post->ID)?>"  data-title="<?php wp_title()?>" data-anchor="<?php echo $post->post_name?>">
 <div class="main column width-45-pct" role="main">
   <?php echo $post->post_content?>
+  <?php get_template_part('includes/secondary-nav') ?>
 </div>
 <aside class="beta column width-55-pct">
   <div class="inner">

@@ -41,7 +41,7 @@ function create_cpt_people(){
 		'rewrite' => array('slug' => 'people/archive'),
 		'menu_position' => 5,
 		'taxonomies' => array('people_category'),
-		'supports' => array('title', 'editor', 'excerpt', 'thumbnail','post-thumbnails')
+		'supports' => array('title', 'editor', 'excerpt', 'thumbnail','post-thumbnails','page-attributes')
 		
 	);
 

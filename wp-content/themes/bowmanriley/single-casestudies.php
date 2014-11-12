@@ -1,7 +1,7 @@
 <?php get_header() ?>
   <?php $page = get_post(24); ?>
   <main id="page-wrap" role="main">
-   <section id="case-studies" class="section <?php echo get_field('theme',$page->ID) ?>">
+   <section id="case-studies"  data-title="<?php wp_title()?>" class="fixed section <?php echo get_field('theme',$page->ID) ?>">
 <div class="main column width-45-pct" role="main">
 
   <?php echo $page->post_content ?>

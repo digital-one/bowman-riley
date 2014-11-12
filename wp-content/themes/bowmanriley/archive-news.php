@@ -4,20 +4,20 @@ $page = get_post(32);
 ?>
  <main id="page-wrap" role="main">
 <!-- our story section -->
-<section id="news" class="section fixed <?php echo get_field('theme',$post->ID)?>" data-anchor="<?php echo $post->post_name?>">
+<section id="news" class="section fixed <?php echo get_field('theme',$post->ID)?>"  data-title="<?php wp_title()?>" data-anchor="<?php echo $post->post_name?>">
 <div class="main column width-45-pct" role="main">
   <?php echo $page->post_content?>
 <?php get_template_part('includes/news-nav') ?>
+<div class="arrow-divide"><a href=""><img data-no-retina src="<?php echo get_template_directory_uri(); ?>/images/arrow-down.svg" /></a></div>
 </div>
 <aside class="beta column width-55-pct">
   <div class="inner">
-  
-  <?php
+ <?php
   $term = isset($wp->query_vars['term']) ? $wp->query_vars['term'] : '';
   $year = isset($wp->query_vars['yr']) ? $wp->query_vars['yr'] : date('Y');
 
   $args = array(
-     'post_type' => 'news',
+    'post_type' => 'news',
     'orderby' => 'date',
     'order' => 'DESC',
     'post_status' => 'publish',
