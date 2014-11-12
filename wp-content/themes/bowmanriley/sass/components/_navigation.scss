@@ -39,7 +39,7 @@
 					float:none;
 					display: block;
 					width:100%;
-					padding:15px 24px;
+					padding:10px 24px;
 					height:auto;
 					line-height: 100%;
 				}
@@ -63,6 +63,7 @@
 				padding:0;
 				display: block;
 				border:none;
+				margin-bottom: 10px;
 			}
 			
 			h5{
@@ -94,8 +95,10 @@
 					padding: 6px 0;
 					@include opacity(.7);
 					@media screen and (max-width: $break-nav) {
-						padding: 6px 0 6px 30px;
+						padding: 6px 20px 6px 24px;
 						width:100%;
+						line-height: 110%;
+						white-space: normal;
 					}
 					&:hover, &:active{
 						@include opacity(1);
@@ -108,6 +111,9 @@
 			.sub-menu{
 				width: 360px;
 				padding: 20px 20px 15px;
+				@media screen and (max-width: $break-medium+1) {
+					display: none;
+				}
 				ul{
 					@extend %clearfix;
 					margin-bottom: 13px;
@@ -150,25 +156,28 @@
 	}
 }
 .secondary-nav{
-	//@include abs-pos(auto,auto,calc(#{$gutter*2}),0);
-	display: none;
-	@media screen and (min-height: 700px) {
-		display:block;
-	}
+	display: block;
 	@include abs-pos(auto,auto,24px,0);
 	.fixed &{
 		@include abs-pos(auto,auto,72px,0);
+		@media screen and (max-width: $break-medium+1) {
+			@include abs-pos(auto,auto,12px,0);
+		}
 	}
 	@include transition (bottom 0.2s ease-in-out);
 	width:100%;
 	padding: 0 calc(#{$gutter*5 + 1}) 0 24px;
 	@media screen and (max-width: $break-medium+1) {
-		@include abs-pos(auto,auto,20px,0);
-		padding: 0 $gutter 0;
+		padding:0 12px 0;
+		@include abs-pos(auto,auto,12px,0);
 	}
-	@media screen and (min-width:$break-medium+2) and  (max-width: $break-xlarge) {
-		display:none;
+	
+	#about &{
+		@media screen and (max-width: $break-medium+1) {
+			@include abs-pos(auto,auto,24px,0);
+		}
 	}
+	
 	@media screen and (max-width: $break-small) {
 		position:relative;
 		padding: 36px 0 0;
@@ -202,6 +211,12 @@ nav#utility-nav{
 		display: block;
 		&.share, &.search{
 			border-bottom:1px solid $grey;
+		}
+		&.share{
+			display: none;
+			@media screen and (min-height: 700px) {
+				display:block;
+			}
 		}
 		&.search{
 			padding-bottom:0;
@@ -359,19 +374,20 @@ nav#utility-nav{
 		}
 	}
 	@media screen and (min-width: $break-small+1) and (max-width: $break-medium+1) {
-		width:50%;
-		float:left;
+		//width:50%;
+		//float:left;
 	}
 }
 nav#sub-nav{
 	text-transform:uppercase;
 		@media screen and (min-width: $break-small+1) and (max-width: $break-medium+1) {
-		padding-right: calc(#{$gutter});
+		//padding-right: calc(#{$gutter});
+		display: none;
 	}
 }
 nav#utility-nav{
 	@media screen and (min-width: $break-small+1) and (max-width: $break-medium+1) {
-		padding-left: calc(#{$gutter});
+		//padding-left: calc(#{$gutter});
 	}
 }
 nav#case-studies-nav{

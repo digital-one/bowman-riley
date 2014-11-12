@@ -1,6 +1,6 @@
 h1,h2,h3,h4,h5{
 	@include font-size(34);
-	line-height: 110%;
+	line-height: 100%;
 	margin: 0 0 20px;
 	font-family: $varela;
 	font-weight:400;
@@ -25,11 +25,19 @@ h1,h2{
 		color: $green;
 	}
 }
+h1{
+	@media screen and (max-width: $break-medium+1) {
+		@include font-size(30);
+	}
+}
 h3{
 	@include font-size(18);
-	margin-bottom:8px;
-	margin-top:5px;
+	margin-bottom:5px;
+	//margin-top:5px;
 	font-weight:600;
+	@media screen and (max-width: $break-medium+1) {
+		@include font-size(15);
+	}
 }
 h4{
 	@include font-size(13);
@@ -37,6 +45,9 @@ h4{
 }
 p{
 	margin-bottom: 16px;
+	@media screen and (max-width: $break-medium+1) {
+		margin-bottom: 12px;
+	}
 }
 figcaption,
 blockquote p{

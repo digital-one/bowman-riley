@@ -58,7 +58,7 @@ if(get_field('image_slider',$post->ID)):
 </div>
 </div>
 <?php else: ?>
-  <div class="row height-60-pct gutter masked bg-fill-cell" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($image_id)); ?>');">
+  <div class="row height-60-pct gutter masked bg-fill-cell" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($image_id)); ?>');"><div class="cell-inner">
   <?php if($has_case_study):?>
   <a href="<?php echo get_permalink($cs->ID)?>" class="main overlay push-link <?php echo get_field('theme',$post->ID)?>">
 <ul class="case-study-meta">
@@ -68,6 +68,7 @@ if(get_field('image_slider',$post->ID)):
 <p><?php echo $cs->post_excerpt ?></p>
   </a>
 <?php endif ?>
+</div>
 </div>
 <?php endif ?>
   <div class="row height-40-pct">

@@ -210,14 +210,15 @@ a{
 }
 .arrow-divide{
 	display: block;
-	@media screen and (max-width: $break-medium+1) {
-		display:none;
-	}
 	width:20px;
 	@include abs-pos(20px,15px,35px,auto);
 	.fixed &{
 		@include abs-pos(20px,15px,70px,auto);
 	}
+	@media screen and (max-width: $break-medium+1) {
+		display:none;
+	}
+
 	background: url('../images/divide-v.png') center top repeat-y;
 	a{
 		width:20px;
@@ -302,6 +303,9 @@ a.overlay{
 			height:4px;
 			background:url('../images/bulletpoint.svg') left top no-repeat;
 			background-size: 4px 4px;
+		}
+		@media screen and (max-width: $break-medium+1) {
+			margin-bottom: 2px;
 		}
 	}
 }
