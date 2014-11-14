@@ -11,6 +11,10 @@
 	position:relative;
 	background-color:white;
 	left:0;
+	@media screen and (max-width: $break-small){
+		overflow:hidden;
+		width: 100%;
+	}
 	@include opacity(1);
 	@include transition (opacity 0.2s ease-in-out);
 	&.loading{
@@ -22,7 +26,7 @@
 		height:100%;
 		display: block;
 		background-color:white;
-		position:relative;
+		position:relative;  
 		@media screen and (max-width: $break-small) {
 			padding-top: 70px;
 		}
@@ -41,6 +45,9 @@
 
 	@media screen and (max-width: $break-medium+1) {
 		padding: calc(#{$gutter*2}) $gutter $gutter $gutter;
+	}
+	@media screen and (max-width: $break-small) {
+		padding: 0 $gutter $gutter;
 	}
 }
 .beta{

@@ -6,6 +6,15 @@ $term = null;
     if( isset( $wp_query->query_vars['term'])) {
         $term_name = $wp_query->query_vars['term'];
     }
+
+
+$queried_object = get_queried_object();
+    $term_id = $queried_object->term_id;
+  $term = get_term($term_id,'casestudies_category');
+$description = get_field('long_description',$term);
+//$term->description;
+
+
 $args = array( 
   'post_type' => 'casestudies',
   'posts_per_page' => -1,
@@ -17,7 +26,7 @@ $args = array(
       'terms' => $term_name
     )
   ),
-  'orderby' => 'menu_index',
+  'orderby' => 'menu_order',
   'order' => 'ASC'
 );
 
@@ -29,6 +38,10 @@ $projects = get_posts($args);
 <section id="case-studies"  data-title="<?php wp_title()?>" class="section <?php if($num_projects > 8): ?>fixed <?php endif ?><?php echo get_field('theme',$page->ID) ?>">
 <div class="main column width-45-pct" role="main">
  <?php echo $page->post_content ?>
+ <?php if(!empty($description)): ?>
+ <p class="description"><?php echo $description ?>
+ </p>
+<?php endif ?>
 <?php get_template_part('includes/case-studies-nav') ?>
 </div>
 <aside class="beta column width-55-pct">
@@ -40,13 +53,18 @@ if($num_projects):
   case 1:
     $location = get_field('location',$projects[0]->ID);
     $stage = get_field('stage',$projects[0]->ID);
-    $value = get_field('value',$projects[0]->ID);
+    $project = get_field('project',$projects[0]->ID);
+    $i=0;
   ?>
   <div class="cell bg-fill-cell" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($projects[$i]->ID)); ?>');">
 <a href="<?php echo get_permalink($projects[$i]->ID) ?>" class="case-study-link overlay"><ul class="case-study-meta"><li class="client"><?php echo $projects[$i]->post_title ?></li>
 <?php
 if(!empty($location)): ?>
       <li class="location"><?php echo $location ?></li>
+<?php endif ?>
+<?php
+if(!empty($project)): ?>
+      <li class="project"><?php echo $project ?></li>
 <?php endif ?>
 <?php
 if(!empty($stage)): ?>
@@ -63,7 +81,7 @@ if(!empty($stage)): ?>
  for($i=0;$i<count($projects);$i++):
     $location = get_field('location',$projects[$i]->ID);
     $stage = get_field('stage',$projects[$i]->ID);
-    $value = get_field('value',$projects[$i]->ID);
+    $project = get_field('project',$projects[$i]->ID);
 ?>
 <div class="row height-50-pct no-gutter masked">
  <div class="cell bg-fill-cell" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($projects[$i]->ID)); ?>');">
@@ -71,6 +89,10 @@ if(!empty($stage)): ?>
 <?php
 if(!empty($location)): ?>
       <li class="location"><?php echo $location ?></li>
+<?php endif ?>
+<?php
+if(!empty($project)): ?>
+      <li class="project"><?php echo $project ?></li>
 <?php endif ?>
 <?php
 if(!empty($stage)): ?>
@@ -89,7 +111,7 @@ if(!empty($stage)): ?>
   for($i=0;$i<count($projects);$i++):
     $location = get_field('location',$projects[$i]->ID);
     $stage = get_field('stage',$projects[$i]->ID);
-    $value = get_field('value',$projects[$i]->ID);
+    $project = get_field('project',$projects[$i]->ID);
     if($i==0):
   ?>
 <div class="row height-50-pct no-gutter masked">
@@ -98,6 +120,10 @@ if(!empty($stage)): ?>
 <?php
 if(!empty($location)): ?>
       <li class="location"><?php echo $location ?></li>
+<?php endif ?>
+<?php
+if(!empty($project)): ?>
+      <li class="project"><?php echo $project ?></li>
 <?php endif ?>
 <?php
 if(!empty($stage)): ?>
@@ -114,6 +140,10 @@ if(!empty($stage)): ?>
 <?php
 if(!empty($location)): ?>
       <li class="location"><?php echo $location ?></li>
+<?php endif ?>
+<?php
+if(!empty($project)): ?>
+      <li class="project"><?php echo $project ?></li>
 <?php endif ?>
 <?php
 if(!empty($stage)): ?>
@@ -136,12 +166,16 @@ if(!empty($stage)): ?>
   for($i=0;$i<count($projects);$i++):
     $location = get_field('location',$projects[$i]->ID);
     $stage = get_field('stage',$projects[$i]->ID);
-    $value = get_field('value',$projects[$i]->ID);
+    $project = get_field('project',$projects[$i]->ID);
     ?>
     <div class="cell half bg-fill-cell" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($projects[$i]->ID)); ?>');"><a href="<?php echo get_permalink($projects[$i]->ID) ?>" class="case-study-link overlay"><ul class="case-study-meta"><li class="client"><?php echo $projects[$i]->post_title ?></li>
 <?php
 if(!empty($location)): ?>
       <li class="location"><?php echo $location ?></li>
+<?php endif ?>
+<?php
+if(!empty($project)): ?>
+      <li class="project"><?php echo $project ?></li>
 <?php endif ?>
 <?php
 if(!empty($stage)): ?>
@@ -168,13 +202,17 @@ if(!empty($stage)): ?>
   for($i=0;$i<count($projects);$i++):
     $location = get_field('location',$projects[$i]->ID);
     $stage = get_field('stage',$projects[$i]->ID);
-    $value = get_field('value',$projects[$i]->ID);
+    $project = get_field('project',$projects[$i]->ID);
     ?>
     <?php if($i<2): ?>
         <div class="cell half bg-fill-cell" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($projects[$i]->ID)); ?>');"><a href="<?php echo get_permalink($projects[$i]->ID) ?>" class="case-study-link overlay"><ul class="case-study-meta"><li class="client"><?php echo $projects[$i]->post_title ?></li>
 <?php
 if(!empty($location)): ?>
       <li class="location"><?php echo $location ?></li>
+<?php endif ?>
+<?php
+if(!empty($project)): ?>
+      <li class="project"><?php echo $project ?></li>
 <?php endif ?>
 <?php
 if(!empty($stage)): ?>
@@ -191,6 +229,10 @@ if(!empty($stage)): ?>
 <?php
 if(!empty($location)): ?>
       <li class="location"><?php echo $location ?></li>
+<?php endif ?>
+<?php
+if(!empty($project)): ?>
+      <li class="project"><?php echo $project ?></li>
 <?php endif ?>
 <?php
 if(!empty($stage)): ?>
@@ -211,12 +253,16 @@ if(!empty($stage)): ?>
   for($i=0;$i<count($projects);$i++):
     $location = get_field('location',$projects[$i]->ID);
     $stage = get_field('stage',$projects[$i]->ID);
-    $value = get_field('value',$projects[$i]->ID);
+    $project = get_field('project',$projects[$i]->ID);
     ?>
     <div class="cell half bg-fill-cell" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($projects[$i]->ID)); ?>');"><a href="<?php echo get_permalink($projects[$i]->ID) ?>" class="case-study-link overlay"><ul class="case-study-meta"><li class="client"><?php echo $projects[$i]->post_title ?></li>
 <?php
 if(!empty($location)): ?>
       <li class="location"><?php echo $location ?></li>
+<?php endif ?>
+<?php
+if(!empty($project)): ?>
+      <li class="project"><?php echo $project ?></li>
 <?php endif ?>
 <?php
 if(!empty($stage)): ?>
@@ -239,7 +285,7 @@ if(!empty($stage)): ?>
  for($i=0;$i<count($projects);$i++):
     $location = get_field('location',$projects[$i]->ID);
     $stage = get_field('stage',$projects[$i]->ID);
-    $value = get_field('value',$projects[$i]->ID);
+    $project = get_field('project',$projects[$i]->ID);
     ?>
     <?php if($i==0): ?>
  <div class="row height-one-third no-gutter masked">
@@ -247,6 +293,10 @@ if(!empty($stage)): ?>
 <?php
 if(!empty($location)): ?>
       <li class="location"><?php echo $location ?></li>
+<?php endif ?>
+<?php
+if(!empty($project)): ?>
+      <li class="project"><?php echo $project ?></li>
 <?php endif ?>
 <?php
 if(!empty($stage)): ?>
@@ -264,6 +314,10 @@ if(!empty($location)): ?>
       <li class="location"><?php echo $location ?></li>
 <?php endif ?>
 <?php
+if(!empty($project)): ?>
+      <li class="project"><?php echo $project ?></li>
+<?php endif ?>
+<?php
 if(!empty($stage)): ?>
       <li class="stage"><?php echo $stage ?></li>
 <?php endif ?>
@@ -278,6 +332,10 @@ if(!empty($stage)): ?>
 <?php
 if(!empty($location)): ?>
       <li class="location"><?php echo $location ?></li>
+<?php endif ?>
+<?php
+if(!empty($project)): ?>
+      <li class="project"><?php echo $project ?></li>
 <?php endif ?>
 <?php
 if(!empty($stage)): ?>
@@ -297,13 +355,17 @@ if(!empty($stage)): ?>
  for($i=0;$i<count($projects);$i++):
     $location = get_field('location',$projects[$i]->ID);
     $stage = get_field('stage',$projects[$i]->ID);
-    $value = get_field('value',$projects[$i]->ID);
+    $project = get_field('project',$projects[$i]->ID);
     ?>
      <?php if($i<2): ?>
     <div class="cell half bg-fill-cell" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($projects[$i]->ID)); ?>');"><a href="<?php echo get_permalink($projects[$i]->ID) ?>" class="case-study-link overlay"><ul class="case-study-meta"><li class="client"><?php echo $projects[$i]->post_title ?></li>
 <?php
 if(!empty($location)): ?>
       <li class="location"><?php echo $location ?></li>
+<?php endif ?>
+<?php
+if(!empty($project)): ?>
+      <li class="project"><?php echo $project ?></li>
 <?php endif ?>
 <?php
 if(!empty($stage)): ?>
@@ -320,6 +382,10 @@ if(!empty($stage)): ?>
 <?php
 if(!empty($location)): ?>
       <li class="location"><?php echo $location ?></li>
+<?php endif ?>
+<?php
+if(!empty($project)): ?>
+      <li class="project"><?php echo $project ?></li>
 <?php endif ?>
 <?php
 if(!empty($stage)): ?>

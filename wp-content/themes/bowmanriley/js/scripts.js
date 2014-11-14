@@ -46,8 +46,8 @@ var isMobile = $(window).width() < 641,
     $parentLinks =  $('#nav li > a:first-child'),
     $parentLIMobile = $('#nav li.menu-item-has-children'),
     $parentLinksMobile =  $('#nav li.menu-item-has-children > a:first-child'),
-    $navPushStateLinks = $([]);
-    $pushStateLinks = $('.case-study-link, #case-studies a.close, #news a.close,#our-people-sector a.close,#people-single a.close, a.news-link, .case-study-links .category-links a, a.push-link');
+    $navPushStateLinks = $([]),
+    $pushStateLinks = '.case-study-link,#case-studies a.close,#news a.close,#our-people-sector a.close,#people-single a.close,a.news-link,.case-study-links .category-links a,a.push-link';
     $home_url = 'http://92.60.114.159/~bowmanriley/',
     $totalPages = 0,
     $loadedPages = 0,
@@ -103,7 +103,7 @@ var firstSubMenuLink = {
     }
 }
 
-var initPushStateLinks = {
+var initNavPushStateLinks = {
   desktop: function(){
     $navPushStateLinks = $([])
     $navPushStateLinks = $('#nav ul a');
@@ -215,7 +215,7 @@ getPages = function(url){
 
 //if(console) console.log('get pages');
 //check if page request is within the section currently being viewed
-  
+  if(url){
 var $hasHash=0;
 var $currentURL = location.href.replace(location.hash,'');
 var $requestedURL = url.split('#');
@@ -285,6 +285,7 @@ if($sameSection && $hasHash && !$firstLoad){
     } 
     }); 
     }
+}
 }
 }
 
@@ -371,10 +372,11 @@ sendPushLink = function(e){
   e.preventDefault()
   $this = $(e.currentTarget);
   url = $this.attr('href');
+ // console.log(url);
   getPages(url);
 }
 //refresh the push state links click action
- refreshPushLinkActions = function(){
+ refreshNavPushLinkActions = function(){
   //if(console) console.log('refresh push links');
   $navPushStateLinks.unbind('click', sendPushLink);
     $navPushStateLinks.bind('click',sendPushLink);
@@ -383,6 +385,10 @@ sendPushLink = function(e){
       url = $(this).attr('href');
       getPages(url);
     });*/
+ }
+ killNavPushLinkActions  = function(){
+  console.log('kill');
+    $navPushStateLinks.unbind('click', sendPushLink);
  }
 
 toggleMobileDropDown = function(e){
@@ -424,11 +430,17 @@ initMobileMenuActions = function(){
   killDesktopMenuActions();
   killMobileMenuActions();
   mobileDropDown.activate();
-   $navPushStateLinks.unbind('click', sendPushLink);
-  initPushStateLinks.mobile();
+  $navPushStateLinks.unbind('click', sendPushLink);
+  if($historyActive){ //if history, refresh the nav push state links
+      initNavPushStateLinks.mobile(); 
+      refreshNavPushLinkActions(); 
+      $('.sub-menu a').bind('click',setParentLinkState);
+    } else {
+$('.sub-menu a').unbind('click',setParentLinkState);
+    }
   firstSubMenuLink.show();
   $mobileMenuHandle.bind('click',toggleMobileMenu);
-  $('.sub-menu a').bind('click',setParentLinkState);
+  
 
    
 }
@@ -446,7 +458,12 @@ initDesktopMenuActions = function(){
   killMobileMenuActions();
  firstSubMenuLink.hide();
   $navPushStateLinks.unbind('click', sendPushLink);
- initPushStateLinks.desktop(); 
+  if($historyActive){ //if history, refresh the nav push state links
+      initNavPushStateLinks.desktop(); 
+      refreshNavPushLinkActions(); 
+    } 
+ 
+  initNavPushStateLinks.desktop(); 
   if(mobileMenuIsActive) closeMobileMenu();
   desktopDropDown.activate();
   $parentLinks.bind('click',setLinkState);
@@ -515,6 +532,12 @@ updateMenuActions = function(){
     mobileMenuIsActive = $mobileMenuHandle.hasClass('active'),
     $historyActive = Modernizr.history && !isMobile;
 
+    if(isMobile){
+      killHistoryActions();
+    } else {
+     killHistoryActions();
+      initHistoryActions();
+    }
     if(!isMobileMenu){
       if(console)  console.log('desktop menu');
       initDesktopMenuActions();
@@ -522,7 +545,7 @@ updateMenuActions = function(){
       if(console)  console.log('mobile menu');
       initMobileMenuActions();
     }
-    if($historyActive) refreshPushLinkActions(); //if history, set up push link actions
+    
 }
 
 
@@ -567,7 +590,8 @@ updateMenuActions = function(){
  removeHashLinks = function(){ //function to reset hash urls
    var $links = $('.sub-menu a');
    $links.each(function(){
-    $(this).attr('href').replace('#','');
+    var href = $(this).attr('href').replace('#','');
+    $(this).attr('href',href)
    })
  }
 
@@ -581,50 +605,63 @@ updateMenuActions = function(){
  }
 
 killCaseStudiesSubNav = function(){
-$('body').unbind('click','#case-studies-nav a', caseStudyPushLinkHandler);
+$('body').off('click','#case-studies-nav a', caseStudyPushLinkHandler);
 }
 
 initCaseStudiesSubNav = function(){
- $('body').bind('click','#case-studies-nav a', caseStudyPushLinkHandler);
+ $('body').on('click','#case-studies-nav a', caseStudyPushLinkHandler);
 }
 
 peoplePushLinkHandler = function(e){
   e.preventDefault();
   $this = $(e.currentTarget);
   $('#sub-nav.people-categories a').parent('li').removeClass('current-menu-item');
-    $(this).parent('li').addClass('current-menu-item');
-    var $href = $(this).attr("href");
+    $this.parent('li').addClass('current-menu-item');
+    var $href = $this.attr("href");
      getPages($href);
 }
 
 killPeopleSubNav = function(){
-$('body').unbind('click','#sub-nav.people-categories  a', peoplePushLinkHandler);
+$('body').off('click','#sub-nav.people-categories  a', peoplePushLinkHandler);
 }
 
 
 initPeopleSubNav = function(){
- $('body').bind('click','#sub-nav.people-categories  a', peoplePushLinkHandler);
+ $('body').on('click','#sub-nav.people-categories  a', peoplePushLinkHandler);
+}
+
+peopleLinkHandler = function(e){
+  e.preventDefault();
+  $this = $(e.currentTarget);
+  var $href = $this.attr("href");
+  getPages($href);
+}
+
+killPeopleLinks = function(){
+  $('body').off('click','.people-link',peopleLinkHandler);
+  $('body').off('click','.people-link.link',peopleLinkHandler)
 }
 
 initPeopleLinks = function(){
   if(!isTouchDevice.any()){
-$('body').on('click','.people-link',function(e){
-    e.preventDefault();
-    var $href = $(this).attr("href");
-     getPages($href);
-  })
+$('body').on('click','.people-link',peopleLinkHandler);
 } else {
     $('body').on('click', '.people-link.select', function(e) {
     e.preventDefault();
     $(this).removeClass('select').addClass('link');
     });
-    $('body').on('click','.people-link.link',function(e){
-    e.preventDefault();
-    var $href = $(this).attr("href");
-    getPages($href);
-    })
+    $('body').on('click','.people-link.link',peopleLinkHandler)
 }
 }
+killPushStateLinks = function(){
+   $('body').off('click', $pushStateLinks, sendPushLink);
+}
+
+initPushStateLinks = function(){
+  killPushStateLinks();
+   $('body').on('click',$pushStateLinks, sendPushLink);
+}
+
 
 /*
 killPopState = function(){
@@ -781,6 +818,7 @@ initHistoryActions = function(){
       convertChildLinksToHash();
       convertHomeChildLinksToHash();
       initCaseStudiesSubNav();
+     
       initPeopleSubNav();
       initPopState();
       initPeopleLinks();
@@ -790,7 +828,12 @@ killHistoryActions = function(){
   removeHashLinks();
   killCaseStudiesSubNav();
   killPeopleSubNav();
-  killPopState();
+   killNavPushLinkActions();
+  //killPopState();
+  killPeopleLinks();
+  killPushStateLinks();
+  initImageSliders();
+  initFirstMap();
 }
 
 
@@ -809,9 +852,12 @@ initLoadedPages = function(){
 //on page load actions
 updateMenuActions(); //set up menu actions
 initMapDirectionsLink() //set up get directions link on map page
+initPageDownArrowLink()
+
 if($historyActive){
    getPages(location.href); //get first page load if history active
-  initHistoryActions();
+    initPushStateLinks();
+ // initHistoryActions();
 }
 }); //closing on document ready
 

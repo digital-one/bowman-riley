@@ -1,9 +1,11 @@
 <?php get_header() ?>
+
  <main id="page-wrap" role="main">
 <!-- our story section -->
 <section id="downloads" class="section fixed">
 <div class="main column width-45-pct" role="main">
  <h1>SEARCH RESULTS</h1>
+ <?php get_template_part('includes/secondary-nav') ?>
 </div>
 <aside class="beta column width-55-pct">
   <div class="inner">

@@ -65,7 +65,7 @@ switch(get_field('link_1_type')){
 
 
     </div>
-     <div class="row square"><a href="<?php echo get_term_link($terms[2]->slug, $terms[2]->taxonomy);?>" class="push-link fit-cell blue"><?php echo $terms[2]->description ?></a></div>
+     <div class="row square architect-team"><a href="<?php echo get_term_link($terms[2]->slug, $terms[2]->taxonomy);?>" class="push-link fit-cell blue"><?php echo $terms[2]->description ?></a></div>
   </div>
 <?php endif ?>
 </div>

@@ -17,6 +17,10 @@ a{
 		padding:12px 40px 12px 12px;
 		@include font-size(16);
 	}
+	@media screen and (max-width: $break-small) {
+		padding:8px;
+		@include font-size(14);
+	}
 	#people &{
 		padding: $gutter;
 	}
@@ -35,6 +39,10 @@ a{
 			&:after{
 				bottom:17px;
 				right:20px;
+				@media screen and (max-width: $break-small) {
+					bottom:10px;
+					right:6px;
+				}
 			}
 		}
 	}
@@ -46,6 +54,10 @@ a{
 			&:after{
 				bottom:23px;
 				right:20px;
+				@media screen and (max-width: $break-small) {
+					bottom:6px;
+					right:6px;
+				}
 			}
 		}
 	}
@@ -59,6 +71,13 @@ a{
 				width:35px;
 				height:32px;
 				background-size: 35px 32px;
+				@media screen and (max-width: $break-small) {
+					bottom:10px;
+					height:20px;
+					width:23px;
+					right:6px;
+					background-size: 23px 20px;
+				}
 			}
 			height:50px;
 			background-image:url('../images/arrow-right-white.svg');
@@ -81,6 +100,9 @@ a{
 		&:hover,&:active{
 			&:after{
 				right:17px;
+				@media screen and (max-width: $break-small) {
+					right:6px;
+				}
 			}
 			#people &{
 				&:after{
@@ -251,6 +273,9 @@ a.overlay{
 	padding: 18px 12px;
 	&.main{
 		padding: 18px 60% 12px 18px;
+		@media screen and (max-width: $break-small){
+			padding: 18px 18px 12px 18px;
+		}
 	}
 	#our-people-sector &{
 		padding:18px;
@@ -303,6 +328,9 @@ a.overlay{
 		cursor:pointer;
 		background:url('../images/close.svg') left top no-repeat;
 		@extend %ir;
+		@media screen and (max-width: $break-small){
+			@include abs-pos(0,0,auto,auto);
+		}
 	}
 }
 .main-content{

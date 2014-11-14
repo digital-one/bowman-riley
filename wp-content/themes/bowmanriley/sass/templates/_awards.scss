@@ -8,7 +8,13 @@ ul#awards-list{
 			padding-right: 10px;
 			min-height:70px;
 		}
-		
+		@media screen and (max-width: $break-small) {
+			width:100%;
+			padding-right:0;
+			margin-bottom: 20px;
+			min-height: 1px;
+			float: none;
+		}
 		span{
 			display: block;
 			line-height: 115%;

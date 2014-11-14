@@ -43,6 +43,7 @@
 </svg>
 </a></li></ul></li>
 <?php endif ?>
+<?php if ($post->ID!=711): ?>
   <li class="share"><span>Share this page</span><ul><li><a href="http://twitter.com/home?status=<?php echo urlencode($post->post_title) ?>+<?php echo get_permalink($post->ID)?>"  class="share-twitter" target="_blank">  <svg id="share-twitter" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
    viewBox="0 0 18.8 18.8" enable-background="new 0 0 18.8 18.8" xml:space="preserve">
    <g class="icon">
@@ -85,11 +86,13 @@
       C10.7,9.5,10.7,9.2,10.7,8.9z"/>
   </g>
 </svg></a></li></ul></li>
-  <?php if(is_front_page()): ?>
+<?php endif ?>
+  <?php if(is_front_page() or $post->ID==711): ?>
   <li class="search" role="search"> <?php //get_search_form( ); ?> 
    <form id="search-form" method="get" action="<?php echo home_url() ?>/search-results"><input type="text" name="search" id="search" placeholder="Search" /><button type="submit"><img data-no-retina src="<?php bloginfo('template_directory')?>/images/search-icon.svg" /></button></form>
 </li>
-
+<?php endif ?>
+<?php if(is_front_page()): ?>
   <li><a href="#fancyboxID-2" class="arrow fancybox">Subscribe to our news<span><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
    viewBox="0 0 17.4 19.4" enable-background="new 0 0 17.4 19.4" xml:space="preserve">
 <path class="icon" fill="#615E60" d="M4.1,11.4l2.1-2.1V17c0,1.3,1.1,2.4,2.4,2.4h0c1.3,0,2.4-1.1,2.4-2.4V9.3l2.1,2.1c0.9,0.9,2.5,0.9,3.4,0l0,0

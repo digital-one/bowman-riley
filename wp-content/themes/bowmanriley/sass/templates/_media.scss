@@ -2,6 +2,9 @@
 	article{
 		.story{
 			padding: calc(#{$gutter}*2);
+			@media screen and (max-width: $break-small){
+				padding: $gutter;
+			}
 			h3{
 				margin-bottom: 5px;
 			}
@@ -36,6 +39,9 @@
 			padding:0 10% 0 24px;
 			display: block;
 			width: 100%;
+			@media screen and (max-width: $break-small){
+				padding:0 10% 0 0;
+			}	
 			h2{
 				@include font-size(24);
 				margin-bottom: 5px;
@@ -54,7 +60,7 @@ a.news-link{
 		}
 	}
 	&:hover, &:active{
-		background-color:lighten($grey,50);
+		background-color:lighten($grey,40);
 		img{
 			@include opacity(.8);
 		}

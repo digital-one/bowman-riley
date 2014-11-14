@@ -44,6 +44,15 @@
 		}
 	}	
 }
+.description{
+	display: none;
+	@media screen and (min-height: 620px) {
+		display: block;
+	}
+	@media screen and (max-width: $break-medium+1) {
+		display: none;
+	}
+}
 ul.case-study-meta{
 	@include font-size(11);
 	#case-studies &{

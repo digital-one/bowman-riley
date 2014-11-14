@@ -127,6 +127,7 @@ switch(get_field('link_1_type')){
 	break;
 }
 ?>
+<?php $class = !empty($form_id) ? 'fancybox' : 'push-link' ?>
  	<?php if(get_field('link_1_type')=='image'): ?>
  	 <div class="column width-40-pct bg-fill-cell" style="background-image:url('<?php echo $src; ?>');"></div>
  	<?php elseif(get_field('link_1_type')=='logo'): ?>

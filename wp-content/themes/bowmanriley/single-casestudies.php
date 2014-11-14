@@ -1,10 +1,20 @@
 <?php get_header() ?>
+<?php
+$terms = wp_get_post_terms( $post->ID, 'casestudies_category');
+$term = $terms[0];
+$description = get_field('long_description',$term);
+?>
+
   <?php $page = get_post(24); ?>
   <main id="page-wrap" role="main">
    <section id="case-studies"  data-title="<?php wp_title()?>" class="fixed section <?php echo get_field('theme',$page->ID) ?>">
 <div class="main column width-45-pct" role="main">
 
   <?php echo $page->post_content ?>
+  <?php
+  if(!empty($description)): ?>
+  <p class="description"><?php echo $description ?></p>
+<?php endif ?>
 <?php get_template_part('includes/case-studies-nav') ?>
 </div>
 <aside class="beta column width-55-pct">

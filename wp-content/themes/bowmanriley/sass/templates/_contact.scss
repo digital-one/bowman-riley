@@ -1,5 +1,8 @@
 #map{
 	background-color:#ccc;
+	@media screen and (max-width: $break-small){
+				height:600px !important;
+			}
 }
 #offices{ 
 	margin-top:40px;
