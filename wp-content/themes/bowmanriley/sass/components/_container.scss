@@ -23,6 +23,9 @@
 		display: block;
 		background-color:white;
 		position:relative;
+		@media screen and (max-width: $break-small) {
+			padding-top: 70px;
+		}
 	}
 	@media screen and (max-width: $break-medium+1) {
 		//padding-top:7%;
@@ -37,7 +40,7 @@
 	padding:calc(#{$gutter*2}) calc(#{$gutter*4 + 1}) calc(#{$gutter*2}) calc(#{$gutter*2});
 
 	@media screen and (max-width: $break-medium+1) {
-		padding: calc(#{$gutter*2}) 62px $gutter $gutter;
+		padding: calc(#{$gutter*2}) $gutter $gutter $gutter;
 	}
 }
 .beta{
@@ -54,6 +57,12 @@
 		.inner{
 			padding:calc(#{$gutter*2}) calc(#{$gutter*2}) calc(#{$gutter*2}) 0;
 			text-align: center;
+			@media screen and (max-width: $break-medium+1) {
+				height:auto !important;
+			}
+			@media screen and(max-width: $break-small){
+				padding: 0 10px 10px;
+			}
 		}
 		svg,img{
 			width:auto;
@@ -69,6 +78,9 @@
 	#downloads &{
 		.inner{
 			padding:calc(#{$gutter*2}) calc(#{$gutter*2}) calc(#{$gutter*2}) 0;
+			@media screen and (max-width: $break-medium+1) {
+				padding: $gutter $gutter 0;
+			}
 		}
 	}
 	#case-studies & .inner{
@@ -90,7 +102,7 @@
 		@extend %clearfix;
 		padding:0;
 		@media screen and (max-width: $break-medium+1) {
-			padding: 0 $gutter 48px 0;
+			padding: 0 $gutter 0 0;
 
 		}
 	}
@@ -99,7 +111,7 @@
 		height:auto;
 		padding:$gutter $gutter $gutter 0;
 		@media screen and (max-width: $break-medium+1) {
-			padding:$gutter 0 48px 0;
+			padding:$gutter 0 0 0;
 		}
 	}
 }

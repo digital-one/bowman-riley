@@ -51,7 +51,7 @@
 		
 		.sub-menu{
 			@include abs-pos(50px,auto,auto,0);
-			border-top:2px solid $brown;
+			border-top:2px solid $blue;
 			display: none;
 			width:auto;
 			min-width: 10px;
@@ -141,12 +141,12 @@
 			height:24px;
 			line-height: 24px;
 			padding: 0 20px;
-			background-color: $brown;
+			background-color: $blue;
 			margin-right: 3px;
 			color: white;
 			@include transition (all 0.2s ease-in-out);
 			&:hover,&:active{
-				background-color: lighten($brown,5);
+				background-color: lighten($blue,5);
 			}
 			&.active{
 				background-color: $grey;
@@ -181,11 +181,11 @@ nav#utility-nav{
 		}
 		&.current-menu-item{
 			a{
-				color:$brown;
-				border-color:$brown;
+				color:$blue;
+				border-color:$blue;
 			}
 			svg path.icon{
-				fill:$brown;
+				fill:$blue;
 			}
 			.orange &{
 				a{
@@ -214,6 +214,24 @@ nav#utility-nav{
 					fill:$purple;
 				}
 			}
+			.green &{
+				a{
+					color:$green;
+					border-color:$green;
+				}
+				svg path.icon{
+					fill:$green;
+				}
+			}
+			.pink &{
+				a{
+					color:$pink;
+					border-color:$pink;
+				}
+				svg path.icon{
+					fill:$pink;
+				}
+			}
 		}
 		a,span{
 			height:30px;
@@ -239,10 +257,10 @@ nav#utility-nav{
 				}
 			}
 			&:hover, &:active{
-				color: $brown;
-				border-color: $brown;
+				color: $blue;
+				border-color: $blue;
 				svg path.icon{
-					fill:$brown;
+					fill:$blue;
 				}
 				.orange &{
 					color: $orange;
@@ -263,6 +281,20 @@ nav#utility-nav{
 					border-color: $purple;
 					svg path.icon{
 						fill:$purple;
+					}
+				}
+				.green &{
+					color: $green;
+					border-color: $green;
+					svg path.icon{
+						fill:$green;
+					}
+				}
+				.pink &{
+					color: $pink;
+					border-color: $pink;
+					svg path.icon{
+						fill:$pink;
 					}
 				}
 			}
@@ -288,12 +320,21 @@ nav#utility-nav{
 							@include transition (fill 0.2s ease-in-out);
 						}
 						svg:hover g.icon path{
-							fill: $brown;
+							fill: $blue;
 							.orange &{
 								fill: $orange;
 							}
 							.blue &{
 								fill: $blue;
+							}
+							.green &{
+								fill: $green;
+							}
+							.pink &{
+								fill: $pink;
+							}
+							.purple &{
+								fill: $purple;
 							}
 						}
 

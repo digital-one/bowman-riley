@@ -24,6 +24,9 @@ h1,h2{
 	.green & em{
 		color: $green;
 	}
+	.pink & em{
+		color: $pink;
+	}
 }
 h1{
 	@media screen and (max-width: $break-medium+1) {

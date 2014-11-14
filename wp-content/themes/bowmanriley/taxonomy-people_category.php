@@ -34,6 +34,8 @@ echo get_field('theme',$term);?> section fixed" data-anchor="<?php echo $term->s
   <?php echo get_field('term_long_description',$term) ?>
 
 <?php get_template_part('includes/secondary-nav-people') ?>
+<div class="arrow-divide"><span><img data-no-retina src="<?php echo get_template_directory_uri(); ?>/images/arrow-down.svg" /></span></div>
+
 </div>
 <aside class="beta column width-55-pct">
 <div class="inner">

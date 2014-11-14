@@ -38,6 +38,9 @@
 	&.orange{
 		background-color: $orange;
 	}
+	&.pink{
+		background-color: $pink;
+	}
 	&.logo{
 		text-align: center;
 		overflow:hidden;
@@ -93,6 +96,9 @@
 	&.orange{
 		background-color: $orange;
 	}
+	&.pink{
+		background-color: $pink;
+	}
 	&.logo{
 		text-align: center;
 		overflow:hidden;
@@ -139,13 +145,26 @@
 
 			@media screen and(max-width: $break-small){
 				height:auto;
+				width:100%;
 			}
+		}
+		section[data-anchor="our-csr"] &.main, section[data-anchor="our-awards"] &.main, section[data-anchor="bim"] &.main{
+			@media screen and (max-width: $break-medium+1) {
+				height:48%;
+				}
 		}
 		#about &.main{
 			@media screen and (max-width: $break-medium+1) {
 				width:55.24%;
 				height:100%;
 				padding-right:48px;
+			}
+			@media screen and(max-width: $break-small){
+				height:auto;
+				width:100%;
+				padding:0;
+				float:none;
+				padding:0 10px;
 			}
 		}
 	}
@@ -161,6 +180,11 @@
 				@media screen and (max-width: $break-medium+1) {
 					margin-left:0;
 				}
+				@media screen and(max-width: $break-small){
+					width:100%;
+					margin:0;
+					float: none;
+				}
 			}
 			#case-studies &{
 				@media screen and(max-width: $break-small){
@@ -171,8 +195,10 @@
 				height:60%;
 				width:100%;
 			}
-			section[data-anchor="our-csr"] &{
-				height:52%;
+			section[data-anchor="our-csr"] &, section[data-anchor="our-awards"] &, section[data-anchor="bim"] &{
+				@media screen and (max-width: $break-medium+1) {
+					height:52%;
+				}
 			}
 			#about &{
 			@media screen and (max-width: $break-medium+1) {
@@ -186,16 +212,33 @@
 			#people &, #explore &{
 				@media screen and (max-width: $break-medium+1) {
 					height: auto;
+					@include abs-pos(auto,auto,0,0);
 				}
 			}
 			
 			@media screen and(max-width: $break-small){
-				height:480px;
+				width:100%;
+				height:auto;
+				margin:0;
+				float: none;
 			}
 			#about &{
 				@media screen and (max-width: $break-medium+1) {
 					width: 44.76%;
-					height: 100%;
+					height:auto;
+					position: relative;
+				}
+				@media screen and(max-width: $break-small){
+					width:100%;
+					height:auto;
+					margin:0;
+					float: none;
+				}
+				svg,img{
+					@media screen and (max-width: $break-medium+1) {
+						width:100%;
+						height:100%;
+					}
 				}
 			}
 		}

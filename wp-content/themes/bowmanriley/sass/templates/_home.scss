@@ -108,85 +108,46 @@
 a.service-link{
 	@include abs-pos(0,0,0,0);
 	display: block;
-	border: 2px solid $blue;
-	@include transition (border-color 0.2s ease-in-out);
-	padding: calc(#{$gutter*2});
-	@include font-size(18);
-	background-color:white;
-	text-transform:uppercase;
+	background-color:$blue;
+	@include transition (background-color 0.2s ease-in-out);
+	text-align:center;
+	color: white;
+	text-transform: uppercase !important;
+	@include font-size(26);
+	&.case-studies{
+		text-align: left;
+	}
 	span{
-		position:relative;
+		@include abs-pos(0,0,0,0);
 		display: block;
-		width:100%;
-		height:100%;
+		margin:10%;
 	}
 	svg,img{
 		height:100%;
 		width:auto;
 		display: block;
-		@include abs-pos(0,0,0,auto);
-		path,polygon{
-			@include transition (fill 0.2s ease-in-out);
-		}
+		margin:0 auto;
 	}
 	&:hover,&:active{
-		color: $grey;
-		border-color:lighten($blue,5);
-		svg{
-			path,polygon{
-				fill:lighten($blue,5);
-			}
-		}
+		color: white;
+		background-color:lighten($blue,5);
 	}
 	&.building-consultants{
-		border-color:$red;
-		svg,img{
-			width:100%;
-			height:auto;
-			display: block;
-			@include abs-pos(auto,0,0,0);
-		}
+		background-color:$orange;
 		&:hover,&:active{
-			border-color:lighten($red,5);
-			svg{
-				path,polygon{
-					fill:lighten($red,5);
-				}
-			}
+			background-color:lighten($orange,5);
 		}
 	}
 	&.healthcare{
-		border-color:$pink;
-		svg,img{
-			width:auto;
-			height:45%;
-			display: block;
-			@include abs-pos(auto,0,0,auto);
-		}
+		background-color:$green;
 		&:hover,&:active{
-			border-color:lighten($pink,5);
-			svg{
-				path,polygon{
-					fill:lighten($pink,5);
-				}
-			}
+			background-color:lighten($green,5);
 		}
 	}
 	&.case-studies{
-		border-color:$grey;
-		svg,img{
-			width:auto;
-			height:25%;
-			display: block;
-			@include abs-pos(auto,0,0,auto);
-		}
+		background-color:$grey;
 		&:hover,&:active{
-			border-color:lighten($grey,5);
-			svg{
-				path,polygon{
-					fill:lighten($grey,5);
-				}
-			}
+			background-color:lighten($grey,5);
 		}
 	}
 }

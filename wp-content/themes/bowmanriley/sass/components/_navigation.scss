@@ -17,9 +17,15 @@
 			display: none;
 			z-index: 1;
 		}
+		@media screen and (max-width: $break-small) {
+			width:80%;
+		}
 	}
 	li{
 		position:relative;
+		&.hover{
+			background-color: $dark-grey;
+		}
 		@media screen and (max-width: $break-nav) {
 			float:none;
 			display: block;
@@ -39,7 +45,7 @@
 					float:none;
 					display: block;
 					width:100%;
-					padding:10px 24px;
+					padding:7px 24px;
 					height:auto;
 					line-height: 100%;
 				}
@@ -59,11 +65,10 @@
 			@media screen and (max-width: $break-nav) {
 				position:relative;
 				top:auto;
-				background-color:transparent;
+				background-color:lighten($dark-grey,20);
 				padding:0;
-				display: block;
+				display: none;
 				border:none;
-				margin-bottom: 10px;
 			}
 			
 			h5{
@@ -75,6 +80,9 @@
 				width:auto;
 				display: inline-block;
 				padding-bottom:0;
+				&.current-menu-item{
+					background-color: transparent;
+				}
 			}
 			li,a{
 				
@@ -107,6 +115,11 @@
 				}
 			}		
 		}
+		&.current-menu-item .sub-menu{
+				@media screen and (max-width: $break-nav) {
+					display: block;
+				}	
+			}
 		&.menu-item-50{
 			.sub-menu{
 				width: 360px;
@@ -135,7 +148,7 @@
 		&.current-menu-item{
 			@media screen and (max-width: $break-nav) {
 				background-color: $dark-grey;
-				padding-bottom:16px;
+				//padding-bottom:16px;
 			}
 		}
 	}
@@ -163,6 +176,9 @@
 		@media screen and (max-width: $break-medium+1) {
 			@include abs-pos(auto,auto,12px,0);
 		}
+		@media screen and(max-width: $break-small){
+			position: relative;
+		}
 	}
 	@include transition (bottom 0.2s ease-in-out);
 	width:100%;
@@ -175,6 +191,9 @@
 	#about &{
 		@media screen and (max-width: $break-medium+1) {
 			@include abs-pos(auto,auto,24px,0);
+		}
+		@media screen and(max-width: $break-small){
+			position: relative;
 		}
 	}
 	
@@ -213,10 +232,19 @@ nav#utility-nav{
 			border-bottom:1px solid $grey;
 		}
 		&.share{
-			display: none;
+			display: block;
+			a{
+				padding:0;
+				svg,img{
+					width:100%;
+					height:auto;
+				}
+			}
+			/*
 			@media screen and (min-height: 700px) {
 				display:block;
 			}
+			*/
 		}
 		&.search{
 			padding-bottom:0;
@@ -282,6 +310,15 @@ nav#utility-nav{
 					fill:$green;
 				}
 			}
+			.pink &{
+				a{
+					color:$pink;
+					border-color:$pink;
+				}
+				svg path.icon{
+					fill:$pink;
+				}
+			}
 		}
 		a,span{
 			height:30px;
@@ -289,16 +326,21 @@ nav#utility-nav{
 			position: relative;
 			@include font-size(13);
 			line-height:31px;
-			padding-bottom:10px;
+			//padding-bottom:10px;
 		}
 		a{
 			border-bottom:1px solid $grey;
+			padding-bottom:0;
 			@include transition (all 0.2s ease-in-out);
 			span{
 				@include abs-pos(0,0,auto,auto);
 				width:20px;
 				height:20px;
 				display: block;
+				svg{
+					width:100%;
+					height:auto;
+				}
 				img{
 					@include fit-grid(height);
 				}
@@ -307,10 +349,10 @@ nav#utility-nav{
 				}
 			}
 			&:hover, &:active{
-				color: $brown;
-				border-color: $brown;
+				color: $blue;
+				border-color: $blue;
 				svg path.icon{
-					fill:$brown;
+					fill:$blue;
 				}
 				.orange &{
 					color: $orange;
@@ -331,6 +373,13 @@ nav#utility-nav{
 					border-color: $green;
 					svg path.icon{
 						fill:$green;
+					}
+				}
+				.pink &{
+					color: $pink;
+					border-color: $pink;
+					svg path.icon{
+						fill:$pink;
 					}
 				}
 			}
@@ -356,12 +405,18 @@ nav#utility-nav{
 							@include transition (fill 0.2s ease-in-out);
 						}
 						svg:hover g.icon path{
-							fill: $brown;
+							fill: $blue;
 							.orange &{
 								fill: $orange;
 							}
 							.blue &{
 								fill: $blue;
+							}
+							.green &{
+								fill: $green;
+							}
+							.pink &{
+								fill: $pink;
 							}
 						}
 
@@ -380,9 +435,13 @@ nav#utility-nav{
 }
 nav#sub-nav{
 	text-transform:uppercase;
-		@media screen and (min-width: $break-small+1) and (max-width: $break-medium+1) {
+	display:none;
+		@media screen and (min-height:690px) {
 		//padding-right: calc(#{$gutter});
-		display: none;
+		display: block;
+	}
+	@media screen and (max-width: $break-medium+1) {
+		display:none;
 	}
 }
 nav#utility-nav{

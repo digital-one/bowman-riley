@@ -20,6 +20,7 @@ $page = get_post(32);
     'post_type' => 'news',
     'orderby' => 'date',
     'order' => 'DESC',
+    'posts_per_page'   => -1,
     'post_status' => 'publish',
     //'monthnum'=>$monthnum,
     'year'=>$year,
