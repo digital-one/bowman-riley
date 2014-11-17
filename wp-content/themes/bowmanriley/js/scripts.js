@@ -34,7 +34,7 @@ $(".fancybox").fancybox();
 
 
 //mobile menu
-var isMobile = $(window).width() < 641,
+var isMobile = $(window).width() < 641, 
     isDeviceSize = $(window).width() < 769,
     isMobileMenu = $(window).width() < 1200,
     mobileMenuIsActive = isMobileMenu ? true : false,
@@ -377,6 +377,7 @@ sendPushLink = function(e){
 }
 //refresh the push state links click action
  refreshNavPushLinkActions = function(){
+
   //if(console) console.log('refresh push links');
   $navPushStateLinks.unbind('click', sendPushLink);
     $navPushStateLinks.bind('click',sendPushLink);
@@ -387,7 +388,7 @@ sendPushLink = function(e){
     });*/
  }
  killNavPushLinkActions  = function(){
-  console.log('kill');
+//  console.log('kill');
     $navPushStateLinks.unbind('click', sendPushLink);
  }
 
@@ -459,15 +460,16 @@ initDesktopMenuActions = function(){
  firstSubMenuLink.hide();
   $navPushStateLinks.unbind('click', sendPushLink);
   if($historyActive){ //if history, refresh the nav push state links
+
       initNavPushStateLinks.desktop(); 
       refreshNavPushLinkActions(); 
+       $parentLinks.bind('click',setLinkState);
+  $('.sub-menu a').bind('click',setParentLinkState);
     } 
  
-  initNavPushStateLinks.desktop(); 
   if(mobileMenuIsActive) closeMobileMenu();
   desktopDropDown.activate();
-  $parentLinks.bind('click',setLinkState);
-  $('.sub-menu a').bind('click',setParentLinkState);
+ 
   
 }
 
@@ -532,24 +534,37 @@ updateMenuActions = function(){
     mobileMenuIsActive = $mobileMenuHandle.hasClass('active'),
     $historyActive = Modernizr.history && !isMobile;
 
-    if(isMobile){
+    if(!$historyActive){
       killHistoryActions();
     } else {
      killHistoryActions();
       initHistoryActions();
     }
     if(!isMobileMenu){
-      if(console)  console.log('desktop menu');
+    //  if(console)  console.log('desktop menu');
       initDesktopMenuActions();
     } else {
-      if(console)  console.log('mobile menu');
+    //  if(console)  console.log('mobile menu');
       initMobileMenuActions();
     }
     
 }
+convertSubNavLinksToHash = function(){
+  var $links = $('#sub-nav a');
+    $links.each(function(){
+    var $href = $(this).attr('href');
+    //remove trailing slash
+    $href =  $href.replace(/\/$/,"");
+    $url = $href.split("/");
+    if($url.length>2){
+        $url[$url.length-1] = '#'+$url[$url.length-1];
+    }
+    $url = $url.join('/');
+    $(this).attr('href',$url);
+    })
 
 
-
+}
  convertChildLinksToHash = function(){
   //$('a:not([href*=javascript]):not([href^=#])') ...
   var $subMenus = $('.sub-menu:not(#menu-item-50 .sub-menu):not(#menu-item-60 .sub-menu)');
@@ -810,6 +825,7 @@ initPageDownArrowLink = function(){
 }
 
 initHistoryActions = function(){
+
        var $main = $('main'),
            $aside = $('aside'),
            $firstLoad = 1;
@@ -825,6 +841,7 @@ initHistoryActions = function(){
 }
 
 killHistoryActions = function(){
+
   removeHashLinks();
   killCaseStudiesSubNav();
   killPeopleSubNav();
@@ -834,6 +851,7 @@ killHistoryActions = function(){
   killPushStateLinks();
   initImageSliders();
   initFirstMap();
+
 }
 
 
@@ -842,6 +860,7 @@ initLoadedPages = function(){
     initFullPageJS();
     updateShareLinks(1); //update share links with first page permalink and title
     initFirstMap();
+    convertSubNavLinksToHash();
     initImageSliders();
     loader('hide'); //hide the loader
     $firstLoad=0;
@@ -859,12 +878,16 @@ if($historyActive){
     initPushStateLinks();
  // initHistoryActions();
 }
+
+$(window).on('resize',function(){
+  updateMenuActions();
+});
+
+
 }); //closing on document ready
 
 //on resize actions
-$(window).on('resize',function(){
-  updateMenuActions()
-});
+
 
 /*
 

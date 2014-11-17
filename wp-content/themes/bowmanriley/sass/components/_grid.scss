@@ -31,8 +31,10 @@
 		height:66.66%;
 	}
 	&.twice-height{
+		height:auto;
 		@media screen and (max-width: $break-small){
 			width:50%;
+
 		}
 		&:before{
 			padding-top:calc(200% + #{$gutter});

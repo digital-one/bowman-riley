@@ -26,8 +26,7 @@ $.fn.gmap = function(options){
 		route: false,
 		routeWayPoints: [],
 		routeOrigin: [],
-		routeDestination: [],
-
+		routeDestination: []
 		};
 	
 	var options = $.extend(defaults,options);
