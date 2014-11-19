@@ -562,8 +562,21 @@ convertSubNavLinksToHash = function(){
     $url = $url.join('/');
     $(this).attr('href',$url);
     })
+  }
 
-
+convertCellAnchorLinksToHash = function(){
+  var $links = $('.push-link.anchor');
+    $links.each(function(){
+    var $href = $(this).attr('href');
+    //remove trailing slash
+    $href =  $href.replace(/\/$/,"");
+    $url = $href.split("/");
+    if($url.length>2){
+        $url[$url.length-1] = '#'+$url[$url.length-1];
+    }
+    $url = $url.join('/');
+    $(this).attr('href',$url);
+    })
 }
  convertChildLinksToHash = function(){
   //$('a:not([href*=javascript]):not([href^=#])') ...
@@ -861,6 +874,7 @@ initLoadedPages = function(){
     updateShareLinks(1); //update share links with first page permalink and title
     initFirstMap();
     convertSubNavLinksToHash();
+  convertCellAnchorLinksToHash();
     initImageSliders();
     loader('hide'); //hide the loader
     $firstLoad=0;

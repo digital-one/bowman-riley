@@ -19,8 +19,22 @@ $description = get_field('long_description',$term);
 </div>
 <aside class="beta column width-55-pct">
   <div class="inner no-cell">
+    <?php
+if(get_field('image_slider',$post->ID)):
+  ?>
+<div class="row height-60-pct bg-fill-cell masked gutter-2x">
+
+<div class="slider owl-carousel">
+  <?php while(the_repeater_field('image_slider')):  ?>
+  <?php list($src,$w,$h) = wp_get_attachment_image_src(get_sub_field('slider_image'), 'full'); ?>
+<div class="image-slide" class="bg-fill-cell" style="background-image:url('<?php echo $src ?>');"></div>
+<?php endwhile ?>
+</div>
+</div>
+<?php else: ?>
   <div class="row height-60-pct bg-fill-cell masked gutter-2x" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>');">
   </div>
+<?php endif ?>
   <div class="row height-40-pct  gutter-2x">
 <div class="column width-25-pct gutter-2x"><ul class="case-study-meta"><li>Client: <?php echo $post->post_title?></li>
   <?php

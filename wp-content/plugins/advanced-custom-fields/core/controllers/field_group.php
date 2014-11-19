@@ -700,13 +700,26 @@ class acf_field_group
 				break;
 			
 			case "post_category" :
-				
-				$category_ids = get_all_category_ids();
-		
-				foreach($category_ids as $cat_id) 
+				$args = array(
+   'public'   => true,
+   '_builtin' => false
+);
+				$output = 'names'; // names or objects, note names is the default
+				$operator = 'and'; // 'and' or 'or'
+					$post_types = get_post_types( $args, $output, $operator ); 
+				$cpt = array();
+				foreach($post_types as $k=>$type):
+					echo $type;
+					array_push($cpt,$type);
+				endforeach;
+				//print_r($cpt);
+				//$category_ids = get_all_category_ids();
+				$terms = get_terms($cpt);
+				print_r($terms);
+				foreach($terms as $term)
 				{
-				  $cat_name = get_cat_name($cat_id);
-				  $choices[$cat_id] = $cat_name;
+				  $cat_name = $term->id;
+				  $choices[$cat_id] = $term->name;
 				}
 				
 				break;

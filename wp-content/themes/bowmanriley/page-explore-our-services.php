@@ -11,11 +11,10 @@
     <div class="square cell half"><a href="<?php echo get_permalink(18)?>" class="service-link push-link architects"><span><img src="<?php echo get_template_directory_uri(); ?>/images/br-architects.svg" /></span></a></div>
     <div class="square cell half"><a href="<?php echo get_permalink(20)?>" class="service-link push-link building-consultants"><span><img src="<?php echo get_template_directory_uri(); ?>/images/br-building-consultancy.svg" /></span></a></div>
     <div class="square cell half"><a href="<?php echo get_permalink(22)?>" class="service-link push-link healthcare"><span><img src="<?php echo get_template_directory_uri(); ?>/images/br-healthcare.svg" /></span></a></div>
-    <div class="square cell half"><a href="<?php echo get_permalink(24)?>" class="service-link fit-cell push-link case-studies"><span>Case Studies</span></a></div>
+    <div class="square cell half"><a href="<?php echo get_permalink(247)?>" class="service-link push-link innovate"><span><img src="<?php echo get_template_directory_uri(); ?>/images/br-innovate.svg" /></span></a></div>
 </div>
 </aside>
-
-  </section>
-  <!--/explore-->
+</section>
+<!--/explore-->
 </main>
 <?php get_footer() ?>

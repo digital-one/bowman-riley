@@ -144,10 +144,57 @@ a.service-link{
 			background-color:lighten($green,5);
 		}
 	}
-	&.case-studies{
-		background-color:$grey;
+	&.innovate{
+		background-color:$pink;
 		&:hover,&:active{
-			background-color:lighten($grey,5);
+			background-color:lighten($pink,5);
 		}
 	}
 }
+
+.svg-logo .riley {
+	fill: $blue;
+	 @include animation(blend 20s infinite ease );
+	 @include keyframes(blend) {
+  	20% { fill: $blue; }
+    25% { fill: $orange; }
+    45% { fill: $orange; }
+    65% { fill: $green; }
+    70% { fill: $green; }
+    75% { fill: $pink; }
+    95% { fill: $pink; }
+    100% { fill: $blue; }
+	}
+  /*  animation-name: blend;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;*/
+}
+
+ /*
+@keyframes blend{
+    0% { fill: $blue; }
+    25% { fill: $orange; }
+    50% { fill: $green; }
+    75% { fill: $pink; }
+    100% { fill: $blue; }
+}
+
+
+
+.svg-rudolph .nose {
+  -webkit-animation-name: nose-glow;
+  -webkit-animation-duration: 6s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-direction: alternate;
+  
+  animation-name: nose-glow;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+  
+}
+*/

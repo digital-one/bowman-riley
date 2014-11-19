@@ -3657,14 +3657,130 @@ a.service-link.healthcare:hover, a.service-link.healthcare:active {
   background-color: #83cd2f;
 }
 /* line 147, ../sass/templates/_home.scss */
-a.service-link.case-studies {
-  background-color: #7c7c7b;
+a.service-link.innovate {
+  background-color: #ec008c;
 }
 /* line 149, ../sass/templates/_home.scss */
-a.service-link.case-studies:hover, a.service-link.case-studies:active {
-  background-color: #898988;
+a.service-link.innovate:hover, a.service-link.innovate:active {
+  background-color: #ff069a;
 }
 
+/* line 155, ../sass/templates/_home.scss */
+.svg-logo .riley {
+  fill: #009fe3;
+  -webkit-animation: blend 20s infinite ease;
+  -moz-animation: blend 20s infinite ease;
+  animation: blend 20s infinite ease;
+  /*  animation-name: blend;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;*/
+}
+@-webkit-keyframes blend {
+  20% {
+    fill: #009fe3;
+  }
+  25% {
+    fill: #ee7203;
+  }
+  45% {
+    fill: #ee7203;
+  }
+  65% {
+    fill: #76b82a;
+  }
+  70% {
+    fill: #76b82a;
+  }
+  75% {
+    fill: #ec008c;
+  }
+  95% {
+    fill: #ec008c;
+  }
+  100% {
+    fill: #009fe3;
+  }
+}
+@-moz-keyframes blend {
+  20% {
+    fill: #009fe3;
+  }
+  25% {
+    fill: #ee7203;
+  }
+  45% {
+    fill: #ee7203;
+  }
+  65% {
+    fill: #76b82a;
+  }
+  70% {
+    fill: #76b82a;
+  }
+  75% {
+    fill: #ec008c;
+  }
+  95% {
+    fill: #ec008c;
+  }
+  100% {
+    fill: #009fe3;
+  }
+}
+@keyframes blend {
+  20% {
+    fill: #009fe3;
+  }
+  25% {
+    fill: #ee7203;
+  }
+  45% {
+    fill: #ee7203;
+  }
+  65% {
+    fill: #76b82a;
+  }
+  70% {
+    fill: #76b82a;
+  }
+  75% {
+    fill: #ec008c;
+  }
+  95% {
+    fill: #ec008c;
+  }
+  100% {
+    fill: #009fe3;
+  }
+}
+ /*
+@keyframes blend{
+    0% { fill: $blue; }
+    25% { fill: $orange; }
+    50% { fill: $green; }
+    75% { fill: $pink; }
+    100% { fill: $blue; }
+}
+
+
+
+.svg-rudolph .nose {
+  -webkit-animation-name: nose-glow;
+  -webkit-animation-duration: 6s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-direction: alternate;
+  
+  animation-name: nose-glow;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+  
+}
+*/
 /* line 2, ../sass/templates/_media.scss */
 #news article, #people-single article, #our-people-sector article {
   /*

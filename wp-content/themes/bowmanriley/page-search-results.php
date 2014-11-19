@@ -15,7 +15,7 @@
         // run search query
         $search = $_REQUEST['search'];
       $args = array(
-        'post_type' => 'page',
+        'post_type' => array( 'page', 'casestudies', 'news', 'people' ),
         's' => $search
 		);
 query_posts($args);

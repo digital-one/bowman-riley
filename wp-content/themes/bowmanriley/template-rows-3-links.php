@@ -55,6 +55,7 @@ switch(get_field('link_1_type')){
 	$permalink = get_field('link_1_page',$post->ID);
 	$arrow_direction = 'right';
 	$target = "_parent";
+	$anchor_class="page";
 	break;
 	case 'case-study-category':
 	$val = get_field('link_1_label',$post->ID);
@@ -63,6 +64,7 @@ switch(get_field('link_1_type')){
 	$permalink = get_term_link($term);
 	$arrow_direction = 'right';
 	$target = "_parent";
+	$anchor_class="case-study-category";
 	break;
 	case 'people-category':
 	$val = get_field('link_1_label',$post->ID);
@@ -71,26 +73,29 @@ switch(get_field('link_1_type')){
 	$permalink = get_term_link($term);
 	$arrow_direction = 'right';
 	$target = "_parent";
+	$anchor_class="people-category";
 	break;
 	case 'anchor':
 	$post_id = url_to_postid(get_field('link_1_anchor',$post->ID));
 	$page = get_post($post_id);
 	get_field('link_1_label',$post->ID);
 	$label = !empty($val) ? get_field('link_1_label',$post->ID) : $post->post_title;
-	if($page->post_parent==0):
+	//if($page->post_parent==0):
 		$permalink = get_permalink($page->ID); //if the target page is the parent page
-	else:
+	/*else:
 		$permalink = get_permalink($page->parent); //if the target page is a child page
-	endif;
-	$permalink = $permalink.'#'.$page->post_name;
+	endif;*/
+	//$permalink = $permalink.'#'.$page->post_name;
 	$arrow_direction = get_field('link_1_arrow_direction',$post->ID);
 	$target = "_parent";
+	$anchor_class="anchor";
 	break;
 	case 'download':
 	$permalink = get_field('link_1_file',$post->ID);
 	$label = get_field('link_1_label',$post->ID);
 	$arrow_direction = 'down';
 	$target = "_blank";
+	$anchor_class="download";
 	break;
 	case 'image':
 	list($src,$w,$h) = wp_get_attachment_image_src(get_field('link_1_image',$post->ID), 'full');
@@ -109,7 +114,7 @@ switch(get_field('link_1_type')){
  	<div class="row height-60-pct logo <?php echo $box_colour ?>"><img src="<?php echo $src ?>" /></div>
  <?php else: ?>
   <div class="row height-60-pct">
- 	<a href="<?php echo $permalink?>" target="<?php echo $target?>" class="<?php echo $class ?> fit-cell <?php echo $arrow_direction?> <?php echo get_field('theme',$post->ID)?>"><?php echo $label ?></a>
+ 	<a href="<?php echo $permalink?>" target="<?php echo $target?>" class="<?php echo $class ?> <?php echo $anchor_class ?> fit-cell <?php echo $arrow_direction?> <?php echo get_field('theme',$post->ID)?>"><?php echo $label ?></a>
  </div>
 <?php endif ?>
 
@@ -122,6 +127,7 @@ switch(get_field('link_2_type')){
 	$permalink = get_field('link_2_page',$post->ID);
 	$arrow_direction = 'right';
 	$target = "_parent";
+	$anchor_class="page";
 	break;
 	case 'case-study-category':
 	$val = get_field('link_2_label',$post->ID);
@@ -130,6 +136,7 @@ switch(get_field('link_2_type')){
 	$permalink = get_term_link($term);
 	$arrow_direction = 'right';
 	$target = "_parent";
+	$anchor_class="case-study-category";
 	break;
 	case 'people-category':
 	$val = get_field('link_2_label',$post->ID);
@@ -138,26 +145,29 @@ switch(get_field('link_2_type')){
 	$permalink = get_term_link($term);
 	$arrow_direction = 'right';
 	$target = "_parent";
+	$anchor_class="people-category";
 	break;
 	case 'anchor':
 	$post_id = url_to_postid(get_field('link_2_anchor',$post->ID));
 	$page = get_post($post_id);
 	$val = get_field('link_2_label',$post->ID);
 	$label = !empty($val) ? get_field('link_2_label',$post->ID) : $post->post_title;
-	if($page->post_parent==0):
+	//if($page->post_parent==0):
 		$permalink = get_permalink($page->ID); //if the target page is the parent page
-	else:
-		$permalink = get_permalink($page->parent); //if the target page is a child page
-	endif;
-	$permalink = $permalink.'#'.$page->post_name;
+	//else:
+	//	$permalink = get_permalink($page->parent); //if the target page is a child page
+	//endif;
+	//$permalink = $permalink.'#'.$page->post_name;
 	$arrow_direction = get_field('link_2_arrow_direction',$post->ID);
 	$target = "_parent";
+	$anchor_class="anchor";
 	break;
 	case 'download':
 	$permalink = get_field('link_2_file',$post->ID);
 	$label = get_field('link_2_label',$post->ID);
 	$arrow_direction = 'down';
 	$target = "_blank";
+	$anchor_class="download";
 	break;
 	case 'image':
 	list($src,$w,$h) = wp_get_attachment_image_src(get_field('link_2_image',$post->ID), 'full');
@@ -175,7 +185,7 @@ switch(get_field('link_2_type')){
  	<div class="row height-40-pct logo <?php echo $box_colour ?>"><img src="<?php echo $src ?>" /></div>
  <?php else: ?>
   <div class="row height-40-pct">
- 	<a href="<?php echo $permalink?>" target="<?php echo $target?>" class="<?php echo $class ?> fit-cell <?php echo $arrow_direction?> white"><?php echo $label ?></a>
+ 	<a href="<?php echo $permalink?>" target="<?php echo $target?>" class="<?php echo $class ?> <?php echo $anchor_class ?> fit-cell <?php echo $arrow_direction?> white"><?php echo $label ?></a>
  </div>
 <?php endif ?>
 
@@ -191,6 +201,7 @@ switch(get_field('link_3_type')){
 	$permalink = get_field('link_3_page',$post->ID);
 	$arrow_direction = 'right';
 	$target = "_parent";
+	$anchor_class="page";
 	break;
 	case 'case-study-category':
 	$val = get_field('link_3_label',$post->ID);
@@ -199,6 +210,7 @@ switch(get_field('link_3_type')){
 	$permalink = get_term_link($term);
 	$arrow_direction = 'right';
 	$target = "_parent";
+	$anchor_class="case-study-category";
 	break;
 	case 'people-category':
 	$val = get_field('link_3_label',$post->ID);
@@ -207,6 +219,7 @@ switch(get_field('link_3_type')){
 	$permalink = get_term_link($term);
 	$arrow_direction = 'right';
 	$target = "_parent";
+	$anchor_class="people-category";
 	break;
 	case 'anchor':
 	//$post_id = get_field('link_3_anchor',$post->ID);
@@ -214,20 +227,22 @@ switch(get_field('link_3_type')){
 	$page = get_post($post_id);
 	$val = get_field('link_3_label',$post->ID);
 	$label = !empty($val) ? get_field('link_3_label',$post->ID) : $post->post_title;
-	if($page->post_parent==0):
+	//if($page->post_parent==0):
 		$permalink = get_permalink($page->ID); //if the target page is the parent page
-	else:
+	/*else:
 		$permalink = get_permalink($page->parent); //if the target page is a child page
-	endif;
-	$permalink = $permalink.'#'.$page->post_name;
+	endif;*/
+	//$permalink = $permalink.'#'.$page->post_name;
 	$arrow_direction = get_field('link_3_arrow_direction',$post->ID);
 	$target = "_parent";
+	$anchor_class="anchor";
 	break;
 	case 'download':
 	$permalink = get_field('link_3_file',$post->ID);
 	$label = get_field('link_3_label',$post->ID);
 	$arrow_direction = 'down';
 	$target = "_blank";
+	$anchor_class="download";
 	break;
 	case 'image':
 	list($src,$w,$h) = wp_get_attachment_image_src(get_field('link_3_image',$post->ID), 'full');
@@ -245,7 +260,7 @@ switch(get_field('link_3_type')){
  	<div class="column width-60-pct logo <?php echo $box_colour ?>"><img src="<?php echo $src ?>" /></div>
  <?php else: ?>
   <div class="column width-60-pct">
- 	<a href="<?php echo $permalink?>" target="<?php echo $target?>" class="<?php echo $class ?> fit-cell <?php echo $arrow_direction?> grey"><?php echo $label ?></a>
+ 	<a href="<?php echo $permalink?>" target="<?php echo $target?>" class="<?php echo $class ?> <?php echo $anchor_class ?> fit-cell <?php echo $arrow_direction?> grey"><?php echo $label ?></a>
  </div>
 <?php endif ?>
 

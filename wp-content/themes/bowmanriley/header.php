@@ -49,8 +49,8 @@
     wp_nav_menu( array(
         'menu'=>'Main Navigation',
         'container' => false, 
-        'fallback_cb' => 'wp_page_menu',
-        'walker' => new subMenu()
+        'fallback_cb' => 'wp_page_menu'//,
+        //'walker' => new subMenu()
         //'menu_class' => 'inline',
         //'link_after' => '<span></span>'
         )

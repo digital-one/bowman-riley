@@ -4,6 +4,118 @@
 		"selected_items":
 		[
 			[
+				"an",
+				"anchor_class"
+			],
+			[
+				"pe",
+				"people-category"
+			],
+			[
+				"case",
+				"case-study-category"
+			],
+			[
+				"cas",
+				"case-study-category"
+			],
+			[
+				"over",
+				"overflow-y"
+			],
+			[
+				"wor",
+				"word-wrap"
+			],
+			[
+				"n",
+				"none"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"curr",
+				"currentTarget"
+			],
+			[
+				"all",
+				"alllinks"
+			],
+			[
+				"crr",
+				"current-menu-item"
+			],
+			[
+				"current",
+				"current-menu-item"
+			],
+			[
+				"has",
+				"menu-item-has-children"
+			],
+			[
+				"cur",
+				"currentTarget"
+			],
+			[
+				"ref",
+				"refreshPushLinkActions"
+			],
+			[
+				"mobi",
+				"mobileMenuIsActive"
+			],
+			[
+				"toggle",
+				"toggleMobileDropDown"
+			],
+			[
+				"close",
+				"closeMobileMenu"
+			],
+			[
+				"isMob",
+				"isMobileMenu"
+			],
+			[
+				"paddin",
+				"padding-top"
+			],
+			[
+				"pad",
+				"padding-top"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"padd",
+				"padding-right"
+			],
+			[
+				"fo",
+				"font-weight"
+			],
+			[
+				"wr",
+				"break-word"
+			],
+			[
+				"bor",
+				"border"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
 				"ur",
 				"urlencode"
 			],
@@ -12,20 +124,8 @@
 				"padding-right"
 			],
 			[
-				"mar",
-				"margin-bottom"
-			],
-			[
-				"ba",
-				"background-color"
-			],
-			[
 				"rep",
 				"replace"
-			],
-			[
-				"pad",
-				"padding-right"
 			],
 			[
 				"trans",
@@ -40,20 +140,8 @@
 				"min-width"
 			],
 			[
-				"fo",
-				"font-style"
-			],
-			[
-				"te",
-				"text-transform"
-			],
-			[
 				"casestudies",
 				"casestudies_category"
-			],
-			[
-				"n",
-				"nowrap"
 			],
 			[
 				"fon",
@@ -62,10 +150,6 @@
 			[
 				"ma",
 				"margin-bottom"
-			],
-			[
-				"curr",
-				"current-menu-item"
 			],
 			[
 				"tran",
@@ -82,10 +166,6 @@
 			[
 				"border-co",
 				"border-color"
-			],
-			[
-				"padd",
-				"padding-bottom"
 			],
 			[
 				"no",
@@ -168,20 +248,12 @@
 				"text-transform"
 			],
 			[
-				"bor",
-				"border-bottom"
-			],
-			[
 				"bu",
 				"button-inner"
 			],
 			[
 				"str_rep",
 				"str_replace"
-			],
-			[
-				"over",
-				"overflow-y"
 			],
 			[
 				"bac",
@@ -442,15 +514,96 @@
 			[
 				"o",
 				"opacity"
-			],
-			[
-				"is",
-				"is_open"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "wp-content/themes/bowmanriley/front-page.php",
+			"settings":
+			{
+				"buffer_size": 4427,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "wp-content/themes/bowmanriley/sass/_variables.scss",
+			"settings":
+			{
+				"buffer_size": 493,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "wp-content/themes/bowmanriley/sass/templates/_home.scss",
+			"settings":
+			{
+				"buffer_size": 3794,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "wp-content/themes/bowmanriley/template-rows-4-links.php",
+			"settings":
+			{
+				"buffer_size": 12797,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "wp-content/themes/bowmanriley/page-explore-our-services.php",
+			"settings":
+			{
+				"buffer_size": 1370,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "wp-includes/functions.php",
+			"settings":
+			{
+				"buffer_size": 142443,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 2196 files for \"get_all_category_ids\"\n\n/Applications/MAMP/htdocs/bowman-riley/wp-content/plugins/advanced-custom-fields/core/controllers/field_group.php:\n  702  			case \"post_category\" :\n  703  				\n  704: 				$category_ids = get_all_category_ids();\n  705  		\n  706  				foreach($category_ids as $cat_id) \n\n/Applications/MAMP/htdocs/bowman-riley/wp-includes/deprecated.php:\n 1292  	$chain = '';\n 1293  	/** TODO: consult hierarchy */\n 1294: 	$cat_ids = get_all_category_ids();\n 1295  	foreach ( (array) $cat_ids as $cat_id ) {\n 1296  		if ( $cat_id == $id )\n ....\n 1315   * @deprecated 4.0.0 Use get_terms() instead.\n 1316   * @see get_terms()\n 1317:  * @link http://codex.wordpress.org/Function_Reference/get_all_category_ids\n 1318   *\n 1319   * @return object List of all of the category IDs.\n 1320   */\n 1321: function get_all_category_ids() {\n 1322  	_deprecated_function( __FUNCTION__, '4.0', 'get_terms()' );\n 1323  \n\n4 matches across 2 files\n",
+			"settings":
+			{
+				"buffer_size": 959,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"contents": "<?php \n\n/*\n*  acf_field_group\n*\n*  @description: controller for editing a field group\n*  @since: 3.6\n*  @created: 25/01/13\n*/\n\nclass acf_field_group\n{\n	\n	var $settings;\n	\n	\n	/*\n	*  __construct\n	*\n	*  @description: \n	*  @since 3.1.8\n	*  @created: 23/06/12\n	*/\n	\n	function __construct()\n	{\n		// actions\n		add_action('admin_enqueue_scripts', array($this,'admin_enqueue_scripts'));\n		\n		\n		// filters\n		add_filter('acf/get_field_groups', array($this, 'get_field_groups'), 1, 1);\n		add_filter('acf/field_group/get_fields', array($this, 'get_fields'), 5, 2);\n		add_filter('acf/field_group/get_location', array($this, 'get_location'), 5, 2);\n		add_filter('acf/field_group/get_options', array($this, 'get_options'), 5, 2);\n		add_filter('acf/field_group/get_next_field_id', array($this, 'get_next_field_id'), 5, 1);\n		\n		\n		// save\n		add_filter('name_save_pre', array($this, 'name_save_pre'));\n		add_action('save_post', array($this, 'save_post'));\n		\n		\n		// ajax\n		add_action('wp_ajax_acf/field_group/render_options', array($this, 'ajax_render_options'));\n		add_action('wp_ajax_acf/field_group/render_location', array($this, 'ajax_render_location'));\n		\n	}\n	\n	\n	/*\n	*  get_field_groups\n	*\n	*  @description: \n	*  @since: 3.6\n	*  @created: 27/01/13\n	*/\n	\n	function get_field_groups( $array )\n	{\n		// cache\n		$found = false;\n		$cache = wp_cache_get( 'field_groups', 'acf', false, $found );\n		\n		if( $found )\n		{\n			return $cache;\n		}\n		\n		\n		// get acf's\n		$posts = get_posts(array(\n			'numberposts' 	=> -1,\n			'post_type' 	=> 'acf',\n			'orderby' 		=> 'menu_order title',\n			'order' 		=> 'asc',\n			'suppress_filters' => false,\n		));\n\n		\n		// populate acfs\n		if( $posts ){ foreach( $posts as $post ){\n			\n			 $array[] = array(\n				'id' => $post->ID,\n				'title' => $post->post_title,\n				'menu_order' => $post->menu_order,\n			);\n			\n		}}\n\n		\n		// set cache\n		wp_cache_set( 'field_groups', $array, 'acf' );\n				\n				\n		return $array;\n	}\n	\n	\n	/*\n	*  get_fields\n	*\n	*  @description: returns all fields for a field group\n	*  @since: 3.6\n	*  @created: 26/01/13\n	*/\n	\n	function get_fields( $fields, $post_id )\n	{\n		// global\n		global $wpdb;\n		\n		\n		// loaded by PHP already?\n		if( !empty($fields) )\n		{\n			return $fields;	\n		}\n\n		\n		// get field from postmeta\n		$rows = $wpdb->get_results( $wpdb->prepare(\"SELECT meta_key FROM $wpdb->postmeta WHERE post_id = %d AND meta_key LIKE %s\", $post_id, 'field_%'), ARRAY_A);\n		\n		\n		if( $rows )\n		{\n			foreach( $rows as $row )\n			{\n				$field = apply_filters('acf/load_field', false, $row['meta_key'], $post_id );\n	\n			 	$fields[ $field['order_no'] ] = $field;\n			}\n		 	\n		 	// sort\n		 	ksort( $fields );\n	 	}\n	 	\n	 	\n	 	\n	 	// return\n		return $fields;\n		\n	}\n	\n	\n	/*\n	*  get_location\n	*\n	*  @description: \n	*  @since: 3.6\n	*  @created: 26/01/13\n	*/\n	\n	function get_location( $location, $post_id )\n	{\n		// loaded by PHP already?\n		if( !empty($location) )\n		{\n			return $location;	\n		}\n		\n		\n		// vars\n		$groups = array();\n		$group_no = 0;\n		\n		\n		// get all rules\n	 	$rules = get_post_meta($post_id, 'rule', false);\n	 	\n	 	\n	 	if( is_array($rules) )\n	 	{\n		 	foreach( $rules as $rule )\n		 	{\n		 		// if field group was duplicated, it may now be a serialized string!\n		 		$rule = maybe_unserialize($rule);\n		 		\n		 		\n			 	// does this rule have a group?\n			 	// + groups were added in 4.0.4\n			 	if( !isset($rule['group_no']) )\n			 	{\n				 	$rule['group_no'] = $group_no;\n				 	\n				 	// sperate groups?\n				 	if( get_post_meta($post_id, 'allorany', true) == 'any' )\n				 	{\n					 	$group_no++;\n				 	}\n			 	}\n			 	\n			 	\n			 	// add to group\n			 	$groups[ $rule['group_no'] ][ $rule['order_no'] ] = $rule;\n			 	\n			 	\n			 	// sort rules\n			 	ksort( $groups[ $rule['group_no'] ] );\n	 	\n		 	}\n		 	\n		 	// sort groups\n			ksort( $groups );\n	 	}\n	 		 	\n	 	\n	 	// return fields\n		return $groups;\n	}\n	\n	\n	/*\n	*  get_options\n	*\n	*  @description: \n	*  @since: 3.6\n	*  @created: 26/01/13\n	*/\n	\n	function get_options( $options, $post_id )\n	{\n		// loaded by PHP already?\n		if( !empty($options) )\n		{\n			return $options;	\n		}\n		\n		\n		// defaults\n	 	$options = array(\n	 		'position'			=>	'normal',\n	 		'layout'			=>	'no_box',\n	 		'hide_on_screen'	=>	array(),\n	 	);\n	 	\n	 	\n	 	// vars\n	 	$position = get_post_meta($post_id, 'position', true);\n	 	if( $position )\n		{\n			$options['position'] = $position;\n		}\n		\n		$layout = get_post_meta($post_id, 'layout', true);\n	 	if( $layout )\n		{\n			$options['layout'] = $layout;\n		}\n		\n		$hide_on_screen = get_post_meta($post_id, 'hide_on_screen', true);\n	 	if( $hide_on_screen )\n		{\n			$hide_on_screen = maybe_unserialize($hide_on_screen);\n			$options['hide_on_screen'] = $hide_on_screen;\n		}\n		\n	 	\n	 	// return\n	 	return $options;\n	}\n	\n	\n	/*\n	*  validate_page\n	*\n	*  @description: \n	*  @since 3.2.6\n	*  @created: 23/06/12\n	*/\n	\n	function validate_page()\n	{\n		// global\n		global $pagenow, $typenow;\n		\n\n		// vars\n		$return = false;\n		\n		\n		// validate page\n		if( in_array( $pagenow, array('post.php', 'post-new.php') ) )\n		{\n		\n			// validate post type\n			if( $typenow == \"acf\" )\n			{\n				$return = true;\n			}\n			\n		}\n		\n		\n		// return\n		return $return;\n	}\n	\n	\n	/*\n	*  admin_enqueue_scripts\n	*\n	*  @description: run after post query but before any admin script / head actions. A good place to register all actions.\n	*  @since: 3.6\n	*  @created: 26/01/13\n	*/\n	\n	function admin_enqueue_scripts()\n	{\n		// validate page\n		if( ! $this->validate_page() ){ return; }\n		\n		\n		// settings\n		$this->settings = apply_filters('acf/get_info', 'all');\n		\n		\n		// no autosave\n		wp_dequeue_script( 'autosave' );\n		\n		\n		// custom scripts\n		wp_enqueue_script(array(\n			'acf-field-group',\n		));\n		\n		\n		// custom styles\n		wp_enqueue_style(array(\n			'acf-global',\n			'acf-field-group',\n		));\n		\n		\n		// actions\n		do_action('acf/field_group/admin_enqueue_scripts');\n		add_action('admin_head', array($this,'admin_head'));\n		\n	}\n	\n	\n	/*\n	*  admin_head\n	*\n	*  @description: \n	*  @since 3.1.8\n	*  @created: 23/06/12\n	*/\n	\n	function admin_head()\n	{\n		global $post;\n		\n		\n		// l10n\n		$l10n = array(\n			'move_to_trash'		=>	__(\"Move to trash. Are you sure?\",'acf'),\n			'checked'			=>	__(\"checked\",'acf'),\n			'no_fields'			=>	__(\"No toggle fields available\",'acf'),\n			'title'				=>	__(\"Field group title is required\",'acf'),\n			'copy'				=>	__(\"copy\",'acf'),\n			'or'				=>	__(\"or\",'acf'),\n			'fields'			=>	__(\"Fields\",'acf'),\n			'parent_fields'		=>	__(\"Parent fields\",'acf'),\n			'sibling_fields'	=>	__(\"Sibling fields\",'acf'),\n			'hide_show_all'		=>	__(\"Hide / Show All\",'acf')\n		);\n		\n\n		\n		?>\n<script type=\"text/javascript\">\n(function($) {\n\n	// vars\n	acf.post_id = <?php echo $post->ID; ?>;\n	acf.nonce = \"<?php echo wp_create_nonce( 'acf_nonce' ); ?>\";\n	acf.admin_url = \"<?php echo admin_url(); ?>\";\n	acf.ajaxurl = \"<?php echo admin_url( 'admin-ajax.php' ); ?>\";\n	\n	\n	// l10n\n	acf.l10n = <?php echo json_encode( $l10n ); ?>;\n	\n})(jQuery);	\n</script>\n		<?php\n		\n		// new action\n		do_action('acf/field_group/admin_head');\n		\n		\n		// add metaboxes\n		add_meta_box('acf_fields', __(\"Fields\",'acf'), array($this, 'html_fields'), 'acf', 'normal', 'high');\n		add_meta_box('acf_location', __(\"Location\",'acf'), array($this, 'html_location'), 'acf', 'normal', 'high');\n		add_meta_box('acf_options', __(\"Options\",'acf'), array($this, 'html_options'), 'acf', 'normal', 'high');\n		\n		\n		// add screen settings\n		add_filter('screen_settings', array($this, 'screen_settings'), 10, 1);\n	}\n	\n	\n	/*\n	*  html_fields\n	*\n	*  @description: \n	*  @since 1.0.0\n	*  @created: 23/06/12\n	*/\n	\n	function html_fields()\n	{\n		include( $this->settings['path'] . 'core/views/meta_box_fields.php' );\n	}\n	\n	\n	/*\n	*  html_location\n	*\n	*  @description: \n	*  @since 1.0.0\n	*  @created: 23/06/12\n	*/\n\n	function html_location()\n	{\n		include( $this->settings['path'] . 'core/views/meta_box_location.php' );\n	}\n	\n	\n	/*\n	*  html_options\n	*\n	*  @description: \n	*  @since 1.0.0\n	*  @created: 23/06/12\n	*/\n	\n	function html_options()\n	{\n		include( $this->settings['path'] . 'core/views/meta_box_options.php' );\n	}\n	\n	\n	/*\n	*  screen_settings\n	*\n	*  @description: \n	*  @since: 3.6\n	*  @created: 26/01/13\n	*/\n	\n	function screen_settings( $current )\n	{\n	    $current .= '<h5>' . __(\"Fields\",'acf') . '</h5>';\n	    \n	    $current .= '<div class=\"show-field_key\">' . __(\"Show Field Key:\",'acf');\n			$current .= '<label class=\"show-field_key-no\"><input checked=\"checked\" type=\"radio\" value=\"0\" name=\"show-field_key\" />' . __(\"No\",'acf') . '</label>';\n			$current .= '<label class=\"show-field_key-yes\"><input type=\"radio\" value=\"1\" name=\"show-field_key\" />' . __(\"Yes\",'acf') . '</label>';\n		$current .= '</div>';\n	    \n	    return $current;\n	}\n	\n	\n	/*\n	*  ajax_render_options\n	*\n	*  @description: creates the HTML for a field's options (field group edit page)\n	*  @since 3.1.6\n	*  @created: 23/06/12\n	*/\n	\n	function ajax_render_options()\n	{\n		// vars\n		$options = array(\n			'field_key' => '',\n			'field_type' => '',\n			'post_id' => 0,\n			'nonce' => ''\n		);\n		\n		// load post options\n		$options = array_merge($options, $_POST);\n		\n		\n		// verify nonce\n		if( ! wp_verify_nonce($options['nonce'], 'acf_nonce') )\n		{\n			die(0);\n		}\n		\n		\n		// required\n		if( ! $options['field_type'] )\n		{\n			die(0);\n		}\n		\n		\n		// find key (not actual field key, more the html attr name)\n		$options['field_key'] = str_replace(\"fields[\", \"\", $options['field_key']);\n		$options['field_key'] = str_replace(\"][type]\", \"\", $options['field_key']) ;\n		\n		\n		// render options\n		$field = array(\n			'type' => $options['field_type'],\n			'name' => $options['field_key']\n		);\n		do_action('acf/create_field_options', $field );\n		\n		\n		die();\n		\n	}\n	\n	\n	/*\n	*  ajax_render_location\n	*\n	*  @description: creates the HTML for the field group location metabox. Called from both Ajax and PHP\n	*  @since 3.1.6\n	*  @created: 23/06/12\n	*/\n	\n	function ajax_render_location( $options = array() )\n	{\n		// defaults\n		$defaults = array(\n			'group_id' => 0,\n			'rule_id' => 0,\n			'value' => null,\n			'param' => null,\n		);\n		\n		$is_ajax = false;\n		if( isset($_POST['nonce']) && wp_verify_nonce($_POST['nonce'], 'acf_nonce') )\n		{\n			$is_ajax = true;\n		}\n		\n		\n		// Is AJAX call?\n		if( $is_ajax )\n		{\n			$options = array_merge($defaults, $_POST);\n		}\n		else\n		{\n			$options = array_merge($defaults, $options);\n		}\n		\n		// vars\n		$choices = array();\n		\n		\n		// some case's have the same outcome\n		if($options['param'] == \"page_parent\")\n		{\n			$options['param'] = \"page\";\n		}\n\n		\n		switch($options['param'])\n		{\n			case \"post_type\":\n				\n				// all post types except attachment\n				$choices = apply_filters('acf/get_post_types', array(), array('attachment'));\n\n				break;\n			\n			\n			case \"page\":\n				\n				$post_type = 'page';\n				$posts = get_posts(array(\n					'posts_per_page'			=>	-1,\n					'post_type'					=> $post_type,\n					'orderby'					=> 'menu_order title',\n					'order'						=> 'ASC',\n					'post_status'				=> 'any',\n					'suppress_filters'			=> false,\n					'update_post_meta_cache'	=> false,\n				));\n				\n				if( $posts )\n				{\n					// sort into hierachial order!\n					if( is_post_type_hierarchical( $post_type ) )\n					{\n						$posts = get_page_children( 0, $posts );\n					}\n					\n					foreach( $posts as $page )\n					{\n						$title = '';\n						$ancestors = get_ancestors($page->ID, 'page');\n						if($ancestors)\n						{\n							foreach($ancestors as $a)\n							{\n								$title .= '- ';\n							}\n						}\n						\n						$title .= apply_filters( 'the_title', $page->post_title, $page->ID );\n						\n						\n						// status\n						if($page->post_status != \"publish\")\n						{\n							$title .= \" ($page->post_status)\";\n						}\n						\n						$choices[ $page->ID ] = $title;\n						\n					}\n					// foreach($pages as $page)\n				\n				}\n				\n				break;\n			\n			\n			case \"page_type\" :\n				\n				$choices = array(\n					'front_page'	=>	__(\"Front Page\",'acf'),\n					'posts_page'	=>	__(\"Posts Page\",'acf'),\n					'top_level'		=>	__(\"Top Level Page (parent of 0)\",'acf'),\n					'parent'		=>	__(\"Parent Page (has children)\",'acf'),\n					'child'			=>	__(\"Child Page (has parent)\",'acf'),\n				);\n								\n				break;\n				\n			case \"page_template\" :\n				\n				$choices = array(\n					'default'	=>	__(\"Default Template\",'acf'),\n				);\n				\n				$templates = get_page_templates();\n				foreach($templates as $k => $v)\n				{\n					$choices[$v] = $k;\n				}\n				\n				break;\n			\n			case \"post\" :\n				\n				$post_types = get_post_types();\n				\n				unset( $post_types['page'], $post_types['attachment'], $post_types['revision'] , $post_types['nav_menu_item'], $post_types['acf']  );\n				\n				if( $post_types )\n				{\n					foreach( $post_types as $post_type )\n					{\n						\n						$posts = get_posts(array(\n							'numberposts' => '-1',\n							'post_type' => $post_type,\n							'post_status' => array('publish', 'private', 'draft', 'inherit', 'future'),\n							'suppress_filters' => false,\n						));\n						\n						if( $posts)\n						{\n							$choices[$post_type] = array();\n							\n							foreach($posts as $post)\n							{\n								$title = apply_filters( 'the_title', $post->post_title, $post->ID );\n								\n								// status\n								if($post->post_status != \"publish\")\n								{\n									$title .= \" ($post->post_status)\";\n								}\n								\n								$choices[$post_type][$post->ID] = $title;\n\n							}\n							// foreach($posts as $post)\n						}\n						// if( $posts )\n					}\n					// foreach( $post_types as $post_type )\n				}\n				// if( $post_types )\n				\n				\n				break;\n			\n			case \"post_category\" :\n				$args = array(\n   'public'   => true,\n   '_builtin' => false\n);\n				$output = 'names'; // names or objects, note names is the default\n				$operator = 'and'; // 'and' or 'or'\n					$post_types = get_post_types( $args, $output, $operator ); \n				$cpt = array();\n				foreach($post_types as $k=>$type):\n					array_push($cpt,$type);\n				endforeach;\n				//print_r($cpt);\n				//$category_ids = get_all_category_ids();\n				$terms = get_terms($cpt);\n				print_r($terms);\n				foreach($terms as $term)\n				{\n				  $cat_name = $term->id;\n				  $choices[$cat_id] = $term->name;\n				}\n				\n				break;\n			\n			case \"post_format\" :\n				\n				$choices = get_post_format_strings();\n								\n				break;\n			\n			case \"post_status\" :\n				\n				$choices = array(\n					'publish'	=> __( 'Publish' ),\n					'pending'	=> __( 'Pending Review' ),\n					'draft'		=> __( 'Draft' ),\n					'future'	=> __( 'Future' ),\n					'private'	=> __( 'Private' ),\n					'inherit'	=> __( 'Revision' ),\n					'trash'		=> __( 'Trash' )\n				);\n								\n				break;\n			\n			case \"user_type\" :\n				\n				global $wp_roles;\n				\n				$choices = $wp_roles->get_names();\n\n				if( is_multisite() )\n				{\n					$choices['super_admin'] = __('Super Admin');\n				}\n								\n				break;\n			\n			case \"taxonomy\" :\n				\n				$choices = array();\n				$simple_value = true;\n				$choices = apply_filters('acf/get_taxonomies_for_select', $choices, $simple_value);\n								\n				break;\n			\n			case \"ef_taxonomy\" :\n				\n				$choices = array('all' => __('All', 'acf'));\n				$taxonomies = get_taxonomies( array('public' => true), 'objects' );\n				\n				foreach($taxonomies as $taxonomy)\n				{\n					$choices[ $taxonomy->name ] = $taxonomy->labels->name;\n				}\n				\n				// unset post_format (why is this a public taxonomy?)\n				if( isset($choices['post_format']) )\n				{\n					unset( $choices['post_format']) ;\n				}\n			\n								\n				break;\n			\n			case \"ef_user\" :\n				\n				global $wp_roles;\n				\n				$choices = array_merge( array('all' => __('All', 'acf')), $wp_roles->get_names() );\n			\n				break;\n				\n				\n			case \"ef_media\" :\n				\n				$choices = array('all' => __('All', 'acf'));\n			\n				break;\n				\n		}\n		\n		\n		// allow custom location rules\n		$choices = apply_filters( 'acf/location/rule_values/' . $options['param'], $choices );\n							\n		\n		// create field\n		do_action('acf/create_field', array(\n			'type'	=>	'select',\n			'name' => 'location[' . $options['group_id'] . '][' . $options['rule_id'] . '][value]',\n			'value'	=>	$options['value'],\n			'choices' => $choices,\n		));\n		\n		\n		// ajax?\n		if( $is_ajax )\n		{\n			die();\n		}\n								\n	}	\n	\n	\n	/*\n	*  name_save_pre\n	*\n	*  @description: intercepts the acf post obejct and adds an \"acf_\" to the start of \n	*				 it's name to stop conflicts between acf's and page's urls\n	*  @since 1.0.0\n	*  @created: 23/06/12\n	*/\n		\n	function name_save_pre($name)\n	{\n		// validate\n		if( !isset($_POST['post_type']) || $_POST['post_type'] != 'acf' ) \n		{\n			return $name;\n		}\n		\n		\n		// need a title\n		if( !$_POST['post_title'] )\n		{\n			$_POST['post_title'] = 'Unnamed Field Group';\n		}\n		\n		\n        $name = 'acf_' . sanitize_title($_POST['post_title']);\n\n        \n        return $name;\n	}\n	\n	\n	/*\n	*  save_post\n	*\n	*  @description: Saves the field / location / option data for a field group\n	*  @since 1.0.0\n	*  @created: 23/06/12\n	*/\n	\n	function save_post($post_id)\n	{\n		// do not save if this is an auto save routine\n		if( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE )\n		{\n			return $post_id;\n		}\n		\n		\n		// verify nonce\n		if( !isset($_POST['acf_nonce']) || !wp_verify_nonce($_POST['acf_nonce'], 'field_group') )\n		{\n			return $post_id;\n		}\n		\n		\n		// only save once! WordPress save's a revision as well.\n		if( wp_is_post_revision($post_id) )\n		{\n	    	return $post_id;\n        }\n		\n		\n		/*\n		*  save fields\n		*/\n		\n		// vars\n		$dont_delete = array();\n		\n		if( isset($_POST['fields']) && is_array($_POST['fields']) )\n		{\n			$i = -1;\n\n\n			// remove clone field\n			unset( $_POST['fields']['field_clone'] );\n			\n			\n\n			// loop through and save fields\n			foreach( $_POST['fields'] as $key => $field )\n			{\n				$i++;\n				\n				\n				// order + key\n				$field['order_no'] = $i;\n				$field['key'] = $key;\n				\n				\n				// save\n				do_action('acf/update_field', $field, $post_id );\n				\n				\n				// add to dont delete array\n				$dont_delete[] = $field['key'];\n			}\n		}\n		unset( $_POST['fields'] );\n		\n		\n		// delete all other field\n		$keys = get_post_custom_keys($post_id);\n		foreach( $keys as $key )\n		{\n			if( strpos($key, 'field_') !== false && !in_array($key, $dont_delete) )\n			{\n				// this is a field, and it wasn't found in the dont_delete array\n				do_action('acf/delete_field', $post_id, $key);\n			}\n		}\n		\n		\n		/*\n		*  save location rules\n		*/\n		\n		if( isset($_POST['location']) && is_array($_POST['location']) )\n		{\n			delete_post_meta( $post_id, 'rule' );\n			\n			\n			// clean array keys\n			$_POST['location'] = array_values( $_POST['location'] );\n			foreach( $_POST['location'] as $group_id => $group )\n			{\n				if( is_array($group) )\n				{\n					// clean array keys\n					$group = array_values( $group );\n					foreach( $group as $rule_id => $rule )\n					{\n						$rule['order_no'] = $rule_id;\n						$rule['group_no'] = $group_id;\n						\n\n						add_post_meta( $post_id, 'rule', $rule );\n					}\n				}\n			}\n			\n			unset( $_POST['location'] );\n		}\n		\n		\n		/*\n		*  save options\n		*/\n		\n		if( isset($_POST['options']) && is_array($_POST['options']) )\n		{\n			update_post_meta($post_id, 'position', $_POST['options']['position']);\n			update_post_meta($post_id, 'layout', $_POST['options']['layout']);\n			update_post_meta($post_id, 'hide_on_screen', $_POST['options']['hide_on_screen']);\n		}\n\n		\n		unset( $_POST['options'] );\n	\n		\n	}\n	\n			\n}\n\nnew acf_field_group();\n\n?>",
+			"file": "wp-content/plugins/advanced-custom-fields/core/controllers/field_group.php",
+			"file_size": 19114,
+			"file_write_time": 1416400777000000,
+			"settings":
+			{
+				"buffer_size": 19097,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "wp-content/themes/bowmanriley/single-casestudies.php",
+			"settings":
+			{
+				"buffer_size": 2651,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "wp-content/themes/bowmanriley/js/scripts.js",
+			"settings":
+			{
+				"buffer_size": 24758,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -480,57 +633,73 @@
 	},
 	"file_history":
 	[
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/template-columns-2-links.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/template-rows-2-links.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/template-rows-3-links.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/page-search-results.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/functions.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/header.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/page-our-people.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/templates/_awards.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/components/_typography.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/components/_container.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/includes/secondary-nav.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/js/scripts.js",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/css/layout.css",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/components/_grid.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/_base.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/components/_global.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/templates/_contact.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/templates/_case-studies.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/templates/_media.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/js/jquery.gmap.js",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/js/jquery.gmap.route.js",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/components/_navigation.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/template-2-images.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/page-case-studies.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/taxonomy-people_category.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/single-people.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/single-casestudies.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/taxonomy-casestudies_category.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/includes/utility-nav.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/archive-news.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/front-page.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/page-explore-our-services.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/templates/_home.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/helpers/mixins/_wp-current-page-links.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/_variables.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/images/bowman-riley-home.svg",
+		"/Applications/MAMP/htdocs/bowman-riley/build/sass/components/_navigation.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/build/sass/components/_header.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/components/_forms.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/includes/case-studies-nav.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/templates/_all.scss",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/template-awards.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/post_types/case-studies.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/template-rows-4-links.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/page-contact.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/page-downloads.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/single-news.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/template-3-images.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/post_types/people.php",
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/post_types/news.php",
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/footer.php",
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/js/slick/slick.css",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/template-3-images.php",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/js/scripts.js",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/page-our-people.php",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/components/_global.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/taxonomy-people_category.php",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/css/layout.css",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/templates/_case-studies.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/components/_grid.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/template-rows-3-links.php",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/template-rows-2-links.php",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/template-rows-4-links.php",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/_variables.scss",
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/_reset.scss",
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/_normalize.scss",
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/style.css",
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/helpers/_placeholders.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/components/_forms.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/templates/_contact.scss",
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/components/_header.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/page-contact.php",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/includes/utility-nav.php",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/components/_navigation.scss",
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/components/_all.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/templates/_all.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/header.php",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/front-page.php",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/taxonomy-casestudies_category.php",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/page-case-studies.php",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/includes/case-studies-nav.php",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/single-casestudies.php",
 		"/Applications/MAMP/htdocs/bowman-riley/wp-config.php",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/functions.php",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/page-search-results.php",
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/templates/_downloads.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/components/_typography.scss",
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/images/arrow-right-green.svg",
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/searchform.php",
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/search.php",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/components/_container.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/archive-news.php",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/template-columns-2-links.php",
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/images/bulletpoint.svg",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/templates/_media.scss",
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/includes/secondary-nav-people.php",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/single-people.php",
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/images/arrow-right-blue.svg",
 		"/Users/neilmills/Downloads/banners.js",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/helpers/mixins/_wp-current-page-links.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/images/bowman-riley-home.svg",
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/layout.scss",
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/helpers/mixins/_bg-cover.scss",
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/js/admin-scripts.js",
@@ -541,14 +710,8 @@
 		"/Applications/MAMP/htdocs/Backups/Stonefix/stonefix/lloyds/js/jquery.confirmBox.js",
 		"/Users/neilmills/Downloads/altinetc_dev.sql",
 		"/Applications/MAMP/htdocs/bowman-riley/bowmanriley.sql",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/post_types/news.php",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/includes/secondary-nav.php",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/post_types/people.php",
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/page-latest-news.php",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/page-explore-our-services.php",
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/js/jquery.slimscroll.min.js",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/templates/_home.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/single-news.php",
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/includes/news-nav.php",
 		"/Applications/MAMP/htdocs/bowman-riley/build/header.php",
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/----page-our-story.php",
@@ -556,9 +719,7 @@
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/----page-architects.php",
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/functions/retina-images.php",
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/page-our-architectural-services.php",
-		"/Applications/MAMP/htdocs/bowman-riley/build/sass/components/_navigation.scss",
 		"/Applications/MAMP/htdocs/bowman-riley/build/work-with-us.php",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/post_types/case-studies.php",
 		"/Applications/MAMP/htdocs/bowman-riley/build/our-people-sector.php",
 		"/Applications/MAMP/htdocs/park_manor/wp-content/themes/parkmanor_modified/taxonomy-activity_category.php",
 		"/Applications/MAMP/htdocs/bowman-riley/build/sass/components/_grid.scss",
@@ -599,19 +760,11 @@
 		"/Applications/MAMP/htdocs/bowman-riley/building-consultancy.php",
 		"/Applications/MAMP/htdocs/bowman-riley/sass/_variables.scss",
 		"/Applications/MAMP/htdocs/bowman-riley/healthcare.php",
-		"/Applications/MAMP/htdocs/bowman-riley/work-with-us.php",
-		"/Applications/MAMP/htdocs/bowman-riley/js/jquery.easing.min.js",
-		"/Applications/MAMP/htdocs/bowman-riley/images/compass.svg",
-		"/Applications/MAMP/htdocs/bowman-riley/images/heart.svg",
-		"/Applications/MAMP/htdocs/bowman-riley/images/share-twitter.svg",
-		"/Applications/MAMP/htdocs/bowman-riley/images/share-linkedin.svg",
-		"/Applications/MAMP/htdocs/bowman-riley/images/share-facebook.svg",
-		"/Applications/MAMP/htdocs/bowman-riley/building-consultancy.html",
-		"/Applications/MAMP/htdocs/bowman-riley/case-studies.html"
+		"/Applications/MAMP/htdocs/bowman-riley/work-with-us.php"
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -628,134 +781,134 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"$page->",
-			"$class",
-			".row",
-			".logo",
-			"slick-prev",
-			".image-slide",
-			".slider",
-			"destroy",
-			"initOwl",
-			"slider",
-			"navLinks",
-			"  $initFullPageJS",
-			"fullPage",
-			"slider",
-			"navlinks",
-			"render",
-			"owlCarousel",
-			"sectionCache",
-			"cache",
-			"navlinks",
-			"destroy",
-			".slider",
-			"$initOwl",
-			"$initFullPageJS",
-			"destroy",
-			"owl",
-			"$firstLoad",
-			"navlinks",
-			"owl",
-			"nav",
-			"append",
-			"owl",
-			"nav",
-			"owl",
-			"firstLoad",
-			"owl",
-			"bowman",
-			"input",
-			"search-form",
-			"overlay",
+			"convertSubNavLinksToHash",
+			"convertChildLinksToHash",
+			"get_all_category_ids",
+			"service",
+			"explore",
+			"subMenu",
+			"twice-height",
+			"alert",
+			"init history",
 			"console",
-			"people",
-			"people-single",
-			"aside",
-			"renderPage",
-			"console",
-			"people",
-			"console",
-			"popstate",
-			"moveTo",
-			"overlay",
-			"loading",
-			"animate",
-			"moveTo",
-			"move",
-			"moveto	",
-			"move",
-			"trim",
-			"empty",
-			".logo",
-			"logo",
-			"$cache",
-			"bg-fill-cell",
-			"feature",
-			"purple",
-			".purple",
-			".green",
-			"$purple",
-			"fullpage",
-			"moveTo",
-			".close",
-			"$firstLoad",
-			".close",
-			"getPages",
-			"$firstLoad ",
-			"console",
-			"$links",
-			"setNavState",
-			"getPages =",
-			"push-link",
-			"activateDropDown",
-			"drop",
-			"current-menu-item",
-			"setNavState",
-			"state",
-			"modernizr",
-			"history",
-			"hash",
-			"first",
-			"people",
-			"input",
-			"http://92.60.114.159/~altinetco",
-			"http://bowmanriley.localhost",
-			"setNavState",
-			"menu()",
-			"nav",
-			".empty",
-			"getPages",
-			"case-stu",
-			"people",
-			"?php echo get_term_link($term)",
-			"aside",
-			"secondary-nav",
+			"#",
 			"sub-nav",
+			"#",
+			"'click'",
+			"killNavPushLinkActions",
+			"killHistoryActions",
+			"updateMenuActions",
+			"initHistoryActions",
+			"updateMenuActions",
+			"historyActive",
+			"History",
 			"getPages",
-			"current",
-			"sub-nav",
-			"main",
-			"overlay",
-			"repositionSubNavs",
-			"secondary",
-			"latest-work",
-			"animateLogo",
-			"animateLogo ",
+			"loadPages",
 			"console",
-			"theme",
-			"case-study-link",
-			"pop",
-			"push",
-			"inverted",
+			"map",
+			".close",
+			"single",
+			"height-60-pct",
+			"beta",
+			"news",
 			"fit-cell",
-			"people",
-			"theme",
-			"push-link",
-			"accreditation",
-			"page-accreditation",
-			"page-buzz",
-			"contribute_blog"
+			"500px",
+			"400px",
+			"width-40",
+			".overlay",
+			"overlay",
+			"initImageSliders",
+			"initImageSliders initImageSliders ",
+			"slider",
+			"data",
+			"architect",
+			"twice",
+			"square",
+			"twice-height",
+			"two-thirds",
+			"main",
+			"setParentLinkState",
+			"current-menu",
+			"killNavPushLinkActions",
+			"$navPushStateLinks",
+			"sendPushLink",
+			"$pushStateLinks",
+			".bind",
+			"$pushStateLinks",
+			"sendPushLink",
+			"$pushStateLinks",
+			"$class",
+			"refreshNavPushLinkActions",
+			"refresh",
+			"initPushStateLinks",
+			"initPageDownArrowLink",
+			"arrow",
+			"removeHashLinks",
+			"Hash",
+			"initPeopleLinks",
+			"setNavState",
+			"initPopState",
+			"initCaseStudiesSubNav",
+			"refresh",
+			"navPushStateLinks",
+			"console",
+			"$navPushStateLinks",
+			":not",
+			"$navPushStateLinks",
+			"refresh",
+			"allPushStateLinks",
+			"initPushStateLinks",
+			"$navPushStateLinks",
+			"refresh",
+			"$.ajax",
+			"$.get",
+			"refreshPushLinkActions",
+			"refreshPushLinkActions ",
+			"pushStateLinks",
+			"setNavState",
+			"desktopDropDown",
+			"mouseenter",
+			"setNavState",
+			"current-menu-item",
+			"toggleMobileDropDown",
+			"toggleMobileDropDown ",
+			"hover",
+			"sub-menu",
+			"current-menu",
+			"State",
+			"toggle",
+			"toggleMobileDropDown",
+			"toggle",
+			"hover",
+			"toggle",
+			"$parentLinks",
+			"toggle",
+			"$navLinks",
+			"closeMobileMenu",
+			"closeMobileMenu()",
+			"console",
+			"initMapDirectionsLink",
+			"initMapDirectionsLink()",
+			"loader",
+			"setNavState",
+			"getPages",
+			"#nav",
+			"add hash",
+			"$parentLinks",
+			"toggleMobileDropDown",
+			"duplicate",
+			"toggleMobileMenu",
+			"console.log",
+			"closeMobileMenu",
+			"activateDropDown",
+			"mobileMenu",
+			"hash",
+			"duplicateParentLink",
+			"duplicateParentLink ",
+			"duplicate",
+			":not",
+			"getPages",
+			"navlinks"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -901,8 +1054,308 @@
 	"groups":
 	[
 		{
+			"selected": 3,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "wp-content/themes/bowmanriley/front-page.php",
+					"settings":
+					{
+						"buffer_size": 4427,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3041,
+								3041
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 263.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "wp-content/themes/bowmanriley/sass/_variables.scss",
+					"settings":
+					{
+						"buffer_size": 493,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								124,
+								107
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "wp-content/themes/bowmanriley/sass/templates/_home.scss",
+					"settings":
+					{
+						"buffer_size": 3794,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2710,
+								2710
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1595.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "wp-content/themes/bowmanriley/template-rows-4-links.php",
+					"settings":
+					{
+						"buffer_size": 12797,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11435,
+								11435
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3830.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "wp-content/themes/bowmanriley/page-explore-our-services.php",
+					"settings":
+					{
+						"buffer_size": 1370,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1174,
+								1174
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "wp-includes/functions.php",
+					"settings":
+					{
+						"buffer_size": 142443,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								97853,
+								97853
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 47715.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"settings":
+					{
+						"buffer_size": 959,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										236,
+										256
+									],
+									[
+										463,
+										483
+									],
+									[
+										716,
+										736
+									],
+									[
+										832,
+										852
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								99,
+								48
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "wp-content/plugins/advanced-custom-fields/core/controllers/field_group.php",
+					"settings":
+					{
+						"buffer_size": 19097,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								13815,
+								13810
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 10298.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "wp-content/themes/bowmanriley/single-casestudies.php",
+					"settings":
+					{
+						"buffer_size": 2651,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								618,
+								618
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "wp-content/themes/bowmanriley/js/scripts.js",
+					"settings":
+					{
+						"buffer_size": 24758,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								23047,
+								23047
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 12965.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
